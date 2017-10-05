@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/people")
+@RequestMapping("/api/people")
 public class PersonController {
     private PersonRepository personRepository;
     private PersonRecourceAssembler personRecourceAssembler;

@@ -5,7 +5,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'twitter-frontend',
     environment,
-    rootURL: '/ui/',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
