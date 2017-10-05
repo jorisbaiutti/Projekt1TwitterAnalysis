@@ -1,8 +1,10 @@
 zuul:
   routes:
     adminui:
-      path: /ui/**
-      url: http://localhost:4200/ui/
+      path: /**
+      url: http://localhost:4200/
+  ignored-patterns:
+     /api/**
 logging:
      level:
        org.springframework.web: 'debug'

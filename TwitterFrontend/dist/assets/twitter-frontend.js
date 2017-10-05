@@ -2,6 +2,16 @@
 
 
 
+define('twitter-frontend/adapters/application', ['exports', 'ember-data'], function (exports, _emberData) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = _emberData.default.JSONAPIAdapter.extend({
+        namespace: 'api'
+    });
+});
 define('twitter-frontend/app', ['exports', 'twitter-frontend/resolver', 'ember-load-initializers', 'twitter-frontend/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
   'use strict';
 
@@ -344,6 +354,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+96a447fb"});
+  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+7b9dfeae"});
 }
 //# sourceMappingURL=twitter-frontend.map
