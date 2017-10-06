@@ -1,0 +1,6 @@
+{
+  "name": "twitter-frontend",
+  "dependencies": {
+    "chartjs": "2.1.6"
+  }
+}

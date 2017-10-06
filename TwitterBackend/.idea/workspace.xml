@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="Heiiiii">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/styles/app.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PersonController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PersonController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/config/environment.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/config/environment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/models/person.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/models/person.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/routes/person/show.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/routes/person/show.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/templates/application.hbs" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/templates/application.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/templates/person/show.hbs" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/templates/person/show.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/index.html" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/tests/index.html" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/tests/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/package.json" afterPath="$PROJECT_DIR$/../TwitterFrontend/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -84,7 +89,7 @@
       <file leaf-file-name="StartApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
+            <state relative-caret-position="833">
               <caret line="58" column="10" lean-forward="false" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -106,7 +111,7 @@
       <file leaf-file-name="EntityNotFoundException.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/exception/EntityNotFoundException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="85">
               <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
               <folding>
                 <element signature="e#216#217#0" expanded="true" />
@@ -132,7 +137,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PersonController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+              <caret line="2" column="48" lean-forward="false" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -246,10 +251,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -380,6 +383,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -593,11 +598,12 @@
       <workItem from="1507144687208" duration="57000" />
       <workItem from="1507184073864" duration="1373000" />
       <workItem from="1507187674282" duration="2001000" />
+      <workItem from="1507270735303" duration="636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28218000" />
+    <option name="totallyTimeSpent" value="29039000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1447" height="1047" extended-state="0" />
@@ -610,21 +616,21 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6159738" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33479694" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33479694" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28983417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29416007" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39565217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39565217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1096,7 +1102,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
+        <state relative-caret-position="833">
           <caret line="58" column="10" lean-forward="false" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1106,7 +1112,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/exception/EntityNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="85">
           <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding>
             <element signature="e#216#217#0" expanded="true" />
@@ -1126,7 +1132,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PersonController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+          <caret line="2" column="48" lean-forward="false" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1134,7 +1140,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,28 @@
+
+@import "bootstrap";
+
+$backgroundcolor: #4abdac;
+$objects: #fc4a1a;
+$buttonsbadges: #f7b733;
+$cleanbackground: #dfdce3;
+$fontcolor: #ffffff;
+
+.container-twitter{
+    background-color: $backgroundcolor;
+    color: $fontcolor;
+}
+.nav-twitter{
+    background-color: $objects;
+    a{
+        color: $fontcolor;   
+    }
+    li{
+        a:hover{
+            background-color: $buttonsbadges;
+        }
+    }
+}
+.button-twitter{
+    background-color: $buttonsbadges;
+    color: $fontcolor;
+}
