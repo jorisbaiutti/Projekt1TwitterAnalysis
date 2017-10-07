@@ -1,6 +1,7 @@
 {
   "name": "twitter-frontend",
   "dependencies": {
-    "chartjs": "2.1.6"
+    "chartjs": "2.1.6",
+    "materialize": "0.97.6"
   }
 }

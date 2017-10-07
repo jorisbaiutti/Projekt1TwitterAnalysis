@@ -26,8 +26,8 @@ public class StartApplication
         SpringApplication.run(StartApplication.class, args);
 
         //Test Twitter
-        /*
-        String line = "";
+
+       /* String line = "";
         SentimentAnalysisWithCount twitterCategorizer = new SentimentAnalysisWithCount();
         twitterCategorizer.trainModel();
 
@@ -43,6 +43,7 @@ public class StartApplication
         QueryResult result = twitter.search(query);
         int result1 = 0;
         for (Status status : result.getTweets()) {
+
             result1 = twitterCategorizer.classifyNewTweet(status.getText());
             if (result1 == 1) {
                 positive++;
@@ -55,8 +56,8 @@ public class StartApplication
         bw.write("Positive Tweets," + positive);
         bw.newLine();
         bw.write("Negative Tweets," + negative);
-        bw.close();
-        */
+        bw.close();*/
+
     }
 
 }

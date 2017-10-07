@@ -5814,7 +5814,7 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-.container-twitter {
+.twitter-blue {
   background-color: #4abdac;
   color: #ffffff; }
 
@@ -5825,8 +5825,12 @@ button.close {
   .nav-twitter li a:hover {
     background-color: #f7b733; }
 
-.button-twitter {
+.twitter-yellow {
   background-color: #f7b733;
+  color: #ffffff; }
+
+.twitter-orange {
+  background-color: #fc4a1a;
   color: #ffffff; }
 
 /*# sourceMappingURL=twitter-frontend.css.map */

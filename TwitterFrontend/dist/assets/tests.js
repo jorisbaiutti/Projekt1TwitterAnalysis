@@ -15,6 +15,11 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'app.js should pass ESLint\n\n');
   });
 
+  QUnit.test('components/card-listing.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/card-listing.js should pass ESLint\n\n');
+  });
+
   QUnit.test('models/person.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'models/person.js should pass ESLint\n\n');
@@ -28,6 +33,16 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
   QUnit.test('router.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'router.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/charts.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/charts.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/index.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/index.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/person/show.js', function (assert) {
@@ -118,6 +133,35 @@ define('twitter-frontend/tests/helpers/start-app', ['exports', 'twitter-frontend
     });
   }
 });
+define('twitter-frontend/tests/integration/components/card-listing-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForComponent)('card-listing', 'Integration | Component | card listing', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      "id": "2GNiOqby",
+      "block": "{\"symbols\":[],\"statements\":[[1,[18,\"card-listing\"],false]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      "id": "sFVw6JtF",
+      "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"card-listing\",null,null,{\"statements\":[[0,\"      template block text\\n\"]],\"parameters\":[]},null],[0,\"  \"]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
 define('twitter-frontend/tests/test-helper', ['twitter-frontend/tests/helpers/resolver', 'ember-qunit', 'ember-cli-qunit'], function (_resolver, _emberQunit, _emberCliQunit) {
   'use strict';
 
@@ -149,6 +193,11 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'helpers/start-app.js should pass ESLint\n\n');
   });
 
+  QUnit.test('integration/components/card-listing-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/card-listing-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('test-helper.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass ESLint\n\n');
@@ -162,6 +211,16 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
   QUnit.test('unit/models/person-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/models/person-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/routes/charts-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/charts-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/routes/index-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/index-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('unit/routes/person-test.js', function (assert) {
@@ -205,6 +264,32 @@ define('twitter-frontend/tests/unit/models/person-test', ['ember-qunit'], functi
     var model = this.subject();
     // let store = this.store();
     assert.ok(!!model);
+  });
+});
+define('twitter-frontend/tests/unit/routes/charts-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:charts', 'Unit | Route | charts', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('twitter-frontend/tests/unit/routes/index-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:index', 'Unit | Route | index', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
   });
 });
 define('twitter-frontend/tests/unit/routes/person-test', ['ember-qunit'], function (_emberQunit) {

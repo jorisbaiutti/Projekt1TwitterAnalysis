@@ -1,4 +1,5 @@
 
+
 @import "bootstrap";
 
 $backgroundcolor: #4abdac;
@@ -7,7 +8,7 @@ $buttonsbadges: #f7b733;
 $cleanbackground: #dfdce3;
 $fontcolor: #ffffff;
 
-.container-twitter{
+.twitter-blue{
     background-color: $backgroundcolor;
     color: $fontcolor;
 }
@@ -22,7 +23,15 @@ $fontcolor: #ffffff;
         }
     }
 }
-.button-twitter{
+.twitter-yellow{
     background-color: $buttonsbadges;
     color: $fontcolor;
 }
+.twitter-orange{
+    background-color: $objects;
+    color: $fontcolor;
+}
+
+
+
+
