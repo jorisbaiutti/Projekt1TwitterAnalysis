@@ -1,6 +1,5 @@
 
-
-@import "bootstrap";
+@import "ember-cli-bootstrap-4/bootstrap";
 
 $backgroundcolor: #4abdac;
 $objects: #fc4a1a;
@@ -31,6 +30,11 @@ $fontcolor: #ffffff;
     background-color: $objects;
     color: $fontcolor;
 }
+.card{
+    margin: 10px;
+}
+
+
 
 
 
