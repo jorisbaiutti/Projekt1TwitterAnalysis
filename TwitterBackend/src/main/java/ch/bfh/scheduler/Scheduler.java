@@ -34,7 +34,7 @@ public class Scheduler {
         twitter = twitterFactory.getInstance();
     }
 
-    @Scheduled(fixedRate = 10000)
+   // @Scheduled(fixedRate = 10000)
     public void getTweets() throws TwitterException {
         System.out.println("getTweets");
         if(counter == queryStrings.size()) counter = 0;
