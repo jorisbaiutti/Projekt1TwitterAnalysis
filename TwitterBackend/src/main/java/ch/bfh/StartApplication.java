@@ -1,21 +1,16 @@
 package ch.bfh;
 
-import ch.bfh.analyse.sentiment.SentimentAnalysisWithCount;
-import ch.bfh.beans.Tweet;
+import ch.bfh.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import twitter4j.*;
-import twitter4j.conf.ConfigurationBuilder;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -35,10 +30,18 @@ public class StartApplication
         SpringApplication.run(StartApplication.class, args);
 
 
+        User user = new User();
+        user.setId(1);
+        user.setUserName("Joris");
 
         EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("emFactory");
         EntityManager entityManager =
                 emFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(user);
+        entityManager.getTransaction().commit();
+        entityManager.clear();
 
 
 

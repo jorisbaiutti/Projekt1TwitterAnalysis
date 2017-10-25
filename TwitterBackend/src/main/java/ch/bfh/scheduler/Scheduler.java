@@ -17,7 +17,7 @@ public class Scheduler {
     TwitterFactory twitterFactory;
     Twitter twitter;
 
-    List<String> queryStrings = Arrays.asList("from:bfh_digital");
+    List<String> queryStrings = Arrays.asList("from:joris_baiutti");
     List<Status> tweets;
 
     int counter = 0;
@@ -34,13 +34,29 @@ public class Scheduler {
         twitter = twitterFactory.getInstance();
     }
 
-    @Scheduled(fixedRate = 10000)
+    //@Scheduled(fixedRate = 1000)
     public void getTweets() throws TwitterException {
         System.out.println("getTweets");
         if(counter == queryStrings.size()) counter = 0;
         List<Status> tweets =  getTweet(queryStrings.get(0));
-        tweets.forEach(tweet -> System.out.println(tweet.getText()));
-        System.out.println(tweets.size());
+        tweets.forEach(tweet -> {
+            System.out.println("Inhalt: ");
+            System.out.println(tweet.getText());
+
+
+            System.out.println("RetweetCount: " + tweet.getRetweetCount());
+            System.out.println("Hashtags: ");
+            Arrays.asList(tweet.getHashtagEntities()).forEach(t -> System.out.println(t.getText()));
+
+            System.out.println("Mentions: ");
+            Arrays.asList(tweet.getUserMentionEntities()).forEach(t -> System.out.println(t.getScreenName()));
+
+            System.out.println("Like count: " + tweet.getFavoriteCount());
+
+            System.out.println("Creator: " + tweet.getUser().getScreenName());
+
+        });
+
         counter++;
     }
 

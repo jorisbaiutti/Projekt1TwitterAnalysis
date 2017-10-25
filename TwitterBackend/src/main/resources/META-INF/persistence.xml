@@ -2,9 +2,9 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
     <persistence-unit name="emFactory">
-        <class>ch.bfh.beans.Tweet</class>
-        <class>ch.bfh.beans.User</class>
-        <class>ch.bfh.beans.HashTag</class>
+        <class>ch.bfh.entities.Tweet</class>
+        <class>ch.bfh.entities.User</class>
+        <class>ch.bfh.entities.HashTag</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://project1twitteranalysis.database.windows.net:1433;database=TwitterAnalysis;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;" />
