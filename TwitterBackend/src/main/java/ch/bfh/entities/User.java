@@ -34,6 +34,11 @@ public class User {
 
     }
 
+    public User(String userName, List<Tweet> mentioned) {
+        this.userName = userName;
+        this.mentioned = mentioned;
+    }
+
     public List<Tweet> getCreated() {
         return created;
     }
