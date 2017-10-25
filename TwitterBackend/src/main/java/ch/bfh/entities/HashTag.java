@@ -21,6 +21,11 @@ public class HashTag {
 
     }
 
+    public HashTag(String hashTag, Tweet tweet) {
+        this.hashTag = hashTag;
+        this.tweets.add(tweet);
+    }
+
     public String getHashTag() {
         return hashTag;
     }
@@ -35,5 +40,9 @@ public class HashTag {
 
     public void setTweets(List<Tweet> tweets) {
         this.tweets = tweets;
+    }
+
+    public void addTweet(Tweet tweet){
+        tweets.add(tweet);
     }
 }

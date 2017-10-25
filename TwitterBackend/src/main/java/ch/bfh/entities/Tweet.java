@@ -10,9 +10,10 @@ import java.util.List;
 @Table
 public class Tweet {
 
-    @Id
+
     @GeneratedValue
-    @Column(name = "TWEET_ID", unique = true, nullable = false)
+    @Column(name = "TWEET_ID", unique = true)
+    @Id
     private int id;
 
     @ManyToMany(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
@@ -44,12 +45,20 @@ public class Tweet {
     private List<User> mentions;
 
 
+    private String content;
+
+
     @ManyToOne
     @JoinColumn(name="CREATOR_ID")
     private User creator;
 
     public Tweet(){
 
+    }
+
+    public Tweet(String content, User creator) {
+        this.content = content;
+        this.creator = creator;
     }
 
     public int getId() {
@@ -98,5 +107,13 @@ public class Tweet {
 
     public void setCreator(User creator) {
         this.creator = creator;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }
