@@ -1,29 +1,28 @@
 package ch.bfh.entities;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by Patrick on 11.10.2017.
  */
-@Entity
+@javax.persistence.Entity
 @Table
-public class HashTag {
+public class HashTag extends TwitterEntity{
 
     @Id
+    @GeneratedValue
+    private long id;
+
     @Column(name = "HASHTAG", unique = true, nullable = false)
     private String hashTag;
-
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "hashTags")
-    private List<Tweet> tweets;
 
     public HashTag(){
 
     }
 
-    public HashTag(String hashTag, Tweet tweet) {
+
+    public HashTag(String hashTag) {
         this.hashTag = hashTag;
-        this.tweets.add(tweet);
     }
 
     public String getHashTag() {
@@ -34,15 +33,11 @@ public class HashTag {
         this.hashTag = hashTag;
     }
 
-    public List<Tweet> getTweets() {
-        return tweets;
+    public long getId() {
+        return id;
     }
 
-    public void setTweets(List<Tweet> tweets) {
-        this.tweets = tweets;
-    }
-
-    public void addTweet(Tweet tweet){
-        tweets.add(tweet);
+    public void setId(int id) {
+        this.id = id;
     }
 }

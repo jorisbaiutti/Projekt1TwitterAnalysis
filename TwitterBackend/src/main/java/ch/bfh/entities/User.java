@@ -6,37 +6,30 @@ import java.util.List;
 /**
  * Created by Patrick on 11.10.2017.
  */
-@Entity
+@javax.persistence.Entity
 @Table(name = "[User]")
-public class User {
+public class User extends TwitterEntity {
 
     @Id
-    @GeneratedValue
     @Column(name = "USER_ID", unique = true, nullable = false)
-    private int id;
+    private long id;
 
     @Column(name = "USER_NAME", unique = true, nullable = false)
     private String userName;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "likes")
-    private List<Tweet> liked;
+    private String location;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "retweets")
-    private List<Tweet> retweeted;
+    private String email;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "mentions")
-    private List<Tweet> mentioned;
-
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "creator")
     private List<Tweet> created;
 
     public User(){
 
     }
 
-    public User(String userName, List<Tweet> mentioned) {
+    public User(String userName) {
         this.userName = userName;
-        this.mentioned = mentioned;
     }
 
     public List<Tweet> getCreated() {
@@ -47,11 +40,11 @@ public class User {
         this.created = created;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -63,27 +56,19 @@ public class User {
         this.userName = userName;
     }
 
-    public List<Tweet> getLiked() {
-        return liked;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLiked(List<Tweet> liked) {
-        this.liked = liked;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public List<Tweet> getRetweeted() {
-        return retweeted;
+    public String getEmail() {
+        return email;
     }
 
-    public void setRetweeted(List<Tweet> retweeted) {
-        this.retweeted = retweeted;
-    }
-
-    public List<Tweet> getMentioned() {
-        return mentioned;
-    }
-
-    public void setMentioned(List<Tweet> mentioned) {
-        this.mentioned = mentioned;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
