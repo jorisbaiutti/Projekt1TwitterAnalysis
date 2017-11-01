@@ -14,16 +14,12 @@ public class Tweet extends TwitterEntity {
     @Id
     private long id;
 
-    @ManyToMany(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY,  cascade = CascadeType.MERGE)
     private List<HashTag> hashTags;
 
     private int likes;
 
     private int retweets;
-
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<User> mentions;
-
 
     private String content;
 
@@ -48,10 +44,6 @@ public class Tweet extends TwitterEntity {
         return hashTags;
     }
 
-    public List<User> getMentions() {
-        return mentions;
-    }
-
     public User getCreator() {
         return creator;
     }
@@ -62,10 +54,6 @@ public class Tweet extends TwitterEntity {
 
     public void setHashTags(List<HashTag> hashTags) {
         this.hashTags = hashTags;
-    }
-
-    public void setMentions(List<User> mentions) {
-        this.mentions = mentions;
     }
 
     public void setCreator(User creator) {

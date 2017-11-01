@@ -28,7 +28,7 @@ public abstract class Repository<T extends TwitterEntity> {
         entityManager.getTransaction().commit();
     }
      public TwitterEntity update(TwitterEntity entity) {
-        entityManager.getTransaction().begin();
+        entityManager.persist(entity);
         return  null;
     }
 
@@ -37,8 +37,8 @@ public abstract class Repository<T extends TwitterEntity> {
     }
 
      public TwitterEntity getOne(long id) {
-        User user = entityManager.find(User.class, id);
-        return user;
+         User user = entityManager.find(User.class, id);
+         return user;
 
      }
 
