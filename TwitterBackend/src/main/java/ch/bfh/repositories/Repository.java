@@ -26,10 +26,13 @@ public abstract class Repository<T extends TwitterEntity> {
          }
 
         entityManager.getTransaction().commit();
+
     }
      public TwitterEntity update(TwitterEntity entity) {
-        entityManager.persist(entity);
-        return  null;
+        entityManager.getTransaction().begin();
+        entityManager.merge(entity);
+        entityManager.getTransaction().commit();
+        return entity;
     }
 
      public List<T> getAll() {
