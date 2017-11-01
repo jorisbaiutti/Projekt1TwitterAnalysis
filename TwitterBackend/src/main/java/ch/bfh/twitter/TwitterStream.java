@@ -112,7 +112,7 @@ public class TwitterStream {
             }
         };
         FilterQuery qry = new FilterQuery();
-        String[] keywords = { "BFH","Digital Society","from:joris_baiutti"};
+        String[] keywords = { "BFH","Digital Society","System Design","Future System","Big Data","Open Data","Gebäude und Städte","Identität","Privatsphäre","IT-Security","Cyberforensik","Gesundheitsversorgung","E-Health"};
 
         qry.track(keywords);
 

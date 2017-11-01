@@ -15,6 +15,10 @@ import java.util.List;
  */
 @Component
 public class UserRepository extends Repository<User>{
+    public UserRepository(ch.bfh.util.EntityManager entityManager) {
+        super(entityManager);
+    }
+
     public User findbyName(String name) {
 
 
@@ -27,4 +31,8 @@ public class UserRepository extends Repository<User>{
         return user;
     }
 
+    @Override
+    public List<User> getAll() {
+        return null;
+    }
 }
