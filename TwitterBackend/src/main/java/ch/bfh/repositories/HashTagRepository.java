@@ -16,4 +16,12 @@ import java.util.List;
 public class HashTagRepository extends Repository<HashTag>{
 
 
+    public HashTagRepository(ch.bfh.util.EntityManager entityManager) {
+        super(entityManager);
+    }
+
+    @Override
+    public List<HashTag> getAll() {
+        return null;
+    }
 }

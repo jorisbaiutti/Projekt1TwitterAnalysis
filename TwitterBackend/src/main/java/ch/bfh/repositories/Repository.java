@@ -3,6 +3,7 @@ package ch.bfh.repositories;
 
 import ch.bfh.entities.TwitterEntity;
 import ch.bfh.entities.User;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,11 +13,16 @@ import java.util.List;
 /**
  * Created by Patrick on 25.10.2017.
  */
-public abstract class Repository<T extends TwitterEntity> {
-    EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("emFactory");
-    EntityManager entityManager = emFactory.createEntityManager();
 
-     public void save(TwitterEntity entity) {
+public abstract class Repository<T extends TwitterEntity> {
+
+    EntityManager entityManager;
+    @Autowired
+    public Repository(ch.bfh.util.EntityManager entityManager) {
+        this.entityManager = entityManager.getEntityManager();
+    }
+
+    public void save(TwitterEntity entity) {
 
         entityManager.getTransaction().begin();
          try {
@@ -29,15 +35,11 @@ public abstract class Repository<T extends TwitterEntity> {
 
     }
      public TwitterEntity update(TwitterEntity entity) {
-        entityManager.getTransaction().begin();
-        entityManager.merge(entity);
-        entityManager.getTransaction().commit();
+        this.save(entity);
         return entity;
     }
 
-     public List<T> getAll() {
-        return null;
-    }
+
 
      public TwitterEntity getOne(long id) {
          User user = entityManager.find(User.class, id);
@@ -48,6 +50,7 @@ public abstract class Repository<T extends TwitterEntity> {
      public void delete(TwitterEntity entity) {
 
     }
+    public abstract List<T> getAll();
 
      public List<T> findBySqlQuery(String SqlQuery) {
         return null;
