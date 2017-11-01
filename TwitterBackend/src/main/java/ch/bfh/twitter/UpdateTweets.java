@@ -36,23 +36,27 @@ public class UpdateTweets {
 
     @Scheduled(fixedRate = 1000)
     private void updateTweets(){
-        Tweet tweet = tweets.get(i);
-        Status status;
-        if(i == tweets.size()){
-            i = 0;
-        }else {
-            i++;
-        }
-       tweets = tweetRepository.getAll();
+        System.out.println("started Scheduler");
+        if(tweets != null) {
+            Tweet tweet = tweets.get(i);
 
-        try {
-            status = twitter.showStatus(tweet.getId());
-            tweet.setContent(status.getText());
-            tweet.setLikes(status.getFavoriteCount());
-            tweet.setRetweets(status.getRetweetCount());
-            tweetRepository.update(tweet);
-        } catch (TwitterException e) {
-            e.printStackTrace();
+            Status status;
+            if (i == tweets.size()) {
+                i = 0;
+            } else {
+                i++;
+            }
+            tweets = tweetRepository.getAll();
+
+            try {
+                status = twitter.showStatus(tweet.getId());
+                tweet.setContent(status.getText());
+                tweet.setLikes(status.getFavoriteCount());
+                tweet.setRetweets(status.getRetweetCount());
+                tweetRepository.update(tweet);
+            } catch (TwitterException e) {
+                e.printStackTrace();
+            }
         }
     }
 
