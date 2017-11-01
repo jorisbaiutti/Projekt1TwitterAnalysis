@@ -11,10 +11,8 @@ import java.util.List;
 public class User extends TwitterEntity {
 
     @Id
-    @Column(name = "USER_ID", unique = true, nullable = false)
     private long id;
 
-    @Column(name = "USER_NAME", unique = true, nullable = false)
     private String userName;
 
     private String location;

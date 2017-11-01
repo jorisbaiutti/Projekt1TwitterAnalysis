@@ -11,7 +11,6 @@ import java.util.List;
 public class Tweet extends TwitterEntity {
 
 
-    @Column(name = "TWEET_ID", unique = true)
     @Id
     private long id;
 
@@ -37,8 +36,7 @@ public class Tweet extends TwitterEntity {
     private String content;
 
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name="CREATOR_ID")
+    @ManyToOne(cascade = {CascadeType.MERGE})
     private User creator;
 
     public Tweet(){

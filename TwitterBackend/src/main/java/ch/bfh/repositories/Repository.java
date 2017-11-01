@@ -16,16 +16,20 @@ public abstract class Repository<T extends TwitterEntity> {
     EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("emFactory");
     EntityManager entityManager = emFactory.createEntityManager();
 
-     public void save(TwitterEntity entity) {
 
+
+     public void save(TwitterEntity entity) {
         entityManager.getTransaction().begin();
         entityManager.persist(entity);
         entityManager.getTransaction().commit();
-        entityManager.clear();
+        entityManager.close();
+
     }
      public TwitterEntity update(TwitterEntity entity) {
         entityManager.getTransaction().begin();
-        return  null;
+        entityManager.merge(entity);
+        entityManager.getTransaction().commit();
+        return entity;
     }
 
      public List<T> getAll() {
@@ -34,7 +38,6 @@ public abstract class Repository<T extends TwitterEntity> {
 
      public TwitterEntity getOne(long id) {
         User user = entityManager.find(User.class, id);
-        entityManager.clear();
         return user;
 
      }

@@ -33,7 +33,7 @@ public class TwitterStream {
 
     @Autowired
     public void readTwitterFeed(){
-        twitter4j.TwitterStream stream = TwitterStreamBuilderUtil.getStream();
+        twitter4j.TwitterStream stream = TwitterUtil.getStream();
         StatusListener listener = new StatusListener() {
             @Override
             public void onStatus(Status status) {
@@ -61,17 +61,19 @@ public class TwitterStream {
 
 
                 User user = (User) userRepository.getOne(status.getUser().getId());
-
+                Tweet tweetentity = new Tweet();
                 if(user == null) {
                     user = new User();
                     user.setId(status.getUser().getId());
                     user.setUserName(status.getUser().getScreenName());
-                }
+                    userRepository.save(user);
 
-                Tweet tweetentity = new Tweet();
+                }
+                tweetentity.setCreator(user);
+
                 tweetentity.setContent(status.getText());
                 tweetentity.setId(status.getId());
-                tweetentity.setCreator(user);
+
 
                 List<HashTag> hashTags = Arrays.asList(status.getHashtagEntities()).stream().map(h -> new HashTag(h.getText())).collect(Collectors.toList());
 
