@@ -13,7 +13,6 @@ public class HashTag extends TwitterEntity{
     @GeneratedValue
     private long id;
 
-    @Column(name = "HASHTAG", unique = true, nullable = false)
     private String hashTag;
 
     public HashTag(){

@@ -11,15 +11,10 @@ import java.util.List;
 public class Tweet extends TwitterEntity {
 
 
-    @Column(name = "TWEET_ID", unique = true)
     @Id
     private long id;
 
-    @ManyToMany(fetch = FetchType.LAZY,  cascade = CascadeType.MERGE)
-    @JoinTable(name = "TWEET_HASHTAG",  joinColumns = {
-            @JoinColumn(name = "TWEET_ID", nullable = false) },
-            inverseJoinColumns = { @JoinColumn(name = "HASHTAG",
-                    nullable = false, updatable = false) })
+    @ManyToMany(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
     private List<HashTag> hashTags;
 
     private int likes;
@@ -27,10 +22,6 @@ public class Tweet extends TwitterEntity {
     private int retweets;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "TWEET_MENTION_USER",  joinColumns = {
-            @JoinColumn(name = "TWEET_ID", nullable = false) },
-            inverseJoinColumns = { @JoinColumn(name = "USER_ID",
-                    nullable = false, updatable = false) })
     private List<User> mentions;
 
 
@@ -38,7 +29,6 @@ public class Tweet extends TwitterEntity {
 
 
     @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name="CREATOR_ID")
     private User creator;
 
     public Tweet(){
