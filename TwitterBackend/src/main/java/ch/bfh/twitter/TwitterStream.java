@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-@Component
+//@Component
 public class TwitterStream {
     HashTagRepository hashTagRepository;
     UserRepository userRepository;

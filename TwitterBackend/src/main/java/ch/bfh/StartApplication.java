@@ -23,9 +23,6 @@ import java.io.IOException;
 @SpringBootApplication
 public class StartApplication
 {
-
-    private static int positive = 0;
-    private static int negative = 0;
     public static void main( String[] args ) throws IOException, TwitterException {
         SpringApplication.run(StartApplication.class, args);
     }

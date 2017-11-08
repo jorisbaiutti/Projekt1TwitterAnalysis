@@ -18,6 +18,7 @@ public class PersonController {
     private PersonRepository personRepository;
     private PersonRecourceAssembler personRecourceAssembler;
 
+
     @Autowired
     public PersonController(PersonRecourceAssembler personRecourceAssembler, PersonRepository personRepository) {
         this.personRepository = personRepository;
