@@ -34,6 +34,7 @@ public class MostDiscussedTopicsAnalyse implements KeyValueAnalyse{
         topicsCount.put("Gesundheitsversorgung",0);
         topicsCount.put("E-Health",0);
         resultList = new ArrayList<>();
+        findTweets();
 
     }
 
@@ -52,7 +53,7 @@ public class MostDiscussedTopicsAnalyse implements KeyValueAnalyse{
     }
 
     public List<KeyValue> getResults() {
-        findTweets();
+
         return resultList;
     }
 }

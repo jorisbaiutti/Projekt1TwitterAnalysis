@@ -8,9 +8,25 @@ define('twitter-frontend/adapters/application', ['exports', 'ember-data'], funct
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.default = _emberData.default.JSONAPIAdapter.extend({
+
+    function _defineProperty(obj, key, value) {
+        if (key in obj) {
+            Object.defineProperty(obj, key, {
+                value: value,
+                enumerable: true,
+                configurable: true,
+                writable: true
+            });
+        } else {
+            obj[key] = value;
+        }
+
+        return obj;
+    }
+
+    exports.default = _emberData.default.JSONAPIAdapter.extend(_defineProperty({
         namespace: 'api'
-    });
+    }, 'namespace', 'api/keyvalueanalyse'));
 });
 define('twitter-frontend/app', ['exports', 'twitter-frontend/resolver', 'ember-load-initializers', 'twitter-frontend/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
   'use strict';
@@ -255,6 +271,16 @@ define("twitter-frontend/instance-initializers/ember-data", ["exports", "ember-d
     initialize: _initializeStoreService.default
   };
 });
+define('twitter-frontend/models/mostdiscussedtopic', ['exports', 'ember-data'], function (exports, _emberData) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = _emberData.default.Model.extend({
+        value: _emberData.default.attr('string')
+    });
+});
 define('twitter-frontend/models/person', ['exports', 'ember-data'], function (exports, _emberData) {
     'use strict';
 
@@ -291,6 +317,10 @@ define('twitter-frontend/router', ['exports', 'twitter-frontend/config/environme
   Router.map(function () {
     this.route('person', function () {
       this.route('show', { path: '/show/:id' });
+    });
+    this.route('keyvalueanalyse', function () {
+      this.route('mostdiscussedtopics', { path: '/mostdiscussedtopics' });
+      this.route('test');
     });
     this.route('charts');
   });
@@ -337,6 +367,70 @@ define('twitter-frontend/routes/index', ['exports'], function (exports) {
         }
     });
 });
+define('twitter-frontend/routes/keyvalueanalyse/mostdiscussedtopics', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+            return this.get('store').findAll('mostdiscussedtopic');
+        },
+
+        setupController: function setupController(controller, model) {
+            var labels = new Array();
+            model.forEach(function (d) {
+                return labels.push(d.id);
+            });
+
+            var modelasJSON = model.map(function (x) {
+                return x.toJSON();
+            });
+
+            var dataArray = new Array();
+            modelasJSON.forEach(function (d) {
+                return dataArray.push(d.value);
+            });
+            var chartData = {
+                datasets: [{
+                    label: "most discussed topics",
+                    data: dataArray,
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+                    borderColor: ['rgba(255,99,132,1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
+                }],
+                labels: labels,
+                options: {
+                    responsive: true
+                }
+
+            };
+
+            model = chartData;
+            this._super(controller, model);
+            controller.set('mostdiscussedtopic', model);
+        }
+    });
+});
+define('twitter-frontend/routes/keyvalueanalyse/test', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+            return {
+                datasets: [{
+                    data: [10, 20, 30]
+                }],
+
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+                labels: ['Red', 'Yellow', 'Blue']
+            };
+        }
+    });
+});
 define('twitter-frontend/routes/person/show', ['exports'], function (exports) {
     'use strict';
 
@@ -365,6 +459,16 @@ define('twitter-frontend/serializers/application', ['exports', 'ember-data'], fu
       return this._super(store, primaryModelClass, restPayload, id, requestType);
     }
   });
+});
+define('twitter-frontend/serializers/mostdiscussedtopic', ['exports', 'twitter-frontend/serializers/application'], function (exports, _application) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = _application.default.extend({
+        primaryKey: 'key'
+    });
 });
 define('twitter-frontend/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _ajax) {
   'use strict';
@@ -401,7 +505,7 @@ define("twitter-frontend/templates/components/card-listing", ["exports"], functi
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "+E0YBljC", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n    \"],[6,\"img\"],[9,\"class\",\"card-img-top\"],[10,\"src\",[26,[[20,[\"card\",\"imageurl\"]]]]],[9,\"alt\",\"Card image cap\"],[7],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n        \"],[6,\"h4\"],[9,\"class\",\"card-title\"],[7],[1,[20,[\"card\",\"title\"]],false],[8],[0,\"\\n        \"],[6,\"p\"],[9,\"class\",\"card-text\"],[7],[1,[20,[\"card\",\"text\"]],false],[8],[0,\"\\n        \"],[6,\"a\"],[10,\"href\",[26,[[20,[\"card\",\"link\"]]]]],[9,\"class\",\"btn btn-primary twitter-orange\"],[7],[0,\"Go somewhere\"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/components/card-listing.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "eGO+lCrm", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n    \"],[6,\"img\"],[9,\"class\",\"card-img-top\"],[10,\"src\",[26,[[20,[\"card\",\"imageurl\"]]]]],[9,\"alt\",\"Card image cap\"],[7],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n        \"],[6,\"h4\"],[9,\"class\",\"card-title\"],[7],[1,[20,[\"card\",\"value\"]],false],[8],[0,\"\\n        \"],[6,\"p\"],[9,\"class\",\"card-text\"],[7],[1,[20,[\"card\",\"text\"]],false],[8],[0,\"\\n        \"],[6,\"a\"],[10,\"href\",[26,[[20,[\"card\",\"link\"]]]]],[9,\"class\",\"btn btn-primary twitter-orange\"],[7],[0,\"Go somewhere\"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/components/card-listing.hbs" } });
 });
 define("twitter-frontend/templates/index", ["exports"], function (exports) {
   "use strict";
@@ -411,13 +515,29 @@ define("twitter-frontend/templates/index", ["exports"], function (exports) {
   });
   exports.default = Ember.HTMLBars.template({ "id": "Lp7MGlt9", "block": "{\"symbols\":[],\"statements\":[[1,[18,\"outlet\"],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/index.hbs" } });
 });
+define("twitter-frontend/templates/keyvalueanalyse/mostdiscussedtopics", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "58CQe+LT", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbotron twitter-blue\"],[7],[0,\"\\n    \"],[6,\"h1\"],[9,\"class\",\"display-3\"],[7],[0,\"Most discussed Topics\"],[8],[0,\"\\n    \\n\"],[8],[0,\"\\n\"],[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"options\",\"height\"],[\"bar\",[19,0,[\"model\"]],[19,0,[\"model\",\"options\"]],600]]],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/keyvalueanalyse/mostdiscussedtopics.hbs" } });
+});
+define("twitter-frontend/templates/keyvalueanalyse/test", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "OcB0FlQI", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"width\",\"height\"],[\"bar\",[19,0,[\"model\"]],200,200]]],false],[0,\"\\n\"],[6,\"h1\"],[7],[1,[18,\"model\"],false],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/keyvalueanalyse/test.hbs" } });
+});
 define("twitter-frontend/templates/person/show", ["exports"], function (exports) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "BElwWNDs", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbotron twitter-blue\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\"\\n        \"],[6,\"h1\"],[9,\"class\",\"display-3\"],[7],[0,\"name: \"],[1,[20,[\"model\",\"name\"]],false],[8],[0,\"\\n        \"],[6,\"h2\"],[9,\"class\",\"display-3\"],[7],[0,\"age: \"],[1,[20,[\"model\",\"age\"]],false],[8],[0,\"\\n        \"],[6,\"h2\"],[9,\"class\",\"display-3\"],[7],[0,\"id: \"],[1,[20,[\"model\",\"id\"]],false],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/person/show.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "VS0dGACP", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbotron twitter-blue\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\"\\n        \"],[6,\"h1\"],[9,\"class\",\"display-3\"],[7],[0,\"name: \"],[1,[20,[\"model\",\"name\"]],false],[8],[0,\"\\n        \"],[6,\"h2\"],[9,\"class\",\"display-3\"],[7],[0,\"age: \"],[1,[20,[\"model\",\"age\"]],false],[8],[0,\"\\n        \"],[6,\"h2\"],[9,\"class\",\"display-3\"],[7],[0,\"id: \"],[1,[20,[\"model\",\"id\"]],false],[8],[0,\"\\n\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/person/show.hbs" } });
 });
 define('twitter-frontend/utils/chart-object', ['exports', 'ember-cli-chartjs/utils/chart-object'], function (exports, _chartObject) {
   'use strict';
@@ -454,6 +574,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+d2e68fc3"});
+  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+2bbc56a1"});
 }
 //# sourceMappingURL=twitter-frontend.map
