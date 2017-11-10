@@ -20,16 +20,6 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'components/card-listing.js should pass ESLint\n\n');
   });
 
-  QUnit.test('models/mostdiscussedtopic.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'models/mostdiscussedtopic.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('models/person.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'models/person.js should pass ESLint\n\n');
-  });
-
   QUnit.test('resolver.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'resolver.js should pass ESLint\n\n');
@@ -38,11 +28,6 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
   QUnit.test('router.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'router.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('routes/barcharts/test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/barcharts/test.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/charts.js', function (assert) {
@@ -55,39 +40,14 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/index.js should pass ESLint\n\n');
   });
 
-  QUnit.test('routes/keyvalueanalyse/mostdiscussedtopics.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/keyvalueanalyse/mostdiscussedtopics.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('routes/keyvalueanalyse/test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/keyvalueanalyse/test.js should pass ESLint\n\n');
-  });
-
   QUnit.test('routes/linecharts/samplechart.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/linecharts/samplechart.js should pass ESLint\n\n');
   });
 
-  QUnit.test('routes/person/show.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/person/show.js should pass ESLint\n\n');
-  });
-
   QUnit.test('serializers/application.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'serializers/application.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('serializers/barcharttest.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'serializers/barcharttest.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('serializers/mostdiscussedtopic.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'serializers/mostdiscussedtopic.js should pass ESLint\n\n');
   });
 });
 define('twitter-frontend/tests/helpers/destroy-app', ['exports'], function (exports) {

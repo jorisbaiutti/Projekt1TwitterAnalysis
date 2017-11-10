@@ -5,17 +5,14 @@ import ch.bfh.entities.HashTag;
 import ch.bfh.entities.Tweet;
 import ch.bfh.entities.User;
 import ch.bfh.repositories.HashTagRepository;
-import ch.bfh.repositories.PersonRepository;
 import ch.bfh.repositories.TweetRepository;
 import ch.bfh.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import twitter4j.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 //@Component
