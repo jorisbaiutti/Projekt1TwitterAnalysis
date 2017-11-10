@@ -14,7 +14,15 @@ Router.map(function() {
     this.route('mostdiscussedtopics',{path: '/mostdiscussedtopics'});
     this.route('test')
   });
+  this.route('barcharts',function(){
+    this.route('test',{path: '/test'});
+  });
+
+
   this.route('charts');
+  this.route('linecharts', function(){
+    this.route('samplechart');
+  });
 });
 
 export default Router;

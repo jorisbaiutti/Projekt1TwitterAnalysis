@@ -7,7 +7,7 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
 
   QUnit.test('adapters/application.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'adapters/application.js should pass ESLint\n\n5:5 - Duplicate key \'namespace\'. (no-dupe-keys)');
+    assert.ok(false, 'adapters/application.js should pass ESLint\n\n5:5 - Duplicate key \'namespace\'. (no-dupe-keys)\n6:5 - Duplicate key \'namespace\'. (no-dupe-keys)');
   });
 
   QUnit.test('app.js', function (assert) {
@@ -40,6 +40,11 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'router.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/barcharts/test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/barcharts/test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('routes/charts.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/charts.js should pass ESLint\n\n');
@@ -60,6 +65,11 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/keyvalueanalyse/test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/linecharts/samplechart.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/linecharts/samplechart.js should pass ESLint\n\n');
+  });
+
   QUnit.test('routes/person/show.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/person/show.js should pass ESLint\n\n');
@@ -68,6 +78,11 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
   QUnit.test('serializers/application.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'serializers/application.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('serializers/barcharttest.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'serializers/barcharttest.js should pass ESLint\n\n');
   });
 
   QUnit.test('serializers/mostdiscussedtopic.js', function (assert) {
@@ -228,6 +243,11 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/adapters/application-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/models/barcharttest-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/barcharttest-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/models/mostdiscussedtopics-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/models/mostdiscussedtopics-test.js should pass ESLint\n\n');
@@ -238,9 +258,19 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/models/person-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/routes/barcharts/test-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/barcharts/test-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/routes/charts-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/charts-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/routes/charts/test-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/charts/test-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('unit/routes/index-test.js', function (assert) {
@@ -256,6 +286,11 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
   QUnit.test('unit/routes/keyvalueanalyse/test-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/keyvalueanalyse/test-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/routes/linecharts/samplechart-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'unit/routes/linecharts/samplechart-test.js should pass ESLint\n\n3:28 - Unnecessary escape character: \\s. (no-useless-escape)\n3:69 - Unnecessary escape character: \\s. (no-useless-escape)');
   });
 
   QUnit.test('unit/routes/mostdiscussedtopics-test.js', function (assert) {
@@ -278,6 +313,11 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/serializers/application-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/serializers/barcharttest-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/serializers/barcharttest-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/serializers/mostdiscussedtopic-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/serializers/mostdiscussedtopic-test.js should pass ESLint\n\n');
@@ -295,6 +335,20 @@ define('twitter-frontend/tests/unit/adapters/application-test', ['ember-qunit'],
   (0, _emberQunit.test)('it exists', function (assert) {
     var adapter = this.subject();
     assert.ok(adapter);
+  });
+});
+define('twitter-frontend/tests/unit/models/barcharttest-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForModel)('barcharttest', 'Unit | Model | barcharttest', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
   });
 });
 define('twitter-frontend/tests/unit/models/mostdiscussedtopics-test', ['ember-qunit'], function (_emberQunit) {
@@ -325,10 +379,36 @@ define('twitter-frontend/tests/unit/models/person-test', ['ember-qunit'], functi
     assert.ok(!!model);
   });
 });
+define('twitter-frontend/tests/unit/routes/barcharts/test-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:barcharts\test', 'Unit | Route | barcharts\test', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
 define('twitter-frontend/tests/unit/routes/charts-test', ['ember-qunit'], function (_emberQunit) {
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:charts', 'Unit | Route | charts', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('twitter-frontend/tests/unit/routes/charts/test-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:charts\test', 'Unit | Route | charts\test', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   });
@@ -368,6 +448,19 @@ define('twitter-frontend/tests/unit/routes/keyvalueanalyse/test-test', ['ember-q
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:keyvalueanalyse\test', 'Unit | Route | keyvalueanalyse\test', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('twitter-frontend/tests/unit/routes/linecharts/samplechart-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:linecharts\samplechart', 'Unit | Route | linecharts\samplechart', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   });
@@ -422,6 +515,23 @@ define('twitter-frontend/tests/unit/serializers/application-test', ['ember-qunit
   (0, _emberQunit.moduleForModel)('application', 'Unit | Serializer | application', {
     // Specify the other units that are required for this test.
     needs: ['serializer:application']
+  });
+
+  // Replace this with your real tests.
+  (0, _emberQunit.test)('it serializes records', function (assert) {
+    var record = this.subject();
+
+    var serializedRecord = record.serialize();
+
+    assert.ok(serializedRecord);
+  });
+});
+define('twitter-frontend/tests/unit/serializers/barcharttest-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForModel)('barcharttest', 'Unit | Serializer | barcharttest', {
+    // Specify the other units that are required for this test.
+    needs: ['serializer:barcharttest']
   });
 
   // Replace this with your real tests.

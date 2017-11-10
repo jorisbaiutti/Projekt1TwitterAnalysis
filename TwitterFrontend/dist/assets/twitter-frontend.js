@@ -9,6 +9,8 @@ define('twitter-frontend/adapters/application', ['exports', 'ember-data'], funct
         value: true
     });
 
+    var _DS$JSONAPIAdapter$ex;
+
     function _defineProperty(obj, key, value) {
         if (key in obj) {
             Object.defineProperty(obj, key, {
@@ -24,9 +26,9 @@ define('twitter-frontend/adapters/application', ['exports', 'ember-data'], funct
         return obj;
     }
 
-    exports.default = _emberData.default.JSONAPIAdapter.extend(_defineProperty({
+    exports.default = _emberData.default.JSONAPIAdapter.extend((_DS$JSONAPIAdapter$ex = {
         namespace: 'api'
-    }, 'namespace', 'api/keyvalueanalyse'));
+    }, _defineProperty(_DS$JSONAPIAdapter$ex, 'namespace', 'api/keyvalueanalyse'), _defineProperty(_DS$JSONAPIAdapter$ex, 'namespace', 'api/charts'), _DS$JSONAPIAdapter$ex));
 });
 define('twitter-frontend/app', ['exports', 'twitter-frontend/resolver', 'ember-load-initializers', 'twitter-frontend/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
   'use strict';
@@ -322,10 +324,31 @@ define('twitter-frontend/router', ['exports', 'twitter-frontend/config/environme
       this.route('mostdiscussedtopics', { path: '/mostdiscussedtopics' });
       this.route('test');
     });
+    this.route('barcharts', function () {
+      this.route('test', { path: '/test' });
+    });
+
     this.route('charts');
+    this.route('linecharts', function () {
+      this.route('samplechart');
+    });
   });
 
   exports.default = Router;
+});
+define('twitter-frontend/routes/barcharts/test', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+
+            //return this.get('store').findAll('barcharttest');
+            return Ember.$.ajax({ url: 'http://localhost:8080/api/charts/test', contentType: 'application/json' });
+        }
+    });
 });
 define("twitter-frontend/routes/charts", ["exports"], function (exports) {
     "use strict";
@@ -431,6 +454,18 @@ define('twitter-frontend/routes/keyvalueanalyse/test', ['exports'], function (ex
         }
     });
 });
+define('twitter-frontend/routes/linecharts/samplechart', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+            return Ember.$.ajax({ url: 'http://localhost:8080/api/linecharts/sample', contentType: 'application/json' });
+        }
+    });
+});
 define('twitter-frontend/routes/person/show', ['exports'], function (exports) {
     'use strict';
 
@@ -459,6 +494,16 @@ define('twitter-frontend/serializers/application', ['exports', 'ember-data'], fu
       return this._super(store, primaryModelClass, restPayload, id, requestType);
     }
   });
+});
+define('twitter-frontend/serializers/barcharttest', ['exports', 'twitter-frontend/serializers/application'], function (exports, _application) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = _application.default.extend({
+        primarykey: 'data'
+    });
 });
 define('twitter-frontend/serializers/mostdiscussedtopic', ['exports', 'twitter-frontend/serializers/application'], function (exports, _application) {
     'use strict';
@@ -490,6 +535,14 @@ define("twitter-frontend/templates/application", ["exports"], function (exports)
     value: true
   });
   exports.default = Ember.HTMLBars.template({ "id": "wgNwtVBJ", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"container-fluid\"],[7],[0,\"\\n  \"],[6,\"nav\"],[9,\"class\",\"navbar navbar-expand-lg navbar-light nav-twitter\"],[7],[0,\"\\n    \"],[4,\"link-to\",[\"index\"],[[\"class\"],[\"navbar-brand\"]],{\"statements\":[[0,\"Twitter Analysie\"]],\"parameters\":[]},null],[0,\"\\n    \"],[6,\"button\"],[9,\"class\",\"navbar-toggler twitter-yellow\"],[9,\"type\",\"button\"],[9,\"data-toggle\",\"collapse\"],[9,\"data-target\",\"#navbarSupportedContent\"],[9,\"aria-controls\",\"navbarSupportedContent\"],[9,\"aria-expanded\",\"false\"],[9,\"aria-label\",\"Toggle navigation\"],[7],[0,\"\\n    \"],[6,\"span\"],[9,\"class\",\"navbar-toggler-icon\"],[7],[8],[0,\"\\n  \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"collapse navbar-collapse\"],[9,\"id\",\"navbarSupportedContent\"],[7],[0,\"\\n      \"],[6,\"ul\"],[9,\"class\",\"nav navbar-nav\"],[7],[0,\"\\n        \"],[4,\"link-to\",[\"index\"],[[\"tagName\"],[\"li\"]],{\"statements\":[[6,\"a\"],[9,\"href\",\"\"],[7],[0,\"Home\"],[8]],\"parameters\":[]},null],[0,\"\\n      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"container-fluid\"],[7],[0,\"\\n  \"],[1,[18,\"outlet\"],false],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/application.hbs" } });
+});
+define("twitter-frontend/templates/barcharts/test", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "XHa5nco8", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"bar\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/barcharts/test.hbs" } });
 });
 define("twitter-frontend/templates/charts", ["exports"], function (exports) {
   "use strict";
@@ -529,7 +582,15 @@ define("twitter-frontend/templates/keyvalueanalyse/test", ["exports"], function 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "OcB0FlQI", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"width\",\"height\"],[\"bar\",[19,0,[\"model\"]],200,200]]],false],[0,\"\\n\"],[6,\"h1\"],[7],[1,[18,\"model\"],false],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/keyvalueanalyse/test.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "EsFlRPUr", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"options\",\"height\"],[\"bar\",[19,0,[\"model\"]],[19,0,[\"model\",\"options\"]],600]]],false],[0,\"\\n\"],[6,\"h1\"],[7],[1,[18,\"model\"],false],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/keyvalueanalyse/test.hbs" } });
+});
+define("twitter-frontend/templates/linecharts/samplechart", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "d9X3lGBw", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"line\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/linecharts/samplechart.hbs" } });
 });
 define("twitter-frontend/templates/person/show", ["exports"], function (exports) {
   "use strict";
