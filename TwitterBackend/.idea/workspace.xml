@@ -2,39 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/KeyValueAnalyse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/analyseentities/KeyValue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mostDiscussedTopics/MostDiscussedTopicsAnalyse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentiment/SentimentAnalysisWithCount.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/assembler/KeyValueResourceAssembler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/assembler/PersonRecourceAssembler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/assembler/testChartAssembler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/beans/Person.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/KeyValueController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PersonController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/testChartController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/PersonRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/Test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/Twitter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/models/mostdiscussedtopic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/models/person.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/routes/barcharts/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/routes/keyvalueanalyse/mostdiscussedtopics.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/routes/keyvalueanalyse/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/routes/person/show.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/serializers/barcharttest.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/serializers/mostdiscussedtopic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/templates/barcharts/test.hbs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/templates/keyvalueanalyse/mostdiscussedtopics.hbs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/templates/keyvalueanalyse/test.hbs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/templates/person/show.hbs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -102,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleAnalyse.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SampleAnalyse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
+            <state relative-caret-position="130">
               <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -116,17 +86,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LineChartController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LineChartController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+            <state relative-caret-position="283">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#710#711#0" expanded="true" />
-                <element signature="e#754#755#0" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+                <element signature="e#799#800#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+                <element signature="e#916#917#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BarChartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#751#752#0" expanded="true" />
+                <element signature="e#793#794#0" expanded="true" />
+                <element signature="e#863#864#0" expanded="true" />
+                <element signature="e#909#910#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -186,6 +172,7 @@
         <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -239,12 +226,12 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/assembler/testChartAssembler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/testChartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/assembler/SampleController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/SampleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java" />
       </list>
     </option>
   </component>
@@ -1005,12 +992,20 @@
       <workItem from="1509549883711" duration="1794000" />
       <workItem from="1509552733719" duration="6298000" />
       <workItem from="1509701330293" duration="25264000" />
-      <workItem from="1510144051025" duration="27506000" />
+      <workItem from="1510144051025" duration="28354000" />
     </task>
+    <task id="LOCAL-00001" summary="added BarChart Controller">
+      <created>1510322367264</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1510322367264</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133238000" />
+    <option name="totallyTimeSpent" value="134086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1063,6 +1058,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added BarChart Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="added BarChart Controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1318,14 +1317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/SampleController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1464,28 +1455,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#710#711#0" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
+        <state relative-caret-position="130">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1388#1389#0" expanded="true" />
             <element signature="e#1415#1416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#793#794#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#799#800#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -11,16 +11,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Component
 @RestController
 @RequestMapping("/api/barchart")
 public class BarChartController {
-    List<Analyse<BarChart>> analysen;
+    Set<Analyse<BarChart>> analysen;
 
     public BarChartController() {
-        analysen = new ArrayList<>();
+        analysen = new HashSet<>();
     }
 
     public void registerAnalyse(Analyse<BarChart> lineChartAnalyse){
