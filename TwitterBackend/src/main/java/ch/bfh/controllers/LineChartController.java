@@ -30,7 +30,7 @@ public class LineChartController {
     }
 
     @RequestMapping(value = "/{lineanalyse}", method = RequestMethod.GET)
-    ResponseEntity<LineChart> getCharts(@PathVariable("lineanalyse")String analyse){
+    ResponseEntity<LineChart> getChart(@PathVariable("lineanalyse")String analyse){
         Analyse<LineChart> finalAnalyse = analysen.stream().filter(a -> a.getName().equals(analyse)).findFirst().get();
         if(finalAnalyse == null){
             throw new EntityNotFoundException("Analyse not found " + analyse);

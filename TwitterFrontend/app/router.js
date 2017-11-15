@@ -16,6 +16,7 @@ Router.map(function() {
   });
   this.route('barcharts',function(){
     this.route('test',{path: '/test'});
+    this.route('tweetsbytheme');
   });
 
 
@@ -23,6 +24,7 @@ Router.map(function() {
   this.route('linecharts', function(){
     this.route('samplechart');
   });
+
 });
 
 export default Router;

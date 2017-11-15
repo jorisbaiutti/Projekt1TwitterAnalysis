@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
+
 import java.util.HashSet;
-import java.util.List;
+
 import java.util.Set;
 
 @Component
@@ -30,11 +30,12 @@ public class BarChartController {
     }
 
     @RequestMapping(value = "/{baranalyse}", method = RequestMethod.GET)
-    ResponseEntity<BarChart> getCharts(@PathVariable("baranalyse")String analyse){
+    ResponseEntity<BarChart> getChart(@PathVariable("baranalyse")String analyse){
         Analyse<BarChart> finalAnalyse = analysen.stream().filter(a -> a.getName().equals(analyse)).findFirst().get();
         if(finalAnalyse == null){
             throw new EntityNotFoundException("Analyse not found " + analyse);
         }
         return ResponseEntity.ok(finalAnalyse.getChart());
+        
     }
 }

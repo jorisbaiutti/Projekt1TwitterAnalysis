@@ -6,6 +6,7 @@ import be.ceau.chart.data.LineData;
 import be.ceau.chart.dataset.LineDataset;
 import ch.bfh.analyse.Analyse;
 import ch.bfh.controllers.LineChartController;
+import ch.bfh.repositories.TweetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +22,7 @@ public class SampleAnalyse implements Analyse {
 
         /**Register lineChart Controller**/
         this.lineChartController = lineChartController;
+
 
         /**Register the Analysis in the Controller**/
         lineChartController.registerAnalyse(this);
