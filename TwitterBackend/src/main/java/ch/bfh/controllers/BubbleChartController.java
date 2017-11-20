@@ -23,8 +23,8 @@ public class BubbleChartController {
         analysen = new HashSet<>();
     }
 
-    public void registerAnalyse(Analyse<BubbleChart> BubbleChartAnalyse){
-        analysen.add(BubbleChartAnalyse);
+    public void registerAnalyse(Analyse<BubbleChart> bubbleChartAnalyse){
+        analysen.add(bubbleChartAnalyse);
     }
 
     @RequestMapping(value = "/{bubbleanalyse}", method = RequestMethod.GET)

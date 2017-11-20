@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import java.util.HashSet;
-
 import java.util.Set;
 
 @Component
@@ -25,8 +23,8 @@ public class BarChartController {
         analysen = new HashSet<>();
     }
 
-    public void registerAnalyse(Analyse<BarChart> lineChartAnalyse){
-        analysen.add(lineChartAnalyse);
+    public void registerAnalyse(Analyse<BarChart> barChartAnalyse){
+        analysen.add(barChartAnalyse);
     }
 
     @RequestMapping(value = "/{baranalyse}", method = RequestMethod.GET)
