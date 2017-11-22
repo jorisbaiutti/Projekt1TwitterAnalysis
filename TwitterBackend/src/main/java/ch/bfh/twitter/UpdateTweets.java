@@ -35,7 +35,7 @@ public class UpdateTweets {
         i = 0;
     }
 
-    //@Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 1000)
     private void updateTweets(){
         System.err.println("started Scheduler");
         if(tweets != null) {
