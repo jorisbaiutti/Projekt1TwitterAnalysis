@@ -1,5 +1,7 @@
 package ch.bfh.entities;
 
+import twitter4j.GeoLocation;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,9 +18,9 @@ public class User extends TwitterEntity {
     @Column(unique = true, nullable = false)
     private String userName;
 
-    private String location;
-
     private String email;
+
+    private String location;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "creator")
     private List<Tweet> created;
@@ -55,19 +57,19 @@ public class User extends TwitterEntity {
         this.userName = userName;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }

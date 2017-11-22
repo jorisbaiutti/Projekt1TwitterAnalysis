@@ -1,5 +1,8 @@
 package ch.bfh.entities;
 
+import twitter4j.GeoLocation;
+import twitter4j.Place;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -23,6 +26,11 @@ public class Tweet extends TwitterEntity {
 
     private String content;
 
+    private String language;
+
+    private double longitude;
+
+    private double latitude;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     private User creator;
@@ -82,5 +90,29 @@ public class Tweet extends TwitterEntity {
 
     public void setRetweets(int retweets) {
         this.retweets = retweets;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 }

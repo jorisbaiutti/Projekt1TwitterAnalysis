@@ -8,6 +8,7 @@ import ch.bfh.repositories.HashTagRepository;
 import ch.bfh.repositories.TweetRepository;
 import ch.bfh.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import twitter4j.*;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//@Component
+@Component
 public class TwitterStream {
     HashTagRepository hashTagRepository;
     UserRepository userRepository;
@@ -56,20 +57,28 @@ public class TwitterStream {
 
                 System.out.println("Creator: " + status.getUser().getScreenName());
 
-
                 User user = (User) userRepository.getOne(status.getUser().getId());
                 Tweet tweetentity = new Tweet();
                 if(user == null) {
                     user = new User();
                     user.setId(status.getUser().getId());
                     user.setUserName(status.getUser().getScreenName());
+                    user.setLocation(status.getUser().getLocation());
                     userRepository.save(user);
 
                 }
                 tweetentity.setCreator(user);
-
+                tweetentity.setLanguage(status.getLang());
                 tweetentity.setContent(status.getText());
                 tweetentity.setId(status.getId());
+
+
+                if (status.getPlace() != null){
+                    tweetentity.setLongitude(status.getPlace().getBoundingBoxCoordinates()[0][0].getLongitude());
+                }
+                if (status.getPlace() != null){
+                    tweetentity.setLatitude(status.getPlace().getBoundingBoxCoordinates()[0][0].getLatitude());
+                }
 
 
                 List<HashTag> hashTags = Arrays.asList(status.getHashtagEntities()).stream().map(h -> new HashTag(h.getText())).collect(Collectors.toList());
@@ -109,7 +118,7 @@ public class TwitterStream {
             }
         };
         FilterQuery qry = new FilterQuery();
-        String[] keywords = { "BFH","Digital Society","System Design","Future System","Big Data","Open Data","Gebäude und Städte","Identität","Privatsphäre","IT-Security","Cyberforensik","Gesundheitsversorgung","E-Health"};
+        String[] keywords = { "BFH"};
 
         qry.track(keywords);
 

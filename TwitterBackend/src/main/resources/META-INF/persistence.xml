@@ -11,7 +11,7 @@
             <property name="javax.persistence.jdbc.user" value="svc_db" />
             <property name="javax.persistence.jdbc.password" value="JoPaBaWy2017" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
 </persistence>
