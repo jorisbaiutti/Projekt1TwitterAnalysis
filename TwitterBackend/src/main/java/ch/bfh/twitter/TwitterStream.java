@@ -8,7 +8,6 @@ import ch.bfh.repositories.HashTagRepository;
 import ch.bfh.repositories.TweetRepository;
 import ch.bfh.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import twitter4j.*;
 
 import java.util.ArrayList;
@@ -118,7 +117,7 @@ public class TwitterStream {
             }
         };
         FilterQuery qry = new FilterQuery();
-        String[] keywords = { "BFH"};
+        String[] keywords = { "BFH","Digital Society","System Design","Future System","Big Data","Open Data","Gebäude und Städte","Identität","Privatsphäre","IT-Security","Cyberforensik","Gesundheitsversorgung","E-Health"};
 
         qry.track(keywords);
 
