@@ -36,6 +36,6 @@ public class BarChartController {
             throw new EntityNotFoundException("Analyse not found " + analyse);
         }
         return ResponseEntity.ok(finalAnalyse.getChart());
-        
+
     }
 }

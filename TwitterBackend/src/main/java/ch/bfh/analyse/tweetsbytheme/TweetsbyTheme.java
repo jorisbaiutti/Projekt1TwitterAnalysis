@@ -13,9 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 @Component
-public class TweetsbyTheme implements Analyse{
+public class TweetsbyTheme implements Analyse, Observer{
     TweetRepository tweetRepository;
     BarChartController barChartController;
     Hashtable<String, Integer> topicsCount;
@@ -25,7 +27,7 @@ public class TweetsbyTheme implements Analyse{
     public TweetsbyTheme(TweetRepository tweetRepository, BarChartController barChartController) {
         this.tweetRepository = tweetRepository;
         this.barChartController = barChartController;
-
+        tweetRepository.addObserver(this);
         name = "countbytheme";
 
         topicsCount = new Hashtable<>();
@@ -78,5 +80,10 @@ public class TweetsbyTheme implements Analyse{
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        findTweets();
     }
 }
