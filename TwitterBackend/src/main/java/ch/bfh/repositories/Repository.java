@@ -3,18 +3,21 @@ package ch.bfh.repositories;
 
 import ch.bfh.entities.TwitterEntity;
 import ch.bfh.entities.User;
+import javafx.beans.Observable;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
+import java.util.Observer;
 
 /**
  * Created by Patrick on 25.10.2017.
  */
 
-public abstract class Repository<T extends TwitterEntity> {
+public abstract class Repository<T extends TwitterEntity> extends java.util.Observable {
+
 
     EntityManager entityManager;
     @Autowired
@@ -32,6 +35,7 @@ public abstract class Repository<T extends TwitterEntity> {
          }
 
         entityManager.getTransaction().commit();
+         notifyObservers();
 
     }
      public TwitterEntity update(TwitterEntity entity) {
