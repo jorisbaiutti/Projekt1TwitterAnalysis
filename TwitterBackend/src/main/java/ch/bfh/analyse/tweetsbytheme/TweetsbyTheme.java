@@ -49,7 +49,7 @@ public class TweetsbyTheme implements Analyse, Observer{
 
     private void findTweets(){
         List<Tweet> tweets = tweetRepository.getAll();
-
+        topicsCount.forEach((k,v)-> topicsCount.put(k,0));
         tweets.forEach(tweet -> {
             for(String key : topicsCount.keySet()){
                 if(tweet.getContent().contains(key)){

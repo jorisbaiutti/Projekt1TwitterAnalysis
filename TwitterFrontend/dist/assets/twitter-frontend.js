@@ -423,7 +423,7 @@ define("twitter-frontend/templates/barcharts/tweetsbytheme", ["exports"], functi
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "i5jO41tU", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"bar\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/barcharts/tweetsbytheme.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "4yAP+dIf", "block": "{\"symbols\":[],\"statements\":[[6,\"br\"],[7],[8],[0,\"\\n\"],[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"bar\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/barcharts/tweetsbytheme.hbs" } });
 });
 define("twitter-frontend/templates/charts", ["exports"], function (exports) {
   "use strict";

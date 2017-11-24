@@ -35,7 +35,9 @@ public abstract class Repository<T extends TwitterEntity> extends java.util.Obse
          }
 
         entityManager.getTransaction().commit();
+         setChanged();
          notifyObservers();
+
 
     }
      public TwitterEntity update(TwitterEntity entity) {

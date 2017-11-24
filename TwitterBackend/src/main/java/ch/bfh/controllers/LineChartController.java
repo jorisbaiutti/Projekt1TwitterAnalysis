@@ -3,6 +3,7 @@ package ch.bfh.controllers;
         import be.ceau.chart.LineChart;
         import ch.bfh.analyse.Analyse;
         import ch.bfh.exception.EntityNotFoundException;
+        import io.swagger.annotations.ApiOperation;
         import org.springframework.http.ResponseEntity;
         import org.springframework.stereotype.Component;
         import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +12,9 @@ package ch.bfh.controllers;
         import org.springframework.web.bind.annotation.RestController;
 
         import java.util.HashSet;
+        import java.util.List;
         import java.util.Set;
+        import java.util.stream.Collectors;
 
 @Component
 @RestController
@@ -34,5 +37,12 @@ public class LineChartController {
             throw new EntityNotFoundException("Analyse not found " + analyse);
         }
         return ResponseEntity.ok(finalAnalyse.getChart());
+    }
+
+    @ApiOperation(value = "View a list of available Analysen")
+    @RequestMapping(value = "/list", method= RequestMethod.GET,produces = "application/json")
+    ResponseEntity<List<String>> getAnalysen(){
+        List<String> availableendpoints = analysen.stream().map(a -> a.getName()).collect(Collectors.toList());
+        return ResponseEntity.ok(availableendpoints);
     }
 }

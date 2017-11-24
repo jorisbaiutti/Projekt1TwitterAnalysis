@@ -8,6 +8,7 @@ import ch.bfh.repositories.HashTagRepository;
 import ch.bfh.repositories.TweetRepository;
 import ch.bfh.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import twitter4j.*;
 
 import java.util.ArrayList;
