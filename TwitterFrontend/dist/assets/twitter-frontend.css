@@ -5887,4 +5887,7 @@ a.text-dark:focus, a.text-dark:hover {
 .card {
   margin: 10px; }
 
+.ember-cli-g-map {
+  height: 700px; }
+
 /*# sourceMappingURL=twitter-frontend.css.map */

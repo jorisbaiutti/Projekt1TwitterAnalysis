@@ -25,6 +25,10 @@ Router.map(function() {
     this.route('samplechart');
   });
 
+  this.route('maps', function(){
+    this.route('tweetoverview');
+  });
+ 
 });
 
 export default Router;

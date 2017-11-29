@@ -50,6 +50,11 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/linecharts/samplechart.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/maps/tweetoverview.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/maps/tweetoverview.js should pass ESLint\n\n');
+  });
+
   QUnit.test('serializers/application.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'serializers/application.js should pass ESLint\n\n');
@@ -65,6 +70,327 @@ define('twitter-frontend/tests/helpers/destroy-app', ['exports'], function (expo
   function destroyApp(application) {
     Ember.run(application, 'destroy');
   }
+});
+define('twitter-frontend/tests/helpers/ember-cli-g-maps/register-async-helpers', ['exports', 'twitter-frontend/tests/helpers/ember-cli-g-maps/select-autocomplete-place-helper', 'twitter-frontend/tests/helpers/ember-cli-g-maps/wait-for-google-map-helper', 'twitter-frontend/tests/helpers/ember-cli-g-maps/wait-for-geocode-requests-helper', 'twitter-frontend/tests/helpers/ember-cli-g-maps/stub-geocode-requests-helper'], function (exports, _selectAutocompletePlaceHelper, _waitForGoogleMapHelper, _waitForGeocodeRequestsHelper, _stubGeocodeRequestsHelper) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  exports.default = function () {
+    Ember.Test.registerAsyncHelper('selectPlace', function () {
+      Ember.Logger.warn('Please replace disabled helper "selectPlace" with "selectAutocompletePlace" helper.\nUsage details here: http://http://matt-jensen.github.io/ember-cli-g-maps/#/place-autocomplete/index');
+    });
+    Ember.Test.registerAsyncHelper('selectAutocompletePlace', _selectAutocompletePlaceHelper.default);
+    Ember.Test.registerAsyncHelper('waitForGoogleMap', _waitForGoogleMapHelper.default);
+    Ember.Test.registerAsyncHelper('waitForGeocodeRequests', _waitForGeocodeRequestsHelper.default);
+    Ember.Test.registerAsyncHelper('stubGeocodeRequests', _stubGeocodeRequestsHelper.default);
+  };
+});
+define('twitter-frontend/tests/helpers/ember-cli-g-maps/select-autocomplete-place-helper', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  exports.default = function (app) {
+    var requestedResult = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    var selector = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '.' + GAUTOCOMPLETE_CLASS;
+
+    return new Ember.Test.promise(function (resolve, reject) {
+
+      // User only provided selector argument
+      if (typeof requestedResult === 'string') {
+        selector = requestedResult;
+        requestedResult = 0;
+      }
+
+      longPollExternalElement(GOOGLE_AUTOCOMPLETE_RESULTS).then(function (autocompletePlaces) {
+        var textResults = autocompletePlaces.map(function (i, el) {
+          return $(el).text();
+        });
+
+        var _app$testHelpers$find = app.testHelpers.find(selector),
+            _app$testHelpers$find2 = _slicedToArray(_app$testHelpers$find, 1),
+            input = _app$testHelpers$find2[0];
+
+        assert('No g-autocomplete component found for selector: ' + selector, input && $(input).hasClass(GAUTOCOMPLETE_CLASS));
+
+        var targetResult = 0;
+
+        /*
+         * Set target to requested result if it exists
+         */
+        if (requestedResult > 0 && requestedResult <= textResults.length - 1) {
+          targetResult = parseInt(requestedResult, 10);
+        }
+
+        /*
+         * Keydown to requested result (40 = down arrow)
+         */
+        for (var i = 0; i <= targetResult; i++) {
+          google.maps.event.trigger(input, 'keydown', { keyCode: 40 });
+        }
+
+        // Select active result (13 = Enter)
+        google.maps.event.trigger(input, 'keydown', { keyCode: 13 });
+        Ember.run.later(function () {
+          return resolve(textResults[targetResult]);
+        }, 300);
+      }, reject);
+    });
+  };
+
+  exports.longPollExternalElement = longPollExternalElement;
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  var $ = Ember.$,
+      assert = Ember.assert;
+
+  var GAUTOCOMPLETE_CLASS = 'g-autocomplete';
+  var GOOGLE_AUTOCOMPLETE_RESULTS = '.pac-container .pac-item';
+
+  function longPollExternalElement(selector) {
+    return new Ember.RSVP.Promise(function (resolve, reject) {
+      var pollAgain = function () {
+        var counter = 0;
+
+        return function () {
+          /*
+           * NOTE searching for elements potentially outside of #ember-testing container
+           */
+          var results = $(selector);
+
+          if (results.length) {
+            return resolve(results);
+          }
+
+          if (counter > 5) {
+            return reject();
+          }
+
+          counter++;
+          Ember.run.later(pollAgain, 300);
+        };
+      }();
+
+      pollAgain();
+    });
+  };
+});
+define("twitter-frontend/tests/helpers/ember-cli-g-maps/setup-test", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  exports.default = function () {};
+});
+define('twitter-frontend/tests/helpers/ember-cli-g-maps/stub-geocode-requests-helper', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  exports.default = function (app) {
+    var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    var onlyPhantomJS = Boolean(config.onlyPhantomJS);
+
+    // Abandon if only stubbing phantomJS
+    if (onlyPhantomJS && IS_PHANTOMJS_ENV === false) {
+      return;
+    }
+
+    assert('A results array is required', config.results && config.results instanceof Array && config.results.length);
+
+    var stubs = void 0;
+    if (config.results[0] instanceof Array) {
+      // Clone 2 demensional array
+      stubs = config.results.map(function (results) {
+        return results.map(toPlaceResult);
+      });
+    } else {
+      // Clone 1 demensional into 2 demensional array
+      stubs = [config.results.map(toPlaceResult)];
+    }
+
+    assert('Geocode stubbed requests are still unresolved', ORIGINAL_GEOCODE === GMaps.prototype.geocode);
+
+    var stubIndex = 0;
+
+    /*
+     * Stub GMaps geocode
+     */
+    GMaps.prototype.geocode = function geocodeStub(_ref) {
+      var callback = _ref.callback;
+
+      run(function () {
+        callback(stubs[stubIndex], 'OK');
+        stubIndex += 1;
+
+        if (stubIndex >= stubs.length) {
+          GMaps.prototype.geocode = ORIGINAL_GEOCODE;
+        }
+      });
+    };
+  };
+
+  exports.toPlaceResult = toPlaceResult;
+
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+
+  var RSVP = Ember.RSVP;
+  var getOwner = Ember.getOwner;
+  var assert = Ember.assert;
+  var copy = Ember.copy;
+  var run = Ember.run;
+  var Logger = Ember.Logger;
+
+  var ORIGINAL_GEOCODE = GMaps.prototype.geocode;
+  var IS_PHANTOMJS_ENV = (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && window.hasOwnProperty('_phantom');
+
+  function toPlaceResult(result) {
+    var clone = copy(result, true);
+    clone.geometry = clone.geometry || {};
+    clone.geometry.location = clone.geometry.location || {};
+
+    if (clone.hasOwnProperty('lat') && typeof clone.geometry.location.lat !== 'function') {
+      clone.geometry.location.lat = function () {
+        return clone.lat;
+      };
+    }
+
+    if (clone.hasOwnProperty('lng') && typeof clone.geometry.location.lng !== 'function') {
+      clone.geometry.location.lng = function () {
+        return clone.lng;
+      };
+    }
+
+    if (clone.hasOwnProperty('address') && !clone.formatted_address) {
+      clone.formatted_address = clone.address;
+    }
+
+    return clone;
+  }
+});
+define('twitter-frontend/tests/helpers/ember-cli-g-maps/wait-for-geocode-requests-helper', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  exports.default = function (app) {
+    var container = getOwner(app) || app.__container__;
+    assert('failed to recover application container', container);
+
+    var gMap = container.lookup && container.lookup('service:gMap');
+    assert('gMap service lookup failed', gMap);
+
+    return new Ember.Test.promise(function (resolve, reject) {
+      Ember.Test.adapter.asyncStart();
+
+      var queue = gMap._geocodeQueue || [];
+
+      if (!queue.length) {
+        Logger.warn('Geocode request queue was not found, or is currently empty');
+      }
+
+      return RSVP.Promise.all(queue).then(function () {
+        Ember.run.scheduleOnce('afterRender', null, resolve);
+        Ember.Test.adapter.asyncEnd();
+      }).catch(function () {
+        reject();
+        Ember.Test.adapter.asyncEnd();
+      });
+    });
+  };
+
+  var RSVP = Ember.RSVP;
+  var getOwner = Ember.getOwner;
+  var assert = Ember.assert;
+  var Logger = Ember.Logger;
+});
+define('twitter-frontend/tests/helpers/ember-cli-g-maps/wait-for-google-map-helper', ['exports', 'ember-cli-g-maps/utils/load-google-maps'], function (exports, _loadGoogleMaps) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  exports.default = function (app) {
+    var selector = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : EMBER_CLI_GMAPS_SELECTOR;
+
+    return new Ember.Test.promise(function (resolve, reject) {
+      Ember.Test.adapter.asyncStart();
+
+      (0, _loadGoogleMaps.default)().then(function () {
+        Ember.run.scheduleOnce('afterRender', function () {
+          var $map = $(selector);
+          assert('No g-maps component found at selector: ' + selector, !$map.length || !$map.eq(0).hasClass(EMBER_CLI_GMAPS_SELECTOR));
+
+          google.maps.event.addListenerOnce($map.get(0).__GOOGLE_MAP__, 'tilesloaded', function () {
+            Ember.run(resolve);
+            Ember.Test.adapter.asyncEnd();
+          });
+        });
+      }).catch(function () {
+        reject();
+        Ember.Test.adapter.asyncEnd();
+      });
+    });
+  };
+
+  var $ = Ember.$,
+      assert = Ember.assert;
+
+  var EMBER_CLI_GMAPS_SELECTOR = '.ember-cli-g-map';
 });
 define('twitter-frontend/tests/helpers/module-for-acceptance', ['exports', 'qunit', 'twitter-frontend/tests/helpers/start-app', 'twitter-frontend/tests/helpers/destroy-app'], function (exports, _qunit, _startApp, _destroyApp) {
   'use strict';
@@ -263,6 +589,11 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(false, 'unit/routes/linecharts/samplechart-test.js should pass ESLint\n\n3:28 - Unnecessary escape character: \\s. (no-useless-escape)\n3:69 - Unnecessary escape character: \\s. (no-useless-escape)');
   });
 
+  QUnit.test('unit/routes/maps/tweetoverview-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/maps/tweetoverview-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/routes/mostdiscussedtopics-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/mostdiscussedtopics-test.js should pass ESLint\n\n');
@@ -444,6 +775,19 @@ define('twitter-frontend/tests/unit/routes/linecharts/samplechart-test', ['ember
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:linecharts\samplechart', 'Unit | Route | linecharts\samplechart', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('twitter-frontend/tests/unit/routes/maps/tweetoverview-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:maps\tweetoverview', 'Unit | Route | maps\tweetoverview', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   });

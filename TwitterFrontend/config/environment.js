@@ -3,6 +3,7 @@
 
 module.exports = function(environment) {
   let ENV = {
+    
     modulePrefix: 'twitter-frontend',
     environment,
     rootURL: '/',
@@ -17,6 +18,11 @@ module.exports = function(environment) {
         Date: false
       }
     },
+    /*gmap: {
+      exclude: true,
+      libraries: ['places', 'geometry'],
+      key: 'AIzaSyDz-v21pI09JnAU8qeWfwZ8X4Gu5bcQQ6k',
+    },*/
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -46,6 +52,18 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
-
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
+    'font-src': "'self' fonts.gstatic.com",
+    'connect-src': "'self' maps.gstatic.com",
+    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com",
+    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
+  };
+  ENV.googleMap = {
+    apiKey: 'AIzaSyDz-v21pI09JnAU8qeWfwZ8X4Gu5bcQQ6k'
+  }
   return ENV;
+
+  
 };
