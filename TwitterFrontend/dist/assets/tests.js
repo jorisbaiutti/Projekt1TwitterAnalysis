@@ -60,6 +60,11 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/maps/tweetoverview.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/testhome.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/testhome.js should pass ESLint\n\n');
+  });
+
   QUnit.test('serializers/application.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'serializers/application.js should pass ESLint\n\n');
@@ -619,6 +624,11 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/routes/person/show-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/routes/testhome-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/testhome-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/serializers/application-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/serializers/application-test.js should pass ESLint\n\n');
@@ -850,6 +860,19 @@ define('twitter-frontend/tests/unit/routes/person/show-test', ['ember-qunit'], f
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:person/show', 'Unit | Route | person/show', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('twitter-frontend/tests/unit/routes/testhome-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:testhome', 'Unit | Route | testhome', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   });

@@ -1,0 +1,29 @@
+<div class="jumbotron twitter-blue">
+    <h2 class="display-3">Available Charts</h2>
+    <div class="row">
+        <div class="card twitter-yellow" style="width: 20rem;">
+            {{g-maps name="myFollwers" lat=model.myfollowers.lat zoom=1 lng=model.myfollowers.lng markers=model.myfollowers.markers class="cardsmap"}}
+            <div class="card-body">
+                <h5 class="card-title">Followers of BFH_DigitalSociety</h5>
+                {{#link-to 'maps.myfollowers' class="btn btn-primary twitter-orange"}} 
+                    Followers 
+                {{/link-to}}
+            </div>
+        </div>
+        <div class="card twitter-yellow" style="width: 20rem;">
+            {{g-maps name="tweetOverview" lat=model.tweetoverview.lat zoom=1 lng=model.tweetoverview.lng markers=model.tweetoverview.markers
+            class="cardsmap"}}
+            <div class="card-body">
+                <h5 class="card-title">Overview of Tweets regarding BFH_DigitalSociety</h5>
+                {{#link-to 'maps.tweetoverview' class="btn btn-primary twitter-orange"}} Tweet Overview {{/link-to}}
+            </div>
+        </div>
+         <div class="card twitter-yellow" style="width: 20rem;">
+          {{ember-chart type='horizontalBar' data=model.tweetsbytheme.data  height=200}}
+            <div class="card-body">
+                <h5 class="card-title">Tweet Count Regarding BFH_DigitalSociety</h5>
+                {{#link-to 'barcharts.tweetsbytheme' class="btn btn-primary twitter-orange"}} Tweet Count {{/link-to}}
+            </div>
+        </div>
+    </div>
+</div>

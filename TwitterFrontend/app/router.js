@@ -31,6 +31,7 @@ Router.map(function() {
   });
 
 
+  this.route('testhome');
 });
 
 export default Router;
