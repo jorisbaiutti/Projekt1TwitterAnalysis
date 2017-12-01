@@ -10601,7 +10601,7 @@ return jQuery;
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   2.15.2
+ * @version   2.15.3
  */
 
 var enifed, requireModule, Ember;
@@ -20039,6 +20039,7 @@ enifed('backburner', ['exports', 'ember-babel'], function (exports, _emberBabel)
     };
 
     var noop = function () {};
+    var SET_TIMEOUT = setTimeout;
 
     var Backburner = function () {
         function Backburner(queueNames) {
@@ -20075,7 +20076,7 @@ enifed('backburner', ['exports', 'ember-babel'], function (exports, _emberBabel)
                 return clearTimeout(id);
             };
             platform.next = _platform.next || function (fn) {
-                return platform.setTimeout(fn, 0);
+                return SET_TIMEOUT(fn, 0);
             };
             platform.clearNext = _platform.clearNext || platform.clearTimeout;
             platform.now = _platform.now || function () {
@@ -58828,7 +58829,7 @@ enifed('ember/index', ['exports', 'require', 'ember-environment', 'node-module',
 enifed("ember/version", ["exports"], function (exports) {
   "use strict";
 
-  exports.default = "2.15.2";
+  exports.default = "2.15.3";
 });
 enifed("handlebars", ["exports"], function (exports) {
   "use strict";
@@ -65487,7 +65488,7 @@ requireModule('ember')
 ;if (typeof FastBoot === 'undefined') {
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.12.3
+ * @version 1.12.5
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -67938,7 +67939,7 @@ return Popper;
 ;if (typeof FastBoot === 'undefined') {
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.12.3
+ * @version 1.12.5
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -69030,65 +69031,41 @@ Object.defineProperty(exports, '__esModule', { value: true });
 }
 ;if (typeof FastBoot === 'undefined') {
 /*!
- * Bootstrap v4.0.0-beta (https://getbootstrap.com)
- * Copyright 2011-2017 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
+  * Copyright 2011-2017 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  */
+var bootstrap = (function (exports,$,Popper) {
+'use strict';
 
-if (typeof jQuery === 'undefined') {
-  throw new Error('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.')
-}
-
-(function ($) {
-  var version = $.fn.jquery.split(' ')[0].split('.')
-  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] >= 4)) {
-    throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0')
-  }
-})(jQuery);
-
-(function () {
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+$ = $ && $.hasOwnProperty('default') ? $['default'] : $;
+Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): util.js
+ * Bootstrap (v4.0.0-beta.2): util.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var Util = function ($) {
-
+var Util = function () {
   /**
    * ------------------------------------------------------------------------
    * Private TransitionEnd Helpers
    * ------------------------------------------------------------------------
    */
-
   var transition = false;
-
   var MAX_UID = 1000000;
-
   var TransitionEndEvent = {
     WebkitTransition: 'webkitTransitionEnd',
     MozTransition: 'transitionend',
     OTransition: 'oTransitionEnd otransitionend',
-    transition: 'transitionend'
+    transition: 'transitionend' // shoutout AngusCroll (https://goo.gl/pxwQGp)
 
-    // shoutout AngusCroll (https://goo.gl/pxwQGp)
-  };function toType(obj) {
+  };
+
+  function toType(obj) {
     return {}.toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
-  }
-
-  function isElement(obj) {
-    return (obj[0] || obj).nodeType;
   }
 
   function getSpecialTransitionEndEvent() {
@@ -69099,7 +69076,8 @@ var Util = function ($) {
         if ($(event.target).is(this)) {
           return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
         }
-        return undefined;
+
+        return undefined; // eslint-disable-line no-undefined
       }
     };
   }
@@ -69112,7 +69090,7 @@ var Util = function ($) {
     var el = document.createElement('bootstrap');
 
     for (var name in TransitionEndEvent) {
-      if (el.style[name] !== undefined) {
+      if (typeof el.style[name] !== 'undefined') {
         return {
           end: TransitionEndEvent[name]
         };
@@ -69126,55 +69104,51 @@ var Util = function ($) {
     var _this = this;
 
     var called = false;
-
     $(this).one(Util.TRANSITION_END, function () {
       called = true;
     });
-
     setTimeout(function () {
       if (!called) {
         Util.triggerTransitionEnd(_this);
       }
     }, duration);
-
     return this;
   }
 
   function setTransitionEndSupport() {
     transition = transitionEndTest();
-
     $.fn.emulateTransitionEnd = transitionEndEmulator;
 
     if (Util.supportsTransitionEnd()) {
       $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
     }
   }
-
   /**
    * --------------------------------------------------------------------------
    * Public Util Api
    * --------------------------------------------------------------------------
    */
 
+
   var Util = {
-
     TRANSITION_END: 'bsTransitionEnd',
-
     getUID: function getUID(prefix) {
       do {
         // eslint-disable-next-line no-bitwise
         prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
       } while (document.getElementById(prefix));
+
       return prefix;
     },
     getSelectorFromElement: function getSelectorFromElement(element) {
       var selector = element.getAttribute('data-target');
+
       if (!selector || selector === '#') {
         selector = element.getAttribute('href') || '';
       }
 
       try {
-        var $selector = $(selector);
+        var $selector = $(document).find(selector);
         return $selector.length > 0 ? selector : null;
       } catch (error) {
         return null;
@@ -69189,64 +69163,85 @@ var Util = function ($) {
     supportsTransitionEnd: function supportsTransitionEnd() {
       return Boolean(transition);
     },
+    isElement: function isElement(obj) {
+      return (obj[0] || obj).nodeType;
+    },
     typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
       for (var property in configTypes) {
-        if (configTypes.hasOwnProperty(property)) {
+        if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
           var expectedTypes = configTypes[property];
           var value = config[property];
-          var valueType = value && isElement(value) ? 'element' : toType(value);
+          var valueType = value && Util.isElement(value) ? 'element' : toType(value);
 
           if (!new RegExp(expectedTypes).test(valueType)) {
-            throw new Error(componentName.toUpperCase() + ': ' + ('Option "' + property + '" provided type "' + valueType + '" ') + ('but expected type "' + expectedTypes + '".'));
+            throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
           }
         }
       }
     }
   };
-
   setTransitionEndSupport();
-
   return Util;
-}(jQuery);
+}($);
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+var createClass = _createClass;
+
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+var inheritsLoose = _inheritsLoose;
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): alert.js
+ * Bootstrap (v4.0.0-beta.2): alert.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var Alert = function ($) {
-
+var Alert = function () {
   /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
-
   var NAME = 'alert';
-  var VERSION = '4.0.0-beta';
+  var VERSION = '4.0.0-beta.2';
   var DATA_KEY = 'bs.alert';
-  var EVENT_KEY = '.' + DATA_KEY;
+  var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var TRANSITION_DURATION = 150;
-
   var Selector = {
     DISMISS: '[data-dismiss="alert"]'
   };
-
   var Event = {
-    CLOSE: 'close' + EVENT_KEY,
-    CLOSED: 'closed' + EVENT_KEY,
-    CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY
+    CLOSE: "close" + EVENT_KEY,
+    CLOSED: "closed" + EVENT_KEY,
+    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-
   var ClassName = {
     ALERT: 'alert',
     FADE: 'fade',
     SHOW: 'show'
-
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -69254,21 +69249,23 @@ var Alert = function ($) {
      */
 
   };
-  var Alert = function () {
+
+  var Alert =
+  /*#__PURE__*/
+  function () {
     function Alert(element) {
-      _classCallCheck(this, Alert);
-
       this._element = element;
-    }
+    } // getters
 
-    // getters
+
+    var _proto = Alert.prototype;
 
     // public
-
-    Alert.prototype.close = function close(element) {
+    _proto.close = function close(element) {
       element = element || this._element;
 
       var rootElement = this._getRootElement(element);
+
       var customEvent = this._triggerCloseEvent(rootElement);
 
       if (customEvent.isDefaultPrevented()) {
@@ -69278,14 +69275,13 @@ var Alert = function ($) {
       this._removeElement(rootElement);
     };
 
-    Alert.prototype.dispose = function dispose() {
+    _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
       this._element = null;
-    };
+    }; // private
 
-    // private
 
-    Alert.prototype._getRootElement = function _getRootElement(element) {
+    _proto._getRootElement = function _getRootElement(element) {
       var selector = Util.getSelectorFromElement(element);
       var parent = false;
 
@@ -69294,39 +69290,38 @@ var Alert = function ($) {
       }
 
       if (!parent) {
-        parent = $(element).closest('.' + ClassName.ALERT)[0];
+        parent = $(element).closest("." + ClassName.ALERT)[0];
       }
 
       return parent;
     };
 
-    Alert.prototype._triggerCloseEvent = function _triggerCloseEvent(element) {
+    _proto._triggerCloseEvent = function _triggerCloseEvent(element) {
       var closeEvent = $.Event(Event.CLOSE);
-
       $(element).trigger(closeEvent);
       return closeEvent;
     };
 
-    Alert.prototype._removeElement = function _removeElement(element) {
-      var _this2 = this;
+    _proto._removeElement = function _removeElement(element) {
+      var _this = this;
 
       $(element).removeClass(ClassName.SHOW);
 
       if (!Util.supportsTransitionEnd() || !$(element).hasClass(ClassName.FADE)) {
         this._destroyElement(element);
+
         return;
       }
 
       $(element).one(Util.TRANSITION_END, function (event) {
-        return _this2._destroyElement(element, event);
+        return _this._destroyElement(element, event);
       }).emulateTransitionEnd(TRANSITION_DURATION);
     };
 
-    Alert.prototype._destroyElement = function _destroyElement(element) {
+    _proto._destroyElement = function _destroyElement(element) {
       $(element).detach().trigger(Event.CLOSED).remove();
-    };
+    }; // static
 
-    // static
 
     Alert._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -69354,24 +69349,22 @@ var Alert = function ($) {
       };
     };
 
-    _createClass(Alert, null, [{
-      key: 'VERSION',
+    createClass(Alert, null, [{
+      key: "VERSION",
       get: function get() {
         return VERSION;
       }
     }]);
-
     return Alert;
   }();
-
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
 
-  $(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
 
+  $(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -69380,42 +69373,39 @@ var Alert = function ($) {
 
   $.fn[NAME] = Alert._jQueryInterface;
   $.fn[NAME].Constructor = Alert;
+
   $.fn[NAME].noConflict = function () {
     $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Alert._jQueryInterface;
   };
 
   return Alert;
-}(jQuery);
+}($);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): button.js
+ * Bootstrap (v4.0.0-beta.2): button.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var Button = function ($) {
-
+var Button = function () {
   /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
-
   var NAME = 'button';
-  var VERSION = '4.0.0-beta';
+  var VERSION = '4.0.0-beta.2';
   var DATA_KEY = 'bs.button';
-  var EVENT_KEY = '.' + DATA_KEY;
+  var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
-
   var ClassName = {
     ACTIVE: 'active',
     BUTTON: 'btn',
     FOCUS: 'focus'
   };
-
   var Selector = {
     DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
     DATA_TOGGLE: '[data-toggle="buttons"]',
@@ -69423,11 +69413,9 @@ var Button = function ($) {
     ACTIVE: '.active',
     BUTTON: '.btn'
   };
-
   var Event = {
-    CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY,
-    FOCUS_BLUR_DATA_API: 'focus' + EVENT_KEY + DATA_API_KEY + ' ' + ('blur' + EVENT_KEY + DATA_API_KEY)
-
+    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY,
+    FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY + DATA_API_KEY + " " + ("blur" + EVENT_KEY + DATA_API_KEY)
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -69435,18 +69423,19 @@ var Button = function ($) {
      */
 
   };
-  var Button = function () {
+
+  var Button =
+  /*#__PURE__*/
+  function () {
     function Button(element) {
-      _classCallCheck(this, Button);
-
       this._element = element;
-    }
+    } // getters
 
-    // getters
+
+    var _proto = Button.prototype;
 
     // public
-
-    Button.prototype.toggle = function toggle() {
+    _proto.toggle = function toggle() {
       var triggerChangeEvent = true;
       var addAriaPressed = true;
       var rootElement = $(this._element).closest(Selector.DATA_TOGGLE)[0];
@@ -69471,6 +69460,7 @@ var Button = function ($) {
             if (input.hasAttribute('disabled') || rootElement.hasAttribute('disabled') || input.classList.contains('disabled') || rootElement.classList.contains('disabled')) {
               return;
             }
+
             input.checked = !$(this._element).hasClass(ClassName.ACTIVE);
             $(input).trigger('change');
           }
@@ -69489,12 +69479,11 @@ var Button = function ($) {
       }
     };
 
-    Button.prototype.dispose = function dispose() {
+    _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
       this._element = null;
-    };
+    }; // static
 
-    // static
 
     Button._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -69511,25 +69500,23 @@ var Button = function ($) {
       });
     };
 
-    _createClass(Button, null, [{
-      key: 'VERSION',
+    createClass(Button, null, [{
+      key: "VERSION",
       get: function get() {
         return VERSION;
       }
     }]);
-
     return Button;
   }();
-
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
 
+
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
     event.preventDefault();
-
     var button = event.target;
 
     if (!$(button).hasClass(ClassName.BUTTON)) {
@@ -69541,7 +69528,6 @@ var Button = function ($) {
     var button = $(event.target).closest(Selector.BUTTON)[0];
     $(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type));
   });
-
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -69550,38 +69536,39 @@ var Button = function ($) {
 
   $.fn[NAME] = Button._jQueryInterface;
   $.fn[NAME].Constructor = Button;
+
   $.fn[NAME].noConflict = function () {
     $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Button._jQueryInterface;
   };
 
   return Button;
-}(jQuery);
+}($);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): carousel.js
+ * Bootstrap (v4.0.0-beta.2): carousel.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var Carousel = function ($) {
-
+var Carousel = function () {
   /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
-
   var NAME = 'carousel';
-  var VERSION = '4.0.0-beta';
+  var VERSION = '4.0.0-beta.2';
   var DATA_KEY = 'bs.carousel';
-  var EVENT_KEY = '.' + DATA_KEY;
+  var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var TRANSITION_DURATION = 600;
   var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
+
   var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
+
   var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
 
   var Default = {
@@ -69591,7 +69578,6 @@ var Carousel = function ($) {
     pause: 'hover',
     wrap: true
   };
-
   var DefaultType = {
     interval: '(number|boolean)',
     keyboard: 'boolean',
@@ -69599,25 +69585,22 @@ var Carousel = function ($) {
     pause: '(string|boolean)',
     wrap: 'boolean'
   };
-
   var Direction = {
     NEXT: 'next',
     PREV: 'prev',
     LEFT: 'left',
     RIGHT: 'right'
   };
-
   var Event = {
-    SLIDE: 'slide' + EVENT_KEY,
-    SLID: 'slid' + EVENT_KEY,
-    KEYDOWN: 'keydown' + EVENT_KEY,
-    MOUSEENTER: 'mouseenter' + EVENT_KEY,
-    MOUSELEAVE: 'mouseleave' + EVENT_KEY,
-    TOUCHEND: 'touchend' + EVENT_KEY,
-    LOAD_DATA_API: 'load' + EVENT_KEY + DATA_API_KEY,
-    CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY
+    SLIDE: "slide" + EVENT_KEY,
+    SLID: "slid" + EVENT_KEY,
+    KEYDOWN: "keydown" + EVENT_KEY,
+    MOUSEENTER: "mouseenter" + EVENT_KEY,
+    MOUSELEAVE: "mouseleave" + EVENT_KEY,
+    TOUCHEND: "touchend" + EVENT_KEY,
+    LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
+    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-
   var ClassName = {
     CAROUSEL: 'carousel',
     ACTIVE: 'active',
@@ -69628,7 +69611,6 @@ var Carousel = function ($) {
     PREV: 'carousel-item-prev',
     ITEM: 'carousel-item'
   };
-
   var Selector = {
     ACTIVE: '.active',
     ACTIVE_ITEM: '.active.carousel-item',
@@ -69637,7 +69619,6 @@ var Carousel = function ($) {
     INDICATORS: '.carousel-indicators',
     DATA_SLIDE: '[data-slide], [data-slide-to]',
     DATA_RIDE: '[data-ride="carousel"]'
-
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -69645,50 +69626,49 @@ var Carousel = function ($) {
      */
 
   };
-  var Carousel = function () {
-    function Carousel(element, config) {
-      _classCallCheck(this, Carousel);
 
+  var Carousel =
+  /*#__PURE__*/
+  function () {
+    function Carousel(element, config) {
       this._items = null;
       this._interval = null;
       this._activeElement = null;
-
       this._isPaused = false;
       this._isSliding = false;
-
       this.touchTimeout = null;
-
       this._config = this._getConfig(config);
       this._element = $(element)[0];
       this._indicatorsElement = $(this._element).find(Selector.INDICATORS)[0];
 
       this._addEventListeners();
-    }
+    } // getters
 
-    // getters
+
+    var _proto = Carousel.prototype;
 
     // public
-
-    Carousel.prototype.next = function next() {
+    _proto.next = function next() {
       if (!this._isSliding) {
         this._slide(Direction.NEXT);
       }
     };
 
-    Carousel.prototype.nextWhenVisible = function nextWhenVisible() {
+    _proto.nextWhenVisible = function nextWhenVisible() {
       // Don't call next when the page isn't visible
-      if (!document.hidden) {
+      // or the carousel or its parent isn't visible
+      if (!document.hidden && $(this._element).is(':visible') && $(this._element).css('visibility') !== 'hidden') {
         this.next();
       }
     };
 
-    Carousel.prototype.prev = function prev() {
+    _proto.prev = function prev() {
       if (!this._isSliding) {
         this._slide(Direction.PREV);
       }
     };
 
-    Carousel.prototype.pause = function pause(event) {
+    _proto.pause = function pause(event) {
       if (!event) {
         this._isPaused = true;
       }
@@ -69702,7 +69682,7 @@ var Carousel = function ($) {
       this._interval = null;
     };
 
-    Carousel.prototype.cycle = function cycle(event) {
+    _proto.cycle = function cycle(event) {
       if (!event) {
         this._isPaused = false;
       }
@@ -69717,8 +69697,8 @@ var Carousel = function ($) {
       }
     };
 
-    Carousel.prototype.to = function to(index) {
-      var _this3 = this;
+    _proto.to = function to(index) {
+      var _this = this;
 
       this._activeElement = $(this._element).find(Selector.ACTIVE_ITEM)[0];
 
@@ -69730,7 +69710,7 @@ var Carousel = function ($) {
 
       if (this._isSliding) {
         $(this._element).one(Event.SLID, function () {
-          return _this3.to(index);
+          return _this.to(index);
         });
         return;
       }
@@ -69746,10 +69726,9 @@ var Carousel = function ($) {
       this._slide(direction, this._items[index]);
     };
 
-    Carousel.prototype.dispose = function dispose() {
+    _proto.dispose = function dispose() {
       $(this._element).off(EVENT_KEY);
       $.removeData(this._element, DATA_KEY);
-
       this._items = null;
       this._config = null;
       this._element = null;
@@ -69758,31 +69737,31 @@ var Carousel = function ($) {
       this._isSliding = null;
       this._activeElement = null;
       this._indicatorsElement = null;
-    };
+    }; // private
 
-    // private
 
-    Carousel.prototype._getConfig = function _getConfig(config) {
+    _proto._getConfig = function _getConfig(config) {
       config = $.extend({}, Default, config);
       Util.typeCheckConfig(NAME, config, DefaultType);
       return config;
     };
 
-    Carousel.prototype._addEventListeners = function _addEventListeners() {
-      var _this4 = this;
+    _proto._addEventListeners = function _addEventListeners() {
+      var _this2 = this;
 
       if (this._config.keyboard) {
         $(this._element).on(Event.KEYDOWN, function (event) {
-          return _this4._keydown(event);
+          return _this2._keydown(event);
         });
       }
 
       if (this._config.pause === 'hover') {
         $(this._element).on(Event.MOUSEENTER, function (event) {
-          return _this4.pause(event);
+          return _this2.pause(event);
         }).on(Event.MOUSELEAVE, function (event) {
-          return _this4.cycle(event);
+          return _this2.cycle(event);
         });
+
         if ('ontouchstart' in document.documentElement) {
           // if it's a touch-enabled device, mouseenter/leave are fired as
           // part of the mouse compatibility events on first tap - the carousel
@@ -69792,19 +69771,21 @@ var Carousel = function ($) {
           // is NOT fired) and after a timeout (to allow for mouse compatibility
           // events to fire) we explicitly restart cycling
           $(this._element).on(Event.TOUCHEND, function () {
-            _this4.pause();
-            if (_this4.touchTimeout) {
-              clearTimeout(_this4.touchTimeout);
+            _this2.pause();
+
+            if (_this2.touchTimeout) {
+              clearTimeout(_this2.touchTimeout);
             }
-            _this4.touchTimeout = setTimeout(function (event) {
-              return _this4.cycle(event);
-            }, TOUCHEVENT_COMPAT_WAIT + _this4._config.interval);
+
+            _this2.touchTimeout = setTimeout(function (event) {
+              return _this2.cycle(event);
+            }, TOUCHEVENT_COMPAT_WAIT + _this2._config.interval);
           });
         }
       }
     };
 
-    Carousel.prototype._keydown = function _keydown(event) {
+    _proto._keydown = function _keydown(event) {
       if (/input|textarea/i.test(event.target.tagName)) {
         return;
       }
@@ -69814,24 +69795,28 @@ var Carousel = function ($) {
           event.preventDefault();
           this.prev();
           break;
+
         case ARROW_RIGHT_KEYCODE:
           event.preventDefault();
           this.next();
           break;
+
         default:
           return;
       }
     };
 
-    Carousel.prototype._getItemIndex = function _getItemIndex(element) {
+    _proto._getItemIndex = function _getItemIndex(element) {
       this._items = $.makeArray($(element).parent().find(Selector.ITEM));
       return this._items.indexOf(element);
     };
 
-    Carousel.prototype._getItemByDirection = function _getItemByDirection(direction, activeElement) {
+    _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
       var isNextDirection = direction === Direction.NEXT;
       var isPrevDirection = direction === Direction.PREV;
+
       var activeIndex = this._getItemIndex(activeElement);
+
       var lastItemIndex = this._items.length - 1;
       var isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex;
 
@@ -69841,26 +69826,25 @@ var Carousel = function ($) {
 
       var delta = direction === Direction.PREV ? -1 : 1;
       var itemIndex = (activeIndex + delta) % this._items.length;
-
       return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
     };
 
-    Carousel.prototype._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
+    _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
       var targetIndex = this._getItemIndex(relatedTarget);
+
       var fromIndex = this._getItemIndex($(this._element).find(Selector.ACTIVE_ITEM)[0]);
+
       var slideEvent = $.Event(Event.SLIDE, {
         relatedTarget: relatedTarget,
         direction: eventDirectionName,
         from: fromIndex,
         to: targetIndex
       });
-
       $(this._element).trigger(slideEvent);
-
       return slideEvent;
     };
 
-    Carousel.prototype._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
+    _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
       if (this._indicatorsElement) {
         $(this._indicatorsElement).find(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
 
@@ -69872,18 +69856,21 @@ var Carousel = function ($) {
       }
     };
 
-    Carousel.prototype._slide = function _slide(direction, element) {
-      var _this5 = this;
+    _proto._slide = function _slide(direction, element) {
+      var _this3 = this;
 
       var activeElement = $(this._element).find(Selector.ACTIVE_ITEM)[0];
-      var activeElementIndex = this._getItemIndex(activeElement);
-      var nextElement = element || activeElement && this._getItemByDirection(direction, activeElement);
-      var nextElementIndex = this._getItemIndex(nextElement);
-      var isCycling = Boolean(this._interval);
 
-      var directionalClassName = void 0;
-      var orderClassName = void 0;
-      var eventDirectionName = void 0;
+      var activeElementIndex = this._getItemIndex(activeElement);
+
+      var nextElement = element || activeElement && this._getItemByDirection(direction, activeElement);
+
+      var nextElementIndex = this._getItemIndex(nextElement);
+
+      var isCycling = Boolean(this._interval);
+      var directionalClassName;
+      var orderClassName;
+      var eventDirectionName;
 
       if (direction === Direction.NEXT) {
         directionalClassName = ClassName.LEFT;
@@ -69901,6 +69888,7 @@ var Carousel = function ($) {
       }
 
       var slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName);
+
       if (slideEvent.isDefaultPrevented()) {
         return;
       }
@@ -69926,29 +69914,21 @@ var Carousel = function ($) {
       });
 
       if (Util.supportsTransitionEnd() && $(this._element).hasClass(ClassName.SLIDE)) {
-
         $(nextElement).addClass(orderClassName);
-
         Util.reflow(nextElement);
-
         $(activeElement).addClass(directionalClassName);
         $(nextElement).addClass(directionalClassName);
-
         $(activeElement).one(Util.TRANSITION_END, function () {
-          $(nextElement).removeClass(directionalClassName + ' ' + orderClassName).addClass(ClassName.ACTIVE);
-
-          $(activeElement).removeClass(ClassName.ACTIVE + ' ' + orderClassName + ' ' + directionalClassName);
-
-          _this5._isSliding = false;
-
+          $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName.ACTIVE);
+          $(activeElement).removeClass(ClassName.ACTIVE + " " + orderClassName + " " + directionalClassName);
+          _this3._isSliding = false;
           setTimeout(function () {
-            return $(_this5._element).trigger(slidEvent);
+            return $(_this3._element).trigger(slidEvent);
           }, 0);
         }).emulateTransitionEnd(TRANSITION_DURATION);
       } else {
         $(activeElement).removeClass(ClassName.ACTIVE);
         $(nextElement).addClass(ClassName.ACTIVE);
-
         this._isSliding = false;
         $(this._element).trigger(slidEvent);
       }
@@ -69956,16 +69936,16 @@ var Carousel = function ($) {
       if (isCycling) {
         this.cycle();
       }
-    };
+    }; // static
 
-    // static
 
     Carousel._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY);
+
         var _config = $.extend({}, Default, $(this).data());
 
-        if ((typeof config === 'undefined' ? 'undefined' : _typeof(config)) === 'object') {
+        if (typeof config === 'object') {
           $.extend(_config, config);
         }
 
@@ -69979,9 +69959,10 @@ var Carousel = function ($) {
         if (typeof config === 'number') {
           data.to(config);
         } else if (typeof action === 'string') {
-          if (data[action] === undefined) {
-            throw new Error('No method named "' + action + '"');
+          if (typeof data[action] === 'undefined') {
+            throw new Error("No method named \"" + action + "\"");
           }
+
           data[action]();
         } else if (_config.interval) {
           data.pause();
@@ -70019,36 +70000,34 @@ var Carousel = function ($) {
       event.preventDefault();
     };
 
-    _createClass(Carousel, null, [{
-      key: 'VERSION',
+    createClass(Carousel, null, [{
+      key: "VERSION",
       get: function get() {
         return VERSION;
       }
     }, {
-      key: 'Default',
+      key: "Default",
       get: function get() {
         return Default;
       }
     }]);
-
     return Carousel;
   }();
-
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
 
-  $(document).on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler);
 
+  $(document).on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler);
   $(window).on(Event.LOAD_DATA_API, function () {
     $(Selector.DATA_RIDE).each(function () {
       var $carousel = $(this);
+
       Carousel._jQueryInterface.call($carousel, $carousel.data());
     });
   });
-
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -70057,71 +70036,63 @@ var Carousel = function ($) {
 
   $.fn[NAME] = Carousel._jQueryInterface;
   $.fn[NAME].Constructor = Carousel;
+
   $.fn[NAME].noConflict = function () {
     $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Carousel._jQueryInterface;
   };
 
   return Carousel;
-}(jQuery);
+}($);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): collapse.js
+ * Bootstrap (v4.0.0-beta.2): collapse.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var Collapse = function ($) {
-
+var Collapse = function () {
   /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
-
   var NAME = 'collapse';
-  var VERSION = '4.0.0-beta';
+  var VERSION = '4.0.0-beta.2';
   var DATA_KEY = 'bs.collapse';
-  var EVENT_KEY = '.' + DATA_KEY;
+  var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var TRANSITION_DURATION = 600;
-
   var Default = {
     toggle: true,
     parent: ''
   };
-
   var DefaultType = {
     toggle: 'boolean',
-    parent: 'string'
+    parent: '(string|element)'
   };
-
   var Event = {
-    SHOW: 'show' + EVENT_KEY,
-    SHOWN: 'shown' + EVENT_KEY,
-    HIDE: 'hide' + EVENT_KEY,
-    HIDDEN: 'hidden' + EVENT_KEY,
-    CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY
+    SHOW: "show" + EVENT_KEY,
+    SHOWN: "shown" + EVENT_KEY,
+    HIDE: "hide" + EVENT_KEY,
+    HIDDEN: "hidden" + EVENT_KEY,
+    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-
   var ClassName = {
     SHOW: 'show',
     COLLAPSE: 'collapse',
     COLLAPSING: 'collapsing',
     COLLAPSED: 'collapsed'
   };
-
   var Dimension = {
     WIDTH: 'width',
     HEIGHT: 'height'
   };
-
   var Selector = {
     ACTIVES: '.show, .collapsing',
     DATA_TOGGLE: '[data-toggle="collapse"]'
-
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -70129,18 +70100,21 @@ var Collapse = function ($) {
      */
 
   };
-  var Collapse = function () {
-    function Collapse(element, config) {
-      _classCallCheck(this, Collapse);
 
+  var Collapse =
+  /*#__PURE__*/
+  function () {
+    function Collapse(element, config) {
       this._isTransitioning = false;
       this._element = element;
       this._config = this._getConfig(config);
-      this._triggerArray = $.makeArray($('[data-toggle="collapse"][href="#' + element.id + '"],' + ('[data-toggle="collapse"][data-target="#' + element.id + '"]')));
+      this._triggerArray = $.makeArray($("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
       var tabToggles = $(Selector.DATA_TOGGLE);
+
       for (var i = 0; i < tabToggles.length; i++) {
         var elem = tabToggles[i];
         var selector = Util.getSelectorFromElement(elem);
+
         if (selector !== null && $(selector).filter(element).length > 0) {
           this._triggerArray.push(elem);
         }
@@ -70155,13 +70129,13 @@ var Collapse = function ($) {
       if (this._config.toggle) {
         this.toggle();
       }
-    }
+    } // getters
 
-    // getters
+
+    var _proto = Collapse.prototype;
 
     // public
-
-    Collapse.prototype.toggle = function toggle() {
+    _proto.toggle = function toggle() {
       if ($(this._element).hasClass(ClassName.SHOW)) {
         this.hide();
       } else {
@@ -70169,18 +70143,19 @@ var Collapse = function ($) {
       }
     };
 
-    Collapse.prototype.show = function show() {
-      var _this6 = this;
+    _proto.show = function show() {
+      var _this = this;
 
       if (this._isTransitioning || $(this._element).hasClass(ClassName.SHOW)) {
         return;
       }
 
-      var actives = void 0;
-      var activesData = void 0;
+      var actives;
+      var activesData;
 
       if (this._parent) {
         actives = $.makeArray($(this._parent).children().children(Selector.ACTIVES));
+
         if (!actives.length) {
           actives = null;
         }
@@ -70188,6 +70163,7 @@ var Collapse = function ($) {
 
       if (actives) {
         activesData = $(actives).data(DATA_KEY);
+
         if (activesData && activesData._isTransitioning) {
           return;
         }
@@ -70195,12 +70171,14 @@ var Collapse = function ($) {
 
       var startEvent = $.Event(Event.SHOW);
       $(this._element).trigger(startEvent);
+
       if (startEvent.isDefaultPrevented()) {
         return;
       }
 
       if (actives) {
         Collapse._jQueryInterface.call($(actives), 'hide');
+
         if (!activesData) {
           $(actives).data(DATA_KEY, null);
         }
@@ -70209,7 +70187,6 @@ var Collapse = function ($) {
       var dimension = this._getDimension();
 
       $(this._element).removeClass(ClassName.COLLAPSE).addClass(ClassName.COLLAPSING);
-
       this._element.style[dimension] = 0;
 
       if (this._triggerArray.length) {
@@ -70219,13 +70196,12 @@ var Collapse = function ($) {
       this.setTransitioning(true);
 
       var complete = function complete() {
-        $(_this6._element).removeClass(ClassName.COLLAPSING).addClass(ClassName.COLLAPSE).addClass(ClassName.SHOW);
+        $(_this._element).removeClass(ClassName.COLLAPSING).addClass(ClassName.COLLAPSE).addClass(ClassName.SHOW);
+        _this._element.style[dimension] = '';
 
-        _this6._element.style[dimension] = '';
+        _this.setTransitioning(false);
 
-        _this6.setTransitioning(false);
-
-        $(_this6._element).trigger(Event.SHOWN);
+        $(_this._element).trigger(Event.SHOWN);
       };
 
       if (!Util.supportsTransitionEnd()) {
@@ -70234,15 +70210,13 @@ var Collapse = function ($) {
       }
 
       var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      var scrollSize = 'scroll' + capitalizedDimension;
-
+      var scrollSize = "scroll" + capitalizedDimension;
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
-
-      this._element.style[dimension] = this._element[scrollSize] + 'px';
+      this._element.style[dimension] = this._element[scrollSize] + "px";
     };
 
-    Collapse.prototype.hide = function hide() {
-      var _this7 = this;
+    _proto.hide = function hide() {
+      var _this2 = this;
 
       if (this._isTransitioning || !$(this._element).hasClass(ClassName.SHOW)) {
         return;
@@ -70250,24 +70224,25 @@ var Collapse = function ($) {
 
       var startEvent = $.Event(Event.HIDE);
       $(this._element).trigger(startEvent);
+
       if (startEvent.isDefaultPrevented()) {
         return;
       }
 
       var dimension = this._getDimension();
 
-      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + 'px';
-
+      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
       Util.reflow(this._element);
-
       $(this._element).addClass(ClassName.COLLAPSING).removeClass(ClassName.COLLAPSE).removeClass(ClassName.SHOW);
 
       if (this._triggerArray.length) {
         for (var i = 0; i < this._triggerArray.length; i++) {
           var trigger = this._triggerArray[i];
           var selector = Util.getSelectorFromElement(trigger);
+
           if (selector !== null) {
             var $elem = $(selector);
+
             if (!$elem.hasClass(ClassName.SHOW)) {
               $(trigger).addClass(ClassName.COLLAPSED).attr('aria-expanded', false);
             }
@@ -70278,8 +70253,9 @@ var Collapse = function ($) {
       this.setTransitioning(true);
 
       var complete = function complete() {
-        _this7.setTransitioning(false);
-        $(_this7._element).removeClass(ClassName.COLLAPSING).addClass(ClassName.COLLAPSE).trigger(Event.HIDDEN);
+        _this2.setTransitioning(false);
+
+        $(_this2._element).removeClass(ClassName.COLLAPSING).addClass(ClassName.COLLAPSE).trigger(Event.HIDDEN);
       };
 
       this._element.style[dimension] = '';
@@ -70292,48 +70268,56 @@ var Collapse = function ($) {
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
     };
 
-    Collapse.prototype.setTransitioning = function setTransitioning(isTransitioning) {
+    _proto.setTransitioning = function setTransitioning(isTransitioning) {
       this._isTransitioning = isTransitioning;
     };
 
-    Collapse.prototype.dispose = function dispose() {
+    _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
-
       this._config = null;
       this._parent = null;
       this._element = null;
       this._triggerArray = null;
       this._isTransitioning = null;
-    };
+    }; // private
 
-    // private
 
-    Collapse.prototype._getConfig = function _getConfig(config) {
+    _proto._getConfig = function _getConfig(config) {
       config = $.extend({}, Default, config);
       config.toggle = Boolean(config.toggle); // coerce string values
+
       Util.typeCheckConfig(NAME, config, DefaultType);
       return config;
     };
 
-    Collapse.prototype._getDimension = function _getDimension() {
+    _proto._getDimension = function _getDimension() {
       var hasWidth = $(this._element).hasClass(Dimension.WIDTH);
       return hasWidth ? Dimension.WIDTH : Dimension.HEIGHT;
     };
 
-    Collapse.prototype._getParent = function _getParent() {
-      var _this8 = this;
+    _proto._getParent = function _getParent() {
+      var _this3 = this;
 
-      var parent = $(this._config.parent)[0];
-      var selector = '[data-toggle="collapse"][data-parent="' + this._config.parent + '"]';
+      var parent = null;
 
+      if (Util.isElement(this._config.parent)) {
+        parent = this._config.parent; // it's a jQuery object
+
+        if (typeof this._config.parent.jquery !== 'undefined') {
+          parent = this._config.parent[0];
+        }
+      } else {
+        parent = $(this._config.parent)[0];
+      }
+
+      var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
       $(parent).find(selector).each(function (i, element) {
-        _this8._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
+        _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
       });
-
       return parent;
     };
 
-    Collapse.prototype._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
+    _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
       if (element) {
         var isOpen = $(element).hasClass(ClassName.SHOW);
 
@@ -70341,9 +70325,8 @@ var Collapse = function ($) {
           $(triggerArray).toggleClass(ClassName.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
         }
       }
-    };
+    }; // static
 
-    // static
 
     Collapse._getTargetFromElement = function _getTargetFromElement(element) {
       var selector = Util.getSelectorFromElement(element);
@@ -70354,7 +70337,8 @@ var Collapse = function ($) {
       return this.each(function () {
         var $this = $(this);
         var data = $this.data(DATA_KEY);
-        var _config = $.extend({}, Default, $this.data(), (typeof config === 'undefined' ? 'undefined' : _typeof(config)) === 'object' && config);
+
+        var _config = $.extend({}, Default, $this.data(), typeof config === 'object' && config);
 
         if (!data && _config.toggle && /show|hide/.test(config)) {
           _config.toggle = false;
@@ -70366,37 +70350,38 @@ var Collapse = function ($) {
         }
 
         if (typeof config === 'string') {
-          if (data[config] === undefined) {
-            throw new Error('No method named "' + config + '"');
+          if (typeof data[config] === 'undefined') {
+            throw new Error("No method named \"" + config + "\"");
           }
+
           data[config]();
         }
       });
     };
 
-    _createClass(Collapse, null, [{
-      key: 'VERSION',
+    createClass(Collapse, null, [{
+      key: "VERSION",
       get: function get() {
         return VERSION;
       }
     }, {
-      key: 'Default',
+      key: "Default",
       get: function get() {
         return Default;
       }
     }]);
-
     return Collapse;
   }();
-
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
 
+
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
-    if (!/input|textarea/i.test(event.target.tagName)) {
+    // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
+    if (event.currentTarget.tagName === 'A') {
       event.preventDefault();
     }
 
@@ -70406,10 +70391,10 @@ var Collapse = function ($) {
       var $target = $(this);
       var data = $target.data(DATA_KEY);
       var config = data ? 'toggle' : $trigger.data();
+
       Collapse._jQueryInterface.call($target, config);
     });
   });
-
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -70418,25 +70403,23 @@ var Collapse = function ($) {
 
   $.fn[NAME] = Collapse._jQueryInterface;
   $.fn[NAME].Constructor = Collapse;
+
   $.fn[NAME].noConflict = function () {
     $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Collapse._jQueryInterface;
   };
 
   return Collapse;
-}(jQuery);
-
-/* global Popper */
+}($);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): dropdown.js
+ * Bootstrap (v4.0.0-beta.2): dropdown.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var Dropdown = function ($) {
-
+var Dropdown = function () {
   /**
    * Check for Popper dependency
    * Popper - https://popper.js.org
@@ -70444,38 +70427,42 @@ var Dropdown = function ($) {
   if (typeof Popper === 'undefined') {
     throw new Error('Bootstrap dropdown require Popper.js (https://popper.js.org)');
   }
-
   /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
 
+
   var NAME = 'dropdown';
-  var VERSION = '4.0.0-beta';
+  var VERSION = '4.0.0-beta.2';
   var DATA_KEY = 'bs.dropdown';
-  var EVENT_KEY = '.' + DATA_KEY;
+  var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+
   var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
+
   var TAB_KEYCODE = 9; // KeyboardEvent.which value for tab key
+
   var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
+
   var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
+
   var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
-  var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + '|' + ARROW_DOWN_KEYCODE + '|' + ESCAPE_KEYCODE);
 
+  var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
   var Event = {
-    HIDE: 'hide' + EVENT_KEY,
-    HIDDEN: 'hidden' + EVENT_KEY,
-    SHOW: 'show' + EVENT_KEY,
-    SHOWN: 'shown' + EVENT_KEY,
-    CLICK: 'click' + EVENT_KEY,
-    CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY,
-    KEYDOWN_DATA_API: 'keydown' + EVENT_KEY + DATA_API_KEY,
-    KEYUP_DATA_API: 'keyup' + EVENT_KEY + DATA_API_KEY
+    HIDE: "hide" + EVENT_KEY,
+    HIDDEN: "hidden" + EVENT_KEY,
+    SHOW: "show" + EVENT_KEY,
+    SHOWN: "shown" + EVENT_KEY,
+    CLICK: "click" + EVENT_KEY,
+    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY,
+    KEYDOWN_DATA_API: "keydown" + EVENT_KEY + DATA_API_KEY,
+    KEYUP_DATA_API: "keyup" + EVENT_KEY + DATA_API_KEY
   };
-
   var ClassName = {
     DISABLED: 'disabled',
     SHOW: 'show',
@@ -70483,7 +70470,6 @@ var Dropdown = function ($) {
     MENURIGHT: 'dropdown-menu-right',
     MENULEFT: 'dropdown-menu-left'
   };
-
   var Selector = {
     DATA_TOGGLE: '[data-toggle="dropdown"]',
     FORM_CHILD: '.dropdown form',
@@ -70491,25 +70477,19 @@ var Dropdown = function ($) {
     NAVBAR_NAV: '.navbar-nav',
     VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled)'
   };
-
   var AttachmentMap = {
     TOP: 'top-start',
     TOPEND: 'top-end',
     BOTTOM: 'bottom-start',
     BOTTOMEND: 'bottom-end'
   };
-
   var Default = {
-    placement: AttachmentMap.BOTTOM,
     offset: 0,
     flip: true
   };
-
   var DefaultType = {
-    placement: 'string',
-    offset: '(number|string)',
+    offset: '(number|string|function)',
     flip: 'boolean'
-
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -70517,10 +70497,11 @@ var Dropdown = function ($) {
      */
 
   };
-  var Dropdown = function () {
-    function Dropdown(element, config) {
-      _classCallCheck(this, Dropdown);
 
+  var Dropdown =
+  /*#__PURE__*/
+  function () {
+    function Dropdown(element, config) {
       this._element = element;
       this._popper = null;
       this._config = this._getConfig(config);
@@ -70528,18 +70509,19 @@ var Dropdown = function ($) {
       this._inNavbar = this._detectNavbar();
 
       this._addEventListeners();
-    }
+    } // getters
 
-    // getters
+
+    var _proto = Dropdown.prototype;
 
     // public
-
-    Dropdown.prototype.toggle = function toggle() {
+    _proto.toggle = function toggle() {
       if (this._element.disabled || $(this._element).hasClass(ClassName.DISABLED)) {
         return;
       }
 
       var parent = Dropdown._getParentFromElement(this._element);
+
       var isActive = $(this._menu).hasClass(ClassName.SHOW);
 
       Dropdown._clearMenus();
@@ -70552,135 +70534,147 @@ var Dropdown = function ($) {
         relatedTarget: this._element
       };
       var showEvent = $.Event(Event.SHOW, relatedTarget);
-
       $(parent).trigger(showEvent);
 
       if (showEvent.isDefaultPrevented()) {
         return;
       }
 
-      var element = this._element;
-      // for dropup with alignment we use the parent as popper container
+      var element = this._element; // for dropup with alignment we use the parent as popper container
+
       if ($(parent).hasClass(ClassName.DROPUP)) {
         if ($(this._menu).hasClass(ClassName.MENULEFT) || $(this._menu).hasClass(ClassName.MENURIGHT)) {
           element = parent;
         }
       }
-      this._popper = new Popper(element, this._menu, this._getPopperConfig());
 
-      // if this is a touch-enabled device we add extra
+      this._popper = new Popper(element, this._menu, this._getPopperConfig()); // if this is a touch-enabled device we add extra
       // empty mouseover listeners to the body's immediate children;
       // only needed because of broken event delegation on iOS
       // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+
       if ('ontouchstart' in document.documentElement && !$(parent).closest(Selector.NAVBAR_NAV).length) {
         $('body').children().on('mouseover', null, $.noop);
       }
 
       this._element.focus();
+
       this._element.setAttribute('aria-expanded', true);
 
       $(this._menu).toggleClass(ClassName.SHOW);
       $(parent).toggleClass(ClassName.SHOW).trigger($.Event(Event.SHOWN, relatedTarget));
     };
 
-    Dropdown.prototype.dispose = function dispose() {
+    _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
       $(this._element).off(EVENT_KEY);
       this._element = null;
       this._menu = null;
+
       if (this._popper !== null) {
         this._popper.destroy();
       }
+
       this._popper = null;
     };
 
-    Dropdown.prototype.update = function update() {
+    _proto.update = function update() {
       this._inNavbar = this._detectNavbar();
+
       if (this._popper !== null) {
         this._popper.scheduleUpdate();
       }
-    };
+    }; // private
 
-    // private
 
-    Dropdown.prototype._addEventListeners = function _addEventListeners() {
-      var _this9 = this;
+    _proto._addEventListeners = function _addEventListeners() {
+      var _this = this;
 
       $(this._element).on(Event.CLICK, function (event) {
         event.preventDefault();
         event.stopPropagation();
-        _this9.toggle();
+
+        _this.toggle();
       });
     };
 
-    Dropdown.prototype._getConfig = function _getConfig(config) {
-      var elementData = $(this._element).data();
-      if (elementData.placement !== undefined) {
-        elementData.placement = AttachmentMap[elementData.placement.toUpperCase()];
-      }
-
+    _proto._getConfig = function _getConfig(config) {
       config = $.extend({}, this.constructor.Default, $(this._element).data(), config);
-
       Util.typeCheckConfig(NAME, config, this.constructor.DefaultType);
-
       return config;
     };
 
-    Dropdown.prototype._getMenuElement = function _getMenuElement() {
+    _proto._getMenuElement = function _getMenuElement() {
       if (!this._menu) {
         var parent = Dropdown._getParentFromElement(this._element);
+
         this._menu = $(parent).find(Selector.MENU)[0];
       }
+
       return this._menu;
     };
 
-    Dropdown.prototype._getPlacement = function _getPlacement() {
+    _proto._getPlacement = function _getPlacement() {
       var $parentDropdown = $(this._element).parent();
-      var placement = this._config.placement;
+      var placement = AttachmentMap.BOTTOM; // Handle dropup
 
-      // Handle dropup
-      if ($parentDropdown.hasClass(ClassName.DROPUP) || this._config.placement === AttachmentMap.TOP) {
+      if ($parentDropdown.hasClass(ClassName.DROPUP)) {
         placement = AttachmentMap.TOP;
+
         if ($(this._menu).hasClass(ClassName.MENURIGHT)) {
           placement = AttachmentMap.TOPEND;
         }
       } else if ($(this._menu).hasClass(ClassName.MENURIGHT)) {
         placement = AttachmentMap.BOTTOMEND;
       }
+
       return placement;
     };
 
-    Dropdown.prototype._detectNavbar = function _detectNavbar() {
+    _proto._detectNavbar = function _detectNavbar() {
       return $(this._element).closest('.navbar').length > 0;
     };
 
-    Dropdown.prototype._getPopperConfig = function _getPopperConfig() {
+    _proto._getPopperConfig = function _getPopperConfig() {
+      var _this2 = this;
+
+      var offsetConf = {};
+
+      if (typeof this._config.offset === 'function') {
+        offsetConf.fn = function (data) {
+          data.offsets = $.extend({}, data.offsets, _this2._config.offset(data.offsets) || {});
+          return data;
+        };
+      } else {
+        offsetConf.offset = this._config.offset;
+      }
+
       var popperConfig = {
         placement: this._getPlacement(),
         modifiers: {
-          offset: {
-            offset: this._config.offset
-          },
+          offset: offsetConf,
           flip: {
             enabled: this._config.flip
           }
-        }
+        } // Disable Popper.js for Dropdown in Navbar
 
-        // Disable Popper.js for Dropdown in Navbar
-      };if (this._inNavbar) {
+      };
+
+      if (this._inNavbar) {
         popperConfig.modifiers.applyStyle = {
           enabled: !this._inNavbar
         };
       }
-      return popperConfig;
-    };
 
-    // static
+      return popperConfig;
+    }; // static
+
 
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY);
-        var _config = (typeof config === 'undefined' ? 'undefined' : _typeof(config)) === 'object' ? config : null;
+
+        var _config = typeof config === 'object' ? config : null;
 
         if (!data) {
           data = new Dropdown(this, _config);
@@ -70688,9 +70682,10 @@ var Dropdown = function ($) {
         }
 
         if (typeof config === 'string') {
-          if (data[config] === undefined) {
-            throw new Error('No method named "' + config + '"');
+          if (typeof data[config] === 'undefined') {
+            throw new Error("No method named \"" + config + "\"");
           }
+
           data[config]();
         }
       });
@@ -70702,8 +70697,10 @@ var Dropdown = function ($) {
       }
 
       var toggles = $.makeArray($(Selector.DATA_TOGGLE));
+
       for (var i = 0; i < toggles.length; i++) {
         var parent = Dropdown._getParentFromElement(toggles[i]);
+
         var context = $(toggles[i]).data(DATA_KEY);
         var relatedTarget = {
           relatedTarget: toggles[i]
@@ -70714,6 +70711,7 @@ var Dropdown = function ($) {
         }
 
         var dropdownMenu = context._menu;
+
         if (!$(parent).hasClass(ClassName.SHOW)) {
           continue;
         }
@@ -70724,25 +70722,25 @@ var Dropdown = function ($) {
 
         var hideEvent = $.Event(Event.HIDE, relatedTarget);
         $(parent).trigger(hideEvent);
+
         if (hideEvent.isDefaultPrevented()) {
           continue;
-        }
-
-        // if this is a touch-enabled device we remove the extra
+        } // if this is a touch-enabled device we remove the extra
         // empty mouseover listeners we added for iOS support
+
+
         if ('ontouchstart' in document.documentElement) {
           $('body').children().off('mouseover', null, $.noop);
         }
 
         toggles[i].setAttribute('aria-expanded', 'false');
-
         $(dropdownMenu).removeClass(ClassName.SHOW);
         $(parent).removeClass(ClassName.SHOW).trigger($.Event(Event.HIDDEN, relatedTarget));
       }
     };
 
     Dropdown._getParentFromElement = function _getParentFromElement(element) {
-      var parent = void 0;
+      var parent;
       var selector = Util.getSelectorFromElement(element);
 
       if (selector) {
@@ -70765,10 +70763,10 @@ var Dropdown = function ($) {
       }
 
       var parent = Dropdown._getParentFromElement(this);
+
       var isActive = $(parent).hasClass(ClassName.SHOW);
 
       if (!isActive && (event.which !== ESCAPE_KEYCODE || event.which !== SPACE_KEYCODE) || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
-
         if (event.which === ESCAPE_KEYCODE) {
           var toggle = $(parent).find(Selector.DATA_TOGGLE)[0];
           $(toggle).trigger('focus');
@@ -70803,40 +70801,39 @@ var Dropdown = function ($) {
       items[index].focus();
     };
 
-    _createClass(Dropdown, null, [{
-      key: 'VERSION',
+    createClass(Dropdown, null, [{
+      key: "VERSION",
       get: function get() {
         return VERSION;
       }
     }, {
-      key: 'Default',
+      key: "Default",
       get: function get() {
         return Default;
       }
     }, {
-      key: 'DefaultType',
+      key: "DefaultType",
       get: function get() {
         return DefaultType;
       }
     }]);
-
     return Dropdown;
   }();
-
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
 
-  $(document).on(Event.KEYDOWN_DATA_API, Selector.DATA_TOGGLE, Dropdown._dataApiKeydownHandler).on(Event.KEYDOWN_DATA_API, Selector.MENU, Dropdown._dataApiKeydownHandler).on(Event.CLICK_DATA_API + ' ' + Event.KEYUP_DATA_API, Dropdown._clearMenus).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
+
+  $(document).on(Event.KEYDOWN_DATA_API, Selector.DATA_TOGGLE, Dropdown._dataApiKeydownHandler).on(Event.KEYDOWN_DATA_API, Selector.MENU, Dropdown._dataApiKeydownHandler).on(Event.CLICK_DATA_API + " " + Event.KEYUP_DATA_API, Dropdown._clearMenus).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     event.preventDefault();
     event.stopPropagation();
+
     Dropdown._jQueryInterface.call($(this), 'toggle');
   }).on(Event.CLICK_DATA_API, Selector.FORM_CHILD, function (e) {
     e.stopPropagation();
   });
-
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -70845,33 +70842,32 @@ var Dropdown = function ($) {
 
   $.fn[NAME] = Dropdown._jQueryInterface;
   $.fn[NAME].Constructor = Dropdown;
+
   $.fn[NAME].noConflict = function () {
     $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Dropdown._jQueryInterface;
   };
 
   return Dropdown;
-}(jQuery);
+}($, Popper);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): modal.js
+ * Bootstrap (v4.0.0-beta.2): modal.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var Modal = function ($) {
-
+var Modal = function () {
   /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
-
   var NAME = 'modal';
-  var VERSION = '4.0.0-beta';
+  var VERSION = '4.0.0-beta.2';
   var DATA_KEY = 'bs.modal';
-  var EVENT_KEY = '.' + DATA_KEY;
+  var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var TRANSITION_DURATION = 300;
@@ -70884,28 +70880,25 @@ var Modal = function ($) {
     focus: true,
     show: true
   };
-
   var DefaultType = {
     backdrop: '(boolean|string)',
     keyboard: 'boolean',
     focus: 'boolean',
     show: 'boolean'
   };
-
   var Event = {
-    HIDE: 'hide' + EVENT_KEY,
-    HIDDEN: 'hidden' + EVENT_KEY,
-    SHOW: 'show' + EVENT_KEY,
-    SHOWN: 'shown' + EVENT_KEY,
-    FOCUSIN: 'focusin' + EVENT_KEY,
-    RESIZE: 'resize' + EVENT_KEY,
-    CLICK_DISMISS: 'click.dismiss' + EVENT_KEY,
-    KEYDOWN_DISMISS: 'keydown.dismiss' + EVENT_KEY,
-    MOUSEUP_DISMISS: 'mouseup.dismiss' + EVENT_KEY,
-    MOUSEDOWN_DISMISS: 'mousedown.dismiss' + EVENT_KEY,
-    CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY
+    HIDE: "hide" + EVENT_KEY,
+    HIDDEN: "hidden" + EVENT_KEY,
+    SHOW: "show" + EVENT_KEY,
+    SHOWN: "shown" + EVENT_KEY,
+    FOCUSIN: "focusin" + EVENT_KEY,
+    RESIZE: "resize" + EVENT_KEY,
+    CLICK_DISMISS: "click.dismiss" + EVENT_KEY,
+    KEYDOWN_DISMISS: "keydown.dismiss" + EVENT_KEY,
+    MOUSEUP_DISMISS: "mouseup.dismiss" + EVENT_KEY,
+    MOUSEDOWN_DISMISS: "mousedown.dismiss" + EVENT_KEY,
+    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-
   var ClassName = {
     SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
     BACKDROP: 'modal-backdrop',
@@ -70913,14 +70906,13 @@ var Modal = function ($) {
     FADE: 'fade',
     SHOW: 'show'
   };
-
   var Selector = {
     DIALOG: '.modal-dialog',
     DATA_TOGGLE: '[data-toggle="modal"]',
     DATA_DISMISS: '[data-dismiss="modal"]',
     FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
+    STICKY_CONTENT: '.sticky-top',
     NAVBAR_TOGGLER: '.navbar-toggler'
-
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -70928,10 +70920,11 @@ var Modal = function ($) {
      */
 
   };
-  var Modal = function () {
-    function Modal(element, config) {
-      _classCallCheck(this, Modal);
 
+  var Modal =
+  /*#__PURE__*/
+  function () {
+    function Modal(element, config) {
       this._config = this._getConfig(config);
       this._element = element;
       this._dialog = $(element).find(Selector.DIALOG)[0];
@@ -70941,20 +70934,20 @@ var Modal = function ($) {
       this._ignoreBackdropClick = false;
       this._originalBodyPadding = 0;
       this._scrollbarWidth = 0;
-    }
+    } // getters
 
-    // getters
+
+    var _proto = Modal.prototype;
 
     // public
-
-    Modal.prototype.toggle = function toggle(relatedTarget) {
+    _proto.toggle = function toggle(relatedTarget) {
       return this._isShown ? this.hide() : this.show(relatedTarget);
     };
 
-    Modal.prototype.show = function show(relatedTarget) {
-      var _this10 = this;
+    _proto.show = function show(relatedTarget) {
+      var _this = this;
 
-      if (this._isTransitioning) {
+      if (this._isTransitioning || this._isShown) {
         return;
       }
 
@@ -70965,7 +70958,6 @@ var Modal = function ($) {
       var showEvent = $.Event(Event.SHOW, {
         relatedTarget: relatedTarget
       });
-
       $(this._element).trigger(showEvent);
 
       if (this._isShown || showEvent.isDefaultPrevented()) {
@@ -70975,32 +70967,35 @@ var Modal = function ($) {
       this._isShown = true;
 
       this._checkScrollbar();
+
       this._setScrollbar();
+
+      this._adjustDialog();
 
       $(document.body).addClass(ClassName.OPEN);
 
       this._setEscapeEvent();
+
       this._setResizeEvent();
 
       $(this._element).on(Event.CLICK_DISMISS, Selector.DATA_DISMISS, function (event) {
-        return _this10.hide(event);
+        return _this.hide(event);
       });
-
       $(this._dialog).on(Event.MOUSEDOWN_DISMISS, function () {
-        $(_this10._element).one(Event.MOUSEUP_DISMISS, function (event) {
-          if ($(event.target).is(_this10._element)) {
-            _this10._ignoreBackdropClick = true;
+        $(_this._element).one(Event.MOUSEUP_DISMISS, function (event) {
+          if ($(event.target).is(_this._element)) {
+            _this._ignoreBackdropClick = true;
           }
         });
       });
 
       this._showBackdrop(function () {
-        return _this10._showElement(relatedTarget);
+        return _this._showElement(relatedTarget);
       });
     };
 
-    Modal.prototype.hide = function hide(event) {
-      var _this11 = this;
+    _proto.hide = function hide(event) {
+      var _this2 = this;
 
       if (event) {
         event.preventDefault();
@@ -71010,14 +71005,7 @@ var Modal = function ($) {
         return;
       }
 
-      var transition = Util.supportsTransitionEnd() && $(this._element).hasClass(ClassName.FADE);
-
-      if (transition) {
-        this._isTransitioning = true;
-      }
-
       var hideEvent = $.Event(Event.HIDE);
-
       $(this._element).trigger(hideEvent);
 
       if (!this._isShown || hideEvent.isDefaultPrevented()) {
@@ -71025,32 +71013,33 @@ var Modal = function ($) {
       }
 
       this._isShown = false;
+      var transition = Util.supportsTransitionEnd() && $(this._element).hasClass(ClassName.FADE);
+
+      if (transition) {
+        this._isTransitioning = true;
+      }
 
       this._setEscapeEvent();
+
       this._setResizeEvent();
 
       $(document).off(Event.FOCUSIN);
-
       $(this._element).removeClass(ClassName.SHOW);
-
       $(this._element).off(Event.CLICK_DISMISS);
       $(this._dialog).off(Event.MOUSEDOWN_DISMISS);
 
       if (transition) {
-
         $(this._element).one(Util.TRANSITION_END, function (event) {
-          return _this11._hideModal(event);
+          return _this2._hideModal(event);
         }).emulateTransitionEnd(TRANSITION_DURATION);
       } else {
         this._hideModal();
       }
     };
 
-    Modal.prototype.dispose = function dispose() {
+    _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
-
       $(window, document, this._element, this._backdrop).off(EVENT_KEY);
-
       this._config = null;
       this._element = null;
       this._dialog = null;
@@ -71061,20 +71050,19 @@ var Modal = function ($) {
       this._scrollbarWidth = null;
     };
 
-    Modal.prototype.handleUpdate = function handleUpdate() {
+    _proto.handleUpdate = function handleUpdate() {
       this._adjustDialog();
-    };
+    }; // private
 
-    // private
 
-    Modal.prototype._getConfig = function _getConfig(config) {
+    _proto._getConfig = function _getConfig(config) {
       config = $.extend({}, Default, config);
       Util.typeCheckConfig(NAME, config, DefaultType);
       return config;
     };
 
-    Modal.prototype._showElement = function _showElement(relatedTarget) {
-      var _this12 = this;
+    _proto._showElement = function _showElement(relatedTarget) {
+      var _this3 = this;
 
       var transition = Util.supportsTransitionEnd() && $(this._element).hasClass(ClassName.FADE);
 
@@ -71084,7 +71072,9 @@ var Modal = function ($) {
       }
 
       this._element.style.display = 'block';
+
       this._element.removeAttribute('aria-hidden');
+
       this._element.scrollTop = 0;
 
       if (transition) {
@@ -71102,11 +71092,12 @@ var Modal = function ($) {
       });
 
       var transitionComplete = function transitionComplete() {
-        if (_this12._config.focus) {
-          _this12._element.focus();
+        if (_this3._config.focus) {
+          _this3._element.focus();
         }
-        _this12._isTransitioning = false;
-        $(_this12._element).trigger(shownEvent);
+
+        _this3._isTransitioning = false;
+        $(_this3._element).trigger(shownEvent);
       };
 
       if (transition) {
@@ -71116,25 +71107,26 @@ var Modal = function ($) {
       }
     };
 
-    Modal.prototype._enforceFocus = function _enforceFocus() {
-      var _this13 = this;
+    _proto._enforceFocus = function _enforceFocus() {
+      var _this4 = this;
 
       $(document).off(Event.FOCUSIN) // guard against infinite focus loop
       .on(Event.FOCUSIN, function (event) {
-        if (document !== event.target && _this13._element !== event.target && !$(_this13._element).has(event.target).length) {
-          _this13._element.focus();
+        if (document !== event.target && _this4._element !== event.target && !$(_this4._element).has(event.target).length) {
+          _this4._element.focus();
         }
       });
     };
 
-    Modal.prototype._setEscapeEvent = function _setEscapeEvent() {
-      var _this14 = this;
+    _proto._setEscapeEvent = function _setEscapeEvent() {
+      var _this5 = this;
 
       if (this._isShown && this._config.keyboard) {
         $(this._element).on(Event.KEYDOWN_DISMISS, function (event) {
           if (event.which === ESCAPE_KEYCODE) {
             event.preventDefault();
-            _this14.hide();
+
+            _this5.hide();
           }
         });
       } else if (!this._isShown) {
@@ -71142,47 +71134,52 @@ var Modal = function ($) {
       }
     };
 
-    Modal.prototype._setResizeEvent = function _setResizeEvent() {
-      var _this15 = this;
+    _proto._setResizeEvent = function _setResizeEvent() {
+      var _this6 = this;
 
       if (this._isShown) {
         $(window).on(Event.RESIZE, function (event) {
-          return _this15.handleUpdate(event);
+          return _this6.handleUpdate(event);
         });
       } else {
         $(window).off(Event.RESIZE);
       }
     };
 
-    Modal.prototype._hideModal = function _hideModal() {
-      var _this16 = this;
+    _proto._hideModal = function _hideModal() {
+      var _this7 = this;
 
       this._element.style.display = 'none';
+
       this._element.setAttribute('aria-hidden', true);
+
       this._isTransitioning = false;
+
       this._showBackdrop(function () {
         $(document.body).removeClass(ClassName.OPEN);
-        _this16._resetAdjustments();
-        _this16._resetScrollbar();
-        $(_this16._element).trigger(Event.HIDDEN);
+
+        _this7._resetAdjustments();
+
+        _this7._resetScrollbar();
+
+        $(_this7._element).trigger(Event.HIDDEN);
       });
     };
 
-    Modal.prototype._removeBackdrop = function _removeBackdrop() {
+    _proto._removeBackdrop = function _removeBackdrop() {
       if (this._backdrop) {
         $(this._backdrop).remove();
         this._backdrop = null;
       }
     };
 
-    Modal.prototype._showBackdrop = function _showBackdrop(callback) {
-      var _this17 = this;
+    _proto._showBackdrop = function _showBackdrop(callback) {
+      var _this8 = this;
 
       var animate = $(this._element).hasClass(ClassName.FADE) ? ClassName.FADE : '';
 
       if (this._isShown && this._config.backdrop) {
         var doAnimate = Util.supportsTransitionEnd() && animate;
-
         this._backdrop = document.createElement('div');
         this._backdrop.className = ClassName.BACKDROP;
 
@@ -71191,19 +71188,20 @@ var Modal = function ($) {
         }
 
         $(this._backdrop).appendTo(document.body);
-
         $(this._element).on(Event.CLICK_DISMISS, function (event) {
-          if (_this17._ignoreBackdropClick) {
-            _this17._ignoreBackdropClick = false;
+          if (_this8._ignoreBackdropClick) {
+            _this8._ignoreBackdropClick = false;
             return;
           }
+
           if (event.target !== event.currentTarget) {
             return;
           }
-          if (_this17._config.backdrop === 'static') {
-            _this17._element.focus();
+
+          if (_this8._config.backdrop === 'static') {
+            _this8._element.focus();
           } else {
-            _this17.hide();
+            _this8.hide();
           }
         });
 
@@ -71227,7 +71225,8 @@ var Modal = function ($) {
         $(this._backdrop).removeClass(ClassName.SHOW);
 
         var callbackRemove = function callbackRemove() {
-          _this17._removeBackdrop();
+          _this8._removeBackdrop();
+
           if (callback) {
             callback();
           }
@@ -71241,88 +71240,92 @@ var Modal = function ($) {
       } else if (callback) {
         callback();
       }
-    };
-
-    // ----------------------------------------------------------------------
+    }; // ----------------------------------------------------------------------
     // the following methods are used to handle overflowing modals
     // todo (fat): these should probably be refactored out of modal.js
     // ----------------------------------------------------------------------
 
-    Modal.prototype._adjustDialog = function _adjustDialog() {
+
+    _proto._adjustDialog = function _adjustDialog() {
       var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
 
       if (!this._isBodyOverflowing && isModalOverflowing) {
-        this._element.style.paddingLeft = this._scrollbarWidth + 'px';
+        this._element.style.paddingLeft = this._scrollbarWidth + "px";
       }
 
       if (this._isBodyOverflowing && !isModalOverflowing) {
-        this._element.style.paddingRight = this._scrollbarWidth + 'px';
+        this._element.style.paddingRight = this._scrollbarWidth + "px";
       }
     };
 
-    Modal.prototype._resetAdjustments = function _resetAdjustments() {
+    _proto._resetAdjustments = function _resetAdjustments() {
       this._element.style.paddingLeft = '';
       this._element.style.paddingRight = '';
     };
 
-    Modal.prototype._checkScrollbar = function _checkScrollbar() {
-      this._isBodyOverflowing = document.body.clientWidth < window.innerWidth;
+    _proto._checkScrollbar = function _checkScrollbar() {
+      var rect = document.body.getBoundingClientRect();
+      this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
       this._scrollbarWidth = this._getScrollbarWidth();
     };
 
-    Modal.prototype._setScrollbar = function _setScrollbar() {
-      var _this18 = this;
+    _proto._setScrollbar = function _setScrollbar() {
+      var _this9 = this;
 
       if (this._isBodyOverflowing) {
         // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
         //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-
         // Adjust fixed content padding
         $(Selector.FIXED_CONTENT).each(function (index, element) {
           var actualPadding = $(element)[0].style.paddingRight;
           var calculatedPadding = $(element).css('padding-right');
-          $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this18._scrollbarWidth + 'px');
-        });
+          $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this9._scrollbarWidth + "px");
+        }); // Adjust sticky content margin
 
-        // Adjust navbar-toggler margin
+        $(Selector.STICKY_CONTENT).each(function (index, element) {
+          var actualMargin = $(element)[0].style.marginRight;
+          var calculatedMargin = $(element).css('margin-right');
+          $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
+        }); // Adjust navbar-toggler margin
+
         $(Selector.NAVBAR_TOGGLER).each(function (index, element) {
           var actualMargin = $(element)[0].style.marginRight;
           var calculatedMargin = $(element).css('margin-right');
-          $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) + _this18._scrollbarWidth + 'px');
-        });
+          $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) + _this9._scrollbarWidth + "px");
+        }); // Adjust body padding
 
-        // Adjust body padding
         var actualPadding = document.body.style.paddingRight;
         var calculatedPadding = $('body').css('padding-right');
-        $('body').data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + 'px');
+        $('body').data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
       }
     };
 
-    Modal.prototype._resetScrollbar = function _resetScrollbar() {
+    _proto._resetScrollbar = function _resetScrollbar() {
       // Restore fixed content padding
       $(Selector.FIXED_CONTENT).each(function (index, element) {
         var padding = $(element).data('padding-right');
+
         if (typeof padding !== 'undefined') {
           $(element).css('padding-right', padding).removeData('padding-right');
         }
-      });
+      }); // Restore sticky content and navbar-toggler margin
 
-      // Restore navbar-toggler margin
-      $(Selector.NAVBAR_TOGGLER).each(function (index, element) {
+      $(Selector.STICKY_CONTENT + ", " + Selector.NAVBAR_TOGGLER).each(function (index, element) {
         var margin = $(element).data('margin-right');
+
         if (typeof margin !== 'undefined') {
           $(element).css('margin-right', margin).removeData('margin-right');
         }
-      });
+      }); // Restore body padding
 
-      // Restore body padding
       var padding = $('body').data('padding-right');
+
       if (typeof padding !== 'undefined') {
         $('body').css('padding-right', padding).removeData('padding-right');
       }
     };
 
-    Modal.prototype._getScrollbarWidth = function _getScrollbarWidth() {
+    _proto._getScrollbarWidth = function _getScrollbarWidth() {
       // thx d.walsh
       var scrollDiv = document.createElement('div');
       scrollDiv.className = ClassName.SCROLLBAR_MEASURER;
@@ -71330,14 +71333,14 @@ var Modal = function ($) {
       var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
       document.body.removeChild(scrollDiv);
       return scrollbarWidth;
-    };
+    }; // static
 
-    // static
 
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY);
-        var _config = $.extend({}, Modal.Default, $(this).data(), (typeof config === 'undefined' ? 'undefined' : _typeof(config)) === 'object' && config);
+
+        var _config = $.extend({}, Modal.Default, $(this).data(), typeof config === 'object' && config);
 
         if (!data) {
           data = new Modal(this, _config);
@@ -71345,9 +71348,10 @@ var Modal = function ($) {
         }
 
         if (typeof config === 'string') {
-          if (data[config] === undefined) {
-            throw new Error('No method named "' + config + '"');
+          if (typeof data[config] === 'undefined') {
+            throw new Error("No method named \"" + config + "\"");
           }
+
           data[config](relatedTarget);
         } else if (_config.show) {
           data.show(relatedTarget);
@@ -71355,31 +71359,30 @@ var Modal = function ($) {
       });
     };
 
-    _createClass(Modal, null, [{
-      key: 'VERSION',
+    createClass(Modal, null, [{
+      key: "VERSION",
       get: function get() {
         return VERSION;
       }
     }, {
-      key: 'Default',
+      key: "Default",
       get: function get() {
         return Default;
       }
     }]);
-
     return Modal;
   }();
-
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
 
-  $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
-    var _this19 = this;
 
-    var target = void 0;
+  $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
+    var _this10 = this;
+
+    var target;
     var selector = Util.getSelectorFromElement(this);
 
     if (selector) {
@@ -71399,15 +71402,14 @@ var Modal = function ($) {
       }
 
       $target.one(Event.HIDDEN, function () {
-        if ($(_this19).is(':visible')) {
-          _this19.focus();
+        if ($(_this10).is(':visible')) {
+          _this10.focus();
         }
       });
     });
 
     Modal._jQueryInterface.call($(target), config, this);
   });
-
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -71416,75 +71418,108 @@ var Modal = function ($) {
 
   $.fn[NAME] = Modal._jQueryInterface;
   $.fn[NAME].Constructor = Modal;
+
   $.fn[NAME].noConflict = function () {
     $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Modal._jQueryInterface;
   };
 
   return Modal;
-}(jQuery);
+}($);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): scrollspy.js
+ * Bootstrap (v4.0.0-beta.2): tooltip.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var ScrollSpy = function ($) {
-
+var Tooltip = function () {
+  /**
+   * Check for Popper dependency
+   * Popper - https://popper.js.org
+   */
+  if (typeof Popper === 'undefined') {
+    throw new Error('Bootstrap tooltips require Popper.js (https://popper.js.org)');
+  }
   /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'scrollspy';
-  var VERSION = '4.0.0-beta';
-  var DATA_KEY = 'bs.scrollspy';
-  var EVENT_KEY = '.' + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
+
+  var NAME = 'tooltip';
+  var VERSION = '4.0.0-beta.2';
+  var DATA_KEY = 'bs.tooltip';
+  var EVENT_KEY = "." + DATA_KEY;
   var JQUERY_NO_CONFLICT = $.fn[NAME];
-
-  var Default = {
-    offset: 10,
-    method: 'auto',
-    target: ''
-  };
-
+  var TRANSITION_DURATION = 150;
+  var CLASS_PREFIX = 'bs-tooltip';
+  var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
   var DefaultType = {
-    offset: 'number',
-    method: 'string',
-    target: '(string|element)'
+    animation: 'boolean',
+    template: 'string',
+    title: '(string|element|function)',
+    trigger: 'string',
+    delay: '(number|object)',
+    html: 'boolean',
+    selector: '(string|boolean)',
+    placement: '(string|function)',
+    offset: '(number|string)',
+    container: '(string|element|boolean)',
+    fallbackPlacement: '(string|array)'
   };
-
+  var AttachmentMap = {
+    AUTO: 'auto',
+    TOP: 'top',
+    RIGHT: 'right',
+    BOTTOM: 'bottom',
+    LEFT: 'left'
+  };
+  var Default = {
+    animation: true,
+    template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
+    trigger: 'hover focus',
+    title: '',
+    delay: 0,
+    html: false,
+    selector: false,
+    placement: 'top',
+    offset: 0,
+    container: false,
+    fallbackPlacement: 'flip'
+  };
+  var HoverState = {
+    SHOW: 'show',
+    OUT: 'out'
+  };
   var Event = {
-    ACTIVATE: 'activate' + EVENT_KEY,
-    SCROLL: 'scroll' + EVENT_KEY,
-    LOAD_DATA_API: 'load' + EVENT_KEY + DATA_API_KEY
+    HIDE: "hide" + EVENT_KEY,
+    HIDDEN: "hidden" + EVENT_KEY,
+    SHOW: "show" + EVENT_KEY,
+    SHOWN: "shown" + EVENT_KEY,
+    INSERTED: "inserted" + EVENT_KEY,
+    CLICK: "click" + EVENT_KEY,
+    FOCUSIN: "focusin" + EVENT_KEY,
+    FOCUSOUT: "focusout" + EVENT_KEY,
+    MOUSEENTER: "mouseenter" + EVENT_KEY,
+    MOUSELEAVE: "mouseleave" + EVENT_KEY
   };
-
   var ClassName = {
-    DROPDOWN_ITEM: 'dropdown-item',
-    DROPDOWN_MENU: 'dropdown-menu',
-    ACTIVE: 'active'
+    FADE: 'fade',
+    SHOW: 'show'
   };
-
   var Selector = {
-    DATA_SPY: '[data-spy="scroll"]',
-    ACTIVE: '.active',
-    NAV_LIST_GROUP: '.nav, .list-group',
-    NAV_LINKS: '.nav-link',
-    LIST_ITEMS: '.list-group-item',
-    DROPDOWN: '.dropdown',
-    DROPDOWN_ITEMS: '.dropdown-item',
-    DROPDOWN_TOGGLE: '.dropdown-toggle'
+    TOOLTIP: '.tooltip',
+    TOOLTIP_INNER: '.tooltip-inner',
+    ARROW: '.arrow'
   };
-
-  var OffsetMethod = {
-    OFFSET: 'offset',
-    POSITION: 'position'
-
+  var Trigger = {
+    HOVER: 'hover',
+    FOCUS: 'focus',
+    CLICK: 'click',
+    MANUAL: 'manual'
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -71492,51 +71527,852 @@ var ScrollSpy = function ($) {
      */
 
   };
-  var ScrollSpy = function () {
-    function ScrollSpy(element, config) {
-      var _this20 = this;
 
-      _classCallCheck(this, ScrollSpy);
+  var Tooltip =
+  /*#__PURE__*/
+  function () {
+    function Tooltip(element, config) {
+      // private
+      this._isEnabled = true;
+      this._timeout = 0;
+      this._hoverState = '';
+      this._activeTrigger = {};
+      this._popper = null; // protected
+
+      this.element = element;
+      this.config = this._getConfig(config);
+      this.tip = null;
+
+      this._setListeners();
+    } // getters
+
+
+    var _proto = Tooltip.prototype;
+
+    // public
+    _proto.enable = function enable() {
+      this._isEnabled = true;
+    };
+
+    _proto.disable = function disable() {
+      this._isEnabled = false;
+    };
+
+    _proto.toggleEnabled = function toggleEnabled() {
+      this._isEnabled = !this._isEnabled;
+    };
+
+    _proto.toggle = function toggle(event) {
+      if (!this._isEnabled) {
+        return;
+      }
+
+      if (event) {
+        var dataKey = this.constructor.DATA_KEY;
+        var context = $(event.currentTarget).data(dataKey);
+
+        if (!context) {
+          context = new this.constructor(event.currentTarget, this._getDelegateConfig());
+          $(event.currentTarget).data(dataKey, context);
+        }
+
+        context._activeTrigger.click = !context._activeTrigger.click;
+
+        if (context._isWithActiveTrigger()) {
+          context._enter(null, context);
+        } else {
+          context._leave(null, context);
+        }
+      } else {
+        if ($(this.getTipElement()).hasClass(ClassName.SHOW)) {
+          this._leave(null, this);
+
+          return;
+        }
+
+        this._enter(null, this);
+      }
+    };
+
+    _proto.dispose = function dispose() {
+      clearTimeout(this._timeout);
+      $.removeData(this.element, this.constructor.DATA_KEY);
+      $(this.element).off(this.constructor.EVENT_KEY);
+      $(this.element).closest('.modal').off('hide.bs.modal');
+
+      if (this.tip) {
+        $(this.tip).remove();
+      }
+
+      this._isEnabled = null;
+      this._timeout = null;
+      this._hoverState = null;
+      this._activeTrigger = null;
+
+      if (this._popper !== null) {
+        this._popper.destroy();
+      }
+
+      this._popper = null;
+      this.element = null;
+      this.config = null;
+      this.tip = null;
+    };
+
+    _proto.show = function show() {
+      var _this = this;
+
+      if ($(this.element).css('display') === 'none') {
+        throw new Error('Please use show on visible elements');
+      }
+
+      var showEvent = $.Event(this.constructor.Event.SHOW);
+
+      if (this.isWithContent() && this._isEnabled) {
+        $(this.element).trigger(showEvent);
+        var isInTheDom = $.contains(this.element.ownerDocument.documentElement, this.element);
+
+        if (showEvent.isDefaultPrevented() || !isInTheDom) {
+          return;
+        }
+
+        var tip = this.getTipElement();
+        var tipId = Util.getUID(this.constructor.NAME);
+        tip.setAttribute('id', tipId);
+        this.element.setAttribute('aria-describedby', tipId);
+        this.setContent();
+
+        if (this.config.animation) {
+          $(tip).addClass(ClassName.FADE);
+        }
+
+        var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
+
+        var attachment = this._getAttachment(placement);
+
+        this.addAttachmentClass(attachment);
+        var container = this.config.container === false ? document.body : $(this.config.container);
+        $(tip).data(this.constructor.DATA_KEY, this);
+
+        if (!$.contains(this.element.ownerDocument.documentElement, this.tip)) {
+          $(tip).appendTo(container);
+        }
+
+        $(this.element).trigger(this.constructor.Event.INSERTED);
+        this._popper = new Popper(this.element, tip, {
+          placement: attachment,
+          modifiers: {
+            offset: {
+              offset: this.config.offset
+            },
+            flip: {
+              behavior: this.config.fallbackPlacement
+            },
+            arrow: {
+              element: Selector.ARROW
+            }
+          },
+          onCreate: function onCreate(data) {
+            if (data.originalPlacement !== data.placement) {
+              _this._handlePopperPlacementChange(data);
+            }
+          },
+          onUpdate: function onUpdate(data) {
+            _this._handlePopperPlacementChange(data);
+          }
+        });
+        $(tip).addClass(ClassName.SHOW); // if this is a touch-enabled device we add extra
+        // empty mouseover listeners to the body's immediate children;
+        // only needed because of broken event delegation on iOS
+        // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+
+        if ('ontouchstart' in document.documentElement) {
+          $('body').children().on('mouseover', null, $.noop);
+        }
+
+        var complete = function complete() {
+          if (_this.config.animation) {
+            _this._fixTransition();
+          }
+
+          var prevHoverState = _this._hoverState;
+          _this._hoverState = null;
+          $(_this.element).trigger(_this.constructor.Event.SHOWN);
+
+          if (prevHoverState === HoverState.OUT) {
+            _this._leave(null, _this);
+          }
+        };
+
+        if (Util.supportsTransitionEnd() && $(this.tip).hasClass(ClassName.FADE)) {
+          $(this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(Tooltip._TRANSITION_DURATION);
+        } else {
+          complete();
+        }
+      }
+    };
+
+    _proto.hide = function hide(callback) {
+      var _this2 = this;
+
+      var tip = this.getTipElement();
+      var hideEvent = $.Event(this.constructor.Event.HIDE);
+
+      var complete = function complete() {
+        if (_this2._hoverState !== HoverState.SHOW && tip.parentNode) {
+          tip.parentNode.removeChild(tip);
+        }
+
+        _this2._cleanTipClass();
+
+        _this2.element.removeAttribute('aria-describedby');
+
+        $(_this2.element).trigger(_this2.constructor.Event.HIDDEN);
+
+        if (_this2._popper !== null) {
+          _this2._popper.destroy();
+        }
+
+        if (callback) {
+          callback();
+        }
+      };
+
+      $(this.element).trigger(hideEvent);
+
+      if (hideEvent.isDefaultPrevented()) {
+        return;
+      }
+
+      $(tip).removeClass(ClassName.SHOW); // if this is a touch-enabled device we remove the extra
+      // empty mouseover listeners we added for iOS support
+
+      if ('ontouchstart' in document.documentElement) {
+        $('body').children().off('mouseover', null, $.noop);
+      }
+
+      this._activeTrigger[Trigger.CLICK] = false;
+      this._activeTrigger[Trigger.FOCUS] = false;
+      this._activeTrigger[Trigger.HOVER] = false;
+
+      if (Util.supportsTransitionEnd() && $(this.tip).hasClass(ClassName.FADE)) {
+        $(tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
+      } else {
+        complete();
+      }
+
+      this._hoverState = '';
+    };
+
+    _proto.update = function update() {
+      if (this._popper !== null) {
+        this._popper.scheduleUpdate();
+      }
+    }; // protected
+
+
+    _proto.isWithContent = function isWithContent() {
+      return Boolean(this.getTitle());
+    };
+
+    _proto.addAttachmentClass = function addAttachmentClass(attachment) {
+      $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
+    };
+
+    _proto.getTipElement = function getTipElement() {
+      this.tip = this.tip || $(this.config.template)[0];
+      return this.tip;
+    };
+
+    _proto.setContent = function setContent() {
+      var $tip = $(this.getTipElement());
+      this.setElementContent($tip.find(Selector.TOOLTIP_INNER), this.getTitle());
+      $tip.removeClass(ClassName.FADE + " " + ClassName.SHOW);
+    };
+
+    _proto.setElementContent = function setElementContent($element, content) {
+      var html = this.config.html;
+
+      if (typeof content === 'object' && (content.nodeType || content.jquery)) {
+        // content is a DOM node or a jQuery
+        if (html) {
+          if (!$(content).parent().is($element)) {
+            $element.empty().append(content);
+          }
+        } else {
+          $element.text($(content).text());
+        }
+      } else {
+        $element[html ? 'html' : 'text'](content);
+      }
+    };
+
+    _proto.getTitle = function getTitle() {
+      var title = this.element.getAttribute('data-original-title');
+
+      if (!title) {
+        title = typeof this.config.title === 'function' ? this.config.title.call(this.element) : this.config.title;
+      }
+
+      return title;
+    }; // private
+
+
+    _proto._getAttachment = function _getAttachment(placement) {
+      return AttachmentMap[placement.toUpperCase()];
+    };
+
+    _proto._setListeners = function _setListeners() {
+      var _this3 = this;
+
+      var triggers = this.config.trigger.split(' ');
+      triggers.forEach(function (trigger) {
+        if (trigger === 'click') {
+          $(_this3.element).on(_this3.constructor.Event.CLICK, _this3.config.selector, function (event) {
+            return _this3.toggle(event);
+          });
+        } else if (trigger !== Trigger.MANUAL) {
+          var eventIn = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
+          var eventOut = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSELEAVE : _this3.constructor.Event.FOCUSOUT;
+          $(_this3.element).on(eventIn, _this3.config.selector, function (event) {
+            return _this3._enter(event);
+          }).on(eventOut, _this3.config.selector, function (event) {
+            return _this3._leave(event);
+          });
+        }
+
+        $(_this3.element).closest('.modal').on('hide.bs.modal', function () {
+          return _this3.hide();
+        });
+      });
+
+      if (this.config.selector) {
+        this.config = $.extend({}, this.config, {
+          trigger: 'manual',
+          selector: ''
+        });
+      } else {
+        this._fixTitle();
+      }
+    };
+
+    _proto._fixTitle = function _fixTitle() {
+      var titleType = typeof this.element.getAttribute('data-original-title');
+
+      if (this.element.getAttribute('title') || titleType !== 'string') {
+        this.element.setAttribute('data-original-title', this.element.getAttribute('title') || '');
+        this.element.setAttribute('title', '');
+      }
+    };
+
+    _proto._enter = function _enter(event, context) {
+      var dataKey = this.constructor.DATA_KEY;
+      context = context || $(event.currentTarget).data(dataKey);
+
+      if (!context) {
+        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
+        $(event.currentTarget).data(dataKey, context);
+      }
+
+      if (event) {
+        context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.HOVER] = true;
+      }
+
+      if ($(context.getTipElement()).hasClass(ClassName.SHOW) || context._hoverState === HoverState.SHOW) {
+        context._hoverState = HoverState.SHOW;
+        return;
+      }
+
+      clearTimeout(context._timeout);
+      context._hoverState = HoverState.SHOW;
+
+      if (!context.config.delay || !context.config.delay.show) {
+        context.show();
+        return;
+      }
+
+      context._timeout = setTimeout(function () {
+        if (context._hoverState === HoverState.SHOW) {
+          context.show();
+        }
+      }, context.config.delay.show);
+    };
+
+    _proto._leave = function _leave(event, context) {
+      var dataKey = this.constructor.DATA_KEY;
+      context = context || $(event.currentTarget).data(dataKey);
+
+      if (!context) {
+        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
+        $(event.currentTarget).data(dataKey, context);
+      }
+
+      if (event) {
+        context._activeTrigger[event.type === 'focusout' ? Trigger.FOCUS : Trigger.HOVER] = false;
+      }
+
+      if (context._isWithActiveTrigger()) {
+        return;
+      }
+
+      clearTimeout(context._timeout);
+      context._hoverState = HoverState.OUT;
+
+      if (!context.config.delay || !context.config.delay.hide) {
+        context.hide();
+        return;
+      }
+
+      context._timeout = setTimeout(function () {
+        if (context._hoverState === HoverState.OUT) {
+          context.hide();
+        }
+      }, context.config.delay.hide);
+    };
+
+    _proto._isWithActiveTrigger = function _isWithActiveTrigger() {
+      for (var trigger in this._activeTrigger) {
+        if (this._activeTrigger[trigger]) {
+          return true;
+        }
+      }
+
+      return false;
+    };
+
+    _proto._getConfig = function _getConfig(config) {
+      config = $.extend({}, this.constructor.Default, $(this.element).data(), config);
+
+      if (typeof config.delay === 'number') {
+        config.delay = {
+          show: config.delay,
+          hide: config.delay
+        };
+      }
+
+      if (typeof config.title === 'number') {
+        config.title = config.title.toString();
+      }
+
+      if (typeof config.content === 'number') {
+        config.content = config.content.toString();
+      }
+
+      Util.typeCheckConfig(NAME, config, this.constructor.DefaultType);
+      return config;
+    };
+
+    _proto._getDelegateConfig = function _getDelegateConfig() {
+      var config = {};
+
+      if (this.config) {
+        for (var key in this.config) {
+          if (this.constructor.Default[key] !== this.config[key]) {
+            config[key] = this.config[key];
+          }
+        }
+      }
+
+      return config;
+    };
+
+    _proto._cleanTipClass = function _cleanTipClass() {
+      var $tip = $(this.getTipElement());
+      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
+
+      if (tabClass !== null && tabClass.length > 0) {
+        $tip.removeClass(tabClass.join(''));
+      }
+    };
+
+    _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(data) {
+      this._cleanTipClass();
+
+      this.addAttachmentClass(this._getAttachment(data.placement));
+    };
+
+    _proto._fixTransition = function _fixTransition() {
+      var tip = this.getTipElement();
+      var initConfigAnimation = this.config.animation;
+
+      if (tip.getAttribute('x-placement') !== null) {
+        return;
+      }
+
+      $(tip).removeClass(ClassName.FADE);
+      this.config.animation = false;
+      this.hide();
+      this.show();
+      this.config.animation = initConfigAnimation;
+    }; // static
+
+
+    Tooltip._jQueryInterface = function _jQueryInterface(config) {
+      return this.each(function () {
+        var data = $(this).data(DATA_KEY);
+
+        var _config = typeof config === 'object' && config;
+
+        if (!data && /dispose|hide/.test(config)) {
+          return;
+        }
+
+        if (!data) {
+          data = new Tooltip(this, _config);
+          $(this).data(DATA_KEY, data);
+        }
+
+        if (typeof config === 'string') {
+          if (typeof data[config] === 'undefined') {
+            throw new Error("No method named \"" + config + "\"");
+          }
+
+          data[config]();
+        }
+      });
+    };
+
+    createClass(Tooltip, null, [{
+      key: "VERSION",
+      get: function get() {
+        return VERSION;
+      }
+    }, {
+      key: "Default",
+      get: function get() {
+        return Default;
+      }
+    }, {
+      key: "NAME",
+      get: function get() {
+        return NAME;
+      }
+    }, {
+      key: "DATA_KEY",
+      get: function get() {
+        return DATA_KEY;
+      }
+    }, {
+      key: "Event",
+      get: function get() {
+        return Event;
+      }
+    }, {
+      key: "EVENT_KEY",
+      get: function get() {
+        return EVENT_KEY;
+      }
+    }, {
+      key: "DefaultType",
+      get: function get() {
+        return DefaultType;
+      }
+    }]);
+    return Tooltip;
+  }();
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+
+  $.fn[NAME] = Tooltip._jQueryInterface;
+  $.fn[NAME].Constructor = Tooltip;
+
+  $.fn[NAME].noConflict = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    return Tooltip._jQueryInterface;
+  };
+
+  return Tooltip;
+}($, Popper);
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0-beta.2): popover.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+var Popover = function () {
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
+  var NAME = 'popover';
+  var VERSION = '4.0.0-beta.2';
+  var DATA_KEY = 'bs.popover';
+  var EVENT_KEY = "." + DATA_KEY;
+  var JQUERY_NO_CONFLICT = $.fn[NAME];
+  var CLASS_PREFIX = 'bs-popover';
+  var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+  var Default = $.extend({}, Tooltip.Default, {
+    placement: 'right',
+    trigger: 'click',
+    content: '',
+    template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
+  });
+  var DefaultType = $.extend({}, Tooltip.DefaultType, {
+    content: '(string|element|function)'
+  });
+  var ClassName = {
+    FADE: 'fade',
+    SHOW: 'show'
+  };
+  var Selector = {
+    TITLE: '.popover-header',
+    CONTENT: '.popover-body'
+  };
+  var Event = {
+    HIDE: "hide" + EVENT_KEY,
+    HIDDEN: "hidden" + EVENT_KEY,
+    SHOW: "show" + EVENT_KEY,
+    SHOWN: "shown" + EVENT_KEY,
+    INSERTED: "inserted" + EVENT_KEY,
+    CLICK: "click" + EVENT_KEY,
+    FOCUSIN: "focusin" + EVENT_KEY,
+    FOCUSOUT: "focusout" + EVENT_KEY,
+    MOUSEENTER: "mouseenter" + EVENT_KEY,
+    MOUSELEAVE: "mouseleave" + EVENT_KEY
+    /**
+     * ------------------------------------------------------------------------
+     * Class Definition
+     * ------------------------------------------------------------------------
+     */
+
+  };
+
+  var Popover =
+  /*#__PURE__*/
+  function (_Tooltip) {
+    inheritsLoose(Popover, _Tooltip);
+
+    function Popover() {
+      return _Tooltip.apply(this, arguments) || this;
+    }
+
+    var _proto = Popover.prototype;
+
+    // overrides
+    _proto.isWithContent = function isWithContent() {
+      return this.getTitle() || this._getContent();
+    };
+
+    _proto.addAttachmentClass = function addAttachmentClass(attachment) {
+      $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
+    };
+
+    _proto.getTipElement = function getTipElement() {
+      this.tip = this.tip || $(this.config.template)[0];
+      return this.tip;
+    };
+
+    _proto.setContent = function setContent() {
+      var $tip = $(this.getTipElement()); // we use append for html objects to maintain js events
+
+      this.setElementContent($tip.find(Selector.TITLE), this.getTitle());
+      this.setElementContent($tip.find(Selector.CONTENT), this._getContent());
+      $tip.removeClass(ClassName.FADE + " " + ClassName.SHOW);
+    }; // private
+
+
+    _proto._getContent = function _getContent() {
+      return this.element.getAttribute('data-content') || (typeof this.config.content === 'function' ? this.config.content.call(this.element) : this.config.content);
+    };
+
+    _proto._cleanTipClass = function _cleanTipClass() {
+      var $tip = $(this.getTipElement());
+      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
+
+      if (tabClass !== null && tabClass.length > 0) {
+        $tip.removeClass(tabClass.join(''));
+      }
+    }; // static
+
+
+    Popover._jQueryInterface = function _jQueryInterface(config) {
+      return this.each(function () {
+        var data = $(this).data(DATA_KEY);
+
+        var _config = typeof config === 'object' ? config : null;
+
+        if (!data && /destroy|hide/.test(config)) {
+          return;
+        }
+
+        if (!data) {
+          data = new Popover(this, _config);
+          $(this).data(DATA_KEY, data);
+        }
+
+        if (typeof config === 'string') {
+          if (typeof data[config] === 'undefined') {
+            throw new Error("No method named \"" + config + "\"");
+          }
+
+          data[config]();
+        }
+      });
+    };
+
+    createClass(Popover, null, [{
+      key: "VERSION",
+      // getters
+      get: function get() {
+        return VERSION;
+      }
+    }, {
+      key: "Default",
+      get: function get() {
+        return Default;
+      }
+    }, {
+      key: "NAME",
+      get: function get() {
+        return NAME;
+      }
+    }, {
+      key: "DATA_KEY",
+      get: function get() {
+        return DATA_KEY;
+      }
+    }, {
+      key: "Event",
+      get: function get() {
+        return Event;
+      }
+    }, {
+      key: "EVENT_KEY",
+      get: function get() {
+        return EVENT_KEY;
+      }
+    }, {
+      key: "DefaultType",
+      get: function get() {
+        return DefaultType;
+      }
+    }]);
+    return Popover;
+  }(Tooltip);
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+
+  $.fn[NAME] = Popover._jQueryInterface;
+  $.fn[NAME].Constructor = Popover;
+
+  $.fn[NAME].noConflict = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    return Popover._jQueryInterface;
+  };
+
+  return Popover;
+}($);
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0-beta.2): scrollspy.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+var ScrollSpy = function () {
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
+  var NAME = 'scrollspy';
+  var VERSION = '4.0.0-beta.2';
+  var DATA_KEY = 'bs.scrollspy';
+  var EVENT_KEY = "." + DATA_KEY;
+  var DATA_API_KEY = '.data-api';
+  var JQUERY_NO_CONFLICT = $.fn[NAME];
+  var Default = {
+    offset: 10,
+    method: 'auto',
+    target: ''
+  };
+  var DefaultType = {
+    offset: 'number',
+    method: 'string',
+    target: '(string|element)'
+  };
+  var Event = {
+    ACTIVATE: "activate" + EVENT_KEY,
+    SCROLL: "scroll" + EVENT_KEY,
+    LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY
+  };
+  var ClassName = {
+    DROPDOWN_ITEM: 'dropdown-item',
+    DROPDOWN_MENU: 'dropdown-menu',
+    ACTIVE: 'active'
+  };
+  var Selector = {
+    DATA_SPY: '[data-spy="scroll"]',
+    ACTIVE: '.active',
+    NAV_LIST_GROUP: '.nav, .list-group',
+    NAV_LINKS: '.nav-link',
+    NAV_ITEMS: '.nav-item',
+    LIST_ITEMS: '.list-group-item',
+    DROPDOWN: '.dropdown',
+    DROPDOWN_ITEMS: '.dropdown-item',
+    DROPDOWN_TOGGLE: '.dropdown-toggle'
+  };
+  var OffsetMethod = {
+    OFFSET: 'offset',
+    POSITION: 'position'
+    /**
+     * ------------------------------------------------------------------------
+     * Class Definition
+     * ------------------------------------------------------------------------
+     */
+
+  };
+
+  var ScrollSpy =
+  /*#__PURE__*/
+  function () {
+    function ScrollSpy(element, config) {
+      var _this = this;
 
       this._element = element;
       this._scrollElement = element.tagName === 'BODY' ? window : element;
       this._config = this._getConfig(config);
-      this._selector = this._config.target + ' ' + Selector.NAV_LINKS + ',' + (this._config.target + ' ' + Selector.LIST_ITEMS + ',') + (this._config.target + ' ' + Selector.DROPDOWN_ITEMS);
+      this._selector = this._config.target + " " + Selector.NAV_LINKS + "," + (this._config.target + " " + Selector.LIST_ITEMS + ",") + (this._config.target + " " + Selector.DROPDOWN_ITEMS);
       this._offsets = [];
       this._targets = [];
       this._activeTarget = null;
       this._scrollHeight = 0;
-
       $(this._scrollElement).on(Event.SCROLL, function (event) {
-        return _this20._process(event);
+        return _this._process(event);
       });
-
       this.refresh();
-      this._process();
-    }
 
-    // getters
+      this._process();
+    } // getters
+
+
+    var _proto = ScrollSpy.prototype;
 
     // public
-
-    ScrollSpy.prototype.refresh = function refresh() {
-      var _this21 = this;
+    _proto.refresh = function refresh() {
+      var _this2 = this;
 
       var autoMethod = this._scrollElement !== this._scrollElement.window ? OffsetMethod.POSITION : OffsetMethod.OFFSET;
-
       var offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
-
       var offsetBase = offsetMethod === OffsetMethod.POSITION ? this._getScrollTop() : 0;
-
       this._offsets = [];
       this._targets = [];
-
       this._scrollHeight = this._getScrollHeight();
-
       var targets = $.makeArray($(this._selector));
-
       targets.map(function (element) {
-        var target = void 0;
+        var target;
         var targetSelector = Util.getSelectorFromElement(element);
 
         if (targetSelector) {
@@ -71545,26 +72381,28 @@ var ScrollSpy = function ($) {
 
         if (target) {
           var targetBCR = target.getBoundingClientRect();
+
           if (targetBCR.width || targetBCR.height) {
             // todo (fat): remove sketch reliance on jQuery position/offset
             return [$(target)[offsetMethod]().top + offsetBase, targetSelector];
           }
         }
+
         return null;
       }).filter(function (item) {
         return item;
       }).sort(function (a, b) {
         return a[0] - b[0];
       }).forEach(function (item) {
-        _this21._offsets.push(item[0]);
-        _this21._targets.push(item[1]);
+        _this2._offsets.push(item[0]);
+
+        _this2._targets.push(item[1]);
       });
     };
 
-    ScrollSpy.prototype.dispose = function dispose() {
+    _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
       $(this._scrollElement).off(EVENT_KEY);
-
       this._element = null;
       this._scrollElement = null;
       this._config = null;
@@ -71573,42 +72411,44 @@ var ScrollSpy = function ($) {
       this._targets = null;
       this._activeTarget = null;
       this._scrollHeight = null;
-    };
+    }; // private
 
-    // private
 
-    ScrollSpy.prototype._getConfig = function _getConfig(config) {
+    _proto._getConfig = function _getConfig(config) {
       config = $.extend({}, Default, config);
 
       if (typeof config.target !== 'string') {
         var id = $(config.target).attr('id');
+
         if (!id) {
           id = Util.getUID(NAME);
           $(config.target).attr('id', id);
         }
-        config.target = '#' + id;
+
+        config.target = "#" + id;
       }
 
       Util.typeCheckConfig(NAME, config, DefaultType);
-
       return config;
     };
 
-    ScrollSpy.prototype._getScrollTop = function _getScrollTop() {
+    _proto._getScrollTop = function _getScrollTop() {
       return this._scrollElement === window ? this._scrollElement.pageYOffset : this._scrollElement.scrollTop;
     };
 
-    ScrollSpy.prototype._getScrollHeight = function _getScrollHeight() {
+    _proto._getScrollHeight = function _getScrollHeight() {
       return this._scrollElement.scrollHeight || Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
     };
 
-    ScrollSpy.prototype._getOffsetHeight = function _getOffsetHeight() {
+    _proto._getOffsetHeight = function _getOffsetHeight() {
       return this._scrollElement === window ? window.innerHeight : this._scrollElement.getBoundingClientRect().height;
     };
 
-    ScrollSpy.prototype._process = function _process() {
+    _proto._process = function _process() {
       var scrollTop = this._getScrollTop() + this._config.offset;
+
       var scrollHeight = this._getScrollHeight();
+
       var maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
 
       if (this._scrollHeight !== scrollHeight) {
@@ -71621,17 +72461,20 @@ var ScrollSpy = function ($) {
         if (this._activeTarget !== target) {
           this._activate(target);
         }
+
         return;
       }
 
       if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
         this._activeTarget = null;
+
         this._clear();
+
         return;
       }
 
       for (var i = this._offsets.length; i--;) {
-        var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (this._offsets[i + 1] === undefined || scrollTop < this._offsets[i + 1]);
+        var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
 
         if (isActiveTarget) {
           this._activate(this._targets[i]);
@@ -71639,16 +72482,17 @@ var ScrollSpy = function ($) {
       }
     };
 
-    ScrollSpy.prototype._activate = function _activate(target) {
+    _proto._activate = function _activate(target) {
       this._activeTarget = target;
 
       this._clear();
 
-      var queries = this._selector.split(',');
-      queries = queries.map(function (selector) {
-        return selector + '[data-target="' + target + '"],' + (selector + '[href="' + target + '"]');
-      });
+      var queries = this._selector.split(','); // eslint-disable-next-line arrow-body-style
 
+
+      queries = queries.map(function (selector) {
+        return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + target + "\"]");
+      });
       var $link = $(queries.join(','));
 
       if ($link.hasClass(ClassName.DROPDOWN_ITEM)) {
@@ -71656,10 +72500,12 @@ var ScrollSpy = function ($) {
         $link.addClass(ClassName.ACTIVE);
       } else {
         // Set triggered link as active
-        $link.addClass(ClassName.ACTIVE);
-        // Set triggered links parents as active
+        $link.addClass(ClassName.ACTIVE); // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
-        $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_LINKS + ', ' + Selector.LIST_ITEMS).addClass(ClassName.ACTIVE);
+
+        $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_LINKS + ", " + Selector.LIST_ITEMS).addClass(ClassName.ACTIVE); // Handle special case when .nav-link is inside .nav-item
+
+        $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_ITEMS).children(Selector.NAV_LINKS).addClass(ClassName.ACTIVE);
       }
 
       $(this._scrollElement).trigger(Event.ACTIVATE, {
@@ -71667,16 +72513,16 @@ var ScrollSpy = function ($) {
       });
     };
 
-    ScrollSpy.prototype._clear = function _clear() {
+    _proto._clear = function _clear() {
       $(this._selector).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
-    };
+    }; // static
 
-    // static
 
     ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY);
-        var _config = (typeof config === 'undefined' ? 'undefined' : _typeof(config)) === 'object' && config;
+
+        var _config = typeof config === 'object' && config;
 
         if (!data) {
           data = new ScrollSpy(this, _config);
@@ -71684,44 +72530,44 @@ var ScrollSpy = function ($) {
         }
 
         if (typeof config === 'string') {
-          if (data[config] === undefined) {
-            throw new Error('No method named "' + config + '"');
+          if (typeof data[config] === 'undefined') {
+            throw new Error("No method named \"" + config + "\"");
           }
+
           data[config]();
         }
       });
     };
 
-    _createClass(ScrollSpy, null, [{
-      key: 'VERSION',
+    createClass(ScrollSpy, null, [{
+      key: "VERSION",
       get: function get() {
         return VERSION;
       }
     }, {
-      key: 'Default',
+      key: "Default",
       get: function get() {
         return Default;
       }
     }]);
-
     return ScrollSpy;
   }();
-
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
 
+
   $(window).on(Event.LOAD_DATA_API, function () {
     var scrollSpys = $.makeArray($(Selector.DATA_SPY));
 
     for (var i = scrollSpys.length; i--;) {
       var $spy = $(scrollSpys[i]);
+
       ScrollSpy._jQueryInterface.call($spy, $spy.data());
     }
   });
-
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -71730,45 +72576,42 @@ var ScrollSpy = function ($) {
 
   $.fn[NAME] = ScrollSpy._jQueryInterface;
   $.fn[NAME].Constructor = ScrollSpy;
+
   $.fn[NAME].noConflict = function () {
     $.fn[NAME] = JQUERY_NO_CONFLICT;
     return ScrollSpy._jQueryInterface;
   };
 
   return ScrollSpy;
-}(jQuery);
+}($);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): tab.js
+ * Bootstrap (v4.0.0-beta.2): tab.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var Tab = function ($) {
-
+var Tab = function () {
   /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
-
   var NAME = 'tab';
-  var VERSION = '4.0.0-beta';
+  var VERSION = '4.0.0-beta.2';
   var DATA_KEY = 'bs.tab';
-  var EVENT_KEY = '.' + DATA_KEY;
+  var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var TRANSITION_DURATION = 150;
-
   var Event = {
-    HIDE: 'hide' + EVENT_KEY,
-    HIDDEN: 'hidden' + EVENT_KEY,
-    SHOW: 'show' + EVENT_KEY,
-    SHOWN: 'shown' + EVENT_KEY,
-    CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY
+    HIDE: "hide" + EVENT_KEY,
+    HIDDEN: "hidden" + EVENT_KEY,
+    SHOW: "show" + EVENT_KEY,
+    SHOWN: "shown" + EVENT_KEY,
+    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-
   var ClassName = {
     DROPDOWN_MENU: 'dropdown-menu',
     ACTIVE: 'active',
@@ -71776,15 +72619,14 @@ var Tab = function ($) {
     FADE: 'fade',
     SHOW: 'show'
   };
-
   var Selector = {
     DROPDOWN: '.dropdown',
     NAV_LIST_GROUP: '.nav, .list-group',
     ACTIVE: '.active',
+    ACTIVE_UL: '> li > .active',
     DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
     DROPDOWN_TOGGLE: '.dropdown-toggle',
     DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
-
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -71792,38 +72634,39 @@ var Tab = function ($) {
      */
 
   };
-  var Tab = function () {
+
+  var Tab =
+  /*#__PURE__*/
+  function () {
     function Tab(element) {
-      _classCallCheck(this, Tab);
-
       this._element = element;
-    }
+    } // getters
 
-    // getters
+
+    var _proto = Tab.prototype;
 
     // public
-
-    Tab.prototype.show = function show() {
-      var _this22 = this;
+    _proto.show = function show() {
+      var _this = this;
 
       if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(ClassName.ACTIVE) || $(this._element).hasClass(ClassName.DISABLED)) {
         return;
       }
 
-      var target = void 0;
-      var previous = void 0;
+      var target;
+      var previous;
       var listElement = $(this._element).closest(Selector.NAV_LIST_GROUP)[0];
       var selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
-        previous = $.makeArray($(listElement).find(Selector.ACTIVE));
+        var itemSelector = listElement.nodeName === 'UL' ? Selector.ACTIVE_UL : Selector.ACTIVE;
+        previous = $.makeArray($(listElement).find(itemSelector));
         previous = previous[previous.length - 1];
       }
 
       var hideEvent = $.Event(Event.HIDE, {
         relatedTarget: this._element
       });
-
       var showEvent = $.Event(Event.SHOW, {
         relatedTarget: previous
       });
@@ -71846,15 +72689,13 @@ var Tab = function ($) {
 
       var complete = function complete() {
         var hiddenEvent = $.Event(Event.HIDDEN, {
-          relatedTarget: _this22._element
+          relatedTarget: _this._element
         });
-
         var shownEvent = $.Event(Event.SHOWN, {
           relatedTarget: previous
         });
-
         $(previous).trigger(hiddenEvent);
-        $(_this22._element).trigger(shownEvent);
+        $(_this._element).trigger(shownEvent);
       };
 
       if (target) {
@@ -71864,21 +72705,28 @@ var Tab = function ($) {
       }
     };
 
-    Tab.prototype.dispose = function dispose() {
+    _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
       this._element = null;
-    };
+    }; // private
 
-    // private
 
-    Tab.prototype._activate = function _activate(element, container, callback) {
-      var _this23 = this;
+    _proto._activate = function _activate(element, container, callback) {
+      var _this2 = this;
 
-      var active = $(container).find(Selector.ACTIVE)[0];
+      var activeElements;
+
+      if (container.nodeName === 'UL') {
+        activeElements = $(container).find(Selector.ACTIVE_UL);
+      } else {
+        activeElements = $(container).children(Selector.ACTIVE);
+      }
+
+      var active = activeElements[0];
       var isTransitioning = callback && Util.supportsTransitionEnd() && active && $(active).hasClass(ClassName.FADE);
 
       var complete = function complete() {
-        return _this23._transitionComplete(element, active, isTransitioning, callback);
+        return _this2._transitionComplete(element, active, isTransitioning, callback);
       };
 
       if (active && isTransitioning) {
@@ -71892,21 +72740,25 @@ var Tab = function ($) {
       }
     };
 
-    Tab.prototype._transitionComplete = function _transitionComplete(element, active, isTransitioning, callback) {
+    _proto._transitionComplete = function _transitionComplete(element, active, isTransitioning, callback) {
       if (active) {
         $(active).removeClass(ClassName.ACTIVE);
-
         var dropdownChild = $(active.parentNode).find(Selector.DROPDOWN_ACTIVE_CHILD)[0];
 
         if (dropdownChild) {
           $(dropdownChild).removeClass(ClassName.ACTIVE);
         }
 
-        active.setAttribute('aria-expanded', false);
+        if (active.getAttribute('role') === 'tab') {
+          active.setAttribute('aria-selected', false);
+        }
       }
 
       $(element).addClass(ClassName.ACTIVE);
-      element.setAttribute('aria-expanded', true);
+
+      if (element.getAttribute('role') === 'tab') {
+        element.setAttribute('aria-selected', true);
+      }
 
       if (isTransitioning) {
         Util.reflow(element);
@@ -71916,8 +72768,8 @@ var Tab = function ($) {
       }
 
       if (element.parentNode && $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
-
         var dropdownElement = $(element).closest(Selector.DROPDOWN)[0];
+
         if (dropdownElement) {
           $(dropdownElement).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
         }
@@ -71928,9 +72780,8 @@ var Tab = function ($) {
       if (callback) {
         callback();
       }
-    };
+    }; // static
 
-    // static
 
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -71943,35 +72794,35 @@ var Tab = function ($) {
         }
 
         if (typeof config === 'string') {
-          if (data[config] === undefined) {
-            throw new Error('No method named "' + config + '"');
+          if (typeof data[config] === 'undefined') {
+            throw new Error("No method named \"" + config + "\"");
           }
+
           data[config]();
         }
       });
     };
 
-    _createClass(Tab, null, [{
-      key: 'VERSION',
+    createClass(Tab, null, [{
+      key: "VERSION",
       get: function get() {
         return VERSION;
       }
     }]);
-
     return Tab;
   }();
-
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
 
+
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     event.preventDefault();
+
     Tab._jQueryInterface.call($(this), 'show');
   });
-
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -71980,886 +72831,56 @@ var Tab = function ($) {
 
   $.fn[NAME] = Tab._jQueryInterface;
   $.fn[NAME].Constructor = Tab;
+
   $.fn[NAME].noConflict = function () {
     $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Tab._jQueryInterface;
   };
 
   return Tab;
-}(jQuery);
-
-/* global Popper */
+}($);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): tooltip.js
+ * Bootstrap (v4.0.0-alpha.6): index.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-var Tooltip = function ($) {
-
-  /**
-   * Check for Popper dependency
-   * Popper - https://popper.js.org
-   */
-  if (typeof Popper === 'undefined') {
-    throw new Error('Bootstrap tooltips require Popper.js (https://popper.js.org)');
+(function () {
+  if (typeof $ === 'undefined') {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
   }
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+  var version = $.fn.jquery.split(' ')[0].split('.');
+  var minMajor = 1;
+  var ltMajor = 2;
+  var minMinor = 9;
+  var minPatch = 1;
+  var maxMajor = 4;
+
+  if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
+    throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
+  }
+})($);
+
+exports.Util = Util;
+exports.Alert = Alert;
+exports.Button = Button;
+exports.Carousel = Carousel;
+exports.Collapse = Collapse;
+exports.Dropdown = Dropdown;
+exports.Modal = Modal;
+exports.Popover = Popover;
+exports.Scrollspy = ScrollSpy;
+exports.Tab = Tab;
+exports.Tooltip = Tooltip;
+
+return exports;
+
+}({},$,Popper));
+//# sourceMappingURL=bootstrap.js.map
 
-  var NAME = 'tooltip';
-  var VERSION = '4.0.0-beta';
-  var DATA_KEY = 'bs.tooltip';
-  var EVENT_KEY = '.' + DATA_KEY;
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var TRANSITION_DURATION = 150;
-  var CLASS_PREFIX = 'bs-tooltip';
-  var BSCLS_PREFIX_REGEX = new RegExp('(^|\\s)' + CLASS_PREFIX + '\\S+', 'g');
-
-  var DefaultType = {
-    animation: 'boolean',
-    template: 'string',
-    title: '(string|element|function)',
-    trigger: 'string',
-    delay: '(number|object)',
-    html: 'boolean',
-    selector: '(string|boolean)',
-    placement: '(string|function)',
-    offset: '(number|string)',
-    container: '(string|element|boolean)',
-    fallbackPlacement: '(string|array)'
-  };
-
-  var AttachmentMap = {
-    AUTO: 'auto',
-    TOP: 'top',
-    RIGHT: 'right',
-    BOTTOM: 'bottom',
-    LEFT: 'left'
-  };
-
-  var Default = {
-    animation: true,
-    template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
-    trigger: 'hover focus',
-    title: '',
-    delay: 0,
-    html: false,
-    selector: false,
-    placement: 'top',
-    offset: 0,
-    container: false,
-    fallbackPlacement: 'flip'
-  };
-
-  var HoverState = {
-    SHOW: 'show',
-    OUT: 'out'
-  };
-
-  var Event = {
-    HIDE: 'hide' + EVENT_KEY,
-    HIDDEN: 'hidden' + EVENT_KEY,
-    SHOW: 'show' + EVENT_KEY,
-    SHOWN: 'shown' + EVENT_KEY,
-    INSERTED: 'inserted' + EVENT_KEY,
-    CLICK: 'click' + EVENT_KEY,
-    FOCUSIN: 'focusin' + EVENT_KEY,
-    FOCUSOUT: 'focusout' + EVENT_KEY,
-    MOUSEENTER: 'mouseenter' + EVENT_KEY,
-    MOUSELEAVE: 'mouseleave' + EVENT_KEY
-  };
-
-  var ClassName = {
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-
-  var Selector = {
-    TOOLTIP: '.tooltip',
-    TOOLTIP_INNER: '.tooltip-inner',
-    ARROW: '.arrow'
-  };
-
-  var Trigger = {
-    HOVER: 'hover',
-    FOCUS: 'focus',
-    CLICK: 'click',
-    MANUAL: 'manual'
-
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
-  };
-  var Tooltip = function () {
-    function Tooltip(element, config) {
-      _classCallCheck(this, Tooltip);
-
-      // private
-      this._isEnabled = true;
-      this._timeout = 0;
-      this._hoverState = '';
-      this._activeTrigger = {};
-      this._popper = null;
-
-      // protected
-      this.element = element;
-      this.config = this._getConfig(config);
-      this.tip = null;
-
-      this._setListeners();
-    }
-
-    // getters
-
-    // public
-
-    Tooltip.prototype.enable = function enable() {
-      this._isEnabled = true;
-    };
-
-    Tooltip.prototype.disable = function disable() {
-      this._isEnabled = false;
-    };
-
-    Tooltip.prototype.toggleEnabled = function toggleEnabled() {
-      this._isEnabled = !this._isEnabled;
-    };
-
-    Tooltip.prototype.toggle = function toggle(event) {
-      if (event) {
-        var dataKey = this.constructor.DATA_KEY;
-        var context = $(event.currentTarget).data(dataKey);
-
-        if (!context) {
-          context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-          $(event.currentTarget).data(dataKey, context);
-        }
-
-        context._activeTrigger.click = !context._activeTrigger.click;
-
-        if (context._isWithActiveTrigger()) {
-          context._enter(null, context);
-        } else {
-          context._leave(null, context);
-        }
-      } else {
-
-        if ($(this.getTipElement()).hasClass(ClassName.SHOW)) {
-          this._leave(null, this);
-          return;
-        }
-
-        this._enter(null, this);
-      }
-    };
-
-    Tooltip.prototype.dispose = function dispose() {
-      clearTimeout(this._timeout);
-
-      $.removeData(this.element, this.constructor.DATA_KEY);
-
-      $(this.element).off(this.constructor.EVENT_KEY);
-      $(this.element).closest('.modal').off('hide.bs.modal');
-
-      if (this.tip) {
-        $(this.tip).remove();
-      }
-
-      this._isEnabled = null;
-      this._timeout = null;
-      this._hoverState = null;
-      this._activeTrigger = null;
-      if (this._popper !== null) {
-        this._popper.destroy();
-      }
-      this._popper = null;
-
-      this.element = null;
-      this.config = null;
-      this.tip = null;
-    };
-
-    Tooltip.prototype.show = function show() {
-      var _this24 = this;
-
-      if ($(this.element).css('display') === 'none') {
-        throw new Error('Please use show on visible elements');
-      }
-
-      var showEvent = $.Event(this.constructor.Event.SHOW);
-      if (this.isWithContent() && this._isEnabled) {
-        $(this.element).trigger(showEvent);
-
-        var isInTheDom = $.contains(this.element.ownerDocument.documentElement, this.element);
-
-        if (showEvent.isDefaultPrevented() || !isInTheDom) {
-          return;
-        }
-
-        var tip = this.getTipElement();
-        var tipId = Util.getUID(this.constructor.NAME);
-
-        tip.setAttribute('id', tipId);
-        this.element.setAttribute('aria-describedby', tipId);
-
-        this.setContent();
-
-        if (this.config.animation) {
-          $(tip).addClass(ClassName.FADE);
-        }
-
-        var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
-
-        var attachment = this._getAttachment(placement);
-        this.addAttachmentClass(attachment);
-
-        var container = this.config.container === false ? document.body : $(this.config.container);
-
-        $(tip).data(this.constructor.DATA_KEY, this);
-
-        if (!$.contains(this.element.ownerDocument.documentElement, this.tip)) {
-          $(tip).appendTo(container);
-        }
-
-        $(this.element).trigger(this.constructor.Event.INSERTED);
-
-        this._popper = new Popper(this.element, tip, {
-          placement: attachment,
-          modifiers: {
-            offset: {
-              offset: this.config.offset
-            },
-            flip: {
-              behavior: this.config.fallbackPlacement
-            },
-            arrow: {
-              element: Selector.ARROW
-            }
-          },
-          onCreate: function onCreate(data) {
-            if (data.originalPlacement !== data.placement) {
-              _this24._handlePopperPlacementChange(data);
-            }
-          },
-          onUpdate: function onUpdate(data) {
-            _this24._handlePopperPlacementChange(data);
-          }
-        });
-
-        $(tip).addClass(ClassName.SHOW);
-
-        // if this is a touch-enabled device we add extra
-        // empty mouseover listeners to the body's immediate children;
-        // only needed because of broken event delegation on iOS
-        // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
-        if ('ontouchstart' in document.documentElement) {
-          $('body').children().on('mouseover', null, $.noop);
-        }
-
-        var complete = function complete() {
-          if (_this24.config.animation) {
-            _this24._fixTransition();
-          }
-          var prevHoverState = _this24._hoverState;
-          _this24._hoverState = null;
-
-          $(_this24.element).trigger(_this24.constructor.Event.SHOWN);
-
-          if (prevHoverState === HoverState.OUT) {
-            _this24._leave(null, _this24);
-          }
-        };
-
-        if (Util.supportsTransitionEnd() && $(this.tip).hasClass(ClassName.FADE)) {
-          $(this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(Tooltip._TRANSITION_DURATION);
-        } else {
-          complete();
-        }
-      }
-    };
-
-    Tooltip.prototype.hide = function hide(callback) {
-      var _this25 = this;
-
-      var tip = this.getTipElement();
-      var hideEvent = $.Event(this.constructor.Event.HIDE);
-      var complete = function complete() {
-        if (_this25._hoverState !== HoverState.SHOW && tip.parentNode) {
-          tip.parentNode.removeChild(tip);
-        }
-
-        _this25._cleanTipClass();
-        _this25.element.removeAttribute('aria-describedby');
-        $(_this25.element).trigger(_this25.constructor.Event.HIDDEN);
-        if (_this25._popper !== null) {
-          _this25._popper.destroy();
-        }
-
-        if (callback) {
-          callback();
-        }
-      };
-
-      $(this.element).trigger(hideEvent);
-
-      if (hideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      $(tip).removeClass(ClassName.SHOW);
-
-      // if this is a touch-enabled device we remove the extra
-      // empty mouseover listeners we added for iOS support
-      if ('ontouchstart' in document.documentElement) {
-        $('body').children().off('mouseover', null, $.noop);
-      }
-
-      this._activeTrigger[Trigger.CLICK] = false;
-      this._activeTrigger[Trigger.FOCUS] = false;
-      this._activeTrigger[Trigger.HOVER] = false;
-
-      if (Util.supportsTransitionEnd() && $(this.tip).hasClass(ClassName.FADE)) {
-
-        $(tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
-      } else {
-        complete();
-      }
-
-      this._hoverState = '';
-    };
-
-    Tooltip.prototype.update = function update() {
-      if (this._popper !== null) {
-        this._popper.scheduleUpdate();
-      }
-    };
-
-    // protected
-
-    Tooltip.prototype.isWithContent = function isWithContent() {
-      return Boolean(this.getTitle());
-    };
-
-    Tooltip.prototype.addAttachmentClass = function addAttachmentClass(attachment) {
-      $(this.getTipElement()).addClass(CLASS_PREFIX + '-' + attachment);
-    };
-
-    Tooltip.prototype.getTipElement = function getTipElement() {
-      return this.tip = this.tip || $(this.config.template)[0];
-    };
-
-    Tooltip.prototype.setContent = function setContent() {
-      var $tip = $(this.getTipElement());
-      this.setElementContent($tip.find(Selector.TOOLTIP_INNER), this.getTitle());
-      $tip.removeClass(ClassName.FADE + ' ' + ClassName.SHOW);
-    };
-
-    Tooltip.prototype.setElementContent = function setElementContent($element, content) {
-      var html = this.config.html;
-      if ((typeof content === 'undefined' ? 'undefined' : _typeof(content)) === 'object' && (content.nodeType || content.jquery)) {
-        // content is a DOM node or a jQuery
-        if (html) {
-          if (!$(content).parent().is($element)) {
-            $element.empty().append(content);
-          }
-        } else {
-          $element.text($(content).text());
-        }
-      } else {
-        $element[html ? 'html' : 'text'](content);
-      }
-    };
-
-    Tooltip.prototype.getTitle = function getTitle() {
-      var title = this.element.getAttribute('data-original-title');
-
-      if (!title) {
-        title = typeof this.config.title === 'function' ? this.config.title.call(this.element) : this.config.title;
-      }
-
-      return title;
-    };
-
-    // private
-
-    Tooltip.prototype._getAttachment = function _getAttachment(placement) {
-      return AttachmentMap[placement.toUpperCase()];
-    };
-
-    Tooltip.prototype._setListeners = function _setListeners() {
-      var _this26 = this;
-
-      var triggers = this.config.trigger.split(' ');
-
-      triggers.forEach(function (trigger) {
-        if (trigger === 'click') {
-          $(_this26.element).on(_this26.constructor.Event.CLICK, _this26.config.selector, function (event) {
-            return _this26.toggle(event);
-          });
-        } else if (trigger !== Trigger.MANUAL) {
-          var eventIn = trigger === Trigger.HOVER ? _this26.constructor.Event.MOUSEENTER : _this26.constructor.Event.FOCUSIN;
-          var eventOut = trigger === Trigger.HOVER ? _this26.constructor.Event.MOUSELEAVE : _this26.constructor.Event.FOCUSOUT;
-
-          $(_this26.element).on(eventIn, _this26.config.selector, function (event) {
-            return _this26._enter(event);
-          }).on(eventOut, _this26.config.selector, function (event) {
-            return _this26._leave(event);
-          });
-        }
-
-        $(_this26.element).closest('.modal').on('hide.bs.modal', function () {
-          return _this26.hide();
-        });
-      });
-
-      if (this.config.selector) {
-        this.config = $.extend({}, this.config, {
-          trigger: 'manual',
-          selector: ''
-        });
-      } else {
-        this._fixTitle();
-      }
-    };
-
-    Tooltip.prototype._fixTitle = function _fixTitle() {
-      var titleType = _typeof(this.element.getAttribute('data-original-title'));
-      if (this.element.getAttribute('title') || titleType !== 'string') {
-        this.element.setAttribute('data-original-title', this.element.getAttribute('title') || '');
-        this.element.setAttribute('title', '');
-      }
-    };
-
-    Tooltip.prototype._enter = function _enter(event, context) {
-      var dataKey = this.constructor.DATA_KEY;
-
-      context = context || $(event.currentTarget).data(dataKey);
-
-      if (!context) {
-        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        $(event.currentTarget).data(dataKey, context);
-      }
-
-      if (event) {
-        context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.HOVER] = true;
-      }
-
-      if ($(context.getTipElement()).hasClass(ClassName.SHOW) || context._hoverState === HoverState.SHOW) {
-        context._hoverState = HoverState.SHOW;
-        return;
-      }
-
-      clearTimeout(context._timeout);
-
-      context._hoverState = HoverState.SHOW;
-
-      if (!context.config.delay || !context.config.delay.show) {
-        context.show();
-        return;
-      }
-
-      context._timeout = setTimeout(function () {
-        if (context._hoverState === HoverState.SHOW) {
-          context.show();
-        }
-      }, context.config.delay.show);
-    };
-
-    Tooltip.prototype._leave = function _leave(event, context) {
-      var dataKey = this.constructor.DATA_KEY;
-
-      context = context || $(event.currentTarget).data(dataKey);
-
-      if (!context) {
-        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        $(event.currentTarget).data(dataKey, context);
-      }
-
-      if (event) {
-        context._activeTrigger[event.type === 'focusout' ? Trigger.FOCUS : Trigger.HOVER] = false;
-      }
-
-      if (context._isWithActiveTrigger()) {
-        return;
-      }
-
-      clearTimeout(context._timeout);
-
-      context._hoverState = HoverState.OUT;
-
-      if (!context.config.delay || !context.config.delay.hide) {
-        context.hide();
-        return;
-      }
-
-      context._timeout = setTimeout(function () {
-        if (context._hoverState === HoverState.OUT) {
-          context.hide();
-        }
-      }, context.config.delay.hide);
-    };
-
-    Tooltip.prototype._isWithActiveTrigger = function _isWithActiveTrigger() {
-      for (var trigger in this._activeTrigger) {
-        if (this._activeTrigger[trigger]) {
-          return true;
-        }
-      }
-
-      return false;
-    };
-
-    Tooltip.prototype._getConfig = function _getConfig(config) {
-      config = $.extend({}, this.constructor.Default, $(this.element).data(), config);
-
-      if (config.delay && typeof config.delay === 'number') {
-        config.delay = {
-          show: config.delay,
-          hide: config.delay
-        };
-      }
-
-      if (config.title && typeof config.title === 'number') {
-        config.title = config.title.toString();
-      }
-
-      if (config.content && typeof config.content === 'number') {
-        config.content = config.content.toString();
-      }
-
-      Util.typeCheckConfig(NAME, config, this.constructor.DefaultType);
-
-      return config;
-    };
-
-    Tooltip.prototype._getDelegateConfig = function _getDelegateConfig() {
-      var config = {};
-
-      if (this.config) {
-        for (var key in this.config) {
-          if (this.constructor.Default[key] !== this.config[key]) {
-            config[key] = this.config[key];
-          }
-        }
-      }
-
-      return config;
-    };
-
-    Tooltip.prototype._cleanTipClass = function _cleanTipClass() {
-      var $tip = $(this.getTipElement());
-      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
-      if (tabClass !== null && tabClass.length > 0) {
-        $tip.removeClass(tabClass.join(''));
-      }
-    };
-
-    Tooltip.prototype._handlePopperPlacementChange = function _handlePopperPlacementChange(data) {
-      this._cleanTipClass();
-      this.addAttachmentClass(this._getAttachment(data.placement));
-    };
-
-    Tooltip.prototype._fixTransition = function _fixTransition() {
-      var tip = this.getTipElement();
-      var initConfigAnimation = this.config.animation;
-      if (tip.getAttribute('x-placement') !== null) {
-        return;
-      }
-      $(tip).removeClass(ClassName.FADE);
-      this.config.animation = false;
-      this.hide();
-      this.show();
-      this.config.animation = initConfigAnimation;
-    };
-
-    // static
-
-    Tooltip._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY);
-        var _config = (typeof config === 'undefined' ? 'undefined' : _typeof(config)) === 'object' && config;
-
-        if (!data && /dispose|hide/.test(config)) {
-          return;
-        }
-
-        if (!data) {
-          data = new Tooltip(this, _config);
-          $(this).data(DATA_KEY, data);
-        }
-
-        if (typeof config === 'string') {
-          if (data[config] === undefined) {
-            throw new Error('No method named "' + config + '"');
-          }
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Tooltip, null, [{
-      key: 'VERSION',
-      get: function get() {
-        return VERSION;
-      }
-    }, {
-      key: 'Default',
-      get: function get() {
-        return Default;
-      }
-    }, {
-      key: 'NAME',
-      get: function get() {
-        return NAME;
-      }
-    }, {
-      key: 'DATA_KEY',
-      get: function get() {
-        return DATA_KEY;
-      }
-    }, {
-      key: 'Event',
-      get: function get() {
-        return Event;
-      }
-    }, {
-      key: 'EVENT_KEY',
-      get: function get() {
-        return EVENT_KEY;
-      }
-    }, {
-      key: 'DefaultType',
-      get: function get() {
-        return DefaultType;
-      }
-    }]);
-
-    return Tooltip;
-  }();
-
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME] = Tooltip._jQueryInterface;
-  $.fn[NAME].Constructor = Tooltip;
-  $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
-    return Tooltip._jQueryInterface;
-  };
-
-  return Tooltip;
-}(jQuery);
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): popover.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-var Popover = function ($) {
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME = 'popover';
-  var VERSION = '4.0.0-beta';
-  var DATA_KEY = 'bs.popover';
-  var EVENT_KEY = '.' + DATA_KEY;
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var CLASS_PREFIX = 'bs-popover';
-  var BSCLS_PREFIX_REGEX = new RegExp('(^|\\s)' + CLASS_PREFIX + '\\S+', 'g');
-
-  var Default = $.extend({}, Tooltip.Default, {
-    placement: 'right',
-    trigger: 'click',
-    content: '',
-    template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
-  });
-
-  var DefaultType = $.extend({}, Tooltip.DefaultType, {
-    content: '(string|element|function)'
-  });
-
-  var ClassName = {
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-
-  var Selector = {
-    TITLE: '.popover-header',
-    CONTENT: '.popover-body'
-  };
-
-  var Event = {
-    HIDE: 'hide' + EVENT_KEY,
-    HIDDEN: 'hidden' + EVENT_KEY,
-    SHOW: 'show' + EVENT_KEY,
-    SHOWN: 'shown' + EVENT_KEY,
-    INSERTED: 'inserted' + EVENT_KEY,
-    CLICK: 'click' + EVENT_KEY,
-    FOCUSIN: 'focusin' + EVENT_KEY,
-    FOCUSOUT: 'focusout' + EVENT_KEY,
-    MOUSEENTER: 'mouseenter' + EVENT_KEY,
-    MOUSELEAVE: 'mouseleave' + EVENT_KEY
-
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
-  };
-  var Popover = function (_Tooltip) {
-    _inherits(Popover, _Tooltip);
-
-    function Popover() {
-      _classCallCheck(this, Popover);
-
-      return _possibleConstructorReturn(this, _Tooltip.apply(this, arguments));
-    }
-
-    // overrides
-
-    Popover.prototype.isWithContent = function isWithContent() {
-      return this.getTitle() || this._getContent();
-    };
-
-    Popover.prototype.addAttachmentClass = function addAttachmentClass(attachment) {
-      $(this.getTipElement()).addClass(CLASS_PREFIX + '-' + attachment);
-    };
-
-    Popover.prototype.getTipElement = function getTipElement() {
-      return this.tip = this.tip || $(this.config.template)[0];
-    };
-
-    Popover.prototype.setContent = function setContent() {
-      var $tip = $(this.getTipElement());
-
-      // we use append for html objects to maintain js events
-      this.setElementContent($tip.find(Selector.TITLE), this.getTitle());
-      this.setElementContent($tip.find(Selector.CONTENT), this._getContent());
-
-      $tip.removeClass(ClassName.FADE + ' ' + ClassName.SHOW);
-    };
-
-    // private
-
-    Popover.prototype._getContent = function _getContent() {
-      return this.element.getAttribute('data-content') || (typeof this.config.content === 'function' ? this.config.content.call(this.element) : this.config.content);
-    };
-
-    Popover.prototype._cleanTipClass = function _cleanTipClass() {
-      var $tip = $(this.getTipElement());
-      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
-      if (tabClass !== null && tabClass.length > 0) {
-        $tip.removeClass(tabClass.join(''));
-      }
-    };
-
-    // static
-
-    Popover._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY);
-        var _config = (typeof config === 'undefined' ? 'undefined' : _typeof(config)) === 'object' ? config : null;
-
-        if (!data && /destroy|hide/.test(config)) {
-          return;
-        }
-
-        if (!data) {
-          data = new Popover(this, _config);
-          $(this).data(DATA_KEY, data);
-        }
-
-        if (typeof config === 'string') {
-          if (data[config] === undefined) {
-            throw new Error('No method named "' + config + '"');
-          }
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Popover, null, [{
-      key: 'VERSION',
-
-
-      // getters
-
-      get: function get() {
-        return VERSION;
-      }
-    }, {
-      key: 'Default',
-      get: function get() {
-        return Default;
-      }
-    }, {
-      key: 'NAME',
-      get: function get() {
-        return NAME;
-      }
-    }, {
-      key: 'DATA_KEY',
-      get: function get() {
-        return DATA_KEY;
-      }
-    }, {
-      key: 'Event',
-      get: function get() {
-        return Event;
-      }
-    }, {
-      key: 'EVENT_KEY',
-      get: function get() {
-        return EVENT_KEY;
-      }
-    }, {
-      key: 'DefaultType',
-      get: function get() {
-        return DefaultType;
-      }
-    }]);
-
-    return Popover;
-  }(Tooltip);
-
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME] = Popover._jQueryInterface;
-  $.fn[NAME].Constructor = Popover;
-  $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
-    return Popover._jQueryInterface;
-  };
-
-  return Popover;
-}(jQuery);
-
-
-})();
 }
 ;/*!
  * Chart.js
@@ -83104,6 +83125,3167 @@ module.exports = function(Chart) {
 
 },{"1":1}]},{},[7])(7)
 });
+;if (typeof FastBoot === 'undefined') {
+"use strict";
+(function(root, factory) {
+  if(typeof exports === 'object') {
+    module.exports = factory();
+  }
+  else if(typeof define === 'function' && define.amd) {
+    define(['jquery', 'googlemaps!'], factory);
+  }
+  else {
+    root.GMaps = factory();
+  }
+
+
+}(this, function() {
+
+/*!
+ * GMaps.js v0.5.14
+ * http://hpneo.github.com/gmaps/
+ *
+ * Copyright 2017, Matt Jensen
+ * Released under the MIT License.
+ */
+
+/*jshint unused:false*/
+var isNodeEnv = (
+  typeof module === 'object' && typeof module.exports === 'object' && typeof require === 'function' // jshint ignore:line
+);
+
+var GMaps = (function() {
+  'use strict';
+
+  if (isNodeEnv) {
+    return function noop() {};
+  }
+
+  var GMaps = function(options) {
+    if (typeof window.google !== 'object' || typeof window.google.maps !== 'object') {
+      throw new Error('Google Maps API is required. Please register the following JavaScript library http://maps.google.com/maps/api/js?sensor=true.');
+    }
+
+    setupGMapsForApps(); // jshint ignore:line
+
+    if (!this) { return new GMaps(options); }
+
+    options.zoom = options.zoom || 15;
+    options.mapType = options.mapType || 'roadmap';
+
+    var valueOrDefault = function(value, defaultValue) {
+      return value === undefined ? defaultValue : value;
+    };
+
+    var self = this;
+    var eventsThatHideContextMenu = [
+      'bounds_changed', 'center_changed', 'click', 'dblclick', 'drag',
+      'dragend', 'dragstart', 'idle', 'maptypeid_changed', 'projection_changed',
+      'resize', 'tilesloaded', 'zoom_changed'
+    ];
+    var eventsThatDoesntHideContextMenu = ['mousemove', 'mouseout', 'mouseover'];
+    var optionsToBeDeleted = ['el', 'lat', 'lng', 'mapType', 'width', 'height', 'markerClusterer', 'enableNewStyle'];
+    var identifier = options.el || options.div;
+    var markerClustererFunction = options.markerClusterer;
+    var mapType = google.maps.MapTypeId[options.mapType.toUpperCase()];
+    var mapCenter = new google.maps.LatLng(options.lat, options.lng);
+    var zoomControl = valueOrDefault(options.zoomControl, true);
+    var zoomControlOpt = options.zoomControlOpt || {
+      style: 'DEFAULT',
+      position: 'TOP_LEFT'
+    };
+    var zoomControlStyle = zoomControlOpt.style || 'DEFAULT';
+    var zoomControlPosition = zoomControlOpt.position || 'TOP_LEFT';
+    var panControl = valueOrDefault(options.panControl, true);
+    var mapTypeControl = valueOrDefault(options.mapTypeControl, true);
+    var scaleControl = valueOrDefault(options.scaleControl, true);
+    var streetViewControl = valueOrDefault(options.streetViewControl, true);
+    var overviewMapControl = valueOrDefault(overviewMapControl, true);
+    var mapOptions = {};
+    var mapBaseOptions = {
+      zoom: this.zoom,
+      center: mapCenter,
+      mapTypeId: mapType
+    };
+    var mapControlsOptions = {
+      panControl: panControl,
+      zoomControl: zoomControl,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle[zoomControlStyle],
+        position: google.maps.ControlPosition[zoomControlPosition]
+      },
+      mapTypeControl: mapTypeControl,
+      scaleControl: scaleControl,
+      streetViewControl: streetViewControl,
+      overviewMapControl: overviewMapControl
+    };
+
+    if (typeof identifier === 'string') {
+      this.el = document.querySelector(identifier);
+
+      if(!this.el) {
+        throw new Error('no element was found via querySelector using: ', identifier);
+      }
+    }
+
+    if (typeof this.el === 'undefined' || this.el === null) {
+      throw new Error('No element defined.');
+    }
+
+    window.contextMenu = window.contextMenu || {};
+    window.contextMenu[self.el.id] = {};
+
+    this.controls = [];
+    this.overlays = [];
+    this.texts = [];
+    this.polygons = [];
+    this.polylines = [];
+    this.circles = [];
+    this.rectangles = [];
+    this.infoWindows = [];
+    this.layers = []; // array with kml/georss and fusiontables layers, can be as many
+    this.singleLayers = {}; // object with the other layers, only one per layer
+    this.markers = [];
+    this.routes = [];
+    this.infoWindow = null;
+    this.overlay_el = null;
+    this.zoom = options.zoom;
+    this.registeredEvents = {};
+    this._mapEventListeners = [];
+
+    this.el.style.width = options.width || this.el.scrollWidth || this.el.offsetWidth;
+    this.el.style.height = options.height || this.el.scrollHeight || this.el.offsetHeight;
+
+    google.maps.visualRefresh = options.enableNewStyle;
+
+    var i, l;
+    for (i = 0, l = optionsToBeDeleted.length; i < l; i++) {
+      delete options[optionsToBeDeleted[i]];
+    }
+
+    if(options.disableDefaultUI !== true) {
+      mapBaseOptions = this.utils.merge(mapBaseOptions, mapControlsOptions);
+    }
+
+    mapOptions = this.utils.merge(mapBaseOptions, options);
+
+    for (i = 0, l = eventsThatHideContextMenu.length; i < l; i++) {
+      delete mapOptions[eventsThatHideContextMenu[i]];
+    }
+
+    for (i = 0, l = eventsThatDoesntHideContextMenu.length; i < l; i++) {
+      delete mapOptions[eventsThatDoesntHideContextMenu[i]];
+    }
+
+    this.map = new google.maps.Map(this.el, mapOptions);
+
+    if (markerClustererFunction) {
+      this.markerClusterer = markerClustererFunction.apply(this, [this.map]);
+    }
+
+    var buildContextMenuHTML = function buildContextMenuHTML(control, e) {
+      var html = '';
+      var options = window.contextMenu[self.el.id][control];
+
+      var i, l;
+      for (i in options){
+        if (options.hasOwnProperty(i)) {
+          var option = options[i];
+
+          html += '<li><a id="' + control + '_' + i + '" href="#">' + option.title + '</a></li>';
+        }
+      }
+
+      if (!document.getElementById('gmaps-context-menu')) { return; }
+
+      var contextMenuElement = document.getElementById('gmaps-context-menu');
+
+      contextMenuElement.innerHTML = html;
+
+      var contextMenuItems = contextMenuElement.getElementsByTagName('a');
+
+      var assignMenuItemAction = function(ev){
+        ev.preventDefault();
+
+        options[this.id.replace(control + '_', '')].action.apply(self, [e]);
+        self.hideContextMenu();
+      };
+
+      for (i = 0, l = contextMenuItems.length; i < l; i++) {
+        var contextMenuItem = contextMenuItems[i];
+        google.maps.event.clearListeners(contextMenuItem, 'click');
+        google.maps.event.addDomListenerOnce(
+          contextMenuItem,
+          'click',
+          assignMenuItemAction,
+          false
+        );
+      }
+
+      var position = self.utils.findAbsolutePosition(self.el);
+      var left = position[0] + e.pixel.x - 15;
+      var top = position[1] + e.pixel.y- 15;
+
+      contextMenuElement.style.left = left + 'px';
+      contextMenuElement.style.top = top + 'px';
+      contextMenuElement.style.display = 'block';
+    };
+
+    this.buildContextMenu = function buildContextMenu(control, e) {
+      if (control === 'marker') {
+        e.pixel = {};
+
+        var overlay = new google.maps.OverlayView();
+        overlay.setMap(self.map);
+
+        overlay.draw = function() {
+          var projection = overlay.getProjection();
+          var position = e.marker.getPosition();
+
+          e.pixel = projection.fromLatLngToContainerPixel(position);
+
+          buildContextMenuHTML(control, e);
+        };
+      }
+      else {
+        buildContextMenuHTML(control, e);
+      }
+    };
+
+    this.setContextMenu = function setContextMenu(options) {
+      window.contextMenu[self.el.id][options.control] = {};
+
+      var ul = document.createElement('ul');
+
+      var i;
+      for (i in options.options) {
+        if (options.options.hasOwnProperty(i)) {
+          var option = options.options[i];
+
+          window.contextMenu[self.el.id][options.control][option.name] = {
+            title: option.title,
+            action: option.action
+          };
+        }
+      }
+
+      ul.id = 'gmaps-context-menu';
+      ul.style.display = 'none';
+      ul.style.position = 'absolute';
+      ul.style.minWidth = '100px';
+      ul.style.background = 'white';
+      ul.style.listStyle = 'none';
+      ul.style.padding = '8px';
+      ul.style.boxShadow = '2px 2px 6px #ccc';
+
+      document.body.appendChild(ul);
+
+      var contextMenuElement = document.getElementById('gmaps-context-menu')
+
+      self._mapEventListeners.push(
+        google.maps.event.addDomListener(contextMenuElement, 'mouseout', function(ev) {
+          if (!ev.relatedTarget || !this.contains(ev.relatedTarget)) {
+            window.setTimeout(function(){
+              contextMenuElement.style.display = 'none';
+            }, 400);
+          }
+        }, false)
+      );
+    };
+
+    this.hideContextMenu = function hideContextMenu() {
+      var contextMenuElement = document.getElementById('gmaps-context-menu');
+
+      if (contextMenuElement) {
+        contextMenuElement.style.display = 'none';
+      }
+    };
+
+    var setupListener = function setupListener(object, name) {
+      return google.maps.event.addListener(object, name, function(e){
+        if (typeof e === 'undefined') {
+          e = this;
+        }
+
+        options[name].apply(this, [e]);
+
+        self.hideContextMenu();
+      });
+    };
+
+    self._mapEventListeners.push(
+      google.maps.event.addListener(
+        this.map,
+        'zoom_changed',
+        this.hideContextMenu
+      )
+    );
+
+    var name;
+
+    for (i = 0, l = eventsThatHideContextMenu.length; i < l; i++) {
+      name = eventsThatHideContextMenu[i];
+
+      if (name in options) {
+        if(options.hasOwnProperty(name)) {
+          self._mapEventListeners.push(setupListener(this.map, name));
+        }
+      }
+    }
+
+    for (i = 0, l = eventsThatDoesntHideContextMenu.length; i < l; i++) {
+      name = eventsThatDoesntHideContextMenu[i];
+
+      if (name in options) {
+        if(options.hasOwnProperty(name)) {
+          self._mapEventListeners.push(setupListener(this.map, name));
+        }
+      }
+    }
+
+    self._mapEventListeners.push(
+      google.maps.event.addListener(this.map, 'rightclick', function(e) {
+        if (options.rightclick) {
+          options.rightclick.apply(this, [e]);
+        }
+
+        if(typeof window.contextMenu[self.el.id]['map'] !== 'undefined') {
+          self.buildContextMenu('map', e);
+        }
+      })
+    );
+
+    this.refresh = function refresh() {
+      google.maps.event.trigger(this.map, 'resize');
+    };
+
+    this.fitZoom = function fitZoom() {
+      var latLngs = [];
+
+      for (var i = 0, l = this.markers.length; i < l; i++) {
+        if(typeof this.markers[i].visible === 'boolean' && this.markers[i].visible) {
+          latLngs.push(this.markers[i].getPosition());
+        }
+      }
+
+      this.fitLatLngBounds(latLngs);
+    };
+
+    this.fitLatLngBounds = function fitLatLngBounds(latLngs) {
+      var bounds = new google.maps.LatLngBounds();
+
+      for(var i = 0, l = latLngs.length; i < l; i++) {
+        bounds.extend(latLngs[i]);
+      }
+
+      this.map.fitBounds(bounds);
+    };
+
+    this.setCenter = function setCenter(lat, lng, callback) {
+      this.map.panTo(new google.maps.LatLng(lat, lng));
+
+      if (callback) { callback(); }
+    };
+
+    this.getElement = function getElement() {
+      return this.el;
+    };
+
+    this.zoomIn = function zoomIn(value) {
+      value = value || 1;
+
+      this.zoom = this.map.getZoom() + value;
+      this.map.setZoom(this.zoom);
+    };
+
+    this.zoomOut = function zoomOut(value) {
+      value = value || 1;
+
+      this.zoom = this.map.getZoom() - value;
+      this.map.setZoom(this.zoom);
+    };
+
+    var nativeMethods = [];
+    var method;
+
+    for (method in this.map) {
+      if (typeof this.map[method] === 'function' && !this[method]) {
+        nativeMethods.push(method);
+      }
+    }
+
+    function createNativeMethod(gmaps, scope, methodName) {
+      gmaps[methodName] = function() {
+        return scope[methodName].apply(scope, arguments);
+      };
+    }
+
+    for (i = 0, l = nativeMethods.length; i < l; i++) {
+      createNativeMethod(this, this.map, nativeMethods[i]);
+    }
+  };
+
+
+  GMaps.prototype.destroy = function destroy() {
+
+    // Clear children
+    this.removeMarkers();
+    this.removeOverlays();
+    this.removeTexts();
+    this.removePolygons();
+    this.removePolylines();
+    this.removeCircles();
+    this.removeRectangles();
+    this.removeInfoWindows();
+
+    // Remove map event listeners
+    for(var i = 0, l = this._mapEventListeners.length; i < l; i++) {
+      google.maps.event.removeListener(this._mapEventListeners[i]);
+    }
+
+    this._mapEventListeners.length = 0;
+
+    // Clear map instance listeners
+    google.maps.event.clearInstanceListeners(this.map);
+
+    // Remove map and map html
+    this.map = null;
+    this.el.innerHTML = '';
+  };
+
+  return GMaps;
+})();
+
+GMaps.prototype._createControl = function(options) {
+  var control = document.createElement('div');
+
+  control.style.cursor = 'pointer';
+  
+  if (options.disableDefaultStyles !== true) {
+    control.style.fontFamily = 'Roboto, Arial, sans-serif';
+    control.style.fontSize = '11px';
+    control.style.boxShadow = 'rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px';
+  }
+
+  for (var option in options.style) {
+    if(options.style.hasOwnProperty(option)) {
+      control.style[option] = options.style[option];
+    }
+  }
+
+  if (options.id) {
+    control.id = options.id;
+  }
+  
+  if (options.title) {
+    control.title = options.title;
+  }
+
+  if (options.classes) {
+    control.className = options.classes;
+  }
+
+  if (options.content) {
+    if (typeof options.content === 'string') {
+      control.innerHTML = options.content;
+    }
+    else if (options.content instanceof HTMLElement) {
+      control.appendChild(options.content);
+    }
+  }
+
+  if (options.position) {
+    control.position = google.maps.ControlPosition[options.position.toUpperCase()];
+  }
+
+  for (var ev in options.events) {
+    if(options.events.hasOwnProperty(ev)) {
+      google.maps.event.addDomListener(
+        control,
+        ev,
+        this.utils.subcribeEvent(options.events[ev])
+      );
+    }
+  }
+
+  control.index = 1;
+
+  return control;
+};
+
+GMaps.prototype.addControl = function(options) {
+  var control = this._createControl(options);
+  
+  this.controls.push(control);
+  this.map.controls[control.position].push(control);
+
+  return control;
+};
+
+GMaps.prototype.removeControl = function(control) {
+  var position = null;
+  var controlsForPosition;
+  var i, l;
+
+  for (i = 0, l = this.controls.length; i < l; i++) {
+    if (this.controls[i] === control) {
+      position = this.controls[i].position;
+      this.controls.splice(i, 1);
+      break;
+    }
+  }
+
+  if (position) {
+    for (i = 0, l = this.map.controls.length; i < l; i++) {
+      controlsForPosition = this.map.controls[control.position];
+
+      if (controlsForPosition.getAt(i) === control) {
+        controlsForPosition.removeAt(i);
+        break;
+      }
+    }
+  }
+
+  return control;
+};
+
+GMaps.prototype.addCircle = function(options) {
+  options = this.utils.merge({
+    map: this.map,
+    center: new google.maps.LatLng(options.lat, options.lng)
+  }, options);
+
+  var circle = new google.maps.Circle(options);
+  var circleEvents = [
+    'click',
+    'dblclick',
+    'rightclick',
+    'drag',
+    'dragend',
+    'dragstart',
+    'mousedown',
+    'mousemove',
+    'mouseout',
+    'mouseover',
+    'mouseup',
+    'radius_changed',
+    'center_changed'
+  ];
+
+  for (var i = 0, l = circleEvents.length, name; i < l; i++) {
+    name = circleEvents[i];
+
+    // If object has configured event
+    if (options.hasOwnProperty(name)) {
+      google.maps.event.addListener(
+        circle,
+        name,
+        this.utils.subcribeEvent(options[name], circle)
+      );
+    }
+  }
+
+  // Prevent double events
+  delete circle.radius_changed;
+  delete circle.center_changed;
+
+  this.circles.push(circle);
+  GMaps.fire('circle_added', circle, this);
+
+  return circle;
+};
+
+
+GMaps.prototype.removeCircle = function(circle) {
+  for (var i = 0, l = this.circles.length; i < l; i++) {
+    if (this.circles[i] === circle) {
+      this._teardownChild('circle', this.circles[i]);
+      this.circles.splice(i, 1);
+      return true;
+    }
+  }
+
+  return false;
+};
+
+
+GMaps.prototype.removeCircles = function() {
+  for (var i = 0, l = this.circles.length; i < l; i++) {
+    this._teardownChild('circle', this.circles[i]);
+  }
+
+  this.circles.length = 0;
+};
+
+GMaps.prototype.drawPolygon = function() {
+  var args = Array.prototype.slice.call(arguments);
+  return this.addPolygon.apply(this, args);
+};
+
+GMaps.prototype.addPolygon = function(options) {
+  var useGeoJSON = false;
+  var self = this;
+
+  if(options.hasOwnProperty('useGeoJSON')) {
+    useGeoJSON = options.useGeoJSON;
+  }
+
+  delete options.useGeoJSON;
+
+  options = this.utils.merge({
+    map: this.map
+  }, options);
+
+  if (useGeoJSON === false) {
+    options.paths = [options.paths.slice(0)];
+  }
+
+  if (options.paths.length > 0) {
+    if (options.paths[0] && options.paths[0].length > 0) {
+      options.paths = this.utils.arrayFlat(
+        this.utils.arrayMap(
+          options.paths,
+          function(p) { return self.utils.arrayToLatLng(p, useGeoJSON); }
+        )
+      );
+    }
+  }
+
+  var polygon = new google.maps.Polygon(options);
+  var polygonEvents = [
+    'click',
+    'rightclick',
+    'dblclick',
+    'drag',
+    'dragend',
+    'dragstart',
+    'mousedown',
+    'mousemove',
+    'mouseout',
+    'mouseover',
+    'mouseup'
+  ];
+
+  for (var ev = 0, l = polygonEvents.length, name; ev < l; ev++) {
+    name = polygonEvents[ev];
+    if (options.hasOwnProperty(name)) {
+      google.maps.event.addListener(
+        polygon,
+        name,
+        this.utils.subcribeEvent(options[name], polygon)
+      );
+    }
+  }
+
+  //////////////////////
+  // Editable Events //
+  ////////////////////
+
+  polygon.delegatedEvents = [];
+
+  var polygonEditableEvents = [
+    'set_at',
+    'insert_at',
+    'remove_at'
+  ];
+
+  // Set editable events to polygon's path
+  for (ev = 0, l = polygonEditableEvents.length, name; ev < l; ev++) {
+    name = polygonEditableEvents[ev];
+    if (options.hasOwnProperty(name)) {
+      polygon.delegatedEvents.push(google.maps.event.addListener(
+        polygon.getPath(),
+        name,
+        this.utils.subcribeEvent(options[name], polygon.getPath())
+      ));
+    }
+  }
+
+  this.polygons.push(polygon);
+
+  GMaps.fire('polygon_added', polygon, this);
+
+  return polygon;
+};
+
+
+GMaps.prototype.removePolygon = function(polygon) {
+  for (var i = 0, l = this.polygons.length; i < l; i++) {
+    if (this.polygons[i] === polygon) {
+      this._teardownChild('polygon', this.polygons[i]);
+      this.polygons.splice(i, 1);
+      return true;
+    }
+  }
+
+  return false;
+};
+
+
+GMaps.prototype.removePolygons = function() {
+  for (var i = 0, l = this.polygons.length; i < l; i++) {
+    this._teardownChild('polygon', this.polygons[i]);
+  }
+
+  this.polygons.length = 0;
+};
+
+GMaps.prototype.drawRectangle = function() {
+  var args = Array.prototype.slice.call(arguments);
+  return this.addRectangle.apply(this, args);
+}
+
+GMaps.prototype.addRectangle = function(options) {
+  options = this.utils.merge({
+    map: this.map
+  }, options);
+
+  var latLngBounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(options.bounds[0][0], options.bounds[0][1]),
+    new google.maps.LatLng(options.bounds[1][0], options.bounds[1][1])
+  );
+
+  options.bounds = latLngBounds;
+
+  var rectangle = new google.maps.Rectangle(options);
+  var rectangleEvents = [
+    'click',
+    'rightclick',
+    'dblclick',
+    'drag',
+    'dragend',
+    'dragstart',
+    'mousedown',
+    'mousemove',
+    'mouseout',
+    'mouseover',
+    'mouseup',
+    'bounds_changed'
+  ];
+
+  for (var ev = 0, l = rectangleEvents.length, name; ev < l; ev++) {
+    name = rectangleEvents[ev];
+    if (options.hasOwnProperty(name)) {
+      google.maps.event.addListener(
+        rectangle,
+        name,
+        this.utils.subcribeEvent(options[name], rectangle)
+      );
+    }
+  }
+
+  // Prevent double events
+  delete rectangle.bounds_changed;
+
+  this.rectangles.push(rectangle);
+  GMaps.fire('rectangle_added', rectangle, this);
+
+  return rectangle;
+};
+
+
+GMaps.prototype.removeRectangle = function(rectangle) {
+  for (var i = 0, l = this.rectangles.length; i < l; i++) {
+    if (this.rectangles[i] === rectangle) {
+      this._teardownChild('rectangle', this.rectangles[i]);
+      this.rectangles.splice(i, 1);
+      return true;
+    }
+  }
+
+  return false;
+};
+
+
+GMaps.prototype.removeRectangles = function() {
+  for (var i = 0, l = this.rectangles.length; i < l; i++) {
+    this._teardownChild('rectangle', this.rectangles[i]);
+  }
+
+  this.rectangles.length = 0;
+};
+
+GMaps.prototype.drawPolyline = function() {
+  var args = Array.prototype.slice.call(arguments);
+  this.addPolyline.apply(this, args);
+};
+
+GMaps.prototype.addPolyline = function(options) {
+  var path = [],
+      points = options.path;
+
+  var i, l, latlng, name;
+
+  if (points.length) {
+    if (typeof points[0][0] === 'undefined') {
+      path = points;
+    }
+    else {
+      for (i = 0, l = points.length; i < l; i++) {
+        latlng = points[i];
+        path.push(new google.maps.LatLng(latlng[0], latlng[1]));
+      }
+    }
+  }
+
+  var polylineOptions = {
+    map: this.map,
+    path: path,
+    strokeColor: options.strokeColor,
+    strokeOpacity: options.strokeOpacity,
+    strokeWeight: options.strokeWeight,
+    geodesic: options.geodesic,
+    clickable: true,
+    editable: false,
+    visible: true
+  };
+
+  if (options.hasOwnProperty('clickable')) {
+    polylineOptions.clickable = options.clickable;
+  }
+
+  if (options.hasOwnProperty('editable')) {
+    polylineOptions.editable = options.editable;
+  }
+
+  if (options.hasOwnProperty('icons')) {
+    polylineOptions.icons = options.icons;
+  }
+
+  if (options.hasOwnProperty('zIndex')) {
+    polylineOptions.zIndex = options.zIndex;
+  }
+
+  var polyline = new google.maps.Polyline(polylineOptions);
+  this.utils.merge(polyline, options);
+
+  var polylineEvents = [
+    'click',
+    'rightclick',
+    'dblclick',
+    'drag',
+    'dragend',
+    'dragstart',
+    'mousedown',
+    'mousemove',
+    'mouseout',
+    'mouseover',
+    'mouseup'
+  ];
+
+  for (i = 0, l = polylineEvents.length; i < l; i++) {
+    name = polylineEvents[i];
+    if (options.hasOwnProperty(name)) {
+      google.maps.event.addListener(
+        polyline,
+        name,
+        this.utils.subcribeEvent(options[name], polyline)
+      );
+    }
+  }
+
+  //////////////////////
+  // Editable Events //
+  ////////////////////
+
+  polyline.delegatedEvents = [];
+
+  var polylineEditableEvents = [
+    'set_at',
+    'insert_at',
+    'remove_at'
+  ];
+
+  // Set editable events to polyline's path
+  for (i = 0, l = polylineEditableEvents.length, name; i < l; i++) {
+    name = polylineEditableEvents[i];
+    if (options.hasOwnProperty(name)) {
+      polyline.delegatedEvents.push(google.maps.event.addListener(
+        polyline.getPath(),
+        name,
+        this.utils.subcribeEvent(options[name], polyline.getPath())
+      ));
+    }
+  }
+
+  this.polylines.push(polyline);
+
+  GMaps.fire('polyline_added', polyline, this);
+
+  return polyline;
+};
+
+
+GMaps.prototype.removePolyline = function(polyline) {
+  for (var i = 0, l = this.polylines.length; i < l; i++) {
+    if (this.polylines[i] === polyline) {
+      this.polylines[i].setMap(null);
+      this.polylines.splice(i, 1);
+
+      GMaps.fire('polyline_removed', polyline, this);
+
+      return true;
+    }
+  }
+  return false;
+};
+
+
+GMaps.prototype.removePolylines = function() {
+  for (var i = 0, l = this.polylines.length; i < l; i++) {
+    this.polylines[i].setMap(null);
+  }
+
+  this.polylines.length = 0;
+};
+
+GMaps.prototype.addInfoWindow = function(options) {
+  options = this.utils.merge({
+    map: this.map,
+    position: new google.maps.LatLng(options.lat, options.lng)
+  }, options);
+
+  var infoWindowSelector = '__gmaps-info-window-'+ this.utils.uuid() +'__';
+  options.content = options.content || '';
+  options.content = [
+    '<div id="',
+    infoWindowSelector,
+    '">',
+    options.content,
+    '</div>'
+  ].join('');
+
+  var infoWindow    = new google.maps.InfoWindow(options);
+  infoWindow._map   = this.map;
+  infoWindow._DOMid = infoWindowSelector;
+  infoWindow.delegatedEvents = [];
+  var mouseEvents = [
+    'click',
+    'rightclick',
+    'dblclick',
+    'drag',
+    'dragend',
+    'dragstart',
+    'mousedown',
+    'mouseout',
+    'mouseover',
+    'mousemove',
+    'mouseup'
+  ];
+
+  var i, l, name, removeDelegatedEvent;
+
+  for (i = 0, l = mouseEvents.length, name; i < l; i++) {
+    name = mouseEvents[i];
+
+    // If object has configured event
+    if (options.hasOwnProperty(name)) {
+
+      // delegate event to the info-window's content wrapper div
+      removeDelegatedEvent = this.addDelegatedEvent(
+        name,
+        '#'+infoWindowSelector,
+        this.utils.subcribeEvent(options[name], infoWindow)
+      );
+      infoWindow.delegatedEvents.push(removeDelegatedEvent);
+    }
+  }
+
+  // Add default events
+  var classEvents = [
+    'closeclick',
+    'content_changed',
+    'domready',
+    'position_changed',
+    'zindex_changed'
+  ];
+
+  for(i = 0, l = classEvents.length, name; i < l; i++) {
+    name = classEvents[i];
+
+    // If object has configured event
+    if (options.hasOwnProperty(name)) {
+      google.maps.event.addListener(
+        infoWindow,
+        name,
+        this.utils.subcribeEvent(options[name], infoWindow)
+      );
+    }
+  }
+
+  infoWindow.visible = (options.hasOwnProperty('visible') ? options.visible : true);
+
+  if(!infoWindow.visible) {
+    infoWindow.close();
+  }
+
+  infoWindow.show = function() {
+    this.open(this._map);
+    this.visible = true;
+  };
+
+  infoWindow.hide = function() {
+    this.close();
+    this.visible = false;
+  };
+
+  this.infoWindows.push(infoWindow);
+  GMaps.fire('info_window_added', infoWindow, this);
+
+  return infoWindow;
+};
+
+
+GMaps.prototype.removeInfoWindow = function(infoWindow) {
+  for (var i = 0, l = this.infoWindows.length; i < l; i++) {
+    if (this.infoWindows[i] === infoWindow) {
+      this._teardownChild('info_window', this.infoWindows[i]);
+      this.infoWindows.splice(i, 1);
+      return true;
+    }
+  }
+
+  return false;
+};
+
+
+GMaps.prototype.removeInfoWindows = function() {
+  for (var i = 0, l = this.infoWindows.length; i < l; i++) {
+    try { this._teardownChild('info_window', this.infoWindows[i]); } catch(e) {} // for jasmine
+  }
+
+  this.infoWindows.length = 0;
+};
+
+GMaps.prototype.createMarker = function(options) {
+  if (typeof options.lat === 'undefined' && typeof options.lng === 'undefined' && options.position === 'undefined') {
+    throw new Error('No latitude or longitude defined.');
+  }
+
+  var self = this;
+  var details = options.details;
+  var fences = options.fences;
+  var outside = options.outside;
+  var baseOptions = {
+    position: new google.maps.LatLng(options.lat, options.lng),
+    map: null
+  };
+  var markerOptions = this.utils.merge(baseOptions, options);
+  var marker = new google.maps.Marker(markerOptions);
+  var ev, l, name;
+
+  marker.fences = fences;
+
+  if (options.infoWindow) {
+    marker.infoWindow = new google.maps.InfoWindow(options.infoWindow);
+
+    var infoWindowEvents = [
+      'closeclick',
+      'content_changed',
+      'domready',
+      'position_changed',
+      'zindex_changed'
+    ];
+
+    for (ev = 0, l = infoWindowEvents.length; ev < l; ev++) {
+      name = infoWindowEvents[ev];
+      if (options.infoWindow.hasOwnProperty(name)) {
+        google.maps.event.addListener(
+          marker.infoWindow,
+          name,
+          this.utils.subcribeEvent(options.infoWindow[name], marker.infoWindow)
+        );
+      }
+    }
+  }
+
+  var markerEvents = [
+    'animation_changed',
+    'clickable_changed',
+    'cursor_changed',
+    'draggable_changed',
+    'flat_changed',
+    'icon_changed',
+    'position_changed',
+    'shadow_changed',
+    'shape_changed',
+    'title_changed',
+    'visible_changed',
+    'zindex_changed'
+  ];
+
+  var markerEventsWithMouse = [
+    'dblclick',
+    'drag',
+    'dragend',
+    'dragstart',
+    'mousedown',
+    'mouseout',
+    'mouseover',
+    'mousemove',
+    'mouseup'
+  ];
+
+  for (ev = 0, l = markerEvents.length; ev < l; ev++) {
+    name = markerEvents[ev];
+    if (options.hasOwnProperty(name)) {
+      google.maps.event.addListener(
+        marker,
+        name,
+        this.utils.subcribeEvent(marker[name], marker)
+      );
+    }
+  }
+
+  function subscribeMouseEvent(callback, obj, map) {
+    return function(me) {
+      if(!me.pixel){
+        me.pixel = map.getProjection();
+        if(me.pixel) {
+          me.pixel = (
+            me.latLng &&
+            me.pixel.fromLatLngToPoint &&
+            me.pixel.fromLatLngToPoint(me.latLng)
+          );
+        }
+      }
+
+      callback(me, this);
+    };
+  }
+
+  for (ev = 0; ev < markerEventsWithMouse.length; ev++) {
+    name = markerEventsWithMouse[ev];
+    if (options.hasOwnProperty(name)) {
+      google.maps.event.addListener(marker, name, subscribeMouseEvent(options[name], marker, this.map));
+    }
+  }
+
+  google.maps.event.addListener(marker, 'click', function(evt) {
+    this.details = details;
+
+    if (options.click) {
+      options.click.apply(this, [evt, this]);
+    }
+
+    if (marker.infoWindow) {
+      self.hideInfoWindows();
+      marker.infoWindow.open(self.map, marker);
+    }
+  });
+
+  google.maps.event.addListener(marker, 'rightclick', function(e) {
+    e.marker = this;
+
+    if (options.rightclick) {
+      options.rightclick.apply(this, [e]);
+    }
+
+    if (typeof window.contextMenu[self.el.id]['marker'] !== undefined) {
+      self.buildContextMenu('marker', e);
+    }
+  });
+
+  if (marker.fences) {
+    google.maps.event.addListener(marker, 'dragend', function() {
+      self.checkMarkerGeofence(marker, function(m, f) {
+        outside(m, f);
+      });
+    });
+  }
+
+  return marker;
+};
+
+GMaps.prototype.addMarker = function(options) {
+  var marker;
+  if(options.hasOwnProperty('gm_accessors_')) {
+    // Native google.maps.Marker object
+    marker = options;
+  }
+  else {
+    if ((options.hasOwnProperty('lat') && options.hasOwnProperty('lng')) || options.position) {
+      marker = this.createMarker(options);
+    }
+    else {
+      throw new Error('No latitude or longitude defined.');
+    }
+  }
+
+  marker.setMap(this.map);
+
+  if(this.markerClusterer) {
+    this.markerClusterer.addMarker(marker);
+  }
+
+  this.markers.push(marker);
+
+  GMaps.fire('marker_added', marker, this);
+
+  return marker;
+};
+
+GMaps.prototype.addMarkers = function(arrayOfMarkers) {
+  for (var i = 0, l = arrayOfMarkers.length; i < l; i++) {
+    this.addMarker(arrayOfMarkers[i]);
+  }
+
+  return this.markers;
+};
+
+GMaps.prototype.hideInfoWindows = function() {
+  for (var i = 0, marker; marker = this.markers[i]; i++){
+    if (marker.infoWindow) {
+      marker.infoWindow.close();
+    }
+  }
+};
+
+GMaps.prototype.removeMarker = function(marker) {
+  for (var i = 0, l = this.markers.length; i < l; i++) {
+    if (this.markers[i] === marker) {
+      this.markers[i].setMap(null);
+      this.markers.splice(i, 1);
+
+      if(this.markerClusterer) {
+        this.markerClusterer.removeMarker(marker);
+      }
+
+      GMaps.fire('marker_removed', marker, this);
+
+      break;
+    }
+  }
+
+  return marker;
+};
+
+GMaps.prototype.removeMarkers = function (collection) {
+  var new_markers = [];
+  var i, l, marker, index;
+
+  if (typeof collection === 'undefined') {
+    for (i = 0, l = this.markers.length; i < l; i++) {
+      marker = this.markers[i];
+      marker.setMap(null);
+      google.maps.event.clearInstanceListeners(marker);
+
+      if(this.markerClusterer) {
+        this.markerClusterer.removeMarker(marker);
+      }
+
+      GMaps.fire('marker_removed', marker, this);
+    }
+  }
+  else {
+    for (i = 0, l = collection.length; i < l; i++) {
+      index = this.markers.indexOf(collection[i]);
+
+      if (index > -1) {
+        marker = this.markers[index];
+        marker.setMap(null);
+        google.maps.event.clearInstanceListeners(marker);
+
+        if(this.markerClusterer) {
+          this.markerClusterer.removeMarker(marker);
+        }
+
+        GMaps.fire('marker_removed', marker, this);
+      }
+    }
+
+    for (i = 0, l = this.markers.length; i < l; i++) {
+      marker = this.markers[i];
+      if (marker.getMap() !== null) {
+        new_markers.push(marker);
+      }
+    }
+  }
+
+  return this.markers = new_markers;
+};
+
+GMaps.prototype.drawOverlay = function() {
+  var args = Array.prototype.slice.call(arguments);
+  return this.addOverlay.apply(this, args);
+};
+
+GMaps.prototype.addOverlay = function(options) {
+  var self = this;
+  var overlay = new google.maps.OverlayView();
+  var visible = true;
+
+  this.utils.merge(overlay, options);
+  overlay.setMap(this.map);
+
+  if (options.hasOwnProperty('visible')) {
+    visible = options.visible;
+  }
+
+  overlay.onAdd = function() {
+    var el = document.createElement('div');
+
+    el.style.borderStyle = 'none';
+    el.style.borderWidth = '0px';
+    el.style.position = 'absolute';
+    el.style.zIndex = 100;
+    el.innerHTML = options.content;
+
+    overlay.el = el;
+
+    if (!options.layer) {
+      options.layer = 'overlayLayer';
+    }
+
+    var panes = this.getPanes();
+    var overlayLayer = panes[options.layer];
+    var stopOverlayEvents = [
+      'contextmenu',
+      'DOMMouseScroll',
+      'dblclick',
+      'mousedown'
+    ];
+
+    overlayLayer.appendChild(el);
+
+    function preventOverlayEvents() {
+      return function(e) {
+        if (navigator.userAgent.toLowerCase().indexOf('msie') !== -1 && document.all) {
+          e.cancelBubble = true;
+          e.returnValue = false;
+        }
+        else if(e && typeof e.stopPropagation === 'function') {
+          e.stopPropagation();
+        }
+      };
+    }
+
+    var name;
+    for (var ev = 0, l = stopOverlayEvents.length; ev < l; ev++) {
+      name = stopOverlayEvents[ev];
+      google.maps.event.addDomListener(el, name, preventOverlayEvents());
+    }
+
+    var overlayEvents = [
+      'click',
+      'rightclick',
+      'dblclick',
+      'drag',
+      'dragend',
+      'dragstart',
+      'mousedown',
+      'mouseout',
+      'mouseover',
+      'mousemove',
+      'mouseup'
+    ];
+
+    // If there are any mouse events append the mouse target element
+    for (ev = 0, l = overlayEvents.length; ev < l; ev++) {
+      name = overlayEvents[ev];
+      if (options.hasOwnProperty(name)) {
+        panes.overlayMouseTarget.appendChild(overlay.el);
+        break;
+      }
+    }
+
+    // Subscribe all configured mouse events
+    for (ev = 0, l = overlayEvents.length; ev < l; ev++) {
+      name = overlayEvents[ev];
+      if(options.hasOwnProperty(name)) {
+        google.maps.event.addDomListener(
+          overlay.el,
+          name,
+          self.utils.subcribeEvent(options[name], overlay)
+        );
+      }
+    }
+
+    google.maps.event.trigger(this, 'ready');
+  };
+
+  overlay.draw = function() {
+    var projection = this.getProjection();
+    var pixel = 0;
+
+    // Avoid crashing unit tests
+    try {
+      pixel = projection.fromLatLngToDivPixel(new google.maps.LatLng(options.lat, options.lng));
+    } catch(e) {}
+
+    options.horizontalOffset = options.horizontalOffset || 0;
+    options.verticalOffset = options.verticalOffset || 0;
+
+    var el = overlay.el;
+    var content = el.children[0];
+    var contentHeight = content.clientHeight;
+    var contentWidth = content.clientWidth;
+
+    switch (options.verticalAlign) {
+      case 'top':
+        el.style.top = (pixel.y - contentHeight + options.verticalOffset) + 'px';
+        break;
+      default:
+      case 'middle':
+        el.style.top = (pixel.y - (contentHeight / 2) + options.verticalOffset) + 'px';
+        break;
+      case 'bottom':
+        el.style.top = (pixel.y + options.verticalOffset) + 'px';
+        break;
+    }
+
+    switch (options.horizontalAlign) {
+      case 'left':
+        el.style.left = (pixel.x - contentWidth + options.horizontalOffset) + 'px';
+        break;
+      default:
+      case 'center':
+        el.style.left = (pixel.x - (contentWidth / 2) + options.horizontalOffset) + 'px';
+        break;
+      case 'right':
+        el.style.left = (pixel.x + options.horizontalOffset) + 'px';
+        break;
+    }
+
+    el.style.display = visible ? 'block' : 'none';
+
+    if (!visible && typeof options.show === 'function') {
+      options.show.apply(this, [el]);
+    }
+  };
+
+  overlay.onRemove = function() {
+    var el = overlay.el;
+
+    if (options.remove) {
+      options.remove.apply(this, [el]);
+    }
+    else {
+      overlay.el.parentNode.removeChild(overlay.el);
+      overlay.el = null;
+    }
+  };
+
+  this.overlays.push(overlay);
+  GMaps.fire('overlay_added', overlay, this);
+
+  return overlay;
+};
+
+GMaps.prototype.removeOverlay = function(overlay) {
+  for (var i = 0, l = this.overlays.length; i < l; i++) {
+    if (this.overlays[i] === overlay) {
+      this._teardownChild('overlay', this.overlays[i]);
+      this.overlays.splice(i, 1);
+      return true;
+    }
+  }
+
+  return false;
+};
+
+GMaps.prototype.removeOverlays = function() {
+  for (var i = 0, l = this.overlays.length; i < l; i++) {
+    this._teardownChild('overlay', this.overlays[i]);
+  }
+
+  this.overlays.length = 0;
+};
+
+GMaps.prototype.addText = function(options) {
+  var self = this;
+  var overlayText = new google.maps.OverlayView();
+  var visible = true;
+
+  this.utils.merge(overlayText, options);
+
+  if(!options.text || typeof options.text !== 'string') {
+    throw new Error('addText requires an options config with a text string property');
+  }
+
+  overlayText.setMap(this.map);
+
+  if (options.hasOwnProperty('visible')) {
+    visible = options.visible;
+  }
+
+  overlayText.onAdd = function() {
+    var el = document.createElement('div');
+
+    el.style.borderStyle = 'none';
+    el.style.borderWidth = '0px';
+    el.style.position = 'absolute';
+    el.style.opacity = 0; // Don't show until element has been adjusted
+    el.style.display = 'block';
+    el.style.zIndex = options.zIndex || 100;
+    el.innerHTML = '<strong>'+ self.utils.stripHTML(options.text) +'</strong>';
+
+    overlayText.el = el;
+
+    var panes = this.getPanes();
+    var overlayLayer = panes.overlayLayer;
+    var stopOverlayEvents = [
+      'contextmenu',
+      'DOMMouseScroll',
+      'dblclick',
+      'mousedown'
+    ];
+
+    overlayLayer.appendChild(el);
+
+    function preventOverlayEvents() {
+      return function(e) {
+        if (navigator.userAgent.toLowerCase().indexOf('msie') !== -1 && document.all) {
+          e.cancelBubble = true;
+          e.returnValue = false;
+        }
+        else if(e && typeof e.stopPropagation === 'function') {
+          e.stopPropagation();
+        }
+      };
+    }
+
+    var name;
+    for (var ev = 0, l = stopOverlayEvents.length; ev < l; ev++) {
+      name = stopOverlayEvents[ev];
+      google.maps.event.addDomListener(el, name, preventOverlayEvents());
+    }
+
+    var overlayEvents = [
+      'click',
+      'rightclick',
+      'dblclick',
+      'drag',
+      'dragend',
+      'dragstart',
+      'mousedown',
+      'mousemove',
+      'mouseout',
+      'mouseover',
+      'mouseup'
+    ];
+
+    // If there are any mouse events append the mouse target element
+    for (ev = 0, l = overlayEvents.length; ev < l; ev++) {
+      name = overlayEvents[ev];
+      if (options.hasOwnProperty(name)) {
+        panes.overlayMouseTarget.appendChild(overlayText.el);
+        break;
+      }
+    }
+
+    // Subscribe all configured mouse events
+    for (ev = 0, l = overlayEvents.length; ev < l; ev++) {
+      name = overlayEvents[ev];
+      if(options.hasOwnProperty(name)) {
+        google.maps.event.addDomListener(
+          overlayText.el,
+          name,
+          self.utils.subcribeEvent(options[name], overlayText)
+        );
+      }
+    }
+
+    google.maps.event.trigger(this, 'ready');
+  };
+
+  overlayText.draw = function() {
+    var projection = this.getProjection();
+    var pixel = 0;
+
+    // Avoid crashing unit tests
+    try {
+      pixel = projection.fromLatLngToDivPixel(new google.maps.LatLng(options.lat, options.lng));
+    } catch(e) {}
+
+    options.horizontalOffset = options.horizontalOffset || 0;
+    options.verticalOffset = options.verticalOffset || 0;
+
+    var el = overlayText.el;
+
+    // Remove all interferring styles
+    var target = el.firstChild;
+    target.style.padding = '0';
+    target.style.margin = '0';
+    target.style.transform = 'none';
+
+    el.style.top = (pixel.y - (el.clientHeight / 2) + options.verticalOffset) + 'px';
+    el.style.left = (pixel.x - (el.clientWidth  / 2) + options.horizontalOffset) + 'px';
+
+    // Show the text element
+    el.style.opacity = 1;
+  };
+
+  overlayText.onRemove = function() {
+    overlayText.el.parentNode.removeChild(overlayText.el);
+    overlayText.el = null;
+  };
+
+  this.texts.push(overlayText);
+  GMaps.fire('text_added', overlayText, this);
+
+  return overlayText;
+};
+
+
+GMaps.prototype.removeText = function(overlayText) {
+  for (var i = 0, l = this.texts.length; i < l; i++) {
+    if (this.texts[i] === overlayText) {
+      this._teardownChild('text', this.texts[i]);
+      this.texts.splice(i, 1);
+      return true;
+    }
+  }
+
+  return false;
+};
+
+
+GMaps.prototype.removeTexts = function() {
+  for (var i = 0, l = this.texts.length; i < l; i++) {
+    this._teardownChild('overlayText', this.texts[i]);
+  }
+
+  this.texts.length = 0;
+};
+
+GMaps.prototype.getFromFusionTables = function(options) {
+  var events = options.events;
+
+  delete options.events;
+
+  var fusion_tables_options = options,
+      layer = new google.maps.FusionTablesLayer(fusion_tables_options);
+
+  for (var ev in events) {
+    if(events.hasOwnProperty(ev)) {
+      google.maps.event.addListener(
+        layer,
+        ev,
+        this.utils.subcribeEvent(events[ev], layer)
+      );
+    }
+  }
+
+  this.layers.push(layer);
+
+  return layer;
+};
+
+GMaps.prototype.loadFromFusionTables = function(options) {
+  var layer = this.getFromFusionTables(options);
+  layer.setMap(this.map);
+
+  return layer;
+};
+
+GMaps.prototype.getFromKML = function(options) {
+  var url = options.url,
+      events = options.events;
+
+  var kml_options = options,
+      layer = new google.maps.KmlLayer(url, kml_options);
+
+  for (var ev in events) {
+    if(events.hasOwnProperty(ev)) {
+      google.maps.event.addListener(
+        layer,
+        ev,
+        this.utils.subcribeEvent(events[ev], layer)
+      );
+    }
+  }
+
+  this.layers.push(layer);
+
+  return layer;
+};
+
+GMaps.prototype.loadFromKML = function(options) {
+  var layer = this.getFromKML(options);
+  layer.setMap(this.map);
+
+  return layer;
+};
+
+GMaps.prototype.addLayer = function(layerName, options) {
+  //var default_layers = ['weather', 'clouds', 'traffic', 'transit', 'bicycling', 'panoramio', 'places'];
+  options = options || {};
+  var layer;
+
+  switch(layerName) {
+    case 'weather': this.singleLayers.weather = layer = new google.maps.weather.WeatherLayer();
+      break;
+    case 'clouds': this.singleLayers.clouds = layer = new google.maps.weather.CloudLayer();
+      break;
+    case 'traffic': this.singleLayers.traffic = layer = new google.maps.TrafficLayer();
+      break;
+    case 'transit': this.singleLayers.transit = layer = new google.maps.TransitLayer();
+      break;
+    case 'bicycling': this.singleLayers.bicycling = layer = new google.maps.BicyclingLayer();
+      break;
+    case 'panoramio':
+        this.singleLayers.panoramio = layer = new google.maps.panoramio.PanoramioLayer();
+        layer.setTag(options.filter);
+        delete options.filter;
+
+        //click event
+        if (options.click) {
+          google.maps.event.addListener(layer, 'click', function(event) {
+            options.click(event);
+            delete options.click;
+          });
+        }
+      break;
+      case 'places':
+        this.singleLayers.places = layer = new google.maps.places.PlacesService(this.map);
+
+        //search, nearbySearch, radarSearch callback, Both are the same
+        if (options.search || options.nearbySearch || options.radarSearch) {
+          var placeSearchRequest  = {
+            bounds : options.bounds || null,
+            keyword : options.keyword || null,
+            location : options.location || null,
+            name : options.name || null,
+            radius : options.radius || null,
+            rankBy : options.rankBy || null,
+            types : options.types || null
+          };
+
+          if (options.radarSearch) {
+            layer.radarSearch(placeSearchRequest, options.radarSearch);
+          }
+
+          if (options.search) {
+            layer.search(placeSearchRequest, options.search);
+          }
+
+          if (options.nearbySearch) {
+            layer.nearbySearch(placeSearchRequest, options.nearbySearch);
+          }
+        }
+
+        //textSearch callback
+        if (options.textSearch) {
+          var textSearchRequest  = {
+            bounds : options.bounds || null,
+            location : options.location || null,
+            query : options.query || null,
+            radius : options.radius || null
+          };
+
+          layer.textSearch(textSearchRequest, options.textSearch);
+        }
+      break;
+  }
+
+  if (typeof layer !== 'undefined') {
+    if (typeof layer.setOptions === 'function') {
+      layer.setOptions(options);
+    }
+    if (typeof layer.setMap === 'function') {
+      layer.setMap(this.map);
+    }
+
+    this.layers.push(layer);
+
+    return layer;
+  }
+};
+
+
+GMaps.prototype.removeLayer = function(layer) {
+  var isStringLayer = (typeof layer === 'string' && this.singleLayers[layer] !== undefined);
+
+  for (var i = 0, l = this.layers.length, curr; i < l; i++) {
+    curr = this.layers[i];
+
+    if(this.layers[i] === layer || isStringLayer && this.singleLayers[layer] === curr) {
+      this._teardownChild('layer', this.layers[i]);
+
+      if (isStringLayer) { delete this.singleLayers[layer]; }
+      this.layers.splice(i, 1);
+      return true;
+    }
+  }
+
+  return false;
+};
+
+
+GMaps.prototype.removeLayers = function() {
+  for (var i = 0, l = this.layers.length; i < l; i++) {
+    this._teardownChild('layer', this.layers[i]);
+  }
+
+  for(i in this.singleLayers) {
+    if(this.singleLayers.hasOwnProperty(i)) {
+      delete this.singleLayers[i];
+    }
+  }
+
+  this.layers.length = 0;
+};
+
+GMaps.prototype.getRoutes = function(options) {
+  var travelMode, unitSystem;
+
+  switch (options.travelMode) {
+    case 'bicycling':
+      travelMode = google.maps.TravelMode.BICYCLING;
+      break;
+    case 'transit':
+      travelMode = google.maps.TravelMode.TRANSIT;
+      break;
+    case 'driving':
+      travelMode = google.maps.TravelMode.DRIVING;
+      break;
+    default:
+      travelMode = google.maps.TravelMode.WALKING;
+      break;
+  }
+
+  if (options.unitSystem === 'imperial') {
+    unitSystem = google.maps.UnitSystem.IMPERIAL;
+  }
+  else {
+    unitSystem = google.maps.UnitSystem.METRIC;
+  }
+
+  var baseOptions = {
+    avoidHighways: false,
+    avoidTolls: false,
+    optimizeWaypoints: false,
+    waypoints: []
+  };
+  var requestOptions =  this.utils.merge(baseOptions, options);
+
+  requestOptions.origin = /string/.test(typeof options.origin) ? options.origin : new google.maps.LatLng(options.origin[0], options.origin[1]);
+  requestOptions.destination = /string/.test(typeof options.destination) ? options.destination : new google.maps.LatLng(options.destination[0], options.destination[1]);
+  requestOptions.travelMode = travelMode;
+  requestOptions.unitSystem = unitSystem;
+
+  delete requestOptions.callback;
+  delete requestOptions.error;
+
+  var self = this,
+      service = new google.maps.DirectionsService();
+
+  service.route(requestOptions, function(result, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      for (var r in result.routes) {
+        if (result.routes.hasOwnProperty(r)) {
+          self.routes.push(result.routes[r]);
+        }
+      }
+
+      if (options.callback) {
+        options.callback(self.routes);
+      }
+    }
+    else {
+      if (options.error) {
+        options.error(result, status);
+      }
+    }
+  });
+};
+
+
+GMaps.prototype.removeRoutes = function() {
+  this.routes.length = 0;
+};
+
+
+GMaps.prototype.getElevations = function(options) {
+  var self = this;
+  options = this.utils.merge({
+    locations: [],
+    path : false,
+    samples : 256
+  }, options);
+
+  if (options.locations.length > 0) {
+    if (options.locations[0].length > 0) {
+      options.locations = this.utils.arrayFlat(
+        this.utils.arrayMap(
+          [options.locations],
+          function(c) { return self.utils.arrayToLatLng(c, false); }
+        )
+      );
+    }
+  }
+
+  var callback = options.callback;
+  delete options.callback;
+
+  var service = new google.maps.ElevationService();
+
+  //location request
+  if (!options.path) {
+    delete options.path;
+    delete options.samples;
+
+    service.getElevationForLocations(options, function(result, status) {
+      if (callback && typeof callback === 'function') {
+        callback(result, status);
+      }
+    });
+  //path request
+  } else {
+    var pathRequest = {
+      path : options.locations,
+      samples : options.samples
+    };
+
+    service.getElevationAlongPath(pathRequest, function(result, status) {
+     if (callback && typeof callback === 'function') {
+        callback(result, status);
+      }
+    });
+  }
+};
+
+GMaps.prototype.cleanRoute = GMaps.prototype.removePolylines;
+
+GMaps.prototype.drawRoute = function() {
+  var args = Array.prototype.slice.call(arguments);
+  this.addRoute.apply(this, args);
+};
+
+GMaps.prototype.addRoute = function(options) {
+  var self = this;
+
+  this.getRoutes({
+    origin: options.origin,
+    destination: options.destination,
+    travelMode: options.travelMode,
+    waypoints: options.waypoints,
+    unitSystem: options.unitSystem,
+    error: options.error,
+    callback: function(e) {
+      if (e.length > 0) {
+        var polyline_options = {
+          path: e[e.length - 1].overview_path,
+          strokeColor: options.strokeColor,
+          strokeOpacity: options.strokeOpacity,
+          strokeWeight: options.strokeWeight
+        };
+
+        if (options.hasOwnProperty('icons')) {
+          polyline_options.icons = options.icons;
+        }
+
+        self.addPolyline(polyline_options);
+        
+        if (options.callback) {
+          options.callback(e[e.length - 1]);
+        }
+      }
+    }
+  });
+};
+
+
+GMaps.prototype.travelRoute = function(options) {
+  var route, steps, step, i, l;
+
+  if (options.origin && options.destination) {
+    this.getRoutes({
+      origin: options.origin,
+      destination: options.destination,
+      travelMode: options.travelMode,
+      waypoints : options.waypoints,
+      unitSystem: options.unitSystem,
+      error: options.error,
+      callback: function(e) {
+
+        //start callback
+        if (e.length > 0 && options.start) {
+          options.start(e[e.length - 1]);
+        }
+
+        //step callback
+        if (e.length > 0 && options.step) {
+          route = e[e.length - 1];
+
+          if (route.legs.length > 0) {
+
+            steps = route.legs[0].steps;
+            for (i = 0, l = steps.length; i < l; i++) {
+              step = steps[i];
+              step.step_number = i;
+              options.step(step, (route.legs[0].steps.length - 1));
+            }
+          }
+        }
+
+        //end callback
+        if (e.length > 0 && options.end) {
+           options.end(e[e.length - 1]);
+        }
+      }
+    });
+  }
+  else if (options.route && options.route.legs.length > 0) {
+    steps = options.route.legs[0].steps;
+    for (i = 0, l = steps.length; i < l; i++) {
+      step = steps[i];
+      step.step_number = i;
+      options.step(step);
+    }
+  }
+};
+
+
+GMaps.prototype.drawSteppedRoute = function() {
+  var args = Array.prototype.slice.call(arguments);
+  this.addSteppedRoute.apply(this, args);
+};
+
+GMaps.prototype.addSteppedRoute = function(options) {
+  var self = this;
+  var route, steps, step, i, l, polyline_options;
+  
+  if (options.origin && options.destination) {
+    this.getRoutes({
+      origin: options.origin,
+      destination: options.destination,
+      travelMode: options.travelMode,
+      waypoints : options.waypoints,
+      error: options.error,
+      callback: function(e) {
+        //start callback
+        if (e.length > 0 && options.start) {
+          options.start(e[e.length - 1]);
+        }
+
+        //step callback
+        if (e.length > 0 && options.step) {
+        
+          route = e[e.length - 1];
+          if (route.legs.length > 0) {
+
+            steps = route.legs[0].steps;
+            for (i = 0, l = steps.length; i < l; i++) {
+              step = steps[i];
+              step.step_number = i;
+              polyline_options = {
+                path: step.path,
+                strokeColor: options.strokeColor,
+                strokeOpacity: options.strokeOpacity,
+                strokeWeight: options.strokeWeight
+              };
+
+              if (options.hasOwnProperty('icons')) {
+                polyline_options.icons = options.icons;
+              }
+
+              self.addPolyline(polyline_options);
+              options.step(step, (route.legs[0].steps.length - 1));
+            }
+          }
+        }
+
+        //end callback
+        if (e.length > 0 && options.end) {
+           options.end(e[e.length - 1]);
+        }
+      }
+    });
+  }
+  else if (options.route) {
+    if (options.route.legs.length > 0) {
+
+      steps = options.route.legs[0].steps;
+      for (i = 0, l = steps.length; i < l; i++) {
+        step = steps[i];
+        step.step_number = i;
+        polyline_options = {
+          path: step.path,
+          strokeColor: options.strokeColor,
+          strokeOpacity: options.strokeOpacity,
+          strokeWeight: options.strokeWeight
+        };
+
+        if (options.hasOwnProperty('icons')) {
+          polyline_options.icons = options.icons;
+        }
+
+        self.addPolyline(polyline_options);
+        options.step(step);
+      }
+    }
+  }
+};
+
+
+GMaps.Route = function(options) {
+  this.origin = options.origin;
+  this.destination = options.destination;
+  this.waypoints = options.waypoints;
+
+  this.map = options.map;
+  this.route = options.route;
+  this.step_count = 0;
+  this.steps = this.route.legs[0].steps;
+  this.steps_length = this.steps.length;
+
+  var polyline_options = {
+    path: new google.maps.MVCArray(),
+    strokeColor: options.strokeColor,
+    strokeOpacity: options.strokeOpacity,
+    strokeWeight: options.strokeWeight
+  };
+
+  if (options.hasOwnProperty('icons')) {
+    polyline_options.icons = options.icons;
+  }
+
+  this.polyline = this.map.addPolyline(polyline_options).getPath();
+};
+
+GMaps.Route.prototype.getRoute = function(options) {
+  var self = this;
+
+  this.map.getRoutes({
+    origin : this.origin,
+    destination : this.destination,
+    travelMode : options.travelMode,
+    waypoints : this.waypoints || [],
+    error: options.error,
+    callback : function(e) {
+      self.route = e && e[0];
+
+      if (options.callback) {
+        options.callback.call(self);
+      }
+    }
+  });
+};
+
+
+GMaps.Route.prototype.back = function() {
+  if (this.step_count > 0) {
+    this.step_count--;
+    var path = this.route.legs[0].steps[this.step_count].path;
+
+    for (var p in path){
+      if (path.hasOwnProperty(p)){
+        this.polyline.pop();
+      }
+    }
+  }
+};
+
+
+GMaps.Route.prototype.forward = function() {
+  if (this.step_count < this.steps_length) {
+    var path = this.route.legs[0].steps[this.step_count].path;
+
+    for (var p in path){
+      if (path.hasOwnProperty(p)){
+        this.polyline.push(path[p]);
+      }
+    }
+    this.step_count++;
+  }
+};
+
+GMaps.prototype.checkGeofence = function(lat, lng, fence) {
+  return fence.containsLatLng(new google.maps.LatLng(lat, lng));
+};
+
+GMaps.prototype.checkMarkerGeofence = function(marker, outside_callback) {
+  var fence, pos;
+
+  if (marker.fences) {
+    for (var i = 0, l = marker.fences.length; i < l; i++) {
+      fence = marker.fences[i];
+      pos = marker.getPosition();
+      if (!this.checkGeofence(pos.lat(), pos.lng(), fence)) {
+        outside_callback(marker, fence);
+      }
+    }
+  }
+};
+
+GMaps.prototype.toImage = function(options) {
+  var staticMapOptions = {};
+
+  if(!options) {
+    options = {};
+  }
+
+  if(options.size) {
+    staticMapOptions.size = options.size;
+  } else {
+    staticMapOptions.size = [this.el.clientWidth, this.el.clientHeight];
+  }
+  staticMapOptions.lat = this.getCenter().lat();
+  staticMapOptions.lng = this.getCenter().lng();
+
+  if (this.markers.length > 0) {
+    staticMapOptions['markers'] = [];
+
+    for (var i = 0, l = this.markers.length; i < l; i++) {
+      staticMapOptions['markers'].push({
+        lat: this.markers[i].getPosition().lat(),
+        lng: this.markers[i].getPosition().lng()
+      });
+    }
+  }
+
+  if (this.polylines.length > 0) {
+    var polyline = this.polylines[0];
+
+    staticMapOptions['polyline'] = {};
+    staticMapOptions['polyline']['path'] = google.maps.geometry.encoding.encodePath(polyline.getPath());
+    staticMapOptions['polyline']['strokeColor'] = polyline.strokeColor
+    staticMapOptions['polyline']['strokeOpacity'] = polyline.strokeOpacity
+    staticMapOptions['polyline']['strokeWeight'] = polyline.strokeWeight
+  }
+
+  return GMaps.staticMapURL(staticMapOptions);
+};
+
+GMaps.staticMapURL = function(options){
+  var parameters = [],
+      data,
+      static_root = (location.protocol === 'file:' ? 'http:' : location.protocol ) + '//maps.googleapis.com/maps/api/staticmap';
+
+  if (options.url) {
+    static_root = options.url;
+    delete options.url;
+  }
+
+  static_root += '?';
+
+  var markers = options.markers;
+  
+  delete options.markers;
+
+  if (!markers && options.marker) {
+    markers = [options.marker];
+    delete options.marker;
+  }
+
+  var styles = options.styles;
+
+  delete options.styles;
+
+  var polyline = options.polyline;
+  delete options.polyline;
+
+  /** Map options **/
+  if (options.center) {
+    parameters.push('center=' + options.center);
+    delete options.center;
+  }
+  else if (options.address) {
+    parameters.push('center=' + options.address);
+    delete options.address;
+  }
+  else if (options.lat) {
+    parameters.push(['center=', options.lat, ',', options.lng].join(''));
+    delete options.lat;
+    delete options.lng;
+  }
+  else if (options.visible) {
+    var visible = encodeURI(options.visible.join('|'));
+    parameters.push('visible=' + visible);
+  }
+
+  var size = options.size;
+  if (size) {
+    if (size.join) {
+      size = size.join('x');
+    }
+    delete options.size;
+  }
+  else {
+    size = '630x300';
+  }
+  parameters.push('size=' + size);
+
+  if (!options.zoom && options.zoom !== false) {
+    options.zoom = 15;
+  }
+
+  var sensor = options.hasOwnProperty('sensor') ? !!options.sensor : true;
+  delete options.sensor;
+  parameters.push('sensor=' + sensor);
+
+  for (var param in options) {
+    if (options.hasOwnProperty(param)) {
+      parameters.push(param + '=' + options[param]);
+    }
+  }
+
+  var marker, loc, i, l;
+
+  /** Markers **/
+  if (markers) {
+
+    for (i = 0, l = markers.length; i < l; i++) {
+      data = markers[i];
+      marker = [];
+
+      if (data.size && data.size !== 'normal') {
+        marker.push('size:' + data.size);
+        delete data.size;
+      }
+      else if (data.icon) {
+        marker.push('icon:' + encodeURI(data.icon));
+        delete data.icon;
+      }
+
+      if (data.color) {
+        marker.push('color:' + data.color.replace('#', '0x'));
+        delete data.color;
+      }
+
+      if (data.label) {
+        marker.push('label:' + data.label[0].toUpperCase());
+        delete data.label;
+      }
+
+      loc = (data.address ? data.address : data.lat + ',' + data.lng);
+      delete data.address;
+      delete data.lat;
+      delete data.lng;
+
+      for(param in data){
+        if (data.hasOwnProperty(param)) {
+          marker.push(param + ':' + data[param]);
+        }
+      }
+
+      if (marker.length || i === 0) {
+        marker.push(loc);
+        marker = marker.join('|');
+        parameters.push('markers=' + encodeURI(marker));
+      }
+      // New marker without styles
+      else {
+        marker = parameters.pop() + encodeURI('|' + loc);
+        parameters.push(marker);
+      }
+    }
+  }
+
+  var styleRule, j, ll, p, ruleArg, rule;
+
+  /** Map Styles **/
+  if (styles) {
+    for (i = 0, l = styles.length; i < l; i++) {
+      styleRule = [];
+      if (styles[i].featureType){
+        styleRule.push('feature:' + styles[i].featureType.toLowerCase());
+      }
+
+      if (styles[i].elementType) {
+        styleRule.push('element:' + styles[i].elementType.toLowerCase());
+      }
+
+      for (j = 0, ll = styles[i].stylers.length; j < l; j++) {
+        for (p in styles[i].stylers[j]) {
+          if(styles[i].stylers[j].hasOwnProperty(p)) {
+            ruleArg = styles[i].stylers[j][p];
+            if (p === 'hue' || p === 'color') {
+              ruleArg = '0x' + ruleArg.substring(1);
+            }
+            styleRule.push(p + ':' + ruleArg);
+          }
+        }
+      }
+
+      rule = styleRule.join('|');
+      if (rule !== '') {
+        parameters.push('style=' + rule);
+      }
+    }
+  }
+
+  /** Polylines **/
+  function parseColor(color, opacity) {
+    if (color[0] === '#'){
+      color = color.replace('#', '0x');
+
+      if (opacity) {
+        opacity = parseFloat(opacity);
+        opacity = Math.min(1, Math.max(opacity, 0));
+        if (opacity === 0) {
+          return '0x00000000';
+        }
+        opacity = (opacity * 255).toString(16);
+        if (opacity.length === 1) {
+          opacity += opacity;
+        }
+
+        color = color.slice(0,8) + opacity;
+      }
+    }
+    return color;
+  }
+
+  if (polyline) {
+    data = polyline;
+    polyline = [];
+
+    if (data.strokeWeight) {
+      polyline.push('weight:' + parseInt(data.strokeWeight, 10));
+    }
+
+    if (data.strokeColor) {
+      var color = parseColor(data.strokeColor, data.strokeOpacity);
+      polyline.push('color:' + color);
+    }
+
+    if (data.fillColor) {
+      var fillcolor = parseColor(data.fillColor, data.fillOpacity);
+      polyline.push('fillcolor:' + fillcolor);
+    }
+
+    var path = data.path;
+    var pos;
+    var lll;
+    if (path.join) {
+      for (j=0, lll = path.length; j < lll; j++) {
+        pos = path[j];
+        polyline.push(pos.join(','));
+      }
+    }
+    else {
+      polyline.push('enc:' + path);
+    }
+
+    polyline = polyline.join('|');
+    parameters.push('path=' + encodeURI(polyline));
+  }
+
+  /** Retina support **/
+  var dpi = window.devicePixelRatio || 1;
+  parameters.push('scale=' + dpi);
+
+  parameters = parameters.join('&');
+  return static_root + parameters;
+};
+
+GMaps.prototype.addMapType = function(mapTypeId, options) {
+  if (options.hasOwnProperty('getTileUrl') && typeof options['getTileUrl'] === 'function') {
+    options.tileSize = options.tileSize || new google.maps.Size(256, 256);
+
+    var mapType = new google.maps.ImageMapType(options);
+
+    this.map.mapTypes.set(mapTypeId, mapType);
+  }
+  else {
+    throw new Error('"getTileUrl" function required.');
+  }
+};
+
+GMaps.prototype.addOverlayMapType = function(options) {
+  if (options.hasOwnProperty('getTile') && typeof options['getTile'] === 'function') {
+    var overlayMapTypeIndex = options.index;
+
+    delete options.index;
+
+    this.map.overlayMapTypes.insertAt(overlayMapTypeIndex, options);
+  }
+  else {
+    throw new Error('"getTile" function required.');
+  }
+};
+
+GMaps.prototype.removeOverlayMapType = function(overlayMapTypeIndex) {
+  this.map.overlayMapTypes.removeAt(overlayMapTypeIndex);
+};
+
+GMaps.prototype.addStyle = function(options) {
+  var styledMapType = new google.maps.StyledMapType(options.styles, { name: options.styledMapName });
+
+  this.map.mapTypes.set(options.mapTypeId, styledMapType);
+};
+
+GMaps.prototype.setStyle = function(mapTypeId) {
+  this.map.setMapTypeId(mapTypeId);
+};
+
+GMaps.prototype.createPanorama = function(streetviewOptions) {
+  if (!streetviewOptions.hasOwnProperty('lat') || !streetviewOptions.hasOwnProperty('lng')) {
+    streetviewOptions.lat = this.getCenter().lat();
+    streetviewOptions.lng = this.getCenter().lng();
+  }
+
+  this.panorama = GMaps.createPanorama(streetviewOptions);
+
+  this.map.setStreetView(this.panorama);
+
+  return this.panorama;
+};
+
+
+GMaps.createPanorama = function(options) {
+  var el = document.getElementById(options.el);
+
+  options.position = new google.maps.LatLng(options.lat, options.lng);
+
+  delete options.el;
+  delete options.context;
+  delete options.lat;
+  delete options.lng;
+
+  var streetviewEvents = [
+    'closeclick',
+    'links_changed',
+    'pano_changed',
+    'position_changed',
+    'pov_changed',
+    'resize',
+    'visible_changed'
+  ];
+  var streetviewOptions = GMaps.prototype.utils.merge({visible : true}, options);
+
+  for (var i = 0, l = streetviewEvents.length; i < l; i++) {
+    delete streetviewOptions[streetviewEvents[i]];
+  }
+
+  var panorama = new google.maps.StreetViewPanorama(el, streetviewOptions);
+  var name;
+
+  for (i = 0, l = streetviewEvents.length; i < l; i++) {
+    name = streetviewEvents[i];
+    if (options.hasOwnProperty(name)) {
+      google.maps.event.addListener(
+        panorama,
+        name,
+        GMaps.prototype.utils.subcribeEvent(options[name], panorama)
+      );
+    }
+  }
+
+  return panorama;
+};
+
+GMaps.prototype.on = function(eventName, handler) {
+  return GMaps.on(eventName, this, handler);
+};
+
+
+GMaps.prototype.off = function(eventName) {
+  GMaps.off(eventName, this);
+};
+
+
+GMaps.customEvents = [
+  'marker_added',
+  'marker_removed',
+  'polyline_added',
+  'polyline_removed',
+  'polygon_added',
+  'polygon_removed',
+  'circle_added',
+  'circle_removed',
+  'rectangle_added',
+  'rectangle_removed',
+  'overlay_added',
+  'overlay_removed',
+  'text_added',
+  'text_removed',
+  'info_window_added',
+  'info_window_removed',
+  'geolocated',
+  'geolocation_failed'
+];
+
+
+GMaps.on = function(eventName, object, handler) {
+  var registeredEvent;
+
+  // Non-supported custom event
+  if (GMaps.customEvents.indexOf(eventName) === -1) {
+    if(object instanceof GMaps) { object = object.map; }
+    return google.maps.event.addListener(object, eventName, handler);
+  }
+
+  // Supported custom event
+  registeredEvent = {
+    handler : handler,
+    eventName : eventName
+  };
+
+  object.registeredEvents[eventName] = object.registeredEvents[eventName] || [];
+  object.registeredEvents[eventName].push(registeredEvent);
+
+  return registeredEvent;
+};
+
+
+GMaps.off = function(eventName, object) {
+  if (GMaps.customEvents.indexOf(eventName) === -1) {
+    if(object instanceof GMaps) { object = object.map; }
+    google.maps.event.clearListeners(object, eventName);
+  }
+  else {
+    object.registeredEvents[eventName] = [];
+  }
+};
+
+
+GMaps.fire = function(eventName, object, scope) {
+  var firing_events;
+
+  if (GMaps.customEvents.indexOf(eventName) === -1) {
+    google.maps.event.trigger(object, eventName, Array.prototype.slice.apply(arguments).slice(2));
+  }
+  else if(scope.registeredEvents && scope.registeredEvents.hasOwnProperty(eventName)) {
+    firing_events = scope.registeredEvents[eventName];
+
+    for(var i = 0, l = firing_events.length; i < l; i++) {
+      firing_events[i]['handler'].apply(scope, [object]);
+    }
+  }
+};
+
+/**
+ * [utils namespace for all utility methods]
+ */
+GMaps.prototype.utils = Object.create(null);
+
+
+/**
+ * [merge description combines an indeterminate # of objects into a single object, giving preferece to the last arguement given]
+ * @param  {[object]} dest [an orginal object]
+ * @return {[object]}      [all merged objects]
+ */
+GMaps.prototype.utils.merge = function merge(dest) {
+  var merging = Array.prototype.slice.call(arguments, 1);
+
+  var target, p;
+  while (merging.length) {
+    target = merging.shift();
+
+    // Only merge objects
+    if (target instanceof Object === false) { continue; }
+
+    for (p in target) {
+      if (target.hasOwnProperty(p)) {
+        if (target[p] instanceof Object && dest[p] instanceof Object) {
+          // Recursively merge objects
+          dest[p] = GMaps.prototype.utils.merge(dest[p], target[p]);
+        }
+        else {
+          dest[p] = target[p];
+        }
+      }
+    }
+  }
+
+  return dest;
+};
+
+
+/**
+ * [geolocate service to request and access a navigators geolocation]
+ * @param  {[object]} options [accepts callbacks always|complete, success, error, notSupported]
+ */
+GMaps.prototype.utils.geolocate = function geolocate(options) {
+  var completeCallback = options.always || options.complete;
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      options.success(position);
+
+      if (completeCallback) {
+        completeCallback();
+      }
+    }, function(error) {
+      options.error(error);
+
+      if (completeCallback) {
+        completeCallback();
+      }
+    }, options.options);
+  }
+  else {
+    options.notSupported();
+
+    if (completeCallback) {
+      completeCallback();
+    }
+  }
+};
+
+
+/**
+ * [isChildElement returns true if childs parentNode's === parent]
+ * @param  {[Node]}  parent [parent element to compare child.parentNode's to]
+ * @param  {[Node]}  child  [child element to begin comparison]
+ * @return {Boolean}        [true if child is desendent of parent]
+ */
+GMaps.prototype.utils.isChildElement = function isChildElement(parent, child) {
+  var node = child.parentNode;
+
+  // while there are parent nodes and parent node is not the root map element
+  while (node !== null && node !== this.el) {
+    if (node === parent) {
+      return true;
+    }
+    node = node.parentNode;
+  }
+  return false;
+};
+
+
+/**
+ * [uuid returns a unique number for each invokation]
+ * @return {[number]}   [a unique number]
+ */
+GMaps.prototype.utils.uuid = (function() {
+  var id = 0;
+
+  return function() {
+    return id++;
+  }
+})();
+
+
+/**
+ * [Removes all HTML tags from a string, returning only text content]
+ * @param  {[str]}    [String to remove HTML tags from]
+ * @return {[string]} [text content of html]
+ */
+GMaps.prototype.utils.stripHTML = (function() {
+  var htmlRE = /(<([^>]+)>)/ig;
+
+  return function stripHTML(str) {
+    return (str+'').replace(htmlRE, '');
+  };
+})();
+
+
+/**
+ * [converts a dasherized strings to camel cased string]
+ * @return {[string]}   [camel cased string]
+ */
+GMaps.prototype.utils.toCamelCase = (function() {
+  var ccRE = /-([a-z])/g;
+
+  return function toCamelCase(str) {
+    return (str+'').replace(ccRE, function (g) { return g[1].toUpperCase(); });
+  };
+})();
+
+
+/**
+ * [arrayMap polyfill for Array.prototype.map]
+ * @param  {[Array]}  array   
+ * @param  {Function} callback [recieves (array[i], i, array)]
+ * @param  {[object]} context  [optional context for callback]
+ * @return {[type]}            [description]
+ */
+GMaps.prototype.utils.arrayMap = function arrayMap(array, callback) {
+  var params = Array.prototype.slice.call(arguments, 1);
+  var arrayReturn = [];
+  var i, l;
+
+  if (Array.prototype.map && array.map === Array.prototype.map) {
+    arrayReturn = array.map.apply(array, params);
+  }
+  else {
+    for (i = 0, l = array.length; i < l; i++) {
+      arrayReturn.push(callback.apply(params[2] || this, [array[i], i, array]));
+    }
+  }
+
+  return arrayReturn;
+};
+
+
+/**
+ * [arrayFlat converts an array of arrays into a single level array]
+ * @param  {[Array]} array [multi level array]
+ * @return {[Array]}       [single level array]
+ */
+GMaps.prototype.utils.arrayFlat = function arrayFlat(array) {
+  var newArray = [];
+  var i, l;
+
+  for (i = 0, l = array.length; i < l; i++) {
+    newArray = newArray.concat(array[i]);
+  }
+
+  return newArray;
+};
+
+
+/**
+ * [arrayToLatLng replaces array items with response from `coordsToLatLngs`]
+ * @param  {[Array]} coords       [array of array coordinates]
+ * @param  {[Boolean]} useGeoJSON [changes coordsToLatLngs behavior]
+ * @return {[Array]}              [Array of google LatLng instances]
+ */
+GMaps.prototype.utils.arrayToLatLng = function arrayToLatLng(coords, useGeoJSON) {
+  for (var i = 0, l = coords.length; i < l; i++) {
+    if (!(coords[i] instanceof google.maps.LatLng)) {
+      if (coords[i].length > 0 && typeof coords[i][0] === 'object') {
+        coords[i] = GMaps.prototype.utils.arrayToLatLng(coords[i], useGeoJSON);
+      }
+      else {
+        coords[i] = GMaps.prototype.utils.coordsToLatLngs(coords[i], useGeoJSON);
+      }
+    }
+  }
+
+  return coords;
+};
+
+
+/**
+ * [coordsToLatLngs returns an instance of google.mapsLatLng based on an array of coords]
+ * @param  {[array]} coords    [[lat,lng]]
+ * @param  {[Boolean]} useGeoJSON [changes to [lng,lat]]
+ * @return {[LatLng]}            [google.maps.LatLng instance]
+ */
+GMaps.prototype.utils.coordsToLatLngs = function coordsToLatLngs(coords, useGeoJSON) {
+  var firstCoord = coords[0],
+      secondCoord = coords[1];
+
+  if (useGeoJSON) {
+    firstCoord = coords[1];
+    secondCoord = coords[0];
+  }
+
+  return new google.maps.LatLng(firstCoord, secondCoord);
+};
+
+
+/**
+ * [findAbsolutePosition calculates the total absolute position left + top relative to the viewport]
+ * @param  {[node]} node [Live node element]
+ * @return {[Array]}     [[from-left, from-top]]
+ */
+GMaps.prototype.utils.findAbsolutePosition = function findAbsolutePosition(node)  {
+  var curleft = 0;
+  var curtop = 0;
+
+  if (node.offsetParent) {
+    do {
+      curleft += node.offsetLeft;
+      curtop += node.offsetTop;
+    } while (node = node.offsetParent);
+  }
+
+  return [curleft, curtop];
+};
+
+/**
+ * [subcribeEvent returns a funciton that provides an event to a callback, with opt params]
+ * @param  {Function} callback [called on event]
+ * @param  {[context]}   obj   [provided to callback]
+ * @return {[Function]}        [return function to be invoked as an event callback]
+ */
+GMaps.prototype.utils.subcribeEvent = function subcribeEvent(callback, obj) {
+  return function(e) {
+    var args = [];
+    if(e && typeof e !== 'number') { args.push(e); } // don't allow index parameters as events
+    args.push(obj || this);
+    return callback.apply(null, args);
+  };
+};
+
+// ********************************************************
+// Instance Helpers are utility methods
+// with logic reliant upon a GMaps instance dynamic scope
+// ********************************************************
+
+
+/**
+ * [geocode instantiates a google.maps Geocoder]
+ * @param  {[object]} options [accepts properties lat, lng, and callback]
+ * @return {[Geocoder]}       [instance of Geocoder]
+ */
+;(function () {
+  var gMapsGeocoder; // Geocoder singleton
+
+  GMaps.prototype.geocode = function geocode(options) {
+    if(!options || !options.callback) {
+      throw new Error('geocode requires an options object with a callback');
+    }
+
+    if (!gMapsGeocoder) {
+      gMapsGeocoder = new google.maps.Geocoder(); // instantiate
+    }
+
+    var callback = options.callback;
+
+    if (options.hasOwnProperty('lat') && options.hasOwnProperty('lng')) {
+      options.latLng = new google.maps.LatLng(options.lat, options.lng);
+    }
+
+    delete options.lat;
+    delete options.lng;
+    delete options.callback;
+
+    gMapsGeocoder.geocode(options, function(results, status) {
+      callback(results, status);
+    });
+  };
+})();
+
+/**
+ * [addDelegatedEvent creates an event listener on the root map element that triggers a
+ * callback when a delegate (or a child) element is source of the event.  Please use with
+ * causion as this is a more expensive operation.]
+ * @param {[string]}   eventName [eventm name to listen for]
+ * @param {[selector]} delegateSelector  [string selector to pass to querySelector]
+ * @param {Function} callback    [function to invoke if delegate is source]
+ * @returns { object } [to remove delegated event listener]
+ */
+GMaps.prototype.addDelegatedEvent = function addDelegated(eventName, delegateSelector, callback) {
+  var self = this;
+
+  var delegateEventHandler = function delegateEventHandler(e) {
+    var trigger = self.el.querySelector(delegateSelector);
+    var target = e ? e.target : window.event.srcElement;
+
+    if(!trigger || !target) { return false; }
+
+    // If delegated is target or parent of target invoke callback
+    if(trigger === target || self.utils.isChildElement(trigger, target)) {
+      callback.apply(null, Array.prototype.slice.call(arguments));
+    }
+  };
+
+  self.el.addEventListener(eventName, delegateEventHandler, true);
+
+  return {
+    eventName: eventName,
+    remove: function removeDelegatedEvent() {
+      self.el.removeEventListener(eventName, delegateEventHandler, true);
+    }
+  };
+};
+
+
+/**
+ * [hasMapChild returns true if a map has a child instance and false if not]
+ * @param  {[string|object]}  child [child instance or id to a child element]
+ * @param  {[string]}  type  [identifier for a map store]
+ * @return {Boolean}         [true if has the child false if not]
+ */
+GMaps.prototype.hasChild = function(child, type) {
+
+  // support dasherized types
+  type = this.utils.toCamelCase(type);
+
+  // support singular types
+  var map = {
+    marker: 'markers',
+    polyline: 'polylines',
+    polygon: 'polygons',
+    circle: 'circles',
+    rectangle: 'rectangles',
+    overlay: 'overlays',
+    text: 'texts',
+    infoWindow: 'infoWindows'
+  };
+
+  var model = (map.hasOwnProperty(type) ? this[map[type]] : this[type]);
+
+  if(typeof model === 'undefined') {
+    throw new Error('hasMapChild requires a name to valid GMap model array');
+  }
+
+  var id, i = 0, l = model.length;
+
+  // search by id
+  if(typeof child === 'string') {
+    id = child;
+    for(; i < l; i++ ) {
+      if(model[i].id === id) {
+        return true;
+      }
+    }
+  }
+  // search by instance
+  else if(typeof child === 'object') {
+    for(; i < l; i++ ) {
+      if(model[i] === child) {
+        return true;
+      }
+    }
+  }
+  else {
+    if(console && console.warn) {
+      console.warn('invalid child argument to hasMapChild, requires an id or map child instance');
+    }
+  }
+
+  return false;
+};
+
+
+/**
+ * [_teardownChild internal method to remove a map child's listeners, delegatedEvents, map]
+ * @param  {[string]} type  [used for global notifications]
+ * @param  {[ChildInstance]} child [an instance of a map child]
+ */
+GMaps.prototype._teardownChild = function teardownChild(type, child) {
+  google.maps.event.clearInstanceListeners(child);
+
+  // Remove all event delegations
+  if(child.delegatedEvents && child.delegatedEvents.length) {
+    for(var i = 0, l = child.delegatedEvents.length; i < l; i++) {
+      child.delegatedEvents[i].remove();
+    }
+    child.delegatedEvents.length = 0;
+  }
+
+  child.setMap(null);
+  GMaps.fire(type+'_removed', child, this);
+}
+
+/* jshint unused:false */
+var isGMapsForAppsSetup = false;
+
+function setupGMapsForApps() {
+  if (isGMapsForAppsSetup) {
+    return false;
+  } else {
+    isGMapsForAppsSetup = true;
+  }
+
+  //==========================
+  // Polygon containsLatLng
+  // https://github.com/tparkin/Google-Maps-Point-in-Polygon
+  // Poygon getBounds extension - google-maps-extensions
+  // http://code.google.com/p/google-maps-extensions/source/browse/google.maps.Polygon.getBounds.js
+  if (!google.maps.Polygon.prototype.getBounds) {
+    google.maps.Polygon.prototype.getBounds = function() {
+      var bounds = new google.maps.LatLngBounds();
+      var paths = this.getPaths();
+      var path;
+
+      for (var p = 0; p < paths.getLength(); p++) {
+        path = paths.getAt(p);
+        for (var i = 0; i < path.getLength(); i++) {
+          bounds.extend(path.getAt(i));
+        }
+      }
+
+      return bounds;
+    };
+  }
+
+  if (!google.maps.Polygon.prototype.containsLatLng) {
+    // Polygon containsLatLng - method to determine if a latLng is within a polygon
+    google.maps.Polygon.prototype.containsLatLng = function(latLng) {
+      // Exclude points outside of bounds as there is no way they are in the poly
+      var bounds = this.getBounds();
+
+      if (bounds !== null && !bounds.contains(latLng)) {
+        return false;
+      }
+
+      // Raycast point in polygon method
+      var inPoly = false;
+
+      var numPaths = this.getPaths().getLength();
+      for (var p = 0; p < numPaths; p++) {
+        var path = this.getPaths().getAt(p);
+        var numPoints = path.getLength();
+        var j = numPoints - 1;
+
+        for (var i = 0; i < numPoints; i++) {
+          var vertex1 = path.getAt(i);
+          var vertex2 = path.getAt(j);
+
+          if (vertex1.lng() < latLng.lng() && vertex2.lng() >= latLng.lng() || vertex2.lng() < latLng.lng() && vertex1.lng() >= latLng.lng()) {
+            if (vertex1.lat() + (latLng.lng() - vertex1.lng()) / (vertex2.lng() - vertex1.lng()) * (vertex2.lat() - vertex1.lat()) < latLng.lat()) {
+              inPoly = !inPoly;
+            }
+          }
+
+          j = i;
+        }
+      }
+
+      return inPoly;
+    };
+  }
+
+  if (!google.maps.Circle.prototype.containsLatLng) {
+    google.maps.Circle.prototype.containsLatLng = function(latLng) {
+      if (google.maps.geometry) {
+        return google.maps.geometry.spherical.computeDistanceBetween(this.getCenter(), latLng) <= this.getRadius();
+      }
+      else {
+        return true;
+      }
+    };
+  }
+
+  google.maps.LatLngBounds.prototype.containsLatLng = function(latLng) {
+    return this.contains(latLng);
+  };
+
+  google.maps.Marker.prototype.setFences = function(fences) {
+    this.fences = fences;
+  };
+
+  google.maps.Marker.prototype.addFence = function(fence) {
+    this.fences.push(fence);
+  };
+
+  google.maps.Marker.prototype.getId = function() {
+    return this['__gm_id'];
+  };
+
+  //==========================
+  // Array indexOf
+  // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array/indexOf
+  if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function (searchElement /*, fromIndex */ ) {
+        'use strict';
+        if (this === null) {
+          throw new TypeError();
+        }
+        var t = Object(this);
+        var len = t.length >>> 0;
+        if (len === 0) {
+          return -1;
+        }
+        var n = 0;
+        if (arguments.length > 1) {
+          n = Number(arguments[1]);
+          if (n !== n) { // shortcut for verifying if it's NaN
+            n = 0;
+          }
+          else if (n !== 0 && n !== Infinity && n !== -Infinity) {
+            n = (n > 0 || -1) * Math.floor(Math.abs(n));
+          }
+        }
+        if (n >= len) {
+          return -1;
+        }
+        var k = n >= 0 ? n : Math.max(len - Math.abs(n), 0);
+        for (; k < len; k++) {
+            if (k in t && t[k] === searchElement) {
+                return k;
+            }
+        }
+        return -1;
+    }
+  }
+}
+
+
+return GMaps;
+}));
+
+}
 ;(function() {
 /* globals define, Ember, jQuery */
 
@@ -85775,6 +88957,2181 @@ createDeprecatedModule('resolver');
  * @module Utils
  *
  */
+;define('ember-cli-g-maps/components/g-autocomplete', ['exports', 'ember-cli-g-maps/utils/load-google-maps'], function (exports, _loadGoogleMaps) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var TextField = Ember.TextField;
+  var assert = Ember.assert;
+  var get = Ember.get,
+      set = Ember.set;
+  exports.default = TextField.extend({
+    tagName: 'input',
+    classNames: ['g-autocomplete'],
+    options: {},
+
+    /**
+     * invoke `setup()` with initial input value
+     */
+    didInsertElement: function didInsertElement() {
+      var _this = this;
+
+      this._super.apply(this, arguments);
+
+      // Don't break the boot
+      if (typeof HTMLInputElement !== 'undefined') {
+
+        // G-Autocomplete's element must be an HTML input
+        assert('g-autocomplete component must have a tagName of `input`', this.element instanceof HTMLInputElement);
+      }
+
+      (0, _loadGoogleMaps.default)().then(function () {
+        return _this.setup(_this.element);
+      });
+    },
+
+
+    /**
+     * @public
+     * generate new autocomplete instance
+     * add `place_changed` event handler
+     * set `autocomplete` and `listener` refs on component
+     *
+     * @param {String} input
+     */
+    setup: function setup(input) {
+      var _this2 = this;
+
+      var autocomplete = new google.maps.places.Autocomplete(input, get(this, 'options'));
+
+      set(this, 'autocomplete', autocomplete);
+      set(this, 'listener', autocomplete.addListener('place_changed', function () {
+        var placeResult = autocomplete.getPlace() || {};
+
+        if (!placeResult.geometry) {
+          return _this2.sendAction('on-select-error', { input: placeResult.name });
+        }
+
+        _this2.sendAction('on-select', {
+          lat: placeResult.geometry.location.lat(),
+          lng: placeResult.geometry.location.lng(),
+          place: placeResult
+        });
+      }));
+    },
+    didAutocomplete: function didAutocomplete(place) {
+      this.send('onSelect', place);
+    },
+    willDestroyElement: function willDestroyElement() {
+      this._super.apply(this, arguments);
+      this.teardown();
+    },
+
+
+    /**
+     * @public
+     * remove listener event
+     * remove autocomplete instances event listeners
+     * if unregister autocomplete
+     */
+    teardown: function teardown() {
+      var autocomplete = get(this, 'autocomplete');
+      var listener = get(this, 'listener');
+
+      google.maps.event.removeListener(listener);
+      google.maps.event.clearInstanceListeners(autocomplete);
+    },
+
+
+    actions: {
+      onSelect: function onSelect(place) {
+        this.sendAction('on-select', place);
+      }
+    }
+  });
+});
+;define('ember-cli-g-maps/components/g-maps', ['exports', 'ember-cli-g-maps/mixins/g-maps/core/main', 'ember-cli-g-maps/mixins/g-maps/core/two-way-lat-lng', 'ember-cli-g-maps/mixins/g-maps/core/two-way-zoom', 'ember-cli-g-maps/mixins/g-maps/core/two-way-draggable', 'ember-cli-g-maps/mixins/g-maps/core/two-way-disable-double-click-zoom', 'ember-cli-g-maps/mixins/g-maps/core/two-way-scroll-wheel', 'ember-cli-g-maps/mixins/g-maps/core/two-way-zoom-control', 'ember-cli-g-maps/mixins/g-maps/core/two-way-scale-control', 'ember-cli-g-maps/mixins/g-maps/core/two-way-map-type', 'ember-cli-g-maps/mixins/g-maps/core/two-way-map-type-control', 'ember-cli-g-maps/mixins/g-maps/core/two-way-styles', 'ember-cli-g-maps/mixins/g-maps/circles', 'ember-cli-g-maps/mixins/g-maps/markers', 'ember-cli-g-maps/mixins/g-maps/polygons', 'ember-cli-g-maps/mixins/g-maps/overlays', 'ember-cli-g-maps/mixins/g-maps/polylines', 'ember-cli-g-maps/mixins/g-maps/rectangles', 'ember-cli-g-maps/mixins/g-maps/heatmap', 'ember-cli-g-maps/mixins/g-maps/selections'], function (exports, _main, _twoWayLatLng, _twoWayZoom, _twoWayDraggable, _twoWayDisableDoubleClickZoom, _twoWayScrollWheel, _twoWayZoomControl, _twoWayScaleControl, _twoWayMapType, _twoWayMapTypeControl, _twoWayStyles, _circles, _markers, _polygons, _overlays, _polylines, _rectangles, _heatmap, _selections) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Component.extend(_circles.default, _markers.default, _polygons.default, _overlays.default, _polylines.default, _rectangles.default, _selections.default, _heatmap.default, _twoWayLatLng.default, _twoWayZoom.default, _twoWayDraggable.default, _twoWayDisableDoubleClickZoom.default, _twoWayScrollWheel.default, _twoWayZoomControl.default, _twoWayScaleControl.default, _twoWayMapType.default, _twoWayMapTypeControl.default, _twoWayStyles.default, _main.default);
+});
+;define('ember-cli-g-maps/mixins/g-maps/circles', ['exports', 'ember-cli-g-maps/utils/g-maps/child-collection'], function (exports, _childCollection) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var isArray = Ember.isArray;
+  exports.default = Ember.Mixin.create(_childCollection.default.create({
+    model: 'circles',
+
+    namespace: 'circle',
+
+    /* Supported:
+    props: [ 'lat', 'lng', 'clickable', 'draggable', 'editable', 'fillColor', 'fillOpacity', 'radius', 'strokeColor', 'strokeOpacity', 'strokePosition', 'visible', 'zIndex' ],
+     events: [ 'center_changed', 'click', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'radius_changed', 'rightclick' ],
+    */
+
+    validate: function validateCircles() {
+      var circles = this.get('circles');
+      if (circles && !isArray(circles)) {
+        throw new Error('g-maps component expects circles to be an Ember Array');
+      }
+    }
+  }));
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/main', ['exports', 'ember-cli-g-maps/utils/load-google-maps'], function (exports, _loadGoogleMaps) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var merge = Ember.merge,
+      uuid = Ember.uuid,
+      computed = Ember.computed;
+  var bind = Ember.run.bind;
+  exports.default = Ember.Mixin.create(Ember.Evented, {
+    map: null,
+    name: null,
+    lat: 33.5205556,
+    lng: -86.8025,
+    zoom: 0,
+    mapType: 'ROADMAP',
+    showMapTypeControl: true,
+    clickableIcons: true,
+    draggable: true,
+    disableDefaultUI: false,
+    disableDoubleClickZoom: false,
+    scrollwheel: true,
+    showZoomControl: true,
+    showScaleControl: true,
+    isMapLoaded: false,
+    classNames: ['ember-cli-g-map'],
+    gMap: Ember.inject.service(),
+
+    // Map Events
+    _gmapEvents: ['idle', 'drag', 'click', 'resize', 'dragend', 'dblclick', 'mouseout', 'dragstart', 'mousemove', 'mouseover', 'rightclick', 'tilesloaded', 'tilt_changed', 'zoom_changed', 'bounds_changed', 'center_changed', 'heading_changed', 'maptypeid_changed', 'projection_changed'],
+
+    didInsertElement: function didInsertElement() {
+      var _this = this;
+
+      this._super.apply(this, arguments);
+
+      var config = this.getProperties('lat', 'lng', 'zoom', 'styles', 'mapType', 'showMapTypeControl', 'scaleControl', 'showScaleControl', 'disableDefaultUI', 'clickableIcons');
+
+      // Map symantic names to Google Map Options
+      config.zoomControl = config.showZoomControl;
+      config.mapTypeControl = config.showMapTypeControl;
+      config.scaleControl = config.showScaleControl;
+
+      (0, _loadGoogleMaps.default)().then(function () {
+
+        // Create Gmap Instance
+        var map = new GMaps(merge(config, {
+          div: '#' + _this.element.id
+        }));
+
+        _this.set('map', map);
+
+        _this._addMapEvents();
+
+        if (!_this.get('name')) {
+          _this.set('name', 'ember-cli-g-map-' + uuid());
+        }
+
+        // Register gMap instance in gMap service
+        _this.get('gMap').maps.add(_this.get('name'), map.map);
+
+        /*
+         * Some test helpers require access to the map instance
+         */
+        if (_this.get('_isTestEnv')) {
+          _this.element.__GOOGLE_MAP__ = map.map;
+        }
+
+        // When map instance has finished loading
+        google.maps.event.addListenerOnce(map.map, 'idle', Ember.run.bind(_this, _this._onMapLoad));
+      }).catch(function () {
+        Ember.Logger.error('Failed to load google maps via Ember-cli-g-maps');
+      });
+    },
+
+
+    // TODO write integration test coverage
+    willDestroyElement: function willDestroyElement() {
+      var _this2 = this;
+
+      this._super.apply(this, arguments);
+
+      this._removeMapEvents();
+
+      // TODO: remove for v1.x
+      this.get('gMap').maps.remove(this.get('name'));
+
+      // Run after Mixin willDestroyElement
+      Ember.run.later(function () {
+        return _this2.get('map').destroy();
+      });
+
+      if (this.get('_isTestEnv')) {
+        this.element.__GOOGLE_MAP__ = null;
+      }
+    },
+
+
+    /**
+     * @type {Boolean}
+     */
+    _isTestEnv: computed(function () {
+      var getOwner = Ember.getOwner;
+
+
+      if (getOwner) {
+        return getOwner(this).resolveRegistration('config:environment').environment === 'test';
+      } else {
+        return this.container.lookupFactory('config:environment').environment === 'test';
+      }
+    }),
+
+    _addMapEvents: function _addMapEvents() {
+      var _this3 = this;
+
+      var events = this.get('_gmapEvents');
+      var sendEvent = function sendEvent(name, evt) {
+        return _this3.send(name, evt);
+      };
+
+      for (var i = 0, l = events.length; i < l; i++) {
+
+        // If map event NOT defined on component continue
+        if (!this.get(events[i])) {
+          continue;
+        }
+
+        // Add GMaps event listener on google map instance
+        GMaps.on(events[i], this.get('map.map'), bind(this, sendEvent, events[i]));
+      }
+    },
+    _removeMapEvents: function _removeMapEvents() {
+      var events = this.get('_gmapEvents');
+
+      for (var i = 0, l = events.length; i < l; i++) {
+
+        // If map event NOT defined on component continue
+        if (!this.get(events[i])) {
+          continue;
+        }
+
+        GMaps.off(events[i], this.get('map.map'));
+      }
+    },
+    _onMapLoad: function _onMapLoad(e) {
+      if (this.get('isDestroyed')) {
+        return false;
+      }
+
+      this.set('isMapLoaded', true);
+      this.trigger('ember-cli-g-map-loaded');
+      this.send('loaded', e);
+    },
+
+
+    /////////////////////////////////////////////////////////////
+    // Map state info, generally required info to make requests
+    /////////////////////////////////////////////////////////////
+
+    defaultGMapState: computed('lat', 'lng', 'zoom', function () {
+      var map = this.get('map');
+      var bounds = map.map.getBounds();
+      var ne = bounds.getNorthEast();
+      var sw = bounds.getSouthWest();
+
+      return {
+        map: this.get('name'),
+
+        bounds: [{ lat: ne.lat(), lng: ne.lng(), location: 'northeast' }, // Northeast
+        { lat: sw.lat(), lng: sw.lng(), location: 'southwest' // Southwest
+        }],
+
+        mapIdle: new Ember.RSVP.Promise(function (resolve) {
+          google.maps.event.addListenerOnce(map.map, 'idle', resolve);
+        }),
+
+        mapTilesLoaded: new Ember.RSVP.Promise(function (resolve) {
+          google.maps.event.addListenerOnce(map.map, 'tilesloaded', resolve);
+        })
+      };
+    }),
+
+    // Supported g-map Actions
+
+    actions: {
+      idle: function idle() {
+        this.sendAction('idle', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      drag: function drag() {
+        this.sendAction('drag', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      click: function click() {
+        this.sendAction('click', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      resize: function resize() {
+        this.sendAction('resize', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      loaded: function loaded() {
+        this.sendAction('loaded', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      dragend: function dragend() {
+        this.sendAction('dragend', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      dblclick: function dblclick() {
+        this.sendAction('dblclick', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      mouseout: function mouseout() {
+        this.sendAction('mouseout', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      dragstart: function dragstart() {
+        this.sendAction('dragstart', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      mousemove: function mousemove() {
+        this.sendAction('mousemove', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      mouseover: function mouseover() {
+        this.sendAction('mouseover', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      rightclick: function rightclick() {
+        this.sendAction('rightclick', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      tilesloaded: function tilesloaded() {
+        this.sendAction('tilesloaded', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      tilt_changed: function tilt_changed() {
+        this.sendAction.apply(this, ['tilt_changed'].concat(Array.prototype.slice.call(arguments)));
+      },
+
+      zoom_changed: function zoom_changed() {
+        this.sendAction('zoom_changed', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      bounds_changed: function bounds_changed() {
+        this.sendAction('bounds_changed', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      center_changed: function center_changed() {
+        this.sendAction('center_changed', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      heading_changed: function heading_changed() {
+        this.sendAction('heading_changed', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      maptypeid_changed: function maptypeid_changed() {
+        var googleMapInstance = this.get('map.map');
+        this.sendAction('maptypeid_changed', merge.apply(undefined, [this.get('defaultGMapState'), { mapType: googleMapInstance.getMapTypeId() }].concat(Array.prototype.slice.call(arguments))));
+      },
+
+      projection_changed: function projection_changed() {
+        this.sendAction('projection_changed', merge.apply(undefined, [this.get('defaultGMapState')].concat(Array.prototype.slice.call(arguments))));
+      }
+    }
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-disable-double-click-zoom', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer;
+  exports.default = Ember.Mixin.create({
+
+    /**
+     * [observer for component attribute's `disableDoubleClickZoom` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[Boolean]}  'disableDoubleClickZoom'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+    _bindDisableDoubleClickZoomToMap: observer('isMapLoaded', 'disableDoubleClickZoom', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      this.get('map.map').setOptions({
+        disableDoubleClickZoom: this.get('disableDoubleClickZoom') ? true : false
+      });
+    })
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-draggable', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer;
+  exports.default = Ember.Mixin.create({
+
+    /**
+     * [observer for component attribute's `draggable` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[Boolean]}  'draggable'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+
+    _bindDraggableToMap: observer('isMapLoaded', 'draggable', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      this.get('map.map').setOptions({
+        draggable: this.get('draggable') ? true : false
+      });
+    })
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-lat-lng', ['exports', 'ember-cli-g-maps/utils/g-maps/math'], function (exports, _math) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer,
+      on = Ember.on;
+  exports.default = Ember.Mixin.create(Ember.Evented, {
+
+    /**
+     * [on map load bind map `center_changed` event to `_bindLatLngToModel`]
+     */
+    _addCenterChangedEvent: on('ember-cli-g-map-loaded', function () {
+      var _this = this;
+
+      var googleMapInstance = this.get('map.map');
+
+      GMaps.on('center_changed', googleMapInstance, function () {
+        Ember.run.debounce(_this, _this._bindLatLngToModel, 100);
+      });
+    }),
+
+    /**
+     * [observer for component attribute's `lat` and `lng` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[Number]}  'lat'
+     * @param  {[Number]}  'lng'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+    _bindLatLngToMap: observer('isMapLoaded', 'lat', 'lng', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      var _getProperties = this.getProperties('map', 'lng', 'lat'),
+          map = _getProperties.map,
+          lat = _getProperties.lat,
+          lng = _getProperties.lng;
+
+      var center = map.getCenter();
+
+      // If map is out of sync with app state
+      if (!(0, _math.areCoordsEqual)(center.lat(), lat) || !(0, _math.areCoordsEqual)(center.lng(), lng)) {
+        map.setCenter(lat, lng);
+      }
+    }),
+
+    /**
+     * [updates component attributes `lat` and `lng` if out of sync]
+     * @return {[Boolean]} [returns false if attributes not updated]
+     */
+    _bindLatLngToModel: function _bindLatLngToModel() {
+      var map = this.get('map');
+
+      var _getProperties2 = this.getProperties('lat', 'lng'),
+          lat = _getProperties2.lat,
+          lng = _getProperties2.lng;
+
+      var center = map.getCenter();
+
+      // Still in sync
+      if ((0, _math.areCoordsEqual)(center.lat(), lat) || (0, _math.areCoordsEqual)(center.lng(), lng)) {
+        return false;
+      }
+
+      // Out of sync
+      this.setProperties({ lat: center.lat(), lng: center.lng() });
+    }
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-map-type-control', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer;
+  exports.default = Ember.Mixin.create({
+
+    /**
+     * [observer for component attribute's `showMapTypeControl` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[Boolean]}  'showMapTypeControl'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+    _bindMapTypeControlToMap: observer('isMapLoaded', 'showMapTypeControl', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      this.get('map.map').setOptions({
+        mapTypeControl: this.get('showMapTypeControl') ? true : false
+      });
+    })
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-map-type', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer;
+  exports.default = Ember.Mixin.create({
+
+    /**
+     * [observer for component attribute's `mapType` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[String]}  'mapType'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+    _bindMapTypeToMap: observer('isMapLoaded', 'mapType', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      var googleMapInstance = this.get('map.map');
+      var mapType = '' + this.get('mapType');
+
+      // If invalid mapType
+      if (google.maps.MapTypeId[mapType.toUpperCase()] === undefined) {
+        return false;
+      }
+
+      // If mapType in sync
+      if (mapType.toLowerCase() === googleMapInstance.getMapTypeId()) {
+        return false;
+      }
+
+      // Update map
+      googleMapInstance.setMapTypeId(google.maps.MapTypeId[mapType.toUpperCase()]);
+    })
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-scale-control', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer;
+  exports.default = Ember.Mixin.create({
+
+    /**
+     * [observer for component attribute's `showScaleControl` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[Boolean]}  'showScaleControl'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+    _bindScaleControlToMap: observer('isMapLoaded', 'showScaleControl', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      this.get('map.map').setOptions({
+        scaleControl: this.get('showScaleControl') ? true : false
+      });
+    })
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-scroll-wheel', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer;
+  exports.default = Ember.Mixin.create({
+
+    /**
+     * [observer for component attribute's `scrollwheel` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[Boolean]}  'scrollwheel'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+    _bindScrollwheelToMap: observer('isMapLoaded', 'scrollwheel', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      this.get('map.map').setOptions({
+        scrollwheel: this.get('scrollwheel') ? true : false
+      });
+    })
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-styles', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer;
+  exports.default = Ember.Mixin.create({
+
+    /**
+     * [observer for component attribute's `styles` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[Boolean]}  'styles'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+    _bindStylesToMap: observer('isMapLoaded', 'styles', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      this.get('map.map').setOptions({
+        styles: this.get('styles')
+      });
+    })
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-zoom-control', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer;
+  exports.default = Ember.Mixin.create({
+
+    /**
+     * [observer for component attribute's `showZoomControl` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[Boolean]}  'showZoomControl'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+    _bindZoomControlToMap: observer('isMapLoaded', 'showZoomControl', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      this.get('map.map').setOptions({
+        zoomControl: this.get('showZoomControl') ? true : false
+      });
+    })
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/core/two-way-zoom', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var observer = Ember.observer,
+      on = Ember.on;
+  exports.default = Ember.Mixin.create(Ember.Evented, {
+
+    /**
+     * [on map load bind map `zoom_changed` event to `_bindZoomToModel`]]
+     */
+    _addZoomChangedEvent: on('ember-cli-g-map-loaded', function () {
+      var _this = this;
+
+      var map = this.get('map');
+
+      GMaps.on('zoom_changed', map.map, function () {
+        Ember.run.later(function () {
+          return _this._bindZoomToModel();
+        });
+      });
+    }),
+
+    /**
+     * [observer for component attribute `zoom` updates]
+     * @param  {Boolean} 'isMapLoaded'
+     * @param  {[Number]}  'zoom'
+     * @return {[Boolean]} [returns false if map not updated]
+     */
+    _bindZoomToMap: observer('isMapLoaded', 'zoom', function () {
+      if (!this.get('isMapLoaded')) {
+        return false;
+      }
+
+      var _getProperties = this.getProperties('map', 'zoom'),
+          map = _getProperties.map,
+          zoom = _getProperties.zoom;
+
+      if (typeof zoom !== 'number') {
+        return false;
+      }
+
+      map.setZoom(zoom);
+    }),
+
+    /**
+     * [updates component attributes `zoom` if out of sync]
+     * @return {[Boolean]} [returns false if attributes not updated]
+     */
+    _bindZoomToModel: function _bindZoomToModel() {
+      var _getProperties2 = this.getProperties('map', 'zoom'),
+          map = _getProperties2.map,
+          zoom = _getProperties2.zoom;
+
+      // Zoom still in sync
+
+
+      if (zoom === map.map.zoom) {
+        return false;
+      }
+
+      var center = map.getCenter();
+
+      // Zoom out of sync (lat, lng are usually updated on zoom as well)
+      this.setProperties({
+        zoom: map.map.zoom,
+        lat: center.lat(),
+        lng: center.lng()
+      });
+    }
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/heatmap', ['exports', 'ember-cli-g-maps/utils/load-google-maps'], function (exports, _loadGoogleMaps) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+
+  var on = Ember.on,
+      isArray = Ember.isArray;
+  exports.default = Ember.Mixin.create({
+    heatmapRadius: null,
+    heatmapOpacity: 1,
+    heatmapVisible: true,
+    heatmapGradient: null,
+    heatmapDissipating: false,
+    heatmapMarkers: null,
+
+    /**
+     * [_heatmap stores reference to google.maps.visualization.HeatmapLayer instance]
+     * @type {[Object]}
+     */
+    _heatmap: null,
+
+    /**
+     * [_heatmapMarkersMVCArray stores reference to `_heatmap.data` MVC Array]
+     * @type {[Google MVCArray]}
+     */
+    _heatmapMarkersMVCArray: null,
+
+    /**
+     * [_toJSArray converts any Ember Array instance to a JS Array]
+     * @param  {[Array]} arr [Ember Array|JS Array]
+     * @return {[Array]}     [JS Array]
+     */
+    _toJSArray: function _toJSArray(arr) {
+      return typeof arr.toArray === 'function' ? arr.toArray() : arr;
+    },
+
+    /**
+     * [googleMapsSupportsHeatmap returns a boolean indicating if HeatmapLayer is supported]
+     * @return {[Boolean]}
+     */
+    googleMapsSupportsHeatmap: function googleMapsSupportsHeatmap() {
+      return !!(google.maps && google.maps.visualization && google.maps.visualization.HeatmapLayer);
+    },
+
+    /**
+     * [_validateHeatmap determines if heatmap can instantiate, if so adds init observers]
+     * @param  {[String]} )[triggered on element insertion]
+     * @return {[Oberservers]}   [if valid adds obersvers to init method]
+     */
+    _validateHeatmap: on('didInsertElement', function () {
+      var _this = this;
+
+      return (0, _loadGoogleMaps.default)().then(function () {
+        if (!_this.get('heatmapMarkers')) {
+          return false;
+        }
+
+        if (!_this.googleMapsSupportsHeatmap()) {
+          throw new Error('g-map component requires the "visualization" library included in `config/environment.js`');
+        } else {
+
+          // Enable Heatmap setup
+          _this.addObserver('isMapLoaded', _this, '_initHeatmap');
+          _this.addObserver('heatmapMarkers', _this, '_initHeatmap');
+        }
+      });
+    }),
+
+    /**
+     * [_initHeatmap runs once per heatmap instance instantiation]
+     * [Added via `_validateHeatmap`]
+     * [Observes ('isMapLoaded', 'heatmapMarkers')]
+     */
+    _initHeatmap: function _initHeatmap() {
+      var continueSetup = this.get('isMapLoaded') && this.get('heatmapMarkers') && this.googleMapsSupportsHeatmap() && !this.get('_heatmap');
+
+      if (!continueSetup) {
+        return false;
+      }
+
+      var googleMVCArray = new google.maps.MVCArray();
+      this.set('_heatmapMarkersMVCArray', googleMVCArray);
+
+      var heatmap = new google.maps.visualization.HeatmapLayer({
+        data: googleMVCArray
+      });
+
+      this.set('_heatmap', heatmap);
+
+      this.addObserver('heatmapMarkers.[]', this, '_syncHeatmapMarkers');
+      this._syncHeatmapMarkers();
+
+      this.addObserver('heatmapRadius', this, '_syncHeatmapRadius');
+      this._syncHeatmapRadius();
+
+      this.addObserver('heatmapDissipating', this, '_syncHeatmapDissipating');
+      this._syncHeatmapDissipating();
+
+      this.addObserver('heatmapOpacity', this, '_syncHeatmapOpacity');
+      this._syncHeatmapOpacity();
+
+      this.addObserver('heatmapGradient.[]', this, '_syncHeatmapGradient');
+      this._syncHeatmapGradient();
+
+      this.addObserver('heatmapVisible', this, '_syncHeatmapVisible');
+      this._syncHeatmapVisible();
+
+      // Remove Init observers
+      this.removeObserver('isMapLoaded', this, '_initHeatmap');
+      this.removeObserver('heatmapMarkers', this, '_initHeatmap');
+    },
+
+    /**
+     * [_teardownHeatmap removes the heatmap from the map, clears up memory, and unbinds any events]
+     * @param  {[String]} [triggered on element destroy]
+     */
+    _teardownHeatmap: on('willDestroyElement', function () {
+      var heatmap = this.get('_heatmap');
+
+      if (heatmap) {
+        heatmap.setMap(null);
+        delete heatmap.data;
+        this.set('_heatmap', null);
+        this.set('_heatmapMarkersMVCArray', null);
+      }
+    }),
+
+    /**
+     * [_syncHeatmapMarkers syncs data of `heatmapMarkers` array to the heatmap.data's MVC Array]
+     * [Added via `_initHeatmap`]
+     * [Observes ('heatmapMarkers.[]')]
+     */
+    _syncHeatmapMarkers: function _syncHeatmapMarkers() {
+      var mvcArray = this._heatmapMarkersMVCArray;
+      var heatmapMarkers = this._toJSArray(this.heatmapMarkers || []);
+
+      if (heatmapMarkers[0]) {
+
+        // is something other than an array of array/objects
+        if (_typeof(heatmapMarkers[0]) !== 'object') {
+          throw new Error('`heatmapMarkers` must be an array of arrays or objects');
+        }
+        // is an object without a location array
+        else if (!isArray(heatmapMarkers[0]) && !isArray(heatmapMarkers[0].location)) {
+            throw new Error('`heatmapMarkers` must be an array of objects with a location array');
+          }
+      }
+
+      heatmapMarkers.forEach(function (hm, i) {
+        var lat = isArray(hm) ? hm[0] : hm.location[0];
+        var lng = isArray(hm) ? hm[1] : hm.location[1];
+        var current = mvcArray.getAt(i);
+        var marker = {};
+
+        // if index is out of sync
+        if (!current || current.location.lat() !== lat || current.location.lng() !== lng) {
+
+          marker.location = new google.maps.LatLng(lat, lng);
+
+          // Optional `weight` parameter
+          if (hm.weight) {
+            marker.weight = hm.weight;
+          }
+
+          // create and set new LatLng instance
+          mvcArray.setAt(i, marker);
+        }
+      });
+
+      // Remove latLng's from end of mvcArray until length is the same
+      while (mvcArray.length > heatmapMarkers.length) {
+        mvcArray.pop();
+      }
+    },
+
+    /**
+     * [_syncHeatmapRadius sync heatmap instance to `heatmapRadius` Number]
+     * [Added via `_initHeatmap`]
+     * [Observes ('heatmapRadius')]
+     */
+    _syncHeatmapRadius: function _syncHeatmapRadius() {
+      var heatmap = this._heatmap;
+      var radius = this.heatmapRadius ? parseInt(this.heatmapRadius, 10) : null;
+
+      if (!heatmap) {
+        return false;
+      }
+
+      heatmap.set('radius', radius);
+    },
+
+    /**
+     * [_syncHeatmapDissipating sync heatmap instance to `heatmapDissipating` Boolean]
+     * [Added via `_initHeatmap`]
+     * [Observes ('heatmapDissipating')]
+     */
+    _syncHeatmapDissipating: function _syncHeatmapDissipating() {
+      var heatmap = this._heatmap;
+      var dissipating = !!this.heatmapDissipating;
+
+      if (!heatmap) {
+        return false;
+      }
+
+      heatmap.set('dissipating', dissipating);
+    },
+
+    /**
+     * [_syncHeatmapOpacity sync heatmap instance to `heatmapOpacity` Floating Point]
+     * [Added via `_initHeatmap`]
+     * [Observes ('heatmapOpacity')]
+     */
+    _syncHeatmapOpacity: function _syncHeatmapOpacity() {
+      var heatmap = this._heatmap;
+      var opacity = this.heatmapOpacity ? parseFloat(this.heatmapOpacity) : 1;
+
+      if (!heatmap) {
+        return false;
+      }
+
+      heatmap.set('opacity', opacity);
+    },
+
+    /**
+     * [_syncHeatmapGradient sync heatmap instance to `heatmapGradient` Array]
+     * [Added via `_initHeatmap`]
+     * [Observes ('heatmapGradient.[]')]
+     */
+    _syncHeatmapGradient: function _syncHeatmapGradient() {
+      var heatmap = this._heatmap;
+      var gradient = isArray(this.heatmapGradient) ? this._toJSArray(this.heatmapGradient) : null;
+
+      if (!heatmap) {
+        return false;
+      }
+
+      heatmap.set('gradient', gradient);
+    },
+
+    /**
+     * [_syncHeatmapVisible sync heatmap instance to `heatmapVisible` Boolean]
+     * [Added via `_initHeatmap`]
+     * [Observes ('heatmapVisible')]
+     */
+    _syncHeatmapVisible: function _syncHeatmapVisible() {
+      var heatmap = this._heatmap;
+      var visible = !!this.heatmapVisible;
+
+      if (!heatmap) {
+        return false;
+      }
+
+      heatmap.setMap(visible ? this.get('map').map : null);
+    }
+  });
+});
+;define('ember-cli-g-maps/mixins/g-maps/markers', ['exports', 'ember-cli-g-maps/utils/g-maps/child-collection'], function (exports, _childCollection) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var isArray = Ember.isArray;
+  exports.default = Ember.Mixin.create(_childCollection.default.create({
+    model: 'markers',
+
+    namespace: 'marker',
+
+    /* Supported:
+    props: [ 'lat', 'lng', 'details', 'fences', 'outside', 'infoWindow', 'anchorPoint', 'animation', 'attribution', 'clickable', 'crossOnDrag', 'cursor', 'draggable', 'icon', 'opacity', 'optimized', 'place', 'shape', 'title', 'visible', 'zIndex' ],
+     events: [ 'click', 'rightclick', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'animation_changed', 'clickable_changed', 'cursor_changed', 'draggable_changed', 'flat_changed', 'icon_changed', 'position_changed', 'shadow_changed', 'shape_changed', 'title_changed', 'visible_changed', 'zindex_changed' ],
+    */
+
+    validate: function validateMarkers() {
+      var markers = this.get('markers');
+      if (markers && !isArray(markers)) {
+        throw new Error('g-maps component expects markers to be an Ember Array');
+      }
+    },
+
+    destroy: function destroyMarkers() {
+      google.maps.event.clearListeners(this.get('map').map, 'closeclick');
+    },
+
+    removeItem: function removeMarker(m) {
+      if (m.infoWindow) {
+        m.infoWindow.setMap(null);
+        m.infoWindow = null;
+      }
+    },
+
+    addedItem: function addMarker(m, marker, map) {
+      // If marker has visible window, trigger open
+      if (marker.infoWindow && marker.infoWindow.visible) {
+        marker.infoWindow.addListener('closeclick', function () {
+          marker.infoWindow.set('visible', false);
+        });
+        marker.infoWindow.open(map.map, marker);
+        marker.addListener('click', function toggleInfoWindow() {
+          if (!marker.infoWindow) {
+            return;
+          }
+          if (marker.infoWindow.get('visible') === false) {
+            marker.infoWindow.open(map.map, marker);
+            marker.infoWindow.set('visible', true);
+          } else {
+            marker.infoWindow.close(map.map, marker);
+            marker.infoWindow.set('visible', false);
+          }
+        });
+      }
+    }
+  }));
+});
+;define('ember-cli-g-maps/mixins/g-maps/overlays', ['exports', 'ember-cli-g-maps/utils/g-maps/child-collection'], function (exports, _childCollection) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+
+  var isArray = Ember.isArray;
+  exports.default = Ember.Mixin.create(_childCollection.default.create({
+    model: 'overlays',
+
+    namespace: 'overlay',
+
+    /* Supported:
+    props: [ 'clickable', 'draggable', 'editable', 'fillColor', 'fillOpacity', 'geodesic', 'paths', 'strokeColor', 'strokeOpacity', 'strokePosition', 'strokeWeight', 'visible', 'zIndex' ],
+     events: [ 'click', 'rightclick', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'mousemove' ],
+    */
+
+    validate: function validatePolygons() {
+      var overlays = this.get('overlays');
+
+      if (!overlays) {
+        return;
+      } // validation not necessary
+
+      if (!isArray(overlays)) {
+        throw new Error('g-maps component expects overlays to be an Ember Array');
+      }
+
+      // End validation
+      if (!overlays[0]) {
+        return;
+      }
+
+      // Reminder for well formed polygon paths
+      if (_typeof(overlays[0]) !== 'object' || isArray(overlays[0])) {
+        throw new Error('g-maps overlay items must be objects');
+      }
+    }
+  }));
+});
+;define('ember-cli-g-maps/mixins/g-maps/polygons', ['exports', 'ember-cli-g-maps/utils/g-maps/child-collection'], function (exports, _childCollection) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var isArray = Ember.isArray;
+  exports.default = Ember.Mixin.create(_childCollection.default.create({
+    model: 'polygons',
+
+    namespace: 'polygon',
+
+    /* Supported:
+    props: [ 'clickable', 'draggable', 'editable', 'fillColor', 'fillOpacity', 'geodesic', 'paths', 'strokeColor', 'strokeOpacity', 'strokePosition', 'strokeWeight', 'visible', 'zIndex' ],
+     events: [ 'click', 'rightclick', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'mousemove' ],
+    */
+
+    validate: function validatePolygons() {
+      var polygons = this.get('polygons');
+
+      if (!polygons) {
+        return;
+      } // validation not necessary
+
+      if (!isArray(polygons)) {
+        throw new Error('g-maps component expects polygons to be an Ember Array');
+      }
+
+      // End validation
+      if (!polygons[0] || !polygons[0].paths || !polygons[0].paths[0]) {
+        return;
+      }
+
+      // Reminder for well formed polygon paths
+      if (!isArray(polygons[0].paths[0])) {
+        throw new Error('g-maps polygon paths expects Array of Arrays: [[lat, lng]]');
+      }
+    }
+  }));
+});
+;define('ember-cli-g-maps/mixins/g-maps/polylines', ['exports', 'ember-cli-g-maps/utils/g-maps/child-collection'], function (exports, _childCollection) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var isArray = Ember.isArray;
+  exports.default = Ember.Mixin.create(_childCollection.default.create({
+    model: 'polylines',
+
+    namespace: 'polyline',
+
+    validate: function validatePolylines() {
+      var polylines = this.get('polylines');
+
+      if (!polylines) {
+        return;
+      } // validation not necessary
+
+      if (!isArray(polylines)) {
+        throw new Error('g-maps component expects polylines to be an Ember Array');
+      }
+
+      // End validation
+      if (!polylines[0] || !polylines[0].path || !polylines[0].path[0]) {
+        return;
+      }
+
+      // Reminder for well formed polygon paths
+      if (!isArray(polylines[0].path[0])) {
+        throw new Error('g-maps polyline path property expects Array of Arrays: [[lat, lng]]');
+      }
+    }
+  }));
+});
+;define('ember-cli-g-maps/mixins/g-maps/rectangles', ['exports', 'ember-cli-g-maps/utils/g-maps/child-collection'], function (exports, _childCollection) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var isArray = Ember.isArray;
+  exports.default = Ember.Mixin.create(_childCollection.default.create({
+    model: 'rectangles',
+
+    namespace: 'rectangle',
+
+    validate: function validateRectangles() {
+      var rectangles = this.get('rectangles');
+
+      if (!rectangles) {
+        return;
+      } // validation not necessary
+
+      if (!isArray(rectangles)) {
+        throw new Error('g-maps component expects rectangles to be an Ember Array');
+      }
+
+      // End validation
+      if (!rectangles[0] || !rectangles[0].bounds || !rectangles[0].bounds[0]) {
+        return;
+      }
+
+      // Reminder for well formed polygon paths
+      if (!isArray(rectangles[0].bounds[0])) {
+        throw new Error('g-maps rectangle bounds property expects Array of Arrays: [[lat, lng]]');
+      }
+    }
+  }));
+});
+;define('ember-cli-g-maps/mixins/g-maps/selections', ['exports', 'ember-cli-g-maps/utils/load-google-maps'], function (exports, _loadGoogleMaps) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var later = Ember.run.later;
+  var on = Ember.on,
+      computed = Ember.computed,
+      isArray = Ember.isArray;
+  exports.default = Ember.Mixin.create({
+
+    // Stores reference to google DrawingManager instance
+    _drawingManager: null,
+
+    /**
+     * [selectionsDelay time it takes to remove last selection from the map]
+     * @type {Number}
+     */
+    selectionsDelay: null,
+
+    // Default to all supported mode
+    selectionsModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle'],
+
+    /**
+     * [_gmapSelectionsModes]
+     * @param  {String}  [observes `selectionsModes` binding options]
+     * @return {[Array]} [Returns array of matched google OverlayType's]
+     */
+    _gmapSelectionsModes: computed('selectionsModes.[]', function () {
+      var modes = [];
+
+      if (isArray(this.get('selectionsModes')) === false) {
+        Ember.Logger.error('`selectionsModes` property expects an array');
+      }
+
+      var selectionsModes = this.get('selectionsModes').map(function (dm) {
+        return dm.toLowerCase();
+      });
+
+      if (selectionsModes.indexOf('marker') > -1) {
+        modes.push(google.maps.drawing.OverlayType.MARKER);
+      }
+
+      if (selectionsModes.indexOf('circle') > -1) {
+        modes.push(google.maps.drawing.OverlayType.CIRCLE);
+      }
+
+      if (selectionsModes.indexOf('polygon') > -1) {
+        modes.push(google.maps.drawing.OverlayType.POLYGON);
+      }
+
+      if (selectionsModes.indexOf('polyline') > -1) {
+        modes.push(google.maps.drawing.OverlayType.POLYLINE);
+      }
+
+      if (selectionsModes.indexOf('rectangle') > -1) {
+        modes.push(google.maps.drawing.OverlayType.RECTANGLE);
+      }
+
+      return modes;
+    }),
+
+    // Default to controls on top
+    selectionsPosition: 'top',
+
+    /**
+     * [_gmapSelectionsPosition ]
+     * @param  {String}            [observes `selectionsPosition` binding]
+     * @return {[ControlPosition]} [Returns matching google ControlPosition]
+     */
+    _gmapSelectionsPosition: computed('selectionsPosition', function () {
+      var pos = 'TOP_CENTER';
+
+      if (typeof this.get('selectionsPosition') !== 'string') {
+        Ember.Logger.error('`selectionsPosition` property expects a string');
+      }
+
+      switch (Ember.String.dasherize(this.get('selectionsPosition').replace('_', '-')).toLowerCase()) {
+        case 'top-left':
+          pos = 'TOP_LEFT';break;
+        case 'top-right':
+          pos = 'TOP_RIGHT';break;
+        case 'left-top':
+          pos = 'LEFT_TOP';break;
+        case 'right-top':
+          pos = 'RIGHT_TOP';break;
+        case 'left':
+          pos = 'LEFT_CENTER';break;
+        case 'left-center':
+          pos = 'LEFT_CENTER';break;
+        case 'right':
+          pos = 'RIGHT_CENTER';break;
+        case 'right-center':
+          pos = 'RIGHT_CENTER';break;
+        case 'left-bottom':
+          pos = 'LEFT_BOTTOM';break;
+        case 'right-bottom':
+          pos = 'RIGHT_BOTTOM';break;
+        case 'bottom':
+          pos = 'BOTTOM_CENTER';break;
+        case 'bottom-center':
+          pos = 'BOTTOM_CENTER';break;
+        case 'bottom-left':
+          pos = 'BOTTOM_LEFT';break;
+        case 'bottom-right':
+          pos = 'BOTTOM_RIGHT';break;
+      }
+
+      return google.maps.ControlPosition[pos];
+    }),
+
+    // Default to no active selection tool
+    selectionsMode: '',
+
+    /**
+     * [_gmapSelectionsMode]
+     * @param  {String}             [observes `selectionsMode` binding]
+     * @return {[OverlayType|null]} [Returns matching google OverlayType]
+     */
+    _gmapSelectionsMode: computed('selectionsMode', function () {
+      var mode = '';
+
+      if (typeof this.get('selectionsMode') !== 'string') {
+        Ember.Logger.error('`selectionsMode` property expects a string');
+      }
+
+      switch (this.get('selectionsMode').toLowerCase()) {
+        case 'marker':
+          mode = 'MARKER';break;
+        case 'circle':
+          mode = 'CIRCLE';break;
+        case 'polygon':
+          mode = 'POLYGON';break;
+        case 'polyline':
+          mode = 'POLYLINE';break;
+        case 'rectangle':
+          mode = 'RECTANGLE';break;
+      }
+
+      return mode ? google.maps.drawing.OverlayType[mode] : null;
+    }),
+
+    // Stores reference to `overlaycomplete` event
+    _selectionsEventOverlayComplete: null,
+
+    /**
+     * [_initSelections runs once per selections instance instantiation]
+     * [Added via `_validateSelections`]
+     * [Observes ('isMapLoaded', 'selections')]
+     */
+    _initSelections: function _initSelections() {
+      var _this = this;
+
+      var continueSetup = this.get('isMapLoaded') && this.get('selections') && this.get('googleMapsSupportsDrawingManager') && !this.get('_drawingManager');
+
+      if (!continueSetup) {
+        return;
+      }
+
+      // Create DrawingManager Instance and store
+      var drawingManager = new google.maps.drawing.DrawingManager();
+      this.set('_drawingManager', drawingManager);
+
+      // Watch for changes to selections configuration and inital sync
+      this.addObserver('_drawManagerOptions', this, '_syncDrawingMangagerOptions');
+      this._syncDrawingMangagerOptions();
+
+      // Add the drawing manager to the map
+      drawingManager.setMap(this.get('map').map);
+
+      var lastSelection = void 0;
+
+      // Bind selection events
+      var overlayListener = google.maps.event.addListener(drawingManager, 'overlaycomplete', function (event) {
+
+        // Prohibit simultanious selections
+        if (lastSelection && lastSelection.map) {
+          lastSelection.setMap(null);
+        }
+
+        lastSelection = event.overlay;
+
+        if (event.type === google.maps.drawing.OverlayType.MARKER) {
+          _this.send('selectionsMarker', event.overlay);
+        } else if (event.type === google.maps.drawing.OverlayType.CIRCLE) {
+          _this.send('selectionsCircle', event.overlay);
+        } else if (event.type === google.maps.drawing.OverlayType.RECTANGLE) {
+          _this.send('selectionsRectangle', event.overlay);
+        } else if (event.type === google.maps.drawing.OverlayType.POLYGON) {
+          _this.send('selectionsPolygon', event.overlay);
+        } else if (event.type === google.maps.drawing.OverlayType.POLYLINE) {
+          _this.send('selectionsPolyline', event.overlay);
+        }
+
+        // Remove the last drawing from map
+        later(function () {
+          event.overlay.setMap(null);
+        }, _this.get('selectionsDelay') || 400);
+      });
+
+      // create reference to event
+      this.set('_selectionsEventOverlayComplete', overlayListener);
+
+      // Add listener to sync user selection of map drawing controls
+      this.$().on('click', '.gmnoprint > div', Ember.run.bind(this, this._syncDrawingManagerModeControls));
+
+      // Remove observers added during `didInsertElement`
+      this.removeObserver('isMapLoaded', this, '_initSelections');
+      this.removeObserver('selections', this, '_initSelections');
+    },
+
+    /**
+     * [Return the configuration object for the drawingManager]
+     * @param  {[Strings]}  [Observes all relevant properties on `selections` config]
+     * @return {[Object]}   [Drawing Manager Configuration Object]
+     */
+    _drawManagerOptions: computed('selections', '_gmapSelectionsMode', '_gmapSelectionsModes', '_gmapSelectionsPosition', 'selections.{visible,markerOptions,circleOptions,polygonOptions,polylineOptions,rectangleOptions}', function () {
+      var isVisible = this.get('selections.visible');
+      var markerOptions = this.get('selections.markerOptions');
+      var circleOptions = this.get('selections.circleOptions');
+      var polygonOptions = this.get('selections.polygonOptions');
+      var polylineOptions = this.get('selections.polylineOptions');
+      var rectangleOptions = this.get('selections.rectangleOptions');
+
+      var options = {
+        drawingMode: this.get('_gmapSelectionsMode'),
+        drawingControl: typeof isVisible === 'boolean' ? isVisible : true, // Shows or hides draw manager
+        drawingControlOptions: {
+          position: this.get('_gmapSelectionsPosition'),
+          drawingModes: this.get('_gmapSelectionsModes')
+        }
+      };
+
+      if (markerOptions) {
+        options.markerOptions = markerOptions;
+      }
+
+      if (circleOptions) {
+        options.circleOptions = circleOptions;
+      }
+
+      if (polygonOptions) {
+        options.polygonOptions = polygonOptions;
+      }
+
+      if (polylineOptions) {
+        options.polylineOptions = polylineOptions;
+      }
+
+      if (rectangleOptions) {
+        options.rectangleOptions = rectangleOptions;
+      }
+
+      return options;
+    }),
+
+    /**
+     * [_syncDrawingMangagerOptions finally sets the options on the drawManager instance]
+     * [Added via `_initSelections`]
+     * [Observes ('_drawManagerOptions')]
+     */
+    _syncDrawingMangagerOptions: function _syncDrawingMangagerOptions() {
+      return this.get('_drawingManager').setOptions(this.get('_drawManagerOptions'));
+    },
+
+    /**
+     * [_syncDrawingManagerModeControls get active drawingMode and bind to parent, enforces string type if falsey]
+     */
+    _syncDrawingManagerModeControls: function _syncDrawingManagerModeControls() {
+      var mode = this.get('_drawingManager').drawingMode || '';
+      this.set('selectionsMode', mode);
+    },
+
+    /**
+     * [googleMapsSupportsDrawingManager returns a boolean indicating if DrawingManager is supported]
+     * @return {[Boolean]}
+     */
+    googleMapsSupportsDrawingManager: computed(function () {
+      return google.maps && google.maps.drawing && google.maps.drawing.DrawingManager;
+    }),
+
+    /**
+     * [_validateSelections determines if selections can instantiate, if so adds init observers]
+     * @param  {[String]} )[triggered on element insertion]
+     * @return {[Oberservers]} [if valid adds obersvers to init method]
+     */
+    _validateSelections: on('didInsertElement', function () {
+      var _this2 = this;
+
+      return (0, _loadGoogleMaps.default)().then(function () {
+        if (!_this2.get('selections')) {
+          return false;
+        }
+
+        if (!_this2.get('googleMapsSupportsDrawingManager')) {
+          throw new Error('g-map component requires the "drawing" library included in `config/environment.js`');
+        } else {
+
+          // Enable selections setup
+          _this2.addObserver('isMapLoaded', _this2, '_initSelections');
+          _this2.addObserver('selections', _this2, '_initSelections');
+        }
+      });
+    }),
+
+    /**
+     * [_teardownSelections removes the draw manager from the map, clears up memory, and unbinds events]
+     * @param  {[String]} [triggered on element destroy]
+     */
+    _teardownSelections: on('willDestroyElement', function () {
+      var drawingManager = this.get('_drawingManager');
+
+      if (drawingManager) {
+        drawingManager.setMap(null);
+        this.set('drawingManager', null);
+
+        // Remove overlay complete listener
+        this.get('_selectionsEventOverlayComplete').remove();
+        this.set('_selectionsEventOverlayComplete', null);
+
+        // Remove select control sync listener
+        this.$().off('click', '.gmnoprint > div');
+      }
+    }),
+
+    actions: {
+      selectionsMarker: function selectionsMarker(marker) {
+        this.sendAction('selectionsMarker', {
+          marker: marker,
+          lat: marker.position.lat(),
+          lng: marker.position.lng()
+        });
+      },
+
+      selectionsCircle: function selectionsCircle(circle) {
+        this.sendAction('selectionsCircle', {
+          circle: circle,
+          radius: circle.getRadius(),
+          lat: circle.center.lat(),
+          lng: circle.center.lng()
+        });
+      },
+
+      selectionsRectangle: function selectionsRectangle(rectangle) {
+        var ne = rectangle.bounds.getNorthEast();
+        var sw = rectangle.bounds.getSouthWest();
+
+        this.sendAction('selectionsRectangle', {
+          rectangle: rectangle,
+          bounds: [{ lat: ne.lat(), lng: ne.lng(), location: 'northeast' }, // Northeast
+          { lat: sw.lat(), lng: sw.lng(), location: 'southwest' // Southwest
+          }]
+        });
+      },
+
+      selectionsPolygon: function selectionsPolygon(polygon) {
+        var pathTarget = polygon.latLngs.getArray()[0];
+
+        if (typeof pathTarget.getArray === 'function') {
+          pathTarget = pathTarget.getArray();
+        }
+
+        this.sendAction('selectionsPolygon', {
+          polygon: polygon,
+          coords: pathTarget.map(function (c) {
+            return { lat: c.lat(), lng: c.lng() };
+          })
+        });
+      },
+
+      selectionsPolyline: function selectionsPolyline(polyline) {
+        var pathTarget = polyline.latLngs.getArray()[0];
+
+        if (typeof pathTarget.getArray === 'function') {
+          pathTarget = pathTarget.getArray();
+        }
+
+        this.sendAction('selectionsPolyline', {
+          polyline: polyline,
+          coords: pathTarget.map(function (c) {
+            return { lat: c.lat(), lng: c.lng() };
+          })
+        });
+      }
+    }
+  });
+});
+;define('ember-cli-g-maps/services/g-map', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _get = Ember.get,
+      typeOf = Ember.typeOf,
+      computed = Ember.computed;
+
+
+  var mapIter = 0;
+
+  exports.default = Ember.Service.extend({
+    maps: function () {
+
+      /**
+       * Store or Gmaps.maps
+       * @type {Ember Array}
+       */
+      var maps = Ember.A([]);
+
+      return {
+
+        /**
+         * Return map instance from store by name
+         * @param {String} name [Name of Google Map instance]
+         * @return {Object} found [GMap.maps store item]
+         */
+        select: function select(name) {
+          var found = void 0;
+
+          for (var i = 0, l = maps.length; i < l; i++) {
+            if (maps[i].name === name) {
+              found = maps[i];
+              return found;
+            }
+          }
+
+          return found;
+        },
+
+
+        /**
+         * Add new map instance to store by name
+         * @param {String} name [Name of Google Map instance]
+         * @param {Object} mapItem [GMap.maps store item]
+         */
+        add: function add(name, map) {
+          if (typeof name !== 'string') {
+            throw new Error('GMap name must be a string');
+          }
+
+          if (map instanceof google.maps.Map === false) {
+            throw new Error('GMap service only accepts Google Map instances');
+          }
+
+          if (this.select(name)) {
+            throw new Error('GMap name is taken, select a new GMap name');
+          }
+
+          var mapItem = { name: name, map: map };
+
+          // Using accessor property to avoid calling warning via `service.add`
+          Object.defineProperty(mapItem, 'onLoad', {
+            get: function get() {
+              return new Ember.RSVP.Promise(function (resolve) {
+                google.maps.event.addListenerOnce(map, 'idle', function () {
+                  Ember.Logger.warn('gMaps service onLoad has been deprecated, please use the component\'s `loaded` action instead.');
+                  resolve();
+                });
+              });
+            }
+          });
+
+          if (typeof Object.freeze === 'function') {
+            Object.freeze(mapItem);
+          }
+
+          maps.pushObject(mapItem);
+
+          return mapItem;
+        },
+
+
+        /**
+         * Remove map instance from store by name
+         * @param {String} name [Name of Google Map instance]
+         * @return {Boolean} isSuccessful [Successfully removed]
+         */
+        remove: function remove(name) {
+          var isSuccessful = false;
+
+          for (var i = 0, l = maps.length; i < l; i++) {
+            if (maps[i].name === name) {
+              maps.removeAt(i);
+              isSuccessful = true;
+              return isSuccessful;
+            }
+          }
+
+          return isSuccessful;
+        },
+
+
+        /**
+         * Refresh a Google Map instance
+         * @param {String} name [Name of Google Map instance]
+         * @return {Boolean} isSuccessful [Successfully refreshed]
+         */
+        refresh: function refresh(name) {
+          var isSuccessful = false;
+          var mapStore = this.select(name);
+
+          if (!mapStore) {
+            Ember.Logger.warn('Attempted to refresh undefined GMap instance: ' + (name || '(no map name given)'));
+          } else {
+            google.maps.event.trigger(mapStore.map, 'resize');
+            isSuccessful = true;
+          }
+
+          return isSuccessful;
+        },
+        list: function list() {
+          return maps.mapBy('name');
+        }
+      };
+    }(),
+
+    /**
+     * @type {Array}
+     * Store references to all active geocode request promises
+     */
+    _geocodeQueue: [],
+
+    geocode: function geocode(options) {
+      var queue = this._geocodeQueue;
+
+      var request = new Ember.RSVP.Promise(function (resolve, reject) {
+        options.callback = function (result, status) {
+          if (status === 'OK' || status === 'ZERO_RESULTS') {
+            resolve(result);
+          } else {
+            var err = { status: status };
+
+            // Add any available error_message
+            if (result && result.error_message) {
+              err.message = result.error_message;
+            }
+
+            reject(err);
+          }
+
+          queue.splice(queue.indexOf(request), 1); // remove from queue
+        };
+
+        GMaps.prototype.geocode(options);
+      });
+
+      queue.push(request); // add to queue
+
+      return request;
+    },
+
+
+    autocompletes: computed({
+      get: function get() {
+        var autocompletes = {};
+        return {
+          add: function add(item) {
+            var id = _get(item.component, 'elementId');
+            autocompletes[id] = item;
+          },
+          remove: function remove(component) {
+            var id = _get(component, 'elementId');
+            delete autocompletes[id];
+          },
+          get: function get(component) {
+            if (typeOf(component) === 'string') {
+              return autocompletes[component];
+            }
+            var id = _get(component, 'elementId');
+            return autocompletes[id];
+          }
+        };
+      }
+    }),
+
+    googleAPI: computed({
+      get: function get() {}
+    }),
+
+    /**
+     @public
+      Add a new map instance to store by name. Map names must be unique.
+      Example:
+      ```
+     import Ember from 'ember';
+       export default Ember.Component.extend({
+        gMap: Ember.inject.service(),
+         addMapWithName(name) {
+          var map = new google.maps.Map();
+           this.get('gMap').addMap(name, map); // {name: 'main-map', map: (Map instance)}
+        },
+         addMapWithoutName() {
+          var map = new google.maps.Map();
+           this.get('gMap').addMap(map); // {name: 'map-1', map: (Map instance)}
+        }
+      });
+     ```
+      @method addMap
+     @param {String} name
+     @param {Object} mapItem [GMap.maps store item]
+     @return {Object} A "plain" object with a name and the map instance
+    */
+    addMap: function addMap(name, map) {
+      mapIter++;
+
+      if (name instanceof google.maps.Map) {
+        map = name;
+        name = 'map-' + mapIter.toString(36);
+      }
+
+      return this.maps.add(name, map);
+    },
+
+
+    /**
+     @public
+      List the names of maps managed by the service.
+      @method list
+     @return {Array} A "plain" object with a name and the map instance
+    */
+    list: function list() {
+      return this.maps.list();
+    },
+
+
+    /**
+     @public
+      Refresh a Google Map instance by name.
+      @method refreshMap
+     @param {String} name
+     @return {Boolean} True is success. False if refresh failed.
+    */
+    refreshMap: function refreshMap() {
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      return this.maps.refresh(name);
+    },
+
+
+    /**
+     @public
+      Remove all registered maps from the service. Mostly used for unit testing.
+      @method removeAll
+     @return {Boolean} True is success. False if any removal failed.
+    */
+    removeAll: function removeAll() {
+      var list = this.list();
+
+      for (var i = list.length - 1; i >= 0; i--) {
+        this.removeMap(list[i]);
+      }
+
+      list = this.list();
+      mapIter = list.length;
+
+      return list.length === 0 ? true : false;
+    },
+
+
+    /**
+     @public
+      Remove a registerd Google Map instance by name.
+      @method removeMap
+     @param {String} name
+     @return {Boolean} True is success. False if removal failed.
+    */
+    removeMap: function removeMap() {
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      return this.maps.remove(name);
+    },
+
+
+    /**
+     @public
+      Find a Google Map instance by name.
+      @method selectMap
+     @param {String} name
+     @return {Object|Null} found [GMap.maps store item] or null
+    */
+    selectMap: function selectMap() {
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      var result = this.maps.select(name);
+
+      if (result && result.map) {
+        return result.map;
+      }
+
+      return null;
+    }
+  });
+});
+;define('ember-cli-g-maps/utils/g-maps/child-collection', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  var capitalize = Ember.String.capitalize;
+  var merge = Ember.merge,
+      uuid = Ember.uuid,
+      on = Ember.on,
+      observer = Ember.observer;
+  exports.default = {
+    create: function createChildCollection(settings) {
+      var _ref;
+
+      var utils = this;
+      var noop = function noop() {};
+      var globalNamespace = '_gmap';
+
+      var defaults = {
+        namespace: 'gMapChildCollection_' + uuid()
+      };
+
+      settings = merge(defaults, settings);
+
+      if (!settings.model) {
+        throw new Error('childCollection requires a `model` string');
+      }
+
+      ////////////////////////////////////////////
+      // Child Collection Factory Configuration
+      ///////////////////////////////////////////
+
+      var model = settings.model;
+      var namespace = globalNamespace + capitalize(settings.namespace);
+      var addMethod = 'add' + capitalize(settings.namespace);
+      var removeMethod = 'remove' + capitalize(settings.namespace);
+
+      ////////////////////////////////////
+      // Child Collection Mixin Factory
+      ///////////////////////////////////
+
+      return _ref = {}, _defineProperty(_ref, model, Ember.A()), _defineProperty(_ref, namespace + 'Validate', on('didInsertElement', settings.validate || noop)), _defineProperty(_ref, namespace + 'Destroy', on('willDestroyElement', settings.destroy || noop)), _defineProperty(_ref, namespace + 'AfterAddChild', settings.addedItem || noop), _defineProperty(_ref, namespace + 'BeforeRemoveChild', settings.removeItem || noop), _defineProperty(_ref, namespace + 'Sync', observer('isMapLoaded', model + '.[]', function sync() {
+        var map = this.get('map');
+        var parentModel = this.get(model);
+
+        // If Items require syncing
+        if (!this.get('isMapLoaded') || !parentModel) {
+          return;
+        }
+
+        for (var i = 0, l = parentModel.length; i < l; i++) {
+          var item = parentModel[i];
+          var mapChild = map[model][i];
+          var addedMapItem = null;
+
+          // Map store doesn't have child
+          if (!mapChild) {
+            addedMapItem = map[addMethod](item);
+          }
+
+          // If map index item is different from model item
+          else if (utils._modelVsMapChildDiff(item, mapChild)) {
+
+              // Somethings different, so just rerender it!
+              this[namespace + 'BeforeRemoveChild'](mapChild, map);
+              map[removeMethod](mapChild);
+
+              // Add to end of map[model]
+              addedMapItem = map[addMethod](item);
+
+              // So here we adjust it to be the current index
+              map[model].splice(i, 0, map[model].pop());
+            }
+
+          // Hook for mixin
+          if (addedMapItem) {
+            this[namespace + 'AfterAddChild'](item, addedMapItem, map);
+          }
+        }
+
+        // Remove any map children out of sync with model
+        while (map[model].length > parentModel.length) {
+          var _mapChild = map[model][map[model].length - 1];
+
+          // Hook for mixin
+          this[namespace + 'BeforeRemoveChild'](_mapChild, map);
+          map[removeMethod](_mapChild);
+        }
+      })), _ref;
+    },
+
+    _modelVsMapChildDiff: function _modelVsMapChildDiff(model, mapChild) {
+      for (var p in model) {
+        if (model.hasOwnProperty(p)) {
+
+          // Only diff one level deep on parent model
+          if (_typeof(model[p]) === 'object') {
+            continue;
+          }
+
+          if (model[p] !== mapChild[p]) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+  };
+});
+;define("ember-cli-g-maps/utils/g-maps/math", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.areCoordsEqual = areCoordsEqual;
+  function areCoordsEqual(a, b) {
+    return parseFloat(a).toFixed(12) === parseFloat(b).toFixed(12);
+  }
+});
+;define('ember-cli-g-maps/utils/load-google-maps', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+
+  var RSVP = Ember.RSVP;
+
+
+  /**
+   * Get the content of element referencing the Google Maps src
+   * @param {String} query [location of HTML element]
+   * @return {String|Boolean}
+   */
+  var getLazyLoadSrc = function getLazyLoadSrc() {
+    var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'meta[name="ember-cli-g-maps-url"]';
+
+    var meta = void 0;
+
+    if ((typeof query === 'undefined' ? 'undefined' : _typeof(query)) === 'object') {
+      meta = query;
+    } else {
+      meta = Ember.$(query).get(0);
+    }
+
+    if (!meta) {
+      return false;
+    }
+
+    // Return content property or bust
+    var content = meta.getAttribute('content') || '';
+    return content.length ? content : false;
+  };
+
+  /**
+   * Request Google Maps script and promise result
+   * @param {String} src
+   * @return {Promise}
+   */
+  var lazyLoadGoogleMap = function lazyLoadGoogleMap(src) {
+    if (!src) {
+      return RSVP.Promise.reject(); // Google Maps source undefined
+    }
+
+    return new RSVP.Promise(function (resolve, reject) {
+      Ember.$.getScript(src).done(function emberCliGMapsLazyLoadSuccess() {
+        resolve(window.google.maps);
+      }).fail(function emberCliGMapsLazyLoadFailure(jqXhr) {
+        reject(jqXhr); // resolve error
+      });
+    });
+  };
+
+  exports.default = function () {
+    var googleMapPromise = void 0;
+
+    /**
+     * Attempts to resolve global `google.maps` -> then attempts lazy load -> otherwise rejects
+     * @type {Function} loadGoogleMaps
+     * @return {Promise}
+     * - @resolve {Object} google.maps
+     */
+    function loadGoogleMaps() {
+
+      /**
+       * Resolve available global google.maps
+       */
+
+      if (_typeof(window.google) === 'object' && _typeof(window.google.maps) === 'object') {
+        return RSVP.Promise.resolve(window.google.maps); // Google maps is loaded
+      }
+
+      /**
+       * Resolve existing `googleMapsPromise` or initiate lazy load
+       */
+
+      if (typeof googleMapPromise === 'undefined') {
+        googleMapPromise = loadGoogleMaps.lazyLoadGoogleMap(loadGoogleMaps.getLazyLoadSrc());
+      }
+
+      return googleMapPromise;
+    }
+
+    loadGoogleMaps.getLazyLoadSrc = getLazyLoadSrc;
+    loadGoogleMaps.lazyLoadGoogleMap = lazyLoadGoogleMap;
+
+    return loadGoogleMaps;
+  }();
+});
 ;define("ember-inflector/index", ["module", "exports", "ember-inflector/lib/system", "ember-inflector/lib/ext/string"], function (module, exports, _system) {
   "use strict";
 

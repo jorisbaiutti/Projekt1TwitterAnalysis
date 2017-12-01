@@ -8,9 +8,27 @@ define('twitter-frontend/adapters/application', ['exports', 'ember-data'], funct
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.default = _emberData.default.JSONAPIAdapter.extend({
+
+    var _DS$JSONAPIAdapter$ex;
+
+    function _defineProperty(obj, key, value) {
+        if (key in obj) {
+            Object.defineProperty(obj, key, {
+                value: value,
+                enumerable: true,
+                configurable: true,
+                writable: true
+            });
+        } else {
+            obj[key] = value;
+        }
+
+        return obj;
+    }
+
+    exports.default = _emberData.default.JSONAPIAdapter.extend((_DS$JSONAPIAdapter$ex = {
         namespace: 'api'
-    });
+    }, _defineProperty(_DS$JSONAPIAdapter$ex, 'namespace', 'api/keyvalueanalyse'), _defineProperty(_DS$JSONAPIAdapter$ex, 'namespace', 'api/charts'), _DS$JSONAPIAdapter$ex));
 });
 define('twitter-frontend/app', ['exports', 'twitter-frontend/resolver', 'ember-load-initializers', 'twitter-frontend/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
   'use strict';
@@ -48,6 +66,32 @@ define('twitter-frontend/components/ember-chart', ['exports', 'ember-cli-chartjs
     enumerable: true,
     get: function () {
       return _emberChart.default;
+    }
+  });
+});
+define('twitter-frontend/components/g-autocomplete', ['exports', 'ember-cli-g-maps/components/g-autocomplete'], function (exports, _gAutocomplete) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gAutocomplete.default;
+    }
+  });
+});
+define('twitter-frontend/components/g-maps', ['exports', 'ember-cli-g-maps/components/g-maps'], function (exports, _gMaps) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMaps.default;
     }
   });
 });
@@ -255,18 +299,6 @@ define("twitter-frontend/instance-initializers/ember-data", ["exports", "ember-d
     initialize: _initializeStoreService.default
   };
 });
-define('twitter-frontend/models/person', ['exports', 'ember-data'], function (exports, _emberData) {
-    'use strict';
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.default = _emberData.default.Model.extend({
-        name: _emberData.default.attr(),
-        age: _emberData.default.attr()
-
-    });
-});
 define('twitter-frontend/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
   'use strict';
 
@@ -292,10 +324,39 @@ define('twitter-frontend/router', ['exports', 'twitter-frontend/config/environme
     this.route('person', function () {
       this.route('show', { path: '/show/:id' });
     });
+    this.route('keyvalueanalyse', function () {
+      this.route('mostdiscussedtopics', { path: '/mostdiscussedtopics' });
+      this.route('test');
+    });
+    this.route('barcharts', function () {
+      this.route('test', { path: '/test' });
+      this.route('tweetsbytheme');
+    });
+
     this.route('charts');
+    this.route('linecharts', function () {
+      this.route('samplechart');
+    });
+
+    this.route('maps', function () {
+      this.route('tweetoverview');
+      this.route('myfollowers');
+    });
   });
 
   exports.default = Router;
+});
+define('twitter-frontend/routes/barcharts/tweetsbytheme', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+            return Ember.$.ajax({ url: 'http://localhost:8080/api/barchart/countbytheme', contentType: 'application/json' });
+        }
+    });
 });
 define("twitter-frontend/routes/charts", ["exports"], function (exports) {
     "use strict";
@@ -337,15 +398,39 @@ define('twitter-frontend/routes/index', ['exports'], function (exports) {
         }
     });
 });
-define('twitter-frontend/routes/person/show', ['exports'], function (exports) {
+define('twitter-frontend/routes/linecharts/samplechart', ['exports'], function (exports) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
     exports.default = Ember.Route.extend({
-        model: function model(params) {
-            return this.get('store').findRecord('person', params.id);
+        model: function model() {
+            return Ember.$.ajax({ url: 'http://localhost:8080/api/linecharts/sample', contentType: 'application/json' });
+        }
+    });
+});
+define('twitter-frontend/routes/maps/myfollowers', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+            return Ember.$.ajax({ url: 'http://localhost:8080/api/map/myfollowers', contentType: 'application/json' });
+        }
+    });
+});
+define('twitter-frontend/routes/maps/tweetoverview', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+            return Ember.$.ajax({ url: 'http://localhost:8080/api/map/mapanalyse', contentType: 'application/json' });
         }
     });
 });
@@ -379,6 +464,19 @@ define('twitter-frontend/services/ajax', ['exports', 'ember-ajax/services/ajax']
     }
   });
 });
+define('twitter-frontend/services/g-map', ['exports', 'ember-cli-g-maps/services/g-map'], function (exports, _gMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMap.default;
+    }
+  });
+});
 define("twitter-frontend/templates/application", ["exports"], function (exports) {
   "use strict";
 
@@ -386,6 +484,14 @@ define("twitter-frontend/templates/application", ["exports"], function (exports)
     value: true
   });
   exports.default = Ember.HTMLBars.template({ "id": "wgNwtVBJ", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"container-fluid\"],[7],[0,\"\\n  \"],[6,\"nav\"],[9,\"class\",\"navbar navbar-expand-lg navbar-light nav-twitter\"],[7],[0,\"\\n    \"],[4,\"link-to\",[\"index\"],[[\"class\"],[\"navbar-brand\"]],{\"statements\":[[0,\"Twitter Analysie\"]],\"parameters\":[]},null],[0,\"\\n    \"],[6,\"button\"],[9,\"class\",\"navbar-toggler twitter-yellow\"],[9,\"type\",\"button\"],[9,\"data-toggle\",\"collapse\"],[9,\"data-target\",\"#navbarSupportedContent\"],[9,\"aria-controls\",\"navbarSupportedContent\"],[9,\"aria-expanded\",\"false\"],[9,\"aria-label\",\"Toggle navigation\"],[7],[0,\"\\n    \"],[6,\"span\"],[9,\"class\",\"navbar-toggler-icon\"],[7],[8],[0,\"\\n  \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"collapse navbar-collapse\"],[9,\"id\",\"navbarSupportedContent\"],[7],[0,\"\\n      \"],[6,\"ul\"],[9,\"class\",\"nav navbar-nav\"],[7],[0,\"\\n        \"],[4,\"link-to\",[\"index\"],[[\"tagName\"],[\"li\"]],{\"statements\":[[6,\"a\"],[9,\"href\",\"\"],[7],[0,\"Home\"],[8]],\"parameters\":[]},null],[0,\"\\n      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"container-fluid\"],[7],[0,\"\\n  \"],[1,[18,\"outlet\"],false],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/application.hbs" } });
+});
+define("twitter-frontend/templates/barcharts/tweetsbytheme", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "4yAP+dIf", "block": "{\"symbols\":[],\"statements\":[[6,\"br\"],[7],[8],[0,\"\\n\"],[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"bar\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/barcharts/tweetsbytheme.hbs" } });
 });
 define("twitter-frontend/templates/charts", ["exports"], function (exports) {
   "use strict";
@@ -401,7 +507,7 @@ define("twitter-frontend/templates/components/card-listing", ["exports"], functi
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "+E0YBljC", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n    \"],[6,\"img\"],[9,\"class\",\"card-img-top\"],[10,\"src\",[26,[[20,[\"card\",\"imageurl\"]]]]],[9,\"alt\",\"Card image cap\"],[7],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n        \"],[6,\"h4\"],[9,\"class\",\"card-title\"],[7],[1,[20,[\"card\",\"title\"]],false],[8],[0,\"\\n        \"],[6,\"p\"],[9,\"class\",\"card-text\"],[7],[1,[20,[\"card\",\"text\"]],false],[8],[0,\"\\n        \"],[6,\"a\"],[10,\"href\",[26,[[20,[\"card\",\"link\"]]]]],[9,\"class\",\"btn btn-primary twitter-orange\"],[7],[0,\"Go somewhere\"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/components/card-listing.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "eGO+lCrm", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n    \"],[6,\"img\"],[9,\"class\",\"card-img-top\"],[10,\"src\",[26,[[20,[\"card\",\"imageurl\"]]]]],[9,\"alt\",\"Card image cap\"],[7],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n        \"],[6,\"h4\"],[9,\"class\",\"card-title\"],[7],[1,[20,[\"card\",\"value\"]],false],[8],[0,\"\\n        \"],[6,\"p\"],[9,\"class\",\"card-text\"],[7],[1,[20,[\"card\",\"text\"]],false],[8],[0,\"\\n        \"],[6,\"a\"],[10,\"href\",[26,[[20,[\"card\",\"link\"]]]]],[9,\"class\",\"btn btn-primary twitter-orange\"],[7],[0,\"Go somewhere\"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/components/card-listing.hbs" } });
 });
 define("twitter-frontend/templates/index", ["exports"], function (exports) {
   "use strict";
@@ -411,13 +517,29 @@ define("twitter-frontend/templates/index", ["exports"], function (exports) {
   });
   exports.default = Ember.HTMLBars.template({ "id": "Lp7MGlt9", "block": "{\"symbols\":[],\"statements\":[[1,[18,\"outlet\"],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/index.hbs" } });
 });
-define("twitter-frontend/templates/person/show", ["exports"], function (exports) {
+define("twitter-frontend/templates/linecharts/samplechart", ["exports"], function (exports) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "BElwWNDs", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbotron twitter-blue\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\"\\n        \"],[6,\"h1\"],[9,\"class\",\"display-3\"],[7],[0,\"name: \"],[1,[20,[\"model\",\"name\"]],false],[8],[0,\"\\n        \"],[6,\"h2\"],[9,\"class\",\"display-3\"],[7],[0,\"age: \"],[1,[20,[\"model\",\"age\"]],false],[8],[0,\"\\n        \"],[6,\"h2\"],[9,\"class\",\"display-3\"],[7],[0,\"id: \"],[1,[20,[\"model\",\"id\"]],false],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/person/show.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "d9X3lGBw", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"line\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/linecharts/samplechart.hbs" } });
+});
+define("twitter-frontend/templates/maps/myfollowers", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "MGIB6YGN", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\"],[\"Tweets Overview\",[19,0,[\"model\",\"lat\"]],5,[19,0,[\"model\",\"lng\"]],[19,0,[\"model\",\"markers\"]]]]],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/maps/myfollowers.hbs" } });
+});
+define("twitter-frontend/templates/maps/tweetoverview", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "xQeOiwah", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\"],[\"Tweets Overview\",[19,0,[\"model\",\"lat\"]],5,[19,0,[\"model\",\"lng\"]],[19,0,[\"model\",\"markers\"]]]]],false],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/maps/tweetoverview.hbs" } });
 });
 define('twitter-frontend/utils/chart-object', ['exports', 'ember-cli-chartjs/utils/chart-object'], function (exports, _chartObject) {
   'use strict';
@@ -429,6 +551,45 @@ define('twitter-frontend/utils/chart-object', ['exports', 'ember-cli-chartjs/uti
     enumerable: true,
     get: function () {
       return _chartObject.default;
+    }
+  });
+});
+define('twitter-frontend/utils/g-maps/child-collection', ['exports', 'ember-cli-g-maps/utils/g-maps/child-collection'], function (exports, _childCollection) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _childCollection.default;
+    }
+  });
+});
+define('twitter-frontend/utils/g-maps/math', ['exports', 'ember-cli-g-maps/utils/g-maps/math'], function (exports, _math) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _math.default;
+    }
+  });
+});
+define('twitter-frontend/utils/load-google-maps', ['exports', 'ember-cli-g-maps/utils/load-google-maps'], function (exports, _loadGoogleMaps) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _loadGoogleMaps.default;
     }
   });
 });
@@ -454,6 +615,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+d2e68fc3"});
+  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+2bbc56a1"});
 }
 //# sourceMappingURL=twitter-frontend.map

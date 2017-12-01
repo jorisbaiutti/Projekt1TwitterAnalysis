@@ -4,7 +4,9 @@ zuul:
       path: /**
       url: http://localhost:4200/
   ignored-patterns:
-     /api/**
+     /api/**,
+     /swagger**,
+     /webjars/**
 logging:
      level:
        org.springframework.web: 'debug'
