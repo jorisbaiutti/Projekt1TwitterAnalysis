@@ -7,8 +7,8 @@ import ch.bfh.entities.User;
 import ch.bfh.repositories.HashTagRepository;
 import ch.bfh.repositories.TweetRepository;
 import ch.bfh.repositories.UserRepository;
+import ch.bfh.util.TwitterUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import twitter4j.*;
 
 import java.util.ArrayList;
@@ -21,9 +21,10 @@ public class TwitterStream {
     HashTagRepository hashTagRepository;
     UserRepository userRepository;
     TweetRepository tweetRepository;
+    TwitterUtil twitterUtil;
 
     @Autowired
-    public TwitterStream(HashTagRepository hashTagRepository, UserRepository userRepository, TweetRepository tweetRepository) {
+    public TwitterStream(HashTagRepository hashTagRepository, UserRepository userRepository, TweetRepository tweetRepository, TwitterUtil twitterUtil) {
         this.hashTagRepository = hashTagRepository;
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
@@ -31,7 +32,7 @@ public class TwitterStream {
 
     @Autowired
     public void readTwitterFeed(){
-        twitter4j.TwitterStream stream = TwitterUtil.getStream();
+        twitter4j.TwitterStream stream = twitterUtil.getStream();
         StatusListener listener = new StatusListener() {
             @Override
             public void onStatus(Status status) {

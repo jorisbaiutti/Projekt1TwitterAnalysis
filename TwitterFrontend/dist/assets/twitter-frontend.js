@@ -340,6 +340,7 @@ define('twitter-frontend/router', ['exports', 'twitter-frontend/config/environme
 
     this.route('maps', function () {
       this.route('tweetoverview');
+      this.route('myfollowers');
     });
   });
 
@@ -406,6 +407,18 @@ define('twitter-frontend/routes/linecharts/samplechart', ['exports'], function (
     exports.default = Ember.Route.extend({
         model: function model() {
             return Ember.$.ajax({ url: 'http://localhost:8080/api/linecharts/sample', contentType: 'application/json' });
+        }
+    });
+});
+define('twitter-frontend/routes/maps/myfollowers', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+            return Ember.$.ajax({ url: 'http://localhost:8080/api/map/myfollowers', contentType: 'application/json' });
         }
     });
 });
@@ -511,6 +524,14 @@ define("twitter-frontend/templates/linecharts/samplechart", ["exports"], functio
     value: true
   });
   exports.default = Ember.HTMLBars.template({ "id": "d9X3lGBw", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"line\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/linecharts/samplechart.hbs" } });
+});
+define("twitter-frontend/templates/maps/myfollowers", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "MGIB6YGN", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\"],[\"Tweets Overview\",[19,0,[\"model\",\"lat\"]],5,[19,0,[\"model\",\"lng\"]],[19,0,[\"model\",\"markers\"]]]]],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/maps/myfollowers.hbs" } });
 });
 define("twitter-frontend/templates/maps/tweetoverview", ["exports"], function (exports) {
   "use strict";

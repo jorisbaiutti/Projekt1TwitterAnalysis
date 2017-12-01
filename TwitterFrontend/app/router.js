@@ -27,8 +27,10 @@ Router.map(function() {
 
   this.route('maps', function(){
     this.route('tweetoverview');
+    this.route('myfollowers');
   });
- 
+
+
 });
 
 export default Router;
