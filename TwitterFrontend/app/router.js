@@ -7,13 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('person', function() {
-    this.route('show', { path: '/show/:id' });
-  });
-  this.route('keyvalueanalyse',function(){
-    this.route('mostdiscussedtopics',{path: '/mostdiscussedtopics'});
-    this.route('test')
-  });
+
   this.route('barcharts',function(){
     this.route('test',{path: '/test'});
     this.route('tweetsbytheme');
@@ -31,7 +25,6 @@ Router.map(function() {
   });
 
 
-  this.route('testhome');
 });
 
 export default Router;

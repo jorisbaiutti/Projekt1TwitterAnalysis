@@ -5888,7 +5888,7 @@ a.text-dark:focus, a.text-dark:hover {
   margin: 10px; }
 
 .ember-cli-g-map {
-  height: 700px; }
+  height: 100vh; }
 
 .cardsmap {
   height: 200px; }

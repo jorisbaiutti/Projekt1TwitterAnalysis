@@ -60,11 +60,6 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/maps/tweetoverview.js should pass ESLint\n\n');
   });
 
-  QUnit.test('routes/testhome.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/testhome.js should pass ESLint\n\n');
-  });
-
   QUnit.test('serializers/application.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'serializers/application.js should pass ESLint\n\n');
