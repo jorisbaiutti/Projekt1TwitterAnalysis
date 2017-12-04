@@ -26,13 +26,13 @@ public class SentimentCategorizer {
     public void trainModel() {
         InputStream dataIn = null;
         try {
-            dataIn = new FileInputStream("C:\\Users\\Patrick\\IdeaProjects\\Projekt1TwitterAnalysis\\TwitterBackend\\src\\main\\resources\\inputfiles\\sentimentinputfile.txt");
+            dataIn = new FileInputStream("C:\\Projekt1TwitterAnalysis\\TwitterBackend\\src\\main\\resources\\inputfiles\\sentimentinput.txt");
             ObjectStream lineStream = new PlainTextByLineStream(dataIn, "UTF-8");
             ObjectStream sampleStream = new DocumentSampleStream(lineStream);
-            // Specifies the minimum number of times a feature must be seen
+
             int cutoff = 2;
             int trainingIterations = 30;
-            model = DocumentCategorizerME.train("de", sampleStream, cutoff,
+            model = DocumentCategorizerME.train("en", sampleStream, cutoff,
                     trainingIterations);
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,9 +48,9 @@ public class SentimentCategorizer {
     }
 
     public String getTweetSentiment(Tweet tweet) {
-        DocumentCategorizerME myCategorizer = new DocumentCategorizerME(model);
-        double[] outcomes = myCategorizer.categorize(tweet.getContent());
-        String category = myCategorizer.getBestCategory(outcomes);
+        DocumentCategorizerME categorizer = new DocumentCategorizerME(model);
+        double[] outcomes = categorizer.categorize(tweet.getContent());
+        String category = categorizer.getBestCategory(outcomes);
 
         if (category.equalsIgnoreCase("1")) {
             return "Positive";

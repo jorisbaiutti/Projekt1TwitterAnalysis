@@ -10601,7 +10601,7 @@ return jQuery;
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   2.15.2
+ * @version   2.15.3
  */
 
 var enifed, requireModule, Ember;
@@ -20039,6 +20039,7 @@ enifed('backburner', ['exports', 'ember-babel'], function (exports, _emberBabel)
     };
 
     var noop = function () {};
+    var SET_TIMEOUT = setTimeout;
 
     var Backburner = function () {
         function Backburner(queueNames) {
@@ -20075,7 +20076,7 @@ enifed('backburner', ['exports', 'ember-babel'], function (exports, _emberBabel)
                 return clearTimeout(id);
             };
             platform.next = _platform.next || function (fn) {
-                return platform.setTimeout(fn, 0);
+                return SET_TIMEOUT(fn, 0);
             };
             platform.clearNext = _platform.clearNext || platform.clearTimeout;
             platform.now = _platform.now || function () {
@@ -58828,7 +58829,7 @@ enifed('ember/index', ['exports', 'require', 'ember-environment', 'node-module',
 enifed("ember/version", ["exports"], function (exports) {
   "use strict";
 
-  exports.default = "2.15.2";
+  exports.default = "2.15.3";
 });
 enifed("handlebars", ["exports"], function (exports) {
   "use strict";

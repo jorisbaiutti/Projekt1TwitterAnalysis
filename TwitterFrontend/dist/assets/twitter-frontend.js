@@ -323,9 +323,8 @@ define('twitter-frontend/router', ['exports', 'twitter-frontend/config/environme
   Router.map(function () {
 
     this.route('barcharts', function () {
-      this.route('test');
+      this.route('test', { path: '/test' });
       this.route('tweetsbytheme');
-      this.route('tweetsbylanguage');
     });
 
     this.route('charts');
@@ -618,6 +617,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+dd567272"});
+  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+2bbc56a1"});
 }
 //# sourceMappingURL=twitter-frontend.map

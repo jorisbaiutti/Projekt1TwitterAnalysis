@@ -26,9 +26,10 @@ public class SentimentAnalyse implements Analyse{
     List<Tweet> tweets;
 
     @Autowired
-    public SentimentAnalyse(TweetRepository tweetRepository, PieChartController pieChartController) {
+    public SentimentAnalyse(TweetRepository tweetRepository, PieChartController pieChartController, SentimentCategorizer sentimentCategorizer) {
         this.tweetRepository = tweetRepository;
         this.pieChartController = pieChartController;
+        this.sentimentCategorizer = sentimentCategorizer;
 
         name = "sentimentanalyse";
 
@@ -46,9 +47,8 @@ public class SentimentAnalyse implements Analyse{
 
         tweets.forEach(tweet -> {
             String sentiment = sentimentCategorizer.getTweetSentiment(tweet);
-            sentimentCount.put(sentiment, sentimentCount.get(sentiment + 1));
+            sentimentCount.put(sentiment, sentimentCount.get(sentiment)+1);
         });
-
     }
 
     @Override
