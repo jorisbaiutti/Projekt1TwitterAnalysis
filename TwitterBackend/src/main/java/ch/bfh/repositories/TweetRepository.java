@@ -41,6 +41,11 @@ public class TweetRepository extends Repository<Tweet>{
         return tweets;
     }
 
+    public Tweet findById(long ID){
+        entityManager.getTransaction().begin();
+        return entityManager.find(Tweet.class, ID);
+    }
+
 
     @Override
     public List<Tweet> getAll() {

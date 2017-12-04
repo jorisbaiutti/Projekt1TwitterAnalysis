@@ -115,4 +115,6 @@ public class Tweet extends TwitterEntity {
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
+
+
 }
