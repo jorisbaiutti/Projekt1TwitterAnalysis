@@ -6,7 +6,7 @@ import be.ceau.chart.color.Color;
 import be.ceau.chart.data.PieData;
 import be.ceau.chart.dataset.PieDataset;
 import ch.bfh.analyse.Analyse;
-import ch.bfh.categorizer.OpenNLPCategorizer;
+import ch.bfh.categorizer.SentimentCategorizer;
 import ch.bfh.controllers.PieChartController;
 import ch.bfh.entities.Tweet;
 import ch.bfh.repositories.TweetRepository;
@@ -21,7 +21,7 @@ public class SentimentAnalyse implements Analyse{
     TweetRepository tweetRepository;
     PieChartController pieChartController;
     Hashtable<String, Integer> sentimentCount;
-    OpenNLPCategorizer sentimentCategorizer;
+    SentimentCategorizer sentimentCategorizer;
     String name;
     List<Tweet> tweets;
 

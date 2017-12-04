@@ -2,34 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/OpenNLPCategorizer.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterBackend.iml" afterPath="$PROJECT_DIR$/TwitterBackend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/router.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.css" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.css" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/crossdomain.xml" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/crossdomain.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/index.html" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/robots.txt" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/robots.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/testem.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/testem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/tests/index.html" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/tests/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/package-lock.json" afterPath="$PROJECT_DIR$/../TwitterFrontend/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/package.json" afterPath="$PROJECT_DIR$/../TwitterFrontend/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,7 +38,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
               <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1278#1279#0" expanded="false" />
+                <element signature="e#1305#1306#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SentimentAnalyse.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SentimentAnalyse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+            <state relative-caret-position="323">
+              <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,15 +71,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpenNLPCategorizer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/OpenNLPCategorizer.java">
+      <file leaf-file-name="SentimentCategorizer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+            <state relative-caret-position="163">
+              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#607#608#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,7 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/beans/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Entity.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/TwitterEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/Test.java" />
@@ -253,6 +231,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/OpenNLPCategorizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java" />
       </list>
     </option>
   </component>
@@ -1493,7 +1472,7 @@
       <workItem from="1511367958490" duration="11956000" />
       <workItem from="1511512172794" duration="1491000" />
       <workItem from="1511969460199" duration="6879000" />
-      <workItem from="1512382558329" duration="2015000" />
+      <workItem from="1512382558329" duration="2215000" />
     </task>
     <task id="LOCAL-00001" summary="added BarChart Controller">
       <created>1510322367264</created>
@@ -1513,7 +1492,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167013000" />
+    <option name="totallyTimeSpent" value="167213000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
@@ -1737,6 +1716,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+          <folding>
+            <element signature="e#1173#1174#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1744,6 +1726,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1856,7 +1839,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1278#1279#0" expanded="false" />
+            <element signature="e#1305#1306#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1912,24 +1899,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/OpenNLPCategorizer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+        <state relative-caret-position="323">
+          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        <state relative-caret-position="163">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
           </folding>
         </state>
       </provider>

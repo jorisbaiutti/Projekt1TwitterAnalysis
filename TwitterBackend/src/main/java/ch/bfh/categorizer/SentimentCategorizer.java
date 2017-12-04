@@ -16,10 +16,10 @@ import java.io.InputStream;
  * Created by Patrick on 04.12.2017.
  */
 @Component
-public class OpenNLPCategorizer {
+public class SentimentCategorizer {
     DoccatModel model;
 
-    public OpenNLPCategorizer(){
+    public SentimentCategorizer(){
         this.trainModel();
     }
 
