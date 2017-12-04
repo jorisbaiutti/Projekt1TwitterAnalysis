@@ -31,7 +31,6 @@ public class TweetsbyLanguage implements Analyse{
 
         languageCount = new Hashtable<>();
         tweets = tweetRepository.getAll();
-        List<Tweet> tweets = tweetRepository.getAll();
 
         tweets.forEach(tweet -> {
             languageCount.put(tweet.getLanguage(), 0);
@@ -41,11 +40,10 @@ public class TweetsbyLanguage implements Analyse{
     }
 
     private void findTweets(){
-        List<Tweet> tweets = tweetRepository.getAll();
 
         tweets.forEach(tweet -> {
             for(String key : languageCount.keySet()){
-                if(tweet.getContent().contains(key)){
+                if(tweet.getLanguage().contains(key)){
                     languageCount.put(key, languageCount.get(key) + 1);
                 }
             }

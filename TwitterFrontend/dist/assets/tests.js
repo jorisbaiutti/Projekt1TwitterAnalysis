@@ -30,6 +30,11 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'router.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/barcharts/tweetsbylanguage.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/barcharts/tweetsbylanguage.js should pass ESLint\n\n');
+  });
+
   QUnit.test('routes/barcharts/tweetsbytheme.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/barcharts/tweetsbytheme.js should pass ESLint\n\n');
@@ -559,6 +564,11 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/routes/barcharts/test-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/routes/barcharts/tweetsbylanguage-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/barcharts/tweetsbylanguage-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/routes/barcharts/tweetsbytheme-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/barcharts/tweetsbytheme-test.js should pass ESLint\n\n');
@@ -699,6 +709,19 @@ define('twitter-frontend/tests/unit/routes/barcharts/test-test', ['ember-qunit']
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:barcharts\test', 'Unit | Route | barcharts\test', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('twitter-frontend/tests/unit/routes/barcharts/tweetsbylanguage-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:barcharts\tweetsbylanguage', 'Unit | Route | barcharts\tweetsbylanguage', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   });
