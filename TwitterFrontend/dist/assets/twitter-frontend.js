@@ -321,13 +321,7 @@ define('twitter-frontend/router', ['exports', 'twitter-frontend/config/environme
   });
 
   Router.map(function () {
-    this.route('person', function () {
-      this.route('show', { path: '/show/:id' });
-    });
-    this.route('keyvalueanalyse', function () {
-      this.route('mostdiscussedtopics', { path: '/mostdiscussedtopics' });
-      this.route('test');
-    });
+
     this.route('barcharts', function () {
       this.route('test', { path: '/test' });
       this.route('tweetsbytheme');
@@ -358,31 +352,19 @@ define('twitter-frontend/routes/barcharts/tweetsbytheme', ['exports'], function 
         }
     });
 });
-define("twitter-frontend/routes/charts", ["exports"], function (exports) {
-    "use strict";
+define('twitter-frontend/routes/charts', ['exports'], function (exports) {
+    'use strict';
 
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
     exports.default = Ember.Route.extend({
         model: function model() {
-            return [{
-
-                title: "chart 1",
-                text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore",
-                imageurl: "/assets/images/chart.png",
-                link: "http://www.chartjs.org"
-            }, {
-                title: "chart 2",
-                text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore",
-                imageurl: "/assets/images/chart.png",
-                link: "http://www.chartjs.org"
-            }, {
-                title: "chart 3",
-                text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore",
-                imageurl: "/assets/images/chart.png",
-                link: "http://www.chartjs.org"
-            }];
+            return new Ember.RSVP.hash({
+                myfollowers: Ember.$.ajax({ url: 'http://localhost:8080/api/map/myfollowers', contentType: 'application/json' }),
+                tweetoverview: Ember.$.ajax({ url: 'http://localhost:8080/api/map/mapanalyse', contentType: 'application/json' }),
+                tweetsbytheme: Ember.$.ajax({ url: 'http://localhost:8080/api/barchart/countbytheme', contentType: 'application/json' })
+            });
         }
     });
 });
@@ -499,7 +481,7 @@ define("twitter-frontend/templates/charts", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "qYGsYRNy", "block": "{\"symbols\":[\"cardunit\"],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbotron twitter-blue\"],[7],[0,\"\\n    \"],[6,\"h1\"],[9,\"class\",\"display-3\"],[7],[0,\"Available Charts\"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n        \"],[4,\"each\",[[19,0,[\"model\"]]],null,{\"statements\":[[0,\" \"],[1,[25,\"card-listing\",null,[[\"card\"],[[19,1,[]]]]],false],[0,\" \"]],\"parameters\":[1]},null],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/charts.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "MMnlpiVt", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbotron twitter-blue\"],[7],[0,\"\\n    \"],[6,\"h2\"],[9,\"class\",\"display-3\"],[7],[0,\"Available Charts\"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n            \"],[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\",\"class\"],[\"myFollwers\",[19,0,[\"model\",\"myfollowers\",\"lat\"]],1,[19,0,[\"model\",\"myfollowers\",\"lng\"]],[19,0,[\"model\",\"myfollowers\",\"markers\"]],\"cardsmap\"]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Followers of BFH_DigitalSociety\"],[8],[0,\"\\n\"],[4,\"link-to\",[\"maps.myfollowers\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\"                    Followers \\n\"]],\"parameters\":[]},null],[0,\"            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n            \"],[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\",\"class\"],[\"tweetOverview\",[19,0,[\"model\",\"tweetoverview\",\"lat\"]],1,[19,0,[\"model\",\"tweetoverview\",\"lng\"]],[19,0,[\"model\",\"tweetoverview\",\"markers\"]],\"cardsmap\"]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Overview of Tweets regarding BFH_DigitalSociety\"],[8],[0,\"\\n                \"],[4,\"link-to\",[\"maps.tweetoverview\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\" Tweet Overview \"]],\"parameters\":[]},null],[0,\"\\n            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n         \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n          \"],[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"horizontalBar\",[19,0,[\"model\",\"tweetsbytheme\",\"data\"]],200]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Tweet Count Regarding BFH_DigitalSociety\"],[8],[0,\"\\n                \"],[4,\"link-to\",[\"barcharts.tweetsbytheme\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\" Tweet Count \"]],\"parameters\":[]},null],[0,\"\\n            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/charts.hbs" } });
 });
 define("twitter-frontend/templates/components/card-listing", ["exports"], function (exports) {
   "use strict";
@@ -539,7 +521,7 @@ define("twitter-frontend/templates/maps/tweetoverview", ["exports"], function (e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "xQeOiwah", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\"],[\"Tweets Overview\",[19,0,[\"model\",\"lat\"]],5,[19,0,[\"model\",\"lng\"]],[19,0,[\"model\",\"markers\"]]]]],false],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/maps/tweetoverview.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "fwdcaPvL", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\"],[\"Tweets Overview\",[19,0,[\"model\",\"lat\"]],5,[19,0,[\"model\",\"lng\"]],[19,0,[\"model\",\"markers\"]]]]],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/maps/tweetoverview.hbs" } });
 });
 define('twitter-frontend/utils/chart-object', ['exports', 'ember-cli-chartjs/utils/chart-object'], function (exports, _chartObject) {
   'use strict';
