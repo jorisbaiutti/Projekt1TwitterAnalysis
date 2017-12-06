@@ -25,5 +25,19 @@
                 {{#link-to 'barcharts.tweetsbytheme' class="btn btn-primary twitter-orange"}} Tweet Count {{/link-to}}
             </div>
         </div>
+        <div class="card twitter-yellow" style="width: 20rem;">
+          {{ember-chart type='horizontalBar' data=model.tweetsbylanguage.data  height=200}}
+            <div class="card-body">
+                <h5 class="card-title">Tweet Count by Language</h5>
+                {{#link-to 'barcharts.tweetsbylanguage' class="btn btn-primary twitter-orange"}} Tweet Count by Language {{/link-to}}
+            </div>
+        </div>
+        <div class="card twitter-yellow" style="width: 20rem;">
+          {{ember-chart type='pie' data=model.sentiment.data  height=200}}
+            <div class="card-body">
+                <h5 class="card-title">Sentiment Analysis</h5>
+                {{#link-to 'piecharts.sentimentanalyse' class="btn btn-primary twitter-orange"}} Sentiment Analysis {{/link-to}}
+            </div>
+        </div>
     </div>
 </div>
