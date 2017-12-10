@@ -9,6 +9,9 @@ import ch.bfh.repositories.TweetRepository;
 import ch.bfh.repositories.UserRepository;
 import ch.bfh.util.TwitterUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 import twitter4j.*;
 
 import java.util.ArrayList;
@@ -16,12 +19,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//Component
+@Component
+@PropertySource("classpath:application.properties")
 public class TwitterStream {
     HashTagRepository hashTagRepository;
     UserRepository userRepository;
     TweetRepository tweetRepository;
     TwitterUtil twitterUtil;
+
+    @Value("${twitterqueryStrings}")
+    String keywords;
 
     @Autowired
     public TwitterStream(HashTagRepository hashTagRepository, UserRepository userRepository, TweetRepository tweetRepository, TwitterUtil twitterUtil) {
@@ -30,7 +37,7 @@ public class TwitterStream {
         this.tweetRepository = tweetRepository;
     }
 
-    @Autowired
+    //@Autowired
     public void readTwitterFeed(){
         twitter4j.TwitterStream stream = twitterUtil.getStream();
         StatusListener listener = new StatusListener() {
@@ -119,8 +126,7 @@ public class TwitterStream {
             }
         };
         FilterQuery qry = new FilterQuery();
-        String[] keywords = { "BFH","Digital Society","System Design","Future System","Big Data","Open Data","Gebäude und Städte","Identität","Privatsphäre","IT-Security","Cyberforensik","Gesundheitsversorgung","E-Health"};
-
+       // String[] keywords = { "BFH","Digital Society","System Design","Future System","Big Data","Open Data","Gebäude und Städte","Identität","Privatsphäre","IT-Security","Cyberforensik","Gesundheitsversorgung","E-Health"};
         qry.track(keywords);
 
         stream.addListener(listener);

@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 
-@Component
+//@Component
 public class Scheduler {
     ConfigurationBuilder cb;
     TwitterFactory twitterFactory;

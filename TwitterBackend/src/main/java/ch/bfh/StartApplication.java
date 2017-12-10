@@ -1,10 +1,12 @@
 package ch.bfh;
 
-import ch.bfh.entities.User;
 import org.springframework.boot.SpringApplication;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
+
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import springfox.documentation.builders.PathSelectors;
@@ -18,7 +20,7 @@ import java.io.IOException;
 
 
 @PropertySource("classpath:application.properties")
-@EnableZuulProxy
+//@EnableZuulProxy
 @EnableSwagger2
 @EnableScheduling
 @SpringBootApplication

@@ -5866,22 +5866,22 @@ a.text-dark:focus, a.text-dark:hover {
   visibility: hidden !important; }
 
 .twitter-blue {
-  background-color: #4abdac;
-  color: #ffffff; }
+  background-color: #e3e8ec;
+  color: #697d91; }
 
 .nav-twitter {
-  background-color: #fc4a1a; }
+  background-color: #697d91; }
   .nav-twitter a {
     color: #ffffff; }
   .nav-twitter li a:hover {
-    background-color: #f7b733; }
+    background-color: #faa500; }
 
 .twitter-yellow {
-  background-color: #f7b733;
-  color: #ffffff; }
+  background-color: #e3e8ec;
+  color: #faa500; }
 
 .twitter-orange {
-  background-color: #fc4a1a;
+  background-color: #697d91;
   color: #ffffff; }
 
 .card {

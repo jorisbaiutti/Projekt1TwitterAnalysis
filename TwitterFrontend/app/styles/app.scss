@@ -1,20 +1,22 @@
 
 @import "ember-cli-bootstrap-4/bootstrap";
 
-$backgroundcolor: #4abdac;
-$objects: #fc4a1a;
-$buttonsbadges: #f7b733;
+$backgroundcolor: #e3e8ec;
+$objects: #697d91;
+$buttonsbadges: #faa500;
 $cleanbackground: #dfdce3;
-$fontcolor: #ffffff;
+$fontcolorwhite: #ffffff;
+$fontcolorblue: #697d91;
+$fontcoloryellow: #faa500;
 
 .twitter-blue{
     background-color: $backgroundcolor;
-    color: $fontcolor;
+    color: $fontcolorblue;
 }
 .nav-twitter{
     background-color: $objects;
     a{
-        color: $fontcolor;   
+        color: $fontcolorwhite;   
     }
     li{
         a:hover{
@@ -23,12 +25,12 @@ $fontcolor: #ffffff;
     }
 }
 .twitter-yellow{
-    background-color: $buttonsbadges;
-    color: $fontcolor;
+    background-color: $backgroundcolor;
+    color: $fontcoloryellow;
 }
 .twitter-orange{
     background-color: $objects;
-    color: $fontcolor;
+    color: $fontcolorwhite;
 }
 .card{
     margin: 10px;

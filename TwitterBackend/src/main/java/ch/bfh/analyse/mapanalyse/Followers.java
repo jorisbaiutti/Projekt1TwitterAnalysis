@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+//@Component
 public class Followers implements Analyse {
     MapChartController mapChartController;
     TwitterUtil twitterUtil;
