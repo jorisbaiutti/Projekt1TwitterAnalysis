@@ -2,9 +2,6 @@ package ch.bfh.entities;
 
 import javax.persistence.*;
 
-/**
- * Created by Patrick on 11.10.2017.
- */
 @javax.persistence.Entity
 @Table
 public class HashTag extends TwitterEntity{

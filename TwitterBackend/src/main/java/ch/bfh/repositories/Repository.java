@@ -12,10 +12,6 @@ import javax.persistence.Persistence;
 import java.util.List;
 import java.util.Observer;
 
-/**
- * Created by Patrick on 25.10.2017.
- */
-
 public abstract class Repository<T extends TwitterEntity> extends java.util.Observable {
 
 
@@ -45,8 +41,6 @@ public abstract class Repository<T extends TwitterEntity> extends java.util.Obse
         return entity;
     }
 
-
-
      public TwitterEntity getOne(long id) {
          User user = entityManager.find(User.class, id);
          return user;
@@ -58,7 +52,7 @@ public abstract class Repository<T extends TwitterEntity> extends java.util.Obse
     }
     public abstract List<T> getAll();
 
-     public List<T> findBySqlQuery(String SqlQuery) {
+    public List<T> findBySqlQuery(String SqlQuery) {
         return null;
     }
 }

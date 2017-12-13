@@ -32,15 +32,24 @@ public class TweetsbyLanguage implements Analyse{
         languageCount = new Hashtable<>();
         tweets = tweetRepository.getAll();
 
-        tweets.forEach(tweet -> {
-            languageCount.put(tweet.getLanguage(), 0);
-        });
-        findTweets();
+        setChartParameters();
+        setCountOfLanguagebyTweet();
         barChartController.registerAnalyse(this);
     }
 
-    private void findTweets(){
+    /**
+     * sets all the different languages of the tweets to the analyse
+     */
+    private void setChartParameters() {
+        tweets.forEach(tweet -> {
+            languageCount.put(tweet.getLanguage(), 0);
+        });
+    }
 
+    /**
+     * sets the value count of the different languages
+     */
+    private void setCountOfLanguagebyTweet(){
         tweets.forEach(tweet -> {
             for(String key : languageCount.keySet()){
                 if(tweet.getLanguage().contains(key)){
@@ -48,8 +57,12 @@ public class TweetsbyLanguage implements Analyse{
                 }
             }
         });
-
     }
+
+    /**
+     *
+     * @return the chart which can be used for display the analyse
+     */
 
     @Override
     public Chart getChart() {

@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @Component
 @RestController
 @RequestMapping("/api/doughnutchart")
-public class DoughnutChartController {
+public class DoughnutChartController extends ChartController{
     Set<Analyse<DoughnutChart>> analysen;
 
     public DoughnutChartController() {
@@ -31,7 +31,7 @@ public class DoughnutChartController {
     }
 
     @RequestMapping(value = "/{doughnutanalyse}", method = RequestMethod.GET)
-    ResponseEntity<DoughnutChart> getChart(@PathVariable("doughnutanalyse")String analyse){
+    private ResponseEntity<DoughnutChart> getChart(@PathVariable("doughnutanalyse")String analyse){
         Analyse<DoughnutChart> finalAnalyse = analysen.stream().filter(a -> a.getName().equals(analyse)).findFirst().get();
         if(finalAnalyse == null){
             throw new EntityNotFoundException("Analyse not found " + analyse);
@@ -41,7 +41,7 @@ public class DoughnutChartController {
 
     @ApiOperation(value = "View a list of available Analysen")
     @RequestMapping(value = "/list", method= RequestMethod.GET,produces = "application/json")
-    ResponseEntity<List<String>> getAnalysen(){
+    private ResponseEntity<List<String>> getAnalysen(){
         List<String> availableendpoints = analysen.stream().map(a -> a.getName()).collect(Collectors.toList());
         return ResponseEntity.ok(availableendpoints);
     }

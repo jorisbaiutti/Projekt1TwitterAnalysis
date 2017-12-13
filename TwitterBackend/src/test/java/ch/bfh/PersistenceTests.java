@@ -4,13 +4,11 @@ package ch.bfh;
 import ch.bfh.entities.Tweet;
 import ch.bfh.repositories.TweetRepository;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import twitter4j.Status;
 
-/**
- * Created by Patrick on 29.11.2017.
- */
-
 public class PersistenceTests {
+    @Autowired
     TweetRepository tweetRepository;
 
     @Test

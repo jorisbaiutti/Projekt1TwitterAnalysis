@@ -45,6 +45,11 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/charts.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/doughnutcharts/sentimentanalyse.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/doughnutcharts/sentimentanalyse.js should pass ESLint\n\n');
+  });
+
   QUnit.test('routes/index.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/index.js should pass ESLint\n\n');
@@ -629,6 +634,11 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/routes/person/show-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/routes/piecharts/sentimentanalyse-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'unit/routes/piecharts/sentimentanalyse-test.js should pass ESLint\n\n3:27 - Unnecessary escape character: \\s. (no-useless-escape)\n3:72 - Unnecessary escape character: \\s. (no-useless-escape)');
+  });
+
   QUnit.test('unit/routes/testhome-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/testhome-test.js should pass ESLint\n\n');
@@ -878,6 +888,19 @@ define('twitter-frontend/tests/unit/routes/person/show-test', ['ember-qunit'], f
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:person/show', 'Unit | Route | person/show', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('twitter-frontend/tests/unit/routes/piecharts/sentimentanalyse-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:piecharts\sentimentanalyse', 'Unit | Route | piecharts\sentimentanalyse', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   });

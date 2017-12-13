@@ -321,13 +321,13 @@ define('twitter-frontend/router', ['exports', 'twitter-frontend/config/environme
   });
 
   Router.map(function () {
-
     this.route('barcharts', function () {
       this.route('test', { path: '/test' });
       this.route('tweetsbytheme');
     });
 
     this.route('charts');
+
     this.route('linecharts', function () {
       this.route('samplechart');
     });
@@ -335,6 +335,10 @@ define('twitter-frontend/router', ['exports', 'twitter-frontend/config/environme
     this.route('maps', function () {
       this.route('tweetoverview');
       this.route('myfollowers');
+    });
+
+    this.route('doughnutcharts', function () {
+      this.route('sentimentanalyse');
     });
   });
 
@@ -375,8 +379,21 @@ define('twitter-frontend/routes/charts', ['exports'], function (exports) {
             return new Ember.RSVP.hash({
                 myfollowers: Ember.$.ajax({ url: 'http://localhost:8080/api/map/myfollowers', contentType: 'application/json' }),
                 tweetoverview: Ember.$.ajax({ url: 'http://localhost:8080/api/map/mapanalyse', contentType: 'application/json' }),
-                tweetsbytheme: Ember.$.ajax({ url: 'http://localhost:8080/api/barchart/countbytheme', contentType: 'application/json' })
+                tweetsbytheme: Ember.$.ajax({ url: 'http://localhost:8080/api/barchart/countbytheme', contentType: 'application/json' }),
+                sentimentanalyse: Ember.$.ajax({ url: 'http://localhost:8080/api/doughnutchart/sentimentanalyse', contentType: 'application/json' })
             });
+        }
+    });
+});
+define('twitter-frontend/routes/doughnutcharts/sentimentanalyse', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+            return Ember.$.ajax({ url: 'http://localhost:8080/api/doughnutchart/sentimentanalyse', contentType: 'application/json' });
         }
     });
 });
@@ -501,7 +518,7 @@ define("twitter-frontend/templates/charts", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "MMnlpiVt", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbotron twitter-blue\"],[7],[0,\"\\n    \"],[6,\"h2\"],[9,\"class\",\"display-3\"],[7],[0,\"Available Charts\"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n            \"],[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\",\"class\"],[\"myFollwers\",[19,0,[\"model\",\"myfollowers\",\"lat\"]],1,[19,0,[\"model\",\"myfollowers\",\"lng\"]],[19,0,[\"model\",\"myfollowers\",\"markers\"]],\"cardsmap\"]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Followers of BFH_DigitalSociety\"],[8],[0,\"\\n\"],[4,\"link-to\",[\"maps.myfollowers\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\"                    Followers \\n\"]],\"parameters\":[]},null],[0,\"            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n            \"],[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\",\"class\"],[\"tweetOverview\",[19,0,[\"model\",\"tweetoverview\",\"lat\"]],1,[19,0,[\"model\",\"tweetoverview\",\"lng\"]],[19,0,[\"model\",\"tweetoverview\",\"markers\"]],\"cardsmap\"]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Overview of Tweets regarding BFH_DigitalSociety\"],[8],[0,\"\\n                \"],[4,\"link-to\",[\"maps.tweetoverview\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\" Tweet Overview \"]],\"parameters\":[]},null],[0,\"\\n            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n         \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n          \"],[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"horizontalBar\",[19,0,[\"model\",\"tweetsbytheme\",\"data\"]],200]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Tweet Count Regarding BFH_DigitalSociety\"],[8],[0,\"\\n                \"],[4,\"link-to\",[\"barcharts.tweetsbytheme\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\" Tweet Count \"]],\"parameters\":[]},null],[0,\"\\n            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/charts.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "M8azT39Y", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbotron twitter-blue\"],[7],[0,\"\\n    \"],[6,\"h2\"],[9,\"class\",\"display-3\"],[7],[0,\"Available Charts\"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n            \"],[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\",\"class\"],[\"myFollwers\",[19,0,[\"model\",\"myfollowers\",\"lat\"]],1,[19,0,[\"model\",\"myfollowers\",\"lng\"]],[19,0,[\"model\",\"myfollowers\",\"markers\"]],\"cardsmap\"]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Followers of BFH_DigitalSociety\"],[8],[0,\"\\n\"],[4,\"link-to\",[\"maps.myfollowers\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\"                    Followers \\n\"]],\"parameters\":[]},null],[0,\"            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n            \"],[1,[25,\"g-maps\",null,[[\"name\",\"lat\",\"zoom\",\"lng\",\"markers\",\"class\"],[\"tweetOverview\",[19,0,[\"model\",\"tweetoverview\",\"lat\"]],1,[19,0,[\"model\",\"tweetoverview\",\"lng\"]],[19,0,[\"model\",\"tweetoverview\",\"markers\"]],\"cardsmap\"]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Overview of Tweets regarding BFH_DigitalSociety\"],[8],[0,\"\\n                \"],[4,\"link-to\",[\"maps.tweetoverview\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\" Tweet Overview \"]],\"parameters\":[]},null],[0,\"\\n            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n         \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n          \"],[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"horizontalBar\",[19,0,[\"model\",\"tweetsbytheme\",\"data\"]],200]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Tweet Count Regarding BFH_DigitalSociety\"],[8],[0,\"\\n                \"],[4,\"link-to\",[\"barcharts.tweetsbytheme\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\" Tweet Count \"]],\"parameters\":[]},null],[0,\"\\n            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n         \"],[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n          \"],[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"doughnut\",[19,0,[\"model\",\"sentimentanalyse\",\"data\"]],200]]],false],[0,\"\\n            \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n                \"],[6,\"h5\"],[9,\"class\",\"card-title\"],[7],[0,\"Sentimentanalyse\"],[8],[0,\"\\n                \"],[4,\"link-to\",[\"doughnutcharts.sentimentanalyse\"],[[\"class\"],[\"btn btn-primary twitter-orange\"]],{\"statements\":[[0,\" Sentiment analyse \"]],\"parameters\":[]},null],[0,\"\\n            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/charts.hbs" } });
 });
 define("twitter-frontend/templates/components/card-listing", ["exports"], function (exports) {
   "use strict";
@@ -510,6 +527,14 @@ define("twitter-frontend/templates/components/card-listing", ["exports"], functi
     value: true
   });
   exports.default = Ember.HTMLBars.template({ "id": "eGO+lCrm", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"card twitter-yellow\"],[9,\"style\",\"width: 20rem;\"],[7],[0,\"\\n    \"],[6,\"img\"],[9,\"class\",\"card-img-top\"],[10,\"src\",[26,[[20,[\"card\",\"imageurl\"]]]]],[9,\"alt\",\"Card image cap\"],[7],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"card-body\"],[7],[0,\"\\n        \"],[6,\"h4\"],[9,\"class\",\"card-title\"],[7],[1,[20,[\"card\",\"value\"]],false],[8],[0,\"\\n        \"],[6,\"p\"],[9,\"class\",\"card-text\"],[7],[1,[20,[\"card\",\"text\"]],false],[8],[0,\"\\n        \"],[6,\"a\"],[10,\"href\",[26,[[20,[\"card\",\"link\"]]]]],[9,\"class\",\"btn btn-primary twitter-orange\"],[7],[0,\"Go somewhere\"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/components/card-listing.hbs" } });
+});
+define("twitter-frontend/templates/doughnutcharts/sentimentanalyse", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "gWnMvX/b", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"doughnut\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/doughnutcharts/sentimentanalyse.hbs" } });
 });
 define("twitter-frontend/templates/index", ["exports"], function (exports) {
   "use strict";
@@ -617,6 +642,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+2bbc56a1"});
+  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+50d80095"});
 }
 //# sourceMappingURL=twitter-frontend.map

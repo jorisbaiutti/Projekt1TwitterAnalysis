@@ -9,6 +9,7 @@ import ch.bfh.repositories.TweetRepository;
 import ch.bfh.repositories.UserRepository;
 import ch.bfh.util.TwitterUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import twitter4j.*;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//Component
+@Component
 public class TwitterStream {
     HashTagRepository hashTagRepository;
     UserRepository userRepository;
@@ -28,6 +29,7 @@ public class TwitterStream {
         this.hashTagRepository = hashTagRepository;
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
+        this.twitterUtil = twitterUtil;
     }
 
     @Autowired

@@ -11,9 +11,6 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.util.List;
 
-/**
- * Created by Patrick on 25.10.2017.
- */
 @Component
 public class TweetRepository extends Repository<Tweet>{
 

@@ -6,9 +6,6 @@ import twitter4j.Place;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Patrick on 09.10.2017.
- */
 @javax.persistence.Entity
 @Table
 public class Tweet extends TwitterEntity {

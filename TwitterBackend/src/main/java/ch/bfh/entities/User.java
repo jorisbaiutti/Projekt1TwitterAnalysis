@@ -1,13 +1,8 @@
 package ch.bfh.entities;
 
-import twitter4j.GeoLocation;
-
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Patrick on 11.10.2017.
- */
 @javax.persistence.Entity
 @Table(name = "[User]")
 public class User extends TwitterEntity {

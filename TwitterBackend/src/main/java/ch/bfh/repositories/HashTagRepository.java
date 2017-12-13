@@ -9,9 +9,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 
-/**
- * Created by Patrick on 25.10.2017.
- */
 @Component
 public class HashTagRepository extends Repository<HashTag>{
 

@@ -31,7 +31,7 @@ public class PieChartController {
     }
 
     @RequestMapping(value = "/{pieanalyse}", method = RequestMethod.GET)
-    ResponseEntity<PieChart> getChart(@PathVariable("pieanalyse")String analyse){
+    private ResponseEntity<PieChart> getChart(@PathVariable("pieanalyse")String analyse){
         Analyse<PieChart> finalAnalyse = analysen.stream().filter(a -> a.getName().equals(analyse)).findFirst().get();
         if(finalAnalyse == null){
             throw new EntityNotFoundException("Analyse not found " + analyse);
@@ -41,7 +41,7 @@ public class PieChartController {
 
     @ApiOperation(value = "View a list of available Analysen")
     @RequestMapping(value = "/list", method= RequestMethod.GET,produces = "application/json")
-    ResponseEntity<List<String>> getAnalysen(){
+    private ResponseEntity<List<String>> getAnalysen(){
         List<String> availableendpoints = analysen.stream().map(a -> a.getName()).collect(Collectors.toList());
         return ResponseEntity.ok(availableendpoints);
     }

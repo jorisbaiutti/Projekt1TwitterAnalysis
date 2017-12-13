@@ -25,5 +25,12 @@
                 {{#link-to 'barcharts.tweetsbytheme' class="btn btn-primary twitter-orange"}} Tweet Count {{/link-to}}
             </div>
         </div>
+         <div class="card twitter-yellow" style="width: 20rem;">
+          {{ember-chart type='doughnut' data=model.sentimentanalyse.data  height=200}}
+            <div class="card-body">
+                <h5 class="card-title">Sentimentanalyse</h5>
+                {{#link-to 'doughnutcharts.sentimentanalyse' class="btn btn-primary twitter-orange"}} Sentiment analyse {{/link-to}}
+            </div>
+        </div>
     </div>
 </div>

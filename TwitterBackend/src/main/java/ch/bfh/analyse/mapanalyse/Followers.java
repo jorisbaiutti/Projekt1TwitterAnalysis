@@ -5,7 +5,6 @@ import ch.bfh.analyse.Analyse;
 import ch.bfh.chartsmodel.GoogleMap;
 import ch.bfh.chartsmodel.GoogleMarker;
 import ch.bfh.controllers.MapChartController;
-import ch.bfh.entities.Tweet;
 import ch.bfh.util.MapsUtil;
 import ch.bfh.util.TwitterUtil;
 import com.google.gson.Gson;
@@ -19,7 +18,6 @@ import twitter4j.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Component

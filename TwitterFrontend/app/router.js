@@ -7,7 +7,6 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-
   this.route('barcharts',function(){
     this.route('test',{path: '/test'});
     this.route('tweetsbytheme');
@@ -15,6 +14,7 @@ Router.map(function() {
 
 
   this.route('charts');
+  
   this.route('linecharts', function(){
     this.route('samplechart');
   });
@@ -25,6 +25,9 @@ Router.map(function() {
   });
 
 
+  this.route('doughnutcharts', function(){
+    this.route('sentimentanalyse');
+  });
 });
 
 export default Router;
