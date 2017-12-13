@@ -8,6 +8,7 @@ import java.util.List;
 public class User extends TwitterEntity {
 
     @Id
+    @GeneratedValue
     private long id;
 
     @Column(unique = true, nullable = false)

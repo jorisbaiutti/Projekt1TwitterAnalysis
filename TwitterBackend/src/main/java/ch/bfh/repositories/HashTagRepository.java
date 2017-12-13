@@ -19,6 +19,6 @@ public class HashTagRepository extends Repository<HashTag>{
 
     @Override
     public List<HashTag> getAll() {
-        return null;
+        return entityManager.createQuery("select h from HashTag h").getResultList();
     }
 }

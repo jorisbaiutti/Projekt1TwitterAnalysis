@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @Component
 @RestController
 @RequestMapping("/api/doughnutchart")
-public class DoughnutChartController extends ChartController{
+public class DoughnutChartController{
     Set<Analyse<DoughnutChart>> analysen;
 
     public DoughnutChartController() {

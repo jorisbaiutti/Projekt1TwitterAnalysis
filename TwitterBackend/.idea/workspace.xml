@@ -2,75 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/ModelLanguage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/inputfiles/sentimentinputDE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/inputfiles/sentimentinputEN.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_maps_google_maps_services_0_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_2_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_8_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_13_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_9_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_2_5_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20140107.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_1_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_1_10_19.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_3_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_nop_1_7_25.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_1_4_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_1_4_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_1_4_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/inputfiles/sentimentinput.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_1_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyseTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ch/bfh/repositories/UserRepositoryTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_1_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/ch/bfh/PersistenceTests.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/ch/bfh/analyse/SentimentAnalyseTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterBackend.iml" afterPath="$PROJECT_DIR$/TwitterBackend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/HashTag.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/HashTag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/HashTagRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/HashTagRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ch/bfh/PersistenceTests.java" afterPath="$PROJECT_DIR$/src/test/java/ch/bfh/PersistenceTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/router.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/routes/charts.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/routes/charts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/templates/charts.hbs" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/templates/charts.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.css" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/index.html" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/tests/index.html" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/tests/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/package-lock.json" afterPath="$PROJECT_DIR$/../TwitterFrontend/package-lock.json" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -99,21 +43,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PieChartController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java">
+      <file leaf-file-name="SentimentAnalyse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+            <state relative-caret-position="1343">
+              <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DoughnutChartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="SentimentAnalyseTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/analyse/SentimentAnalyseTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="282">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,46 +75,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartApplicationTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/StartApplicationTest.java">
+      <file leaf-file-name="SampleAnalyse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="51">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/AppTest.java">
+      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="34">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TweetsbyLanguage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java">
+      <file leaf-file-name="HashTagRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/HashTagRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SentimentAnalyse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,8 +108,38 @@
       <file leaf-file-name="SentimentCategorizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="-8">
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Repository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-102">
+              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TweetRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepositoryTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/repositories/UserRepositoryTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,6 +155,7 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -209,12 +180,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/util/EntityManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mostDiscussedTopics/Model.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/analyseentities/KeyValue.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mostDiscussedTopics/TestWorker.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mostDiscussedTopics/mostDiscussedTopicsAnalyse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/assembler/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/assembler/KeyValueResourceAssembler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/TestController.java" />
@@ -239,7 +206,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/tests/PersistenceTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/OpenNLPCategorizer.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/inputfiles/sentimentinput.txt" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/ModelLanguages.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java" />
@@ -247,19 +213,24 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ChartController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/ModelLanguage.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/HashTag.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/HashTagRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java" />
         <option value="$PROJECT_DIR$/src/test/java/ch/bfh/PersistenceTests.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java" />
         <option value="$PROJECT_DIR$/src/test/java/ch/bfh/analyse/SentimentAnalyseTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ch/bfh/persistence/PersistenceTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ch/bfh/repositories/UserRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/HashTagRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyseTest.java" />
       </list>
     </option>
   </component>
@@ -323,7 +294,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -422,6 +393,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="repositories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwitterBackend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwitterBackend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -457,6 +462,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="analyse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sentimentanalyse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1080,20 +1089,28 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Patrick\IdeaProjects\Projekt1TwitterAnalysis\TwitterBackend\src\main\resources" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ch.bfh.analyse.sentimentanalyse" />
+      <recent name="ch.bfh.repositories" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ch.bfh" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="ch.bfh.categorizer" />
-      <recent name="ch.bfh.beans" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Patrick\IdeaProjects\Projekt1TwitterAnalysis\TwitterBackend\src\main\resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Patrick\IdeaProjects\Projekt1TwitterAnalysis\TwitterBackend\src\main\resources\inputfiles" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ch.bfh.categorizer" />
+      <recent name="ch.bfh.beans" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1108,7 +1125,111 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.TwitterBackend [spring-boot:run]">
+  <component name="RunManager" selected="JUnit.SentimentAnalyseTest (1)">
+    <configuration default="false" name="SentimentAnalyseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ch.bfh.analyse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TwitterBackend" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ch.bfh.analyse" />
+      <option name="MAIN_CLASS_NAME" value="ch.bfh.analyse.SentimentAnalyseTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ch.bfh.persistence.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TwitterBackend" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ch.bfh.persistence" />
+      <option name="MAIN_CLASS_NAME" value="ch.bfh.persistence.PersistenceTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ch.bfh.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TwitterBackend" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ch.bfh.repositories" />
+      <option name="MAIN_CLASS_NAME" value="ch.bfh.repositories.UserRepositoryTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="SentimentAnalyseTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ch.bfh.analyse.sentimentanalyse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TwitterBackend" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ch.bfh.analyse.sentimentanalyse" />
+      <option name="MAIN_CLASS_NAME" value="ch.bfh.analyse.sentimentanalyse.SentimentAnalyseTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -1577,10 +1698,22 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Maven.TwitterBackend [spring-boot:run]" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.StartApplication" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SentimentAnalyseTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.PersistenceTests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.UserRepositoryTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.SentimentAnalyseTest (1)" />
     </list>
+    <recent_temporary>
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SentimentAnalyseTest (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.UserRepositoryTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PersistenceTests" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SentimentAnalyseTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -1628,7 +1761,7 @@
       <workItem from="1512573517172" duration="15625000" />
       <workItem from="1512720093954" duration="7982000" />
       <workItem from="1513155897514" duration="4954000" />
-      <workItem from="1513178494318" duration="762000" />
+      <workItem from="1513178494318" duration="10386000" />
     </task>
     <task id="LOCAL-00001" summary="added BarChart Controller">
       <created>1510322367264</created>
@@ -1647,8 +1780,40 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="SentimentAnalyseTest_(1) - 2017.12.13 at 19h 34m 04s.xml">
+      <configuration name="SentimentAnalyseTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SentimentAnalyseTest_(1) - 2017.12.13 at 19h 37m 13s.xml">
+      <configuration name="SentimentAnalyseTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryTest - 2017.12.13 at 18h 47m 30s.xml">
+      <configuration name="UserRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryTest - 2017.12.13 at 18h 52m 57s.xml">
+      <configuration name="UserRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryTest - 2017.12.13 at 18h 54m 38s.xml">
+      <configuration name="UserRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryTest - 2017.12.13 at 18h 56m 08s.xml">
+      <configuration name="UserRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryTest - 2017.12.13 at 18h 57m 35s.xml">
+      <configuration name="UserRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryTest - 2017.12.13 at 19h 04m 47s.xml">
+      <configuration name="UserRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryTest - 2017.12.13 at 19h 05m 46s.xml">
+      <configuration name="UserRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryTest - 2017.12.13 at 19h 06m 17s.xml">
+      <configuration name="UserRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199572000" />
+    <option name="totallyTimeSpent" value="209196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1656,32 +1821,32 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39891306" sideWeight="0.50213677" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114072494" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3249453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32394367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719395" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21481876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26812366" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39715537" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39653304" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1752,8 +1917,14 @@
           <properties method="onStatus" />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ch/bfh/persistence/PersistenceTests.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="24" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1762,103 +1933,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="140" column="18" selection-start-line="140" selection-start-column="18" selection-end-line="140" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3-sources.jar!/opennlp/tools/doccat/DoccatModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3-sources.jar!/opennlp/tools/doccat/DocumentCategorizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3-sources.jar!/opennlp/tools/util/model/ModelUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="142" column="17" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3-sources.jar!/opennlp/tools/doccat/DocumentCategorizerME.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1209">
-          <caret line="183" column="58" selection-start-line="183" selection-start-column="58" selection-end-line="183" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/ModelLanguages.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-tools/1.5.3/opennlp-tools-1.5.3-sources.jar!/opennlp/tools/util/TrainingParameters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/inputfiles/sentimentinputDE.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="99" column="43" selection-start-line="99" selection-start-column="43" selection-end-line="99" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/inputfiles/sentimentinputEN.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetsbytheme/TweetsbyTheme.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ChartController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/MapAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1875,30 +1953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="42" column="62" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BubbleChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1943,33 +1997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/TwitterEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding>
-            <element signature="e#1063#1064#0" expanded="false" />
-            <element signature="e#1097#1098#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/exception/ControllerExceptionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1986,80 +2013,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/HashTagRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/scheduler/Scheduler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="36" column="7" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="219" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/util/MapsUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/util/EntityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -2069,44 +2026,6 @@
         <state relative-caret-position="85">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/PersistenceTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/BarChartControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2123,16 +2042,9 @@
         <state relative-caret-position="799">
           <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2513#2514#0" expanded="false" />
+            <element signature="e#2540#2541#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2140,6 +2052,956 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#334#335#0" expanded="false" />
+            <element signature="e#367#368#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
+            <element signature="e#521#522#0" expanded="false" />
+            <element signature="e#596#597#0" expanded="false" />
+            <element signature="e#630#631#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/util/MapsUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MAVEN/ch.bfh:TwitterBackend:1.0-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>ch.bfh:TwitterBackend:1.0-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="0.0" y="1895.0833333333335">ch.bfh:TwitterBackend:1.0-SNAPSHOT</node>
+            <node x="247.5" y="483.0000000000002">junit:junit:jar:4.12</node>
+            <node x="488.0" y="483.0000000000002">junit:junit:jar:4.12/org.hamcrest:hamcrest-core:jar:1.3</node>
+            <node x="230.0" y="552.0000000000002">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8</node>
+            <node x="488.0" y="552.0000000000002">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3</node>
+            <node x="776.0" y="256.8945544459755">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3</node>
+            <node x="1006.5" y="0.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/commons-codec:commons-codec:jar:1.10</node>
+            <node x="1011.0" y="69.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/commons-lang:commons-lang:jar:2.6</node>
+            <node x="1040.5" y="138.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/javax.mail:mail:jar:1.4.5</node>
+            <node x="1271.0" y="138.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/javax.mail:mail:jar:1.4.5/javax.activation:activation:jar:1.1</node>
+            <node x="1020.0" y="207.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-client:jar:1.19.1</node>
+            <node x="1268.0" y="207.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-client:jar:1.19.1/com.sun.jersey:jersey-core:jar:1.19.1</node>
+            <node x="1498.0" y="207.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-client:jar:1.19.1/com.sun.jersey:jersey-core:jar:1.19.1/javax.ws.rs:jsr311-api:jar:1.1.1</node>
+            <node x="1023.5" y="448.5000000000002">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13</node>
+            <node x="1277.5" y="276.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jettison:jettison:jar:1.1</node>
+            <node x="1502.5" y="276.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jettison:jettison:jar:1.1/stax:stax-api:jar:1.0.1</node>
+            <node x="1271.5" y="345.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/com.sun.xml.bind:jaxb-impl:jar:2.2.3-1</node>
+            <node x="1502.0" y="345.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/com.sun.xml.bind:jaxb-impl:jar:2.2.3-1/javax.xml.bind:jaxb-api:jar:2.2.2</node>
+            <node x="1676.0" y="345.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/com.sun.xml.bind:jaxb-impl:jar:2.2.3-1/javax.xml.bind:jaxb-api:jar:2.2.2/javax.xml.stream:stax-api:jar:1.0-2</node>
+            <node x="1253.5" y="414.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jackson:jackson-core-asl:jar:1.9.2</node>
+            <node x="1244.5" y="483.0">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2</node>
+            <node x="1262.5" y="656.1041666666667">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jackson:jackson-jaxrs:jar:1.9.2</node>
+            <node x="1268.5" y="725.1041666666667">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jackson:jackson-xc:jar:1.9.2</node>
+            <node x="778.5" y="536.8820544459757">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/org.apache.httpcomponents:httpclient:jar:4.5.2</node>
+            <node x="1029.5" y="536.8820544459757">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/org.apache.httpcomponents:httpclient:jar:4.5.2/org.apache.httpcomponents:httpcore:jar:4.4.5</node>
+            <node x="774.5" y="605.8820544459757">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/javax.inject:javax.inject:jar:1</node>
+            <node x="788.5" y="927.2432296449367">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0</node>
+            <node x="1008.0" y="897.6041666666667">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5</node>
+            <node x="1253.5" y="794.1041666666667">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5/net.jcip:jcip-annotations:jar:1.0</node>
+            <node x="1268.5" y="863.1041666666667">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5/net.minidev:json-smart:jar:1.1.1</node>
+            <node x="1274.5" y="932.1041666666667">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5/com.nimbusds:lang-tag:jar:1.4</node>
+            <node x="1253.5" y="1001.1041666666667">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5/com.nimbusds:nimbus-jose-jwt:jar:3.1.2</node>
+            <node x="1039.0" y="968.4166666666667">com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.google.code.gson:gson:jar:2.7</node>
+            <node x="220.5" y="897.0000000000002">org.hibernate:hibernate-core:jar:5.2.8.Final</node>
+            <node x="490.0" y="621.0000000000002">org.hibernate:hibernate-core:jar:5.2.8.Final/org.jboss.logging:jboss-logging:jar:3.3.0.Final</node>
+            <node x="470.5" y="690.0000000000002">org.hibernate:hibernate-core:jar:5.2.8.Final/org.hibernate.javax.persistence:hibernate-jpa-2.1-api:jar:1.0.0.Final</node>
+            <node x="505.0" y="759.0000000000002">org.hibernate:hibernate-core:jar:5.2.8.Final/org.javassist:javassist:jar:3.20.0-GA</node>
+            <node x="514.5" y="828.0000000000002">org.hibernate:hibernate-core:jar:5.2.8.Final/antlr:antlr:jar:2.7.7</node>
+            <node x="446.0" y="897.0000000000002">org.hibernate:hibernate-core:jar:5.2.8.Final/org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:jar:1.0.1.Final</node>
+            <node x="509.0" y="966.0000000000001">org.hibernate:hibernate-core:jar:5.2.8.Final/org.jboss:jandex:jar:2.0.3.Final</node>
+            <node x="500.5" y="1035.0">org.hibernate:hibernate-core:jar:5.2.8.Final/com.fasterxml:classmate:jar:1.3.1</node>
+            <node x="509.5" y="1104.0">org.hibernate:hibernate-core:jar:5.2.8.Final/dom4j:dom4j:jar:1.6.1</node>
+            <node x="438.0" y="1173.0">org.hibernate:hibernate-core:jar:5.2.8.Final/org.hibernate.common:hibernate-commons-annotations:jar:5.0.1.Final</node>
+            <node x="195.5" y="1686.875">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE</node>
+            <node x="476.0" y="1242.0">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE</node>
+            <node x="772.5" y="1083.975868533824">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot:jar:1.4.1.RELEASE</node>
+            <node x="732.5" y="1180.8438600015295">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-autoconfigure:jar:1.4.1.RELEASE</node>
+            <node x="730.5" y="1272.2329229797995">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE</node>
+            <node x="1011.5" y="1084.5938600015295">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/ch.qos.logback:logback-classic:jar:1.1.7</node>
+            <node x="1262.0" y="1084.5938600015295">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/ch.qos.logback:logback-classic:jar:1.1.7/ch.qos.logback:logback-core:jar:1.1.7</node>
+            <node x="1019.0" y="1242.0">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/org.slf4j:jcl-over-slf4j:jar:1.7.21</node>
+            <node x="1024.5" y="1311.0">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/org.slf4j:jul-to-slf4j:jar:1.7.21</node>
+            <node x="1012.0" y="1464.13906297827">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/org.slf4j:log4j-over-slf4j:jar:1.7.21</node>
+            <node x="776.0" y="1341.2329229797995">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.yaml:snakeyaml:jar:1.17</node>
+            <node x="454.5" y="1483.5">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE</node>
+            <node x="750.0" y="1410.2329229797995">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.5</node>
+            <node x="757.0" y="1479.2329229797995">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE/org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.5</node>
+            <node x="733.5" y="1548.2329229797995">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE/org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.5</node>
+            <node x="476.0" y="1617.2329229797995">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.hibernate:hibernate-validator:jar:5.2.4.Final</node>
+            <node x="767.5" y="1617.2329229797995">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.hibernate:hibernate-validator:jar:5.2.4.Final/javax.validation:validation-api:jar:1.1.0.Final</node>
+            <node x="480.5" y="1725.0">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.3</node>
+            <node x="750.0" y="1686.2329229797995">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.3/com.fasterxml.jackson.core:jackson-annotations:jar:2.8.3</node>
+            <node x="770.0" y="1755.2329229797995">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.3/com.fasterxml.jackson.core:jackson-core:jar:2.8.3</node>
+            <node x="496.5" y="1794.0">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework:spring-web:jar:4.3.3.RELEASE</node>
+            <node x="485.0" y="1863.0">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework:spring-webmvc:jar:4.3.3.RELEASE</node>
+            <node x="757.0" y="1863.0">org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework:spring-webmvc:jar:4.3.3.RELEASE/org.springframework:spring-expression:jar:4.3.3.RELEASE</node>
+            <node x="224.0" y="1826.0833333333335">org.twitter4j:twitter4j-core:jar:4.0.6</node>
+            <node x="217.5" y="1895.0833333333335">org.twitter4j:twitter4j-stream:jar:4.0.6</node>
+            <node x="220.0" y="2070.0">org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE</node>
+            <node x="497.5" y="1932.0">org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.springframework:spring-aop:jar:4.3.3.RELEASE</node>
+            <node x="492.0" y="2001.0">org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.springframework:spring-beans:jar:4.3.3.RELEASE</node>
+            <node x="487.5" y="2070.0">org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.springframework:spring-context:jar:4.3.3.RELEASE</node>
+            <node x="496.0" y="2139.0">org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.springframework:spring-core:jar:4.3.3.RELEASE</node>
+            <node x="505.5" y="2208.0">org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.slf4j:slf4j-api:jar:1.7.21</node>
+            <node x="193.0" y="2899.8125">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE</node>
+            <node x="473.5" y="2277.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE</node>
+            <node x="747.5" y="2178.9271933348627">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-context:jar:1.1.0.RELEASE</node>
+            <node x="993.0" y="2178.9271933348627">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-context:jar:1.1.0.RELEASE/org.springframework.security:spring-security-crypto:jar:4.1.3.RELEASE</node>
+            <node x="740.5" y="2277.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-commons:jar:1.1.0.RELEASE</node>
+            <node x="754.5" y="2346.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.1.RELEASE</node>
+            <node x="1011.0" y="2346.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.1.RELEASE/org.bouncycastle:bcpkix-jdk15on:jar:1.47</node>
+            <node x="1255.0" y="2346.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.1.RELEASE/org.bouncycastle:bcpkix-jdk15on:jar:1.47/org.bouncycastle:bcprov-jdk15on:jar:1.47</node>
+            <node x="451.5" y="2415.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.boot:spring-boot-starter-actuator:jar:1.4.1.RELEASE</node>
+            <node x="748.0" y="2415.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.boot:spring-boot-starter-actuator:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-actuator:jar:1.4.1.RELEASE</node>
+            <node x="453.5" y="2620.1875">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE</node>
+            <node x="737.0" y="2484.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-netflix-core:jar:1.1.0.RELEASE</node>
+            <node x="772.5" y="2553.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-core:jar:1.5.2</node>
+            <node x="1014.0" y="2553.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-core:jar:1.5.2/org.hdrhistogram:HdrHistogram:jar:2.1.7</node>
+            <node x="727.0" y="2660.705035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-metrics-event-stream:jar:1.5.2</node>
+            <node x="762.5" y="2729.705035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2</node>
+            <node x="1015.0" y="2622.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2/org.aspectj:aspectjweaver:jar:1.8.9</node>
+            <node x="994.0" y="2691.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2/commons-collections:commons-collections:jar:3.2.2</node>
+            <node x="1008.0" y="2760.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2/org.apache.commons:commons-lang3:jar:3.1</node>
+            <node x="1041.0" y="2829.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2/org.ow2.asm:asm:jar:5.0.4</node>
+            <node x="453.5" y="3174.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE</node>
+            <node x="786.5" y="3040.205035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5</node>
+            <node x="1008.0" y="2898.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/com.netflix.ribbon:ribbon-transport:jar:2.1.5</node>
+            <node x="1253.5" y="2863.5">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/com.netflix.ribbon:ribbon-transport:jar:2.1.5/io.reactivex:rxnetty-contexts:jar:0.4.9</node>
+            <node x="1262.0" y="2932.5">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/com.netflix.ribbon:ribbon-transport:jar:2.1.5/io.reactivex:rxnetty-servo:jar:0.4.9</node>
+            <node x="1033.5" y="3109.205035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9</node>
+            <node x="1251.5" y="3001.5">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final</node>
+            <node x="1491.5" y="2967.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final/io.netty:netty-codec:jar:4.0.27.Final</node>
+            <node x="1487.5" y="3036.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final/io.netty:netty-handler:jar:4.0.27.Final</node>
+            <node x="1223.0" y="3193.382054445976">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final</node>
+            <node x="1483.0" y="3105.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-common:jar:4.0.27.Final</node>
+            <node x="1491.5" y="3174.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-buffer:jar:4.0.27.Final</node>
+            <node x="1483.5" y="3243.0">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-transport:jar:4.0.27.Final</node>
+            <node x="772.5" y="3109.205035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-core:jar:2.1.5</node>
+            <node x="758.5" y="3209.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.1.5</node>
+            <node x="995.5" y="3209.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.1.5/com.sun.jersey.contribs:jersey-apache-client4:jar:1.19.1</node>
+            <node x="750.0" y="3278.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.1.5</node>
+            <node x="1010.5" y="3278.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.1.5/com.netflix.netflix-commons:netflix-statistics:jar:0.1.1</node>
+            <node x="788.5" y="3347.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/io.reactivex:rxjava:jar:1.1.5</node>
+            <node x="449.0" y="3455.413368533824">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE</node>
+            <node x="768.0" y="3416.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/com.netflix.archaius:archaius-core:jar:0.7.4</node>
+            <node x="1037.0" y="3416.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/com.netflix.archaius:archaius-core:jar:0.7.4/com.google.code.findbugs:jsr305:jar:3.0.1</node>
+            <node x="738.5" y="3485.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/commons-configuration:commons-configuration:jar:1.8</node>
+            <node x="1002.0" y="3485.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/commons-configuration:commons-configuration:jar:1.8/commons-logging:commons-logging:jar:1.1.1</node>
+            <node x="788.0" y="3554.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/com.google.guava:guava:jar:18.0</node>
+            <node x="501.5" y="3662.413368533824">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0</node>
+            <node x="769.5" y="3623.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0/commons-io:commons-io:jar:2.4</node>
+            <node x="776.0" y="3692.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0/com.netflix.servo:servo-core:jar:0.10.1</node>
+            <node x="1015.5" y="3692.080035200491">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0/com.netflix.servo:servo-core:jar:0.10.1/com.netflix.servo:servo-internal:jar:0.10.1</node>
+            <node x="747.0" y="3780.4620896464658">org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0/com.netflix.netflix-commons:netflix-commons-util:jar:0.1.1</node>
+            <node x="222.0" y="3765.913368533824">org.apache.opennlp:opennlp-tools:jar:1.5.3</node>
+            <node x="482.0" y="3731.413368533824">org.apache.opennlp:opennlp-tools:jar:1.5.3/org.apache.opennlp:opennlp-maxent:jar:3.0.3</node>
+            <node x="515.5" y="3800.413368533824">org.apache.opennlp:opennlp-tools:jar:1.5.3/net.sf.jwordnet:jwnl:jar:1.3.3</node>
+            <node x="246.0" y="3834.913368533824">be.ceau:chart:jar:2.2.0</node>
+            <node x="197.0" y="3903.913368533824">org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE</node>
+            <node x="483.0" y="3869.413368533824">org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-test:jar:1.4.1.RELEASE</node>
+            <node x="772.5" y="3869.413368533824">org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-test:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot:jar:1.4.1.RELEASE</node>
+            <node x="496.0" y="3938.413368533824">org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE/org.springframework:spring-core:jar:4.3.3.RELEASE</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/io.reactivex:rxjava:jar:1.1.5">
+              <point x="89.0" y="11.599999999999909" />
+              <point x="647.0" y="3200.1000000000004" />
+              <point x="727.0" y="3361.580035200491" />
+              <point x="-31.5" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate:hibernate-core:jar:5.2.8.Final" target="org.hibernate:hibernate-core:jar:5.2.8.Final/org.hibernate.common:hibernate-commons-annotations:jar:5.0.1.Final">
+              <point x="55.0" y="12.888888888888914" />
+              <point x="358.0" y="924.3888888888891" />
+              <point x="-104.5" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate:hibernate-core:jar:5.2.8.Final" target="org.hibernate:hibernate-core:jar:5.2.8.Final/org.hibernate.javax.persistence:hibernate-jpa-2.1-api:jar:1.0.0.Final">
+              <point x="55.0" y="-9.666666666666629" />
+              <point x="358.0" y="901.8333333333337" />
+              <point x="438.0" y="704.5000000000002" />
+              <point x="-72.0" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE">
+              <point x="56.5" y="5.272727272727252" />
+              <point x="-82.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-commons:jar:1.1.0.RELEASE">
+              <point x="69.0" y="-0.0" />
+              <point x="-79.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-test:jar:1.4.1.RELEASE">
+              <point x="78.5" y="-7.25" />
+              <point x="438.0" y="3883.913368533824" />
+              <point x="-59.5" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE">
+              <point x="56.5" y="-5.272727272727252" />
+              <point x="-80.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/com.sun.xml.bind:jaxb-impl:jar:2.2.3-1/javax.xml.bind:jaxb-api:jar:2.2.2" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/com.sun.xml.bind:jaxb-impl:jar:2.2.3-1/javax.xml.bind:jaxb-api:jar:2.2.2/javax.xml.stream:stax-api:jar:1.0-2">
+              <point x="37.5" y="-0.0" />
+              <point x="-37.0" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="org.hibernate:hibernate-core:jar:5.2.8.Final">
+              <point x="56.5" y="-7.909090909090992" />
+              <point x="193.0" y="911.5000000000002" />
+              <point x="-55.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5/net.jcip:jcip-annotations:jar:1.0">
+              <point x="60.0" y="-10.875" />
+              <point x="1143.0" y="901.2291666666667" />
+              <point x="1223.0" y="808.6041666666667" />
+              <point x="-59.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/commons-lang:commons-lang:jar:2.6">
+              <point x="44.0" y="-5.800000000000011" />
+              <point x="913.0" y="265.5945544459755" />
+              <point x="993.0" y="83.5" />
+              <point x="-57.0" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="org.apache.opennlp:opennlp-tools:jar:1.5.3">
+              <point x="56.5" y="7.909090909090992" />
+              <point x="193.0" y="3780.413368533824" />
+              <point x="-53.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2/org.ow2.asm:asm:jar:5.0.4">
+              <point x="57.5" y="10.875" />
+              <point x="913.0" y="2755.080035200491" />
+              <point x="993.0" y="2843.5" />
+              <point x="-27.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE">
+              <point x="82.5" y="2.416666666666515" />
+              <point x="438.0" y="3188.5" />
+              <point x="-89.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.boot:spring-boot-starter-actuator:jar:1.4.1.RELEASE">
+              <point x="82.5" y="-7.25" />
+              <point x="438.0" y="2429.5" />
+              <point x="-91.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-client:jar:1.19.1">
+              <point x="44.0" y="5.800000000000011" />
+              <point x="913.0" y="277.1945544459754" />
+              <point x="993.0" y="221.5" />
+              <point x="-48.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.3" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.3/com.fasterxml.jackson.core:jackson-annotations:jar:2.8.3">
+              <point x="62.0" y="-7.25" />
+              <point x="647.0" y="1732.25" />
+              <point x="727.0" y="1700.7329229797995" />
+              <point x="-70.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-common:jar:4.0.27.Final">
+              <point x="90.0" y="-9.666666666666515" />
+              <point x="-56.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-core:jar:1.5.2" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-core:jar:1.5.2/org.hdrhistogram:HdrHistogram:jar:2.1.7">
+              <point x="47.5" y="-0.0" />
+              <point x="-54.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0/com.netflix.netflix-commons:netflix-commons-util:jar:0.1.1">
+              <point x="41.0" y="9.666666666666515" />
+              <point x="647.0" y="3686.580035200491" />
+              <point x="727.0" y="3794.9620896464658" />
+              <point x="-73.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0">
+              <point x="82.5" y="12.083333333333485" />
+              <point x="438.0" y="3676.913368533824" />
+              <point x="-41.0" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate:hibernate-core:jar:5.2.8.Final" target="org.hibernate:hibernate-core:jar:5.2.8.Final/org.javassist:javassist:jar:3.20.0-GA">
+              <point x="55.0" y="-6.444444444444457" />
+              <point x="358.0" y="905.0555555555559" />
+              <point x="438.0" y="773.5000000000002" />
+              <point x="-37.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jackson:jackson-core-asl:jar:1.9.2">
+              <point x="44.5" y="-2.4166666666666856" />
+              <point x="1143.0" y="460.5833333333335" />
+              <point x="1223.0" y="428.5" />
+              <point x="-59.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final">
+              <point x="34.5" y="-7.25" />
+              <point x="1143.0" y="3116.455035200491" />
+              <point x="1223.0" y="3016.0" />
+              <point x="-61.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2">
+              <point x="44.5" y="2.4166666666666856" />
+              <point x="1143.0" y="465.41666666666697" />
+              <point x="1223.0" y="497.5" />
+              <point x="-68.5" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate:hibernate-core:jar:5.2.8.Final" target="org.hibernate:hibernate-core:jar:5.2.8.Final/com.fasterxml:classmate:jar:1.3.1">
+              <point x="55.0" y="6.444444444444457" />
+              <point x="358.0" y="917.9444444444446" />
+              <point x="438.0" y="1049.5" />
+              <point x="-42.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5">
+              <point x="89.0" y="-11.599999999999909" />
+              <point x="647.0" y="3176.9000000000005" />
+              <point x="727.0" y="3054.705035200491" />
+              <point x="-33.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final/io.netty:netty-handler:jar:4.0.27.Final">
+              <point x="61.5" y="7.25" />
+              <point x="1403.0" y="3023.25" />
+              <point x="-52.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/org.apache.httpcomponents:httpclient:jar:4.5.2" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/org.apache.httpcomponents:httpclient:jar:4.5.2/org.apache.httpcomponents:httpcore:jar:4.4.5">
+              <point x="41.5" y="-0.0" />
+              <point x="-38.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final">
+              <point x="34.5" y="7.25" />
+              <point x="1143.0" y="3130.955035200491" />
+              <point x="-90.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0/com.netflix.servo:servo-core:jar:0.10.1" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0/com.netflix.servo:servo-core:jar:0.10.1/com.netflix.servo:servo-internal:jar:0.10.1">
+              <point x="44.0" y="-0.0" />
+              <point x="-52.5" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate:hibernate-core:jar:5.2.8.Final" target="org.hibernate:hibernate-core:jar:5.2.8.Final/dom4j:dom4j:jar:1.6.1">
+              <point x="55.0" y="9.666666666666629" />
+              <point x="358.0" y="921.1666666666667" />
+              <point x="438.0" y="1118.5" />
+              <point x="-33.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5/com.nimbusds:lang-tag:jar:1.4">
+              <point x="60.0" y="3.625" />
+              <point x="1143.0" y="915.7291666666667" />
+              <point x="1223.0" y="946.6041666666667" />
+              <point x="-38.5" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="junit:junit:jar:4.12">
+              <point x="56.5" y="-13.181818181818244" />
+              <point x="193.0" y="497.5000000000002" />
+              <point x="-28.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE/org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.5">
+              <point x="88.0" y="-0.0" />
+              <point x="727.0" y="1493.7329229797995" />
+              <point x="-63.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE">
+              <point x="80.0" y="-12.083333333333258" />
+              <point x="438.0" y="1256.5" />
+              <point x="-66.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-netflix-core:jar:1.1.0.RELEASE">
+              <point x="89.0" y="-10.875" />
+              <point x="647.0" y="2623.8125" />
+              <point x="-83.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9">
+              <point x="33.5" y="7.25" />
+              <point x="913.0" y="3061.955035200491" />
+              <point x="993.0" y="3123.705035200491" />
+              <point x="-34.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-metrics-event-stream:jar:1.5.2">
+              <point x="89.0" y="3.625" />
+              <point x="647.0" y="2638.3125" />
+              <point x="-93.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE">
+              <point x="82.5" y="-12.083333333333485" />
+              <point x="438.0" y="2291.5" />
+              <point x="-69.0" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate:hibernate-core:jar:5.2.8.Final" target="org.hibernate:hibernate-core:jar:5.2.8.Final/org.jboss.logging:jboss-logging:jar:3.3.0.Final">
+              <point x="55.0" y="-12.888888888888914" />
+              <point x="358.0" y="898.6111111111113" />
+              <point x="438.0" y="635.5000000000002" />
+              <point x="-52.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2">
+              <point x="89.0" y="10.875" />
+              <point x="647.0" y="2645.5625" />
+              <point x="727.0" y="2744.205035200491" />
+              <point x="-57.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE" target="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.slf4j:slf4j-api:jar:1.7.21">
+              <point x="55.5" y="11.599999999999909" />
+              <point x="358.0" y="2096.1" />
+              <point x="438.0" y="2222.5" />
+              <point x="-37.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/javax.inject:javax.inject:jar:1">
+              <point x="54.5" y="3.625" />
+              <point x="647.0" y="570.1250000000002" />
+              <point x="727.0" y="620.3820544459757" />
+              <point x="-45.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-core:jar:2.1.5">
+              <point x="89.0" y="-5.800000000000182" />
+              <point x="647.0" y="3182.7" />
+              <point x="727.0" y="3123.705035200491" />
+              <point x="-47.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.3" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.3/com.fasterxml.jackson.core:jackson-core:jar:2.8.3">
+              <point x="62.0" y="7.25" />
+              <point x="647.0" y="1746.75" />
+              <point x="727.0" y="1769.7329229797995" />
+              <point x="-50.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE">
+              <point x="66.5" y="3.625" />
+              <point x="647.0" y="1260.125" />
+              <point x="-89.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.1.5" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.1.5/com.netflix.netflix-commons:netflix-statistics:jar:0.1.1">
+              <point x="70.0" y="-0.0" />
+              <point x="-57.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-context:jar:1.1.0.RELEASE">
+              <point x="69.0" y="-9.666666666666515" />
+              <point x="647.0" y="2281.833333333334" />
+              <point x="727.0" y="2193.4271933348627" />
+              <point x="-72.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE">
+              <point x="80.0" y="-7.25" />
+              <point x="438.0" y="1498.0" />
+              <point x="-88.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE">
+              <point x="82.5" y="7.25" />
+              <point x="-93.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE/org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.5">
+              <point x="88.0" y="9.666666666666742" />
+              <point x="647.0" y="1507.666666666667" />
+              <point x="-86.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/ch.qos.logback:logback-classic:jar:1.1.7" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/ch.qos.logback:logback-classic:jar:1.1.7/ch.qos.logback:logback-core:jar:1.1.7">
+              <point x="56.5" y="-0.0" />
+              <point x="-51.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-client:jar:1.19.1" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-client:jar:1.19.1/com.sun.jersey:jersey-core:jar:1.19.1">
+              <point x="48.0" y="-0.0" />
+              <point x="-45.0" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate:hibernate-core:jar:5.2.8.Final" target="org.hibernate:hibernate-core:jar:5.2.8.Final/org.jboss:jandex:jar:2.0.3.Final">
+              <point x="55.0" y="3.2222222222221717" />
+              <point x="358.0" y="914.7222222222224" />
+              <point x="438.0" y="980.5000000000001" />
+              <point x="-33.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/org.slf4j:log4j-over-slf4j:jar:1.7.21">
+              <point x="89.5" y="10.875" />
+              <point x="993.0" y="1478.63906297827" />
+              <point x="-56.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3">
+              <point x="45.5" y="-0.0" />
+              <point x="-54.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/com.netflix.archaius:archaius-core:jar:0.7.4">
+              <point x="93.5" y="-9.666666666666515" />
+              <point x="727.0" y="3430.580035200491" />
+              <point x="-52.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.1.RELEASE">
+              <point x="69.0" y="9.666666666666515" />
+              <point x="647.0" y="2301.166666666667" />
+              <point x="727.0" y="2360.5" />
+              <point x="-65.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/org.apache.httpcomponents:httpclient:jar:4.5.2">
+              <point x="54.5" y="-3.625" />
+              <point x="647.0" y="562.8750000000002" />
+              <point x="727.0" y="551.3820544459757" />
+              <point x="-41.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0">
+              <point x="54.5" y="10.875" />
+              <point x="647.0" y="577.3750000000002" />
+              <point x="727.0" y="941.7432296449367" />
+              <point x="-31.5" y="-0.0" />
+            </edge>
+            <edge source="org.apache.opennlp:opennlp-tools:jar:1.5.3" target="org.apache.opennlp:opennlp-tools:jar:1.5.3/org.apache.opennlp:opennlp-maxent:jar:3.0.3">
+              <point x="53.5" y="-7.25" />
+              <point x="358.0" y="3773.163368533824" />
+              <point x="438.0" y="3745.913368533824" />
+              <point x="-60.5" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="org.twitter4j:twitter4j-core:jar:4.0.6">
+              <point x="56.5" y="-2.6363636363637397" />
+              <point x="193.0" y="1840.5833333333335" />
+              <point x="-51.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/org.slf4j:jcl-over-slf4j:jar:1.7.21">
+              <point x="89.5" y="-3.625" />
+              <point x="993.0" y="1256.5" />
+              <point x="-49.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-context:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-context:jar:1.1.0.RELEASE/org.springframework.security:spring-security-crypto:jar:4.1.3.RELEASE">
+              <point x="72.5" y="-0.0" />
+              <point x="-75.0" y="-0.0" />
+            </edge>
+            <edge source="junit:junit:jar:4.12" target="junit:junit:jar:4.12/org.hamcrest:hamcrest-core:jar:1.3">
+              <point x="28.0" y="-0.0" />
+              <point x="-54.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-test:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-test:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot:jar:1.4.1.RELEASE">
+              <point x="59.5" y="-0.0" />
+              <point x="-47.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.1.5">
+              <point x="89.0" y="5.800000000000182" />
+              <point x="647.0" y="3194.3" />
+              <point x="727.0" y="3292.580035200491" />
+              <point x="-70.0" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate:hibernate-core:jar:5.2.8.Final" target="org.hibernate:hibernate-core:jar:5.2.8.Final/antlr:antlr:jar:2.7.7">
+              <point x="55.0" y="-3.2222222222221717" />
+              <point x="358.0" y="908.277777777778" />
+              <point x="438.0" y="842.5000000000002" />
+              <point x="-28.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE/org.springframework:spring-core:jar:4.3.3.RELEASE">
+              <point x="78.5" y="7.25" />
+              <point x="438.0" y="3952.913368533824" />
+              <point x="-46.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework:spring-webmvc:jar:4.3.3.RELEASE">
+              <point x="80.0" y="12.083333333333258" />
+              <point x="438.0" y="1877.5" />
+              <point x="-57.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE" target="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.springframework:spring-beans:jar:4.3.3.RELEASE">
+              <point x="55.5" y="-5.800000000000182" />
+              <point x="358.0" y="2078.7" />
+              <point x="438.0" y="2015.5" />
+              <point x="-50.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/ch.qos.logback:logback-classic:jar:1.1.7">
+              <point x="89.5" y="-10.875" />
+              <point x="993.0" y="1099.0938600015295" />
+              <point x="-56.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/commons-configuration:commons-configuration:jar:1.8" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/commons-configuration:commons-configuration:jar:1.8/commons-logging:commons-logging:jar:1.1.1">
+              <point x="81.5" y="-0.0" />
+              <point x="-66.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/javax.mail:mail:jar:1.4.5">
+              <point x="44.0" y="-0.0" />
+              <point x="913.0" y="271.3945544459755" />
+              <point x="993.0" y="152.5" />
+              <point x="-27.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.1.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.1.RELEASE/org.bouncycastle:bcpkix-jdk15on:jar:1.47">
+              <point x="65.5" y="-0.0" />
+              <point x="-57.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.hibernate:hibernate-validator:jar:5.2.4.Final">
+              <point x="80.0" y="-2.4166666666667425" />
+              <point x="438.0" y="1631.7329229797995" />
+              <point x="-66.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-buffer:jar:4.0.27.Final">
+              <point x="90.0" y="-0.0" />
+              <point x="-48.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.1.5" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.1.5/com.sun.jersey.contribs:jersey-apache-client4:jar:1.19.1">
+              <point x="61.5" y="-0.0" />
+              <point x="-72.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/com.sun.xml.bind:jaxb-impl:jar:2.2.3-1">
+              <point x="44.5" y="-7.25" />
+              <point x="1143.0" y="455.7500000000002" />
+              <point x="1223.0" y="359.5" />
+              <point x="-41.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2/org.apache.commons:commons-lang3:jar:3.1">
+              <point x="57.5" y="3.625" />
+              <point x="913.0" y="2747.830035200491" />
+              <point x="993.0" y="2774.5" />
+              <point x="-60.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13">
+              <point x="44.0" y="11.600000000000023" />
+              <point x="913.0" y="282.9945544459754" />
+              <point x="993.0" y="463.0000000000002" />
+              <point x="-44.5" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="be.ceau:chart:jar:2.2.0">
+              <point x="56.5" y="10.545454545454504" />
+              <point x="193.0" y="3849.413368533824" />
+              <point x="-29.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2/commons-collections:commons-collections:jar:3.2.2">
+              <point x="57.5" y="-3.625" />
+              <point x="913.0" y="2740.580035200491" />
+              <point x="-74.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework:spring-webmvc:jar:4.3.3.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework:spring-webmvc:jar:4.3.3.RELEASE/org.springframework:spring-expression:jar:4.3.3.RELEASE">
+              <point x="57.5" y="-0.0" />
+              <point x="-63.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.3">
+              <point x="80.0" y="2.4166666666667425" />
+              <point x="438.0" y="1739.5" />
+              <point x="-62.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0/com.netflix.servo:servo-core:jar:0.10.1">
+              <point x="41.0" y="-0.0" />
+              <point x="647.0" y="3676.913368533824" />
+              <point x="727.0" y="3706.580035200491" />
+              <point x="-44.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/com.netflix.ribbon:ribbon-transport:jar:2.1.5" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/com.netflix.ribbon:ribbon-transport:jar:2.1.5/io.reactivex:rxnetty-contexts:jar:0.4.9">
+              <point x="60.0" y="-7.25" />
+              <point x="1143.0" y="2905.25" />
+              <point x="1223.0" y="2878.0" />
+              <point x="-59.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-transport:jar:4.0.27.Final">
+              <point x="90.0" y="9.666666666666515" />
+              <point x="-56.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE">
+              <point x="82.5" y="-2.416666666666515" />
+              <point x="438.0" y="2634.6875" />
+              <point x="-89.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/com.netflix.ribbon:ribbon-transport:jar:2.1.5">
+              <point x="33.5" y="-7.25" />
+              <point x="913.0" y="3047.455035200491" />
+              <point x="993.0" y="2912.5" />
+              <point x="-60.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.hibernate:hibernate-validator:jar:5.2.4.Final" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.hibernate:hibernate-validator:jar:5.2.4.Final/javax.validation:validation-api:jar:1.1.0.Final">
+              <point x="66.5" y="-0.0" />
+              <point x="-52.5" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE">
+              <point x="56.5" y="2.6363636363637397" />
+              <point x="193.0" y="2084.5" />
+              <point x="-55.5" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="org.twitter4j:twitter4j-stream:jar:4.0.6">
+              <point x="56.5" y="-0.0" />
+              <point x="-58.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5">
+              <point x="31.5" y="-7.25" />
+              <point x="913.0" y="934.4932296449367" />
+              <point x="993.0" y="912.1041666666667" />
+              <point x="-60.0" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate:hibernate-core:jar:5.2.8.Final" target="org.hibernate:hibernate-core:jar:5.2.8.Final/org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:jar:1.0.1.Final">
+              <point x="55.0" y="-0.0" />
+              <point x="-96.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-core:jar:1.5.2">
+              <point x="89.0" y="-3.625" />
+              <point x="647.0" y="2631.0625" />
+              <point x="727.0" y="2567.5" />
+              <point x="-47.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3">
+              <point x="54.5" y="-10.875" />
+              <point x="647.0" y="555.6250000000002" />
+              <point x="727.0" y="271.3945544459755" />
+              <point x="-44.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework:spring-web:jar:4.3.3.RELEASE">
+              <point x="80.0" y="7.25" />
+              <point x="438.0" y="1808.5" />
+              <point x="-46.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.RELEASE/org.slf4j:jul-to-slf4j:jar:1.7.21">
+              <point x="89.5" y="3.625" />
+              <point x="993.0" y="1325.5" />
+              <point x="-43.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.5">
+              <point x="88.0" y="-9.666666666666742" />
+              <point x="647.0" y="1488.3333333333335" />
+              <point x="727.0" y="1424.7329229797995" />
+              <point x="-70.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-hystrix:jar:1.1.0.RELEASE/com.netflix.hystrix:hystrix-javanica:jar:1.5.2/org.aspectj:aspectjweaver:jar:1.8.9">
+              <point x="57.5" y="-10.875" />
+              <point x="913.0" y="2733.330035200491" />
+              <point x="993.0" y="2636.5" />
+              <point x="-53.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/com.netflix.zuul:zuul-core:jar:1.1.0/commons-io:commons-io:jar:2.4">
+              <point x="41.0" y="-9.666666666666515" />
+              <point x="647.0" y="3667.2467018671578" />
+              <point x="727.0" y="3637.580035200491" />
+              <point x="-50.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/com.google.guava:guava:jar:18.0">
+              <point x="93.5" y="9.666666666666515" />
+              <point x="727.0" y="3568.580035200491" />
+              <point x="-32.0" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8">
+              <point x="56.5" y="-10.545454545454504" />
+              <point x="193.0" y="566.5000000000002" />
+              <point x="-45.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5/com.nimbusds:nimbus-jose-jwt:jar:3.1.2">
+              <point x="60.0" y="10.875" />
+              <point x="1143.0" y="922.9791666666667" />
+              <point x="1223.0" y="1015.6041666666667" />
+              <point x="-59.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/javax.mail:mail:jar:1.4.5" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/javax.mail:mail:jar:1.4.5/javax.activation:activation:jar:1.1">
+              <point x="27.5" y="-0.0" />
+              <point x="-42.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jettison:jettison:jar:1.1" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jettison:jettison:jar:1.1/stax:stax-api:jar:1.0.1">
+              <point x="35.5" y="-0.0" />
+              <point x="-37.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jackson:jackson-jaxrs:jar:1.9.2">
+              <point x="44.5" y="7.25" />
+              <point x="1143.0" y="470.2500000000002" />
+              <point x="1223.0" y="670.6041666666667" />
+              <point x="-50.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.nimbusds:oauth2-oidc-sdk:jar:4.5/net.minidev:json-smart:jar:1.1.1">
+              <point x="60.0" y="-3.625" />
+              <point x="1143.0" y="908.4791666666667" />
+              <point x="1223.0" y="877.6041666666667" />
+              <point x="-44.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jettison:jettison:jar:1.1">
+              <point x="44.5" y="-12.083333333333314" />
+              <point x="1143.0" y="450.91666666666697" />
+              <point x="1223.0" y="290.5" />
+              <point x="-35.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/com.netflix.ribbon:ribbon-transport:jar:2.1.5" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/com.netflix.ribbon:ribbon-transport:jar:2.1.5/io.reactivex:rxnetty-servo:jar:0.4.9">
+              <point x="60.0" y="7.25" />
+              <point x="1143.0" y="2919.75" />
+              <point x="1223.0" y="2947.0" />
+              <point x="-51.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot:jar:1.4.1.RELEASE">
+              <point x="66.5" y="-10.875" />
+              <point x="647.0" y="1245.625" />
+              <point x="727.0" y="1098.475868533824" />
+              <point x="-47.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE" target="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.springframework:spring-core:jar:4.3.3.RELEASE">
+              <point x="55.5" y="5.800000000000182" />
+              <point x="358.0" y="2090.3" />
+              <point x="438.0" y="2153.5" />
+              <point x="-46.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:adal4j:jar:1.0.0/com.google.code.gson:gson:jar:2.7">
+              <point x="31.5" y="7.25" />
+              <point x="913.0" y="948.9932296449367" />
+              <point x="993.0" y="982.9166666666667" />
+              <point x="-29.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.1.5">
+              <point x="89.0" y="-0.0" />
+              <point x="647.0" y="3188.5" />
+              <point x="727.0" y="3223.580035200491" />
+              <point x="-61.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/com.netflix.archaius:archaius-core:jar:0.7.4" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/com.netflix.archaius:archaius-core:jar:0.7.4/com.google.code.findbugs:jsr305:jar:3.0.1">
+              <point x="52.0" y="-0.0" />
+              <point x="-31.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.1.0.RELEASE/commons-configuration:commons-configuration:jar:1.8">
+              <point x="93.5" y="-0.0" />
+              <point x="-81.5" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh:TwitterBackend:1.0-SNAPSHOT" target="org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE">
+              <point x="56.5" y="13.181818181818244" />
+              <point x="-78.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/com.sun.xml.bind:jaxb-impl:jar:2.2.3-1" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/com.sun.xml.bind:jaxb-impl:jar:2.2.3-1/javax.xml.bind:jaxb-api:jar:2.2.2">
+              <point x="41.5" y="-0.0" />
+              <point x="-37.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE" target="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.springframework:spring-aop:jar:4.3.3.RELEASE">
+              <point x="55.5" y="-11.599999999999909" />
+              <point x="358.0" y="2072.9" />
+              <point x="438.0" y="1946.5" />
+              <point x="-45.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.1.0.RELEASE/com.netflix.ribbon:ribbon:jar:2.1.5/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final/io.netty:netty-codec:jar:4.0.27.Final">
+              <point x="61.5" y="-7.25" />
+              <point x="1403.0" y="3008.75" />
+              <point x="-48.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.yaml:snakeyaml:jar:1.17">
+              <point x="66.5" y="10.875" />
+              <point x="647.0" y="1267.375" />
+              <point x="727.0" y="1355.7329229797995" />
+              <point x="-44.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/commons-codec:commons-codec:jar:1.10">
+              <point x="44.0" y="-11.600000000000023" />
+              <point x="913.0" y="259.79455444597556" />
+              <point x="993.0" y="14.5" />
+              <point x="-61.5" y="-0.0" />
+            </edge>
+            <edge source="org.apache.opennlp:opennlp-tools:jar:1.5.3" target="org.apache.opennlp:opennlp-tools:jar:1.5.3/net.sf.jwordnet:jwnl:jar:1.3.3">
+              <point x="53.5" y="7.25" />
+              <point x="358.0" y="3787.663368533824" />
+              <point x="438.0" y="3814.913368533824" />
+              <point x="-27.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE" target="org.springframework.hateoas:spring-hateoas:jar:0.20.0.RELEASE/org.springframework:spring-context:jar:4.3.3.RELEASE">
+              <point x="55.5" y="-0.0" />
+              <point x="-55.0" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-client:jar:1.19.1/com.sun.jersey:jersey-core:jar:1.19.1" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-client:jar:1.19.1/com.sun.jersey:jersey-core:jar:1.19.1/javax.ws.rs:jsr311-api:jar:1.1.1">
+              <point x="45.0" y="-0.0" />
+              <point x="-41.5" y="-0.0" />
+            </edge>
+            <edge source="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13" target="com.microsoft.sqlserver:mssql-jdbc:jar:6.1.0.jre8/com.microsoft.azure:azure-keyvault:jar:0.9.3/com.microsoft.azure:azure-core:jar:0.9.3/com.sun.jersey:jersey-json:jar:1.13/org.codehaus.jackson:jackson-xc:jar:1.9.2">
+              <point x="44.5" y="12.083333333333314" />
+              <point x="1143.0" y="475.0833333333335" />
+              <point x="1223.0" y="739.6041666666667" />
+              <point x="-44.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.1.RELEASE/org.bouncycastle:bcpkix-jdk15on:jar:1.47" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.1.0.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.1.RELEASE/org.bouncycastle:bcpkix-jdk15on:jar:1.47/org.bouncycastle:bcprov-jdk15on:jar:1.47">
+              <point x="57.0" y="-0.0" />
+              <point x="-58.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE" target="org.springframework.boot:spring-boot-starter-web:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-autoconfigure:jar:1.4.1.RELEASE">
+              <point x="66.5" y="-3.625" />
+              <point x="647.0" y="1252.875" />
+              <point x="-87.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.boot:spring-boot-starter-actuator:jar:1.4.1.RELEASE" target="org.springframework.cloud:spring-cloud-starter-zuul:jar:1.1.0.RELEASE/org.springframework.boot:spring-boot-starter-actuator:jar:1.4.1.RELEASE/org.springframework.boot:spring-boot-actuator:jar:1.4.1.RELEASE">
+              <point x="91.0" y="-0.0" />
+              <point x="-72.0" y="-0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.14167502507522567" x="-1873.9823008849557" y="3364.0176991150443" />
+          <SelectedNodes>
+            <node>ch.bfh:TwitterBackend:1.0-SNAPSHOT</node>
+            <node>org.springframework.boot:spring-boot-starter-test:jar:1.4.1.RELEASE/org.springframework:spring-core:jar:4.3.3.RELEASE</node>
+          </SelectedNodes>
+          <Categories />
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BubbleChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/TwitterEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="370" column="0" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
+          <folding>
+            <element signature="e#2922#2923#0" expanded="false" />
+            <element signature="e#2966#2967#0" expanded="false" />
+            <element signature="e#10310#10449#0" expanded="false" />
+            <element signature="e#10448#10449#0" expanded="false" />
+            <element signature="e#11040#11204#0" expanded="false" />
+            <element signature="e#11203#11204#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runner/JUnitCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2152,18 +3014,174 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/BarChartControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        <state relative-caret-position="180">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwitterBackend.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/analyse/SentimentAnalyseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/persistence/PersistenceTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/util/EntityManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Observer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/HashTagRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/repositories/UserRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
