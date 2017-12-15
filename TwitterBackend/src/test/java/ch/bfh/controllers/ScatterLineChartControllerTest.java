@@ -1,5 +1,6 @@
 package ch.bfh.controllers;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,6 +12,14 @@ import static org.junit.Assert.*;
 @ComponentScan(basePackages = { "ch.bfh" })
 public class ScatterLineChartControllerTest {
 
-    /*No Analyzes yet*/
+    @Test
+    public void shouldreturnaListofanalyse() throws Exception {
+
+    }
+
+    @Test
+    public void shouldreturnScatterLineCharts() throws Exception{
+
+    }
 
 }

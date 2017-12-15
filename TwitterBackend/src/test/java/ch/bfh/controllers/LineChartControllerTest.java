@@ -32,17 +32,17 @@ public class LineChartControllerTest {
     public void shouldreturnaListofanalyse() throws Exception {
         List<String> availableendpoints = lineChartController.analysen.stream().map(a -> a.getName()).collect(Collectors.toList());
         String responsebody = availableendpoints.toString();
-        responsebody = responsebody.replace("\"", "");
+
 
 
         this.mockMvc.perform(get("/api/linechart/list"))
                 .andDo(print())
                 .andExpect(status().is(200))
-                .andExpect(content().string(responsebody));
+                .andExpect(content().json(responsebody));
     }
 
     @Test
-    public void shouldreturnBarcharts() throws Exception{
+    public void shouldreturnLinecharts() throws Exception{
         String analyse = lineChartController.analysen.stream().map(a -> a.getName()).findFirst().get();
         this.mockMvc.perform(get("/api/linechart/"+ analyse))
                 .andDo(print())
