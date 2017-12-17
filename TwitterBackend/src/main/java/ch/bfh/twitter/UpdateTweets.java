@@ -6,6 +6,8 @@ import ch.bfh.repositories.TweetRepository;
 import ch.bfh.repositories.UserRepository;
 import ch.bfh.util.TwitterUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -24,6 +26,9 @@ public class UpdateTweets {
     TwitterUtil twitterUtil;
     int i;
 
+    @Value("${twitter.updatetweets}")
+    boolean updateTweets;
+
 
     @Autowired
     public UpdateTweets(UserRepository userRepository, TweetRepository tweetRepository, HashTagRepository hashTagRepository, TwitterUtil twitterUtil) {
@@ -35,28 +40,30 @@ public class UpdateTweets {
         i = 0;
     }
 
-    //@Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 1000)
     private void updateTweets(){
-        System.err.println("started Scheduler");
-        if(tweets != null) {
-            Tweet tweet = tweets.get(i);
+        if(updateTweets) {
+            System.out.println("updated Tweet");
+            if (tweets != null) {
+                Tweet tweet = tweets.get(i);
 
-            Status status;
-            if (i == tweets.size()-1) {
-                i = 0;
-            } else {
-                i++;
-            }
-            tweets = tweetRepository.getAll();
+                Status status;
+                if (i == tweets.size() - 1) {
+                    i = 0;
+                } else {
+                    i++;
+                }
+                tweets = tweetRepository.getAll();
 
-            try {
-                status = twitter.showStatus(tweet.getId());
-                tweet.setContent(status.getText());
-                tweet.setLikes(status.getFavoriteCount());
-                tweet.setRetweets(status.getRetweetCount());
-                tweetRepository.update(tweet);
-            } catch (TwitterException e) {
-                e.printStackTrace();
+                try {
+                    status = twitter.showStatus(tweet.getId());
+                    tweet.setContent(status.getText());
+                    tweet.setLikes(status.getFavoriteCount());
+                    tweet.setRetweets(status.getRetweetCount());
+                    tweetRepository.update(tweet);
+                } catch (TwitterException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

@@ -335,9 +335,11 @@ define('twitter-frontend/router', ['exports', 'twitter-frontend/config/environme
       this.route('sentimentanalyse');
     });
 
-    this.route('charts');
+    this.route('linecharts', function () {
+      this.route('tutorial');
+    });
 
-    this.route('piecharts\\sentimentanalyse');
+    this.route('charts');
   });
 
   exports.default = Router;
@@ -406,6 +408,18 @@ define('twitter-frontend/routes/linecharts/samplechart', ['exports'], function (
     exports.default = Ember.Route.extend({
         model: function model() {
             return Ember.$.ajax({ url: 'http://localhost:8080/api/linecharts/sample', contentType: 'application/json' });
+        }
+    });
+});
+define('twitter-frontend/routes/linecharts/tutorial', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+        model: function model() {
+            return Ember.$.ajax({ url: 'http://localhost:8080/api/linechart/sample', contentType: 'application/json' });
         }
     });
 });
@@ -544,6 +558,14 @@ define("twitter-frontend/templates/linecharts/samplechart", ["exports"], functio
   });
   exports.default = Ember.HTMLBars.template({ "id": "d9X3lGBw", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"line\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/linecharts/samplechart.hbs" } });
 });
+define("twitter-frontend/templates/linecharts/tutorial", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "oCc2QowW", "block": "{\"symbols\":[],\"statements\":[[1,[25,\"ember-chart\",null,[[\"type\",\"data\",\"height\"],[\"line\",[19,0,[\"model\",\"data\"]],600]]],false]],\"hasEval\":false}", "meta": { "moduleName": "twitter-frontend/templates/linecharts/tutorial.hbs" } });
+});
 define("twitter-frontend/templates/maps/myfollowers", ["exports"], function (exports) {
   "use strict";
 
@@ -642,6 +664,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+5202ac0f"});
+  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+3d0f6288"});
 }
 //# sourceMappingURL=twitter-frontend.map

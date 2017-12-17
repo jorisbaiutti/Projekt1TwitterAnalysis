@@ -8,17 +8,16 @@ import twitter4j.TwitterFactory;
 import twitter4j.TwitterStream;
 import twitter4j.TwitterStreamFactory;
 import twitter4j.conf.ConfigurationBuilder;
-@PropertySource("classpath:application.properties")
 @Component
 public class TwitterUtil {
 
-    @Value("${OAuthConsumerKey}")
+    @Value("${twitter.OAuthConsumerKey}")
     String OAuthConsumerKey;
-    @Value("${OAuthConsumerSecret}")
+    @Value("${twitter.OAuthConsumerSecret}")
     String OAuthConsumerSecret;
-    @Value("${OAuthAccessToken}")
+    @Value("${twitter.OAuthAccessToken}")
     String OAuthAccessToken;
-    @Value("${OAuthAccessTokenSecret}")
+    @Value("${twitter.OAuthAccessTokenSecret}")
     String OAuthAccessTokenSecret;
 
     public  TwitterStream getStream(){

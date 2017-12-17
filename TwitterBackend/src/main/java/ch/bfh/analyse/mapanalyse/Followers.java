@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//@Component
+@Component
 public class Followers implements Analyse {
     MapChartController mapChartController;
     TwitterUtil twitterUtil;
@@ -51,7 +51,7 @@ public class Followers implements Analyse {
             }
 
         } catch (TwitterException e) {
-            e.printStackTrace();
+            System.out.println("No valid GeoData");
         }
 
         googleMap = new GoogleMap("testmap",8.5661791,46.8207642);
@@ -81,7 +81,7 @@ public class Followers implements Analyse {
             results = GeocodingApi.geocode(context,address).await();
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
         } catch (ApiException e) {
-            e.printStackTrace();
+            System.out.println("no valid GeoData");
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (IOException e) {

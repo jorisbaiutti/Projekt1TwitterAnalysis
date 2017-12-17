@@ -55,6 +55,11 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/linecharts/samplechart.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/linecharts/tutorial.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/linecharts/tutorial.js should pass ESLint\n\n');
+  });
+
   QUnit.test('routes/maps/myfollowers.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/maps/myfollowers.js should pass ESLint\n\n');
@@ -609,6 +614,11 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(false, 'unit/routes/linecharts/samplechart-test.js should pass ESLint\n\n3:28 - Unnecessary escape character: \\s. (no-useless-escape)\n3:69 - Unnecessary escape character: \\s. (no-useless-escape)');
   });
 
+  QUnit.test('unit/routes/linecharts/tutorial-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/linecharts/tutorial-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/routes/maps/myfollowers-test.js', function (assert) {
     assert.expect(1);
     assert.ok(false, 'unit/routes/maps/myfollowers-test.js should pass ESLint\n\n3:22 - Unnecessary escape character: \\m. (no-useless-escape)\n3:57 - Unnecessary escape character: \\m. (no-useless-escape)');
@@ -828,6 +838,19 @@ define('twitter-frontend/tests/unit/routes/linecharts/samplechart-test', ['ember
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:linecharts\samplechart', 'Unit | Route | linecharts\samplechart', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('twitter-frontend/tests/unit/routes/linecharts/tutorial-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:linecharts\tutorial', 'Unit | Route | linecharts\tutorial', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   });

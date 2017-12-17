@@ -21,11 +21,13 @@ Router.map(function() {
     this.route('sentimentanalyse');
   });
 
+  this.route('linecharts', function(){
+    this.route('tutorial')
+  });
+
 
   this.route('charts');
 
-
-  this.route('piecharts\\sentimentanalyse');
 });
 
 export default Router;
