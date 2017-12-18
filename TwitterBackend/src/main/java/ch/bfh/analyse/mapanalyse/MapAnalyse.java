@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+//@Component
 public class MapAnalyse implements Analyse{
     MapChartController mapChartController;
     TweetRepository tweetRepository;

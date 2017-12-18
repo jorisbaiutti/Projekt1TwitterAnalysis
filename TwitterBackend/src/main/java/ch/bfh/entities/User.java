@@ -3,12 +3,11 @@ package ch.bfh.entities;
 import javax.persistence.*;
 import java.util.List;
 
-@javax.persistence.Entity
+@Entity
 @Table(name = "[User]")
 public class User extends TwitterEntity {
 
     @Id
-    @GeneratedValue
     private long id;
 
     @Column(unique = true, nullable = false)

@@ -24,7 +24,7 @@ public class TweetRepository extends Repository<Tweet>{
         Query q = entityManager.createQuery("SELECT t FROM Tweet t where t.content LIKE :name");
         q.setParameter("name", "%"+content+"%");
         List<Tweet> tweets = q.getResultList();
-        entityManager.close();
+        entityManager.getTransaction().commit();
 
         return tweets;
     }
@@ -34,13 +34,15 @@ public class TweetRepository extends Repository<Tweet>{
         Query q = entityManager.createQuery("SELECT t FROM Tweet t join HashTag h where h.hashTag = :hashTag");
         q.setParameter("hashTag", hashTag);
         List<Tweet> tweets = q.getResultList();
-
+        entityManager.getTransaction().commit();
         return tweets;
     }
 
     public Tweet findById(long ID){
         entityManager.getTransaction().begin();
-        return entityManager.find(Tweet.class, ID);
+        Tweet tweet = entityManager.find(Tweet.class, ID);
+        entityManager.getTransaction().commit();
+        return tweet;
     }
 
 

@@ -1,15 +1,14 @@
 package ch.bfh.analyse.sentimentanalyse;
 
-import ch.bfh.repositories.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(UserRepository.class)
+@SpringBootTest
 @ComponentScan(basePackages = { "ch.bfh.analyse.sentimentanalyse", "ch.bfh.categorizer", "ch.bfh.controllers", "ch.bfh.repositories", "ch.bfh.util" })
 public class SentimentAnalyseTest {
 

@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-@Component
+//@Component
 public class SentimentAnalyse implements Analyse, Observer{
     private TweetRepository tweetRepository;
     private DoughnutChartController doughnutChartController;

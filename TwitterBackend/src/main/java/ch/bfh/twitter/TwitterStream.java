@@ -60,7 +60,13 @@ public class TwitterStream {
 
                 System.out.println("Creator: " + status.getUser().getScreenName());
 
-                User user = (User) userRepository.getOne(status.getUser().getId());
+                User user = new User();
+                try {
+                    user = (User) userRepository.getOne(status.getUser().getId());
+                } catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
+
                 Tweet tweetentity = new Tweet();
                 if(user == null) {
                     user = new User();
@@ -68,7 +74,6 @@ public class TwitterStream {
                     user.setUserName(status.getUser().getScreenName());
                     user.setLocation(status.getUser().getLocation());
                     userRepository.save(user);
-
                 }
                 tweetentity.setCreator(user);
                 tweetentity.setLanguage(status.getLang());
@@ -88,6 +93,8 @@ public class TwitterStream {
 
 
                 tweetentity.setHashTags(hashTags);
+
+                System.err.println(tweetentity.getContent());
 
                 tweetRepository.save(tweetentity);
 

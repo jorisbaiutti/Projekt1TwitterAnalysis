@@ -24,15 +24,16 @@ public abstract class Repository<T extends TwitterEntity> extends java.util.Obse
     public void save(TwitterEntity entity) {
 
         entityManager.getTransaction().begin();
-         try {
-             entityManager.persist(entity);
-         }finally {
-             entityManager.merge(entity);
-         }
+
+        try{
+            entityManager.persist(entity);
+        } finally {
+            entityManager.merge(entity);
+        }
 
         entityManager.getTransaction().commit();
-         setChanged();
-         notifyObservers();
+        setChanged();
+        notifyObservers();
 
 
     }
