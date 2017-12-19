@@ -42,10 +42,10 @@ public class SentimentAnalyse implements Analyse, Observer{
         name = "sentimentanalyse";
 
         // all the URL of the golden standard file for each language
-        goldStandardFileURL = "C:\\Projekt1TwitterAnalysis\\TwitterBackend\\src\\main\\resources\\inputfiles\\sentimentinputEN.txt";
+        goldStandardFileURL = "C:\\Users\\Patrick\\IdeaProjects\\Projekt1TwitterAnalysis\\TwitterBackend\\src\\main\\resources\\inputfiles\\sentimentinputEN.txt";
         sentimentCategorizer.trainModel(goldStandardFileURL, ModelLanguage.EN);
 
-        goldStandardFileURL = "C:\\Projekt1TwitterAnalysis\\TwitterBackend\\src\\main\\resources\\inputfiles\\sentimentinputDE.txt";
+        goldStandardFileURL = "C:\\Users\\Patrick\\IdeaProjects\\Projekt1TwitterAnalysis\\TwitterBackend\\src\\main\\resources\\inputfiles\\sentimentinputDE.txt";
         sentimentCategorizer.trainModel(goldStandardFileURL, ModelLanguage.DE);
 
         sentimentAnalyse = new Hashtable<>();

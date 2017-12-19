@@ -32,6 +32,12 @@ public class Followers implements Analyse {
     String name;
     GoogleMap googleMap;
 
+    /**
+     *
+     * @param mapChartController is used to register the mapChart of this analyse Followers
+     * @param twitterUtil
+     * @param mapsUtil
+     */
     public Followers(MapChartController mapChartController, TwitterUtil twitterUtil, MapsUtil mapsUtil) {
         this.mapChartController = mapChartController;
         this.twitterUtil = twitterUtil;
