@@ -9,6 +9,8 @@ import ch.bfh.repositories.TweetRepository;
 import ch.bfh.repositories.UserRepository;
 import ch.bfh.util.TwitterUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import twitter4j.*;
 
@@ -24,6 +26,11 @@ public class TwitterStream {
     TweetRepository tweetRepository;
     TwitterUtil twitterUtil;
 
+    @Value("${twitter.twitterqueryStrings}")
+    String[] keywords;
+    @Value("${twitter.enabletwitterstream}")
+    boolean enabletwitterstream;
+
     @Autowired
     public TwitterStream(HashTagRepository hashTagRepository, UserRepository userRepository, TweetRepository tweetRepository, TwitterUtil twitterUtil) {
         this.hashTagRepository = hashTagRepository;
@@ -33,106 +40,78 @@ public class TwitterStream {
     }
 
     @Autowired
-    public void readTwitterFeed(){
+    public void readTwitterFeed() {
         twitter4j.TwitterStream stream = twitterUtil.getStream();
-        StatusListener listener = new StatusListener() {
-            @Override
-            public void onStatus(Status status) {
-                UserMentionEntity[] userMentionEntities = status.getUserMentionEntities();
-                HashtagEntity[] hashtags = status.getHashtagEntities();
-                Status tweet = status;
-                List<HashTag> hashTagList = new ArrayList<>();
-                List<User> mentionsList = new ArrayList<>();
-                System.out.println("Inhalt: ");
-                System.out.println(status.getText());
+        if (enabletwitterstream) {
+            StatusListener listener = new StatusListener() {
+                @Override
+                public void onStatus(Status status) {
+                    UserMentionEntity[] userMentionEntities = status.getUserMentionEntities();
+                    HashtagEntity[] hashtags = status.getHashtagEntities();
+                    Status tweet = status;
+                    List<HashTag> hashTagList = new ArrayList<>();
+                    List<User> mentionsList = new ArrayList<>();
 
-                System.out.println(status.getId());
+                    User user = (User) userRepository.getOne(status.getUser().getId());
+                    Tweet tweetentity = new Tweet();
+                    if (user == null) {
+                        user = new User();
+                        user.setId(status.getUser().getId());
+                        user.setUserName(status.getUser().getScreenName());
+                        user.setLocation(status.getUser().getLocation());
+                        userRepository.save(user);
 
+                    }
+                    tweetentity.setCreator(user);
+                    tweetentity.setLanguage(status.getLang());
+                    tweetentity.setContent(status.getText());
+                    tweetentity.setId(status.getId());
 
-                System.out.println("RetweetCount: " + status.getRetweetCount());
-                System.out.println("Hashtags: ");
-                Arrays.asList(status.getHashtagEntities()).forEach(t -> System.out.println(t.getText()));
+                    if (status.getPlace() != null) {
+                        tweetentity.setLongitude(status.getPlace().getBoundingBoxCoordinates()[0][0].getLongitude());
+                    }
+                    if (status.getPlace() != null) {
+                        tweetentity.setLatitude(status.getPlace().getBoundingBoxCoordinates()[0][0].getLatitude());
+                    }
 
-                System.out.println("Mentions: ");
-                Arrays.asList(status.getUserMentionEntities()).forEach(t -> System.out.println(t.getScreenName()));
+                    List<HashTag> hashTags = Arrays.asList(status.getHashtagEntities()).stream().map(h -> new HashTag(h.getText())).collect(Collectors.toList());
+                    tweetentity.setHashTags(hashTags);
+                    tweetRepository.save(tweetentity);
+                    System.out.println(tweetentity.getContent());
 
-                System.out.println("Like count: " + status.getFavoriteCount());
-
-                System.out.println("Creator: " + status.getUser().getScreenName());
-
-                User user = new User();
-                try {
-                    user = (User) userRepository.getOne(status.getUser().getId());
-                } catch (Exception e){
-                    System.out.println(e.getMessage());
                 }
 
-                Tweet tweetentity = new Tweet();
-                if(user == null) {
-                    user = new User();
-                    user.setId(status.getUser().getId());
-                    user.setUserName(status.getUser().getScreenName());
-                    user.setLocation(status.getUser().getLocation());
-                    userRepository.save(user);
-                }
-                tweetentity.setCreator(user);
-                tweetentity.setLanguage(status.getLang());
-                tweetentity.setContent(status.getText());
-                tweetentity.setId(status.getId());
+                @Override
+                public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {
 
-
-                if (status.getPlace() != null){
-                    tweetentity.setLongitude(status.getPlace().getBoundingBoxCoordinates()[0][0].getLongitude());
-                }
-                if (status.getPlace() != null){
-                    tweetentity.setLatitude(status.getPlace().getBoundingBoxCoordinates()[0][0].getLatitude());
                 }
 
+                @Override
+                public void onTrackLimitationNotice(int numberOfLimitedStatuses) {
 
-                List<HashTag> hashTags = Arrays.asList(status.getHashtagEntities()).stream().map(h -> new HashTag(h.getText())).collect(Collectors.toList());
+                }
 
+                @Override
+                public void onScrubGeo(long userId, long upToStatusId) {
 
-                tweetentity.setHashTags(hashTags);
+                }
 
-                System.err.println(tweetentity.getContent());
+                @Override
+                public void onStallWarning(StallWarning warning) {
 
-                tweetRepository.save(tweetentity);
+                }
 
-                System.err.println(tweetentity.getContent());
+                @Override
+                public void onException(Exception ex) {
 
-            }
+                }
+            };
+            FilterQuery qry = new FilterQuery();
+            // String[] keywords = { "BFH","Digital Society","System Design","Future System","Big Data","Open Data","Gebäude und Städte","Identität","Privatsphäre","IT-Security","Cyberforensik","Gesundheitsversorgung","E-Health"};
+            qry.track(keywords);
 
-            @Override
-            public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {
-
-            }
-
-            @Override
-            public void onTrackLimitationNotice(int numberOfLimitedStatuses) {
-
-            }
-
-            @Override
-            public void onScrubGeo(long userId, long upToStatusId) {
-
-            }
-
-            @Override
-            public void onStallWarning(StallWarning warning) {
-
-            }
-
-            @Override
-            public void onException(Exception ex) {
-
-            }
-        };
-        FilterQuery qry = new FilterQuery();
-        String[] keywords = { "BFH","Digital Society","System Design","Future System","Big Data","Open Data","Gebäude und Städte","Identität","Privatsphäre","IT-Security","Cyberforensik","Gesundheitsversorgung","E-Health"};
-
-        qry.track(keywords);
-
-        stream.addListener(listener);
-        stream.filter(qry);
+            stream.addListener(listener);
+            stream.filter(qry);
+        }
     }
 }

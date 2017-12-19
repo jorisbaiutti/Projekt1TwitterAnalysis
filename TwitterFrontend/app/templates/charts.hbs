@@ -5,8 +5,8 @@
             {{g-maps name="myFollwers" lat=model.myfollowers.lat zoom=1 lng=model.myfollowers.lng markers=model.myfollowers.markers class="cardsmap"}}
             <div class="card-body">
                 <h5 class="card-title">Followers of BFH_DigitalSociety</h5>
-                {{#link-to 'maps.myfollowers' class="btn btn-primary twitter-orange"}} 
-                    Followers 
+                {{#link-to 'maps.myfollowers' class="btn btn-primary twitter-orange"}}
+                    Followers
                 {{/link-to}}
             </div>
         </div>
@@ -25,11 +25,18 @@
                 {{#link-to 'barcharts.tweetsbytheme' class="btn btn-primary twitter-orange"}} Tweet Count {{/link-to}}
             </div>
         </div>
-         <div class="card twitter-yellow" style="width: 20rem;">
-          {{ember-chart type='doughnut' data=model.sentimentanalyse.data  height=200}}
+        <div class="card twitter-yellow" style="width: 20rem;">
+          {{ember-chart type='horizontalBar' data=model.tweetsbylanguage.data  height=200}}
             <div class="card-body">
-                <h5 class="card-title">Sentimentanalyse</h5>
-                {{#link-to 'doughnutcharts.sentimentanalyse' class="btn btn-primary twitter-orange"}} Sentiment analyse {{/link-to}}
+                <h5 class="card-title">Tweet Count by Language</h5>
+                {{#link-to 'barcharts.tweetsbylanguage' class="btn btn-primary twitter-orange"}} Tweet Count by Language {{/link-to}}
+            </div>
+        </div>
+        <div class="card twitter-yellow" style="width: 20rem;">
+          {{ember-chart type='doughnut' data=model.sentiment.data  height=200}}
+            <div class="card-body">
+                <h5 class="card-title">Sentiment Analysis</h5>
+                {{#link-to 'piecharts.sentimentanalyse' class="btn btn-primary twitter-orange"}} Sentiment Analysis {{/link-to}}
             </div>
         </div>
     </div>
