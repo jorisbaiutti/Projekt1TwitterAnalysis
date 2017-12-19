@@ -8,27 +8,9 @@ define('twitter-frontend/adapters/application', ['exports', 'ember-data'], funct
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-
-    var _DS$JSONAPIAdapter$ex;
-
-    function _defineProperty(obj, key, value) {
-        if (key in obj) {
-            Object.defineProperty(obj, key, {
-                value: value,
-                enumerable: true,
-                configurable: true,
-                writable: true
-            });
-        } else {
-            obj[key] = value;
-        }
-
-        return obj;
-    }
-
-    exports.default = _emberData.default.JSONAPIAdapter.extend((_DS$JSONAPIAdapter$ex = {
+    exports.default = _emberData.default.JSONAPIAdapter.extend({
         namespace: 'api'
-    }, _defineProperty(_DS$JSONAPIAdapter$ex, 'namespace', 'api/keyvalueanalyse'), _defineProperty(_DS$JSONAPIAdapter$ex, 'namespace', 'api/charts'), _DS$JSONAPIAdapter$ex));
+    });
 });
 define('twitter-frontend/app', ['exports', 'twitter-frontend/resolver', 'ember-load-initializers', 'twitter-frontend/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
   'use strict';
@@ -711,6 +693,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+2087190d"});
+  require("twitter-frontend/app")["default"].create({"name":"twitter-frontend","version":"0.0.0+54cb0ef4"});
 }
 //# sourceMappingURL=twitter-frontend.map
