@@ -81,3 +81,5 @@ node_modules/
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
+/TwitterBackend/.idea/workspace.xml
+/TwitterBackend/.idea/workspace.xml
