@@ -43,8 +43,8 @@ public abstract class Repository<T extends TwitterEntity> extends java.util.Obse
     }
 
      public TwitterEntity getOne(long id) {
-         User user = entityManager.find(User.class, id);
-         return user;
+         return entityManager.find(User.class, id);
+
 
      }
 
