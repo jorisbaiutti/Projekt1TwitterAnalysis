@@ -80,6 +80,10 @@ public class SentimentAnalyse implements Analyse, Observer{
         sentimentAnalyse.put("% Negative", sentimentValueNegativeinPercent);
     }
 
+    /**
+     *
+     * @return the chart which can be used for display the analyse
+     */
     @Override
     public Chart getChart() {
 

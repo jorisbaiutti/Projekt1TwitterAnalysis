@@ -12,9 +12,13 @@ public class UserRepository extends Repository<User>{
         super(entityManager);
     }
 
+    /**
+     *
+     * @param name is the userName of the Entity User
+     *             this is used for the SQL Query to find the User
+     * @return a User object
+     */
     public User findbyName(String name) {
-
-
         entityManager.getTransaction().begin();
         Query q = entityManager.createQuery("SELECT t FROM User t where t.userName LIKE :name");
         q.setParameter("name", name);

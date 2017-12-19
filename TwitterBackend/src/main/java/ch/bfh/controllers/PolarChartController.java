@@ -26,6 +26,10 @@ public class PolarChartController {
         analysen = new HashSet<>();
     }
 
+    /**
+     *
+     * register a analyse to this specific ChartController in a HashSet of analyses
+     */
     public void registerAnalyse(Analyse<PolarChart> polarChartAnalyse){
         analysen.add(polarChartAnalyse);
     }
@@ -39,6 +43,10 @@ public class PolarChartController {
         return ResponseEntity.ok(finalAnalyse.getChart());
     }
 
+    /**
+     *
+     * @return a List of all registrated PieChart analyses
+     */
     @ApiOperation(value = "View a list of available Analysen")
     @RequestMapping(value = "/list", method= RequestMethod.GET,produces = "application/json")
     ResponseEntity<List<String>> getAnalysen(){

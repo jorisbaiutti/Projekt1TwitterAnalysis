@@ -19,16 +19,27 @@ public class TweetRepository extends Repository<Tweet>{
         super(entityManager);
     }
 
+    /**
+     *
+     * @param content is the String which is the full or a part of the Content of a Tweet
+     *             this is used for the SQL Query to find this Tweets
+     * @return a List of Tweets
+     */
     public List<Tweet> findbyContent(String content) {
         entityManager.getTransaction().begin();
         Query q = entityManager.createQuery("SELECT t FROM Tweet t where t.content LIKE :name");
         q.setParameter("name", "%"+content+"%");
         List<Tweet> tweets = q.getResultList();
         entityManager.getTransaction().commit();
-
         return tweets;
     }
 
+    /**
+     *
+     * @param hashTag is the String which is one of the HashTags of a Tweet
+     *             this is used for the SQL Query to find this Tweets
+     * @return a List of Tweets
+     */
     public List<Tweet> findbyHashtag(String hashTag) {
         entityManager.getTransaction().begin();
         Query q = entityManager.createQuery("SELECT t FROM Tweet t join HashTag h where h.hashTag = :hashTag");
@@ -44,7 +55,6 @@ public class TweetRepository extends Repository<Tweet>{
         entityManager.getTransaction().commit();
         return tweet;
     }
-
 
     @Override
     public List<Tweet> getAll() {

@@ -19,7 +19,6 @@ public class SentimentCategorizer {
      * trains the model with 30 iterations and between 0 and 9
      * @param path URL from the gold standard file
      */
-
     public void trainModel(String path, ModelLanguage langiuage) {
         InputStream dataIn = null;
         try {

@@ -47,6 +47,10 @@ public class TweetsbyTheme implements Analyse, Observer{
         barChartController.registerAnalyse(this);
     }
 
+    /**
+     *
+     *  find all tweets for each topic and count them
+     */
     private void findTweets(){
         List<Tweet> tweets = tweetRepository.getAll();
         topicsCount.forEach((k,v)-> topicsCount.put(k,0));
@@ -60,6 +64,10 @@ public class TweetsbyTheme implements Analyse, Observer{
 
     }
 
+    /**
+     *
+     * @return the chart which can be used for display the analyse
+     */
     @Override
     public Chart getChart() {
 

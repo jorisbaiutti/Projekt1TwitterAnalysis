@@ -26,6 +26,10 @@ public class PieChartController {
         analysen = new HashSet<>();
     }
 
+    /**
+     *
+     * register a analyse to this specific ChartController in a HashSet of analyses
+     */
     public void registerAnalyse(Analyse<PieChart> pieChartAnalyse){
         analysen.add(pieChartAnalyse);
     }
@@ -39,6 +43,10 @@ public class PieChartController {
         return ResponseEntity.ok(finalAnalyse.getChart());
     }
 
+    /**
+     *
+     * @return a List of all registrated PieChart analyses
+     */
     @ApiOperation(value = "View a list of available Analysen")
     @RequestMapping(value = "/list", method= RequestMethod.GET,produces = "application/json")
     private ResponseEntity<List<String>> getAnalysen(){

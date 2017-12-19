@@ -62,7 +62,6 @@ public class TweetsbyLanguage implements Analyse{
      *
      * @return the chart which can be used for display the analyse
      */
-
     @Override
     public Chart getChart() {
 

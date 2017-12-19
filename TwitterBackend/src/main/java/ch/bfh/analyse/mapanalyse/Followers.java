@@ -62,6 +62,10 @@ public class Followers implements Analyse {
         mapChartController.registerAnalyse(this);
     }
 
+    /**
+     *
+     * @return the chart which can be used for display the analyse
+     */
     @Override
     public Chart getChart() {
         return googleMap;

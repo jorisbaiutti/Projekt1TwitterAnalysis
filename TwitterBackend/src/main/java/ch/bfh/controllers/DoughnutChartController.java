@@ -26,6 +26,10 @@ public class DoughnutChartController{
         analysen = new HashSet<>();
     }
 
+    /**
+     *
+     * register a analyse to this specific ChartController in a HashSet of analyses
+     */
     public void registerAnalyse(Analyse<DoughnutChart> doughnutChartAnalyse){
         analysen.add(doughnutChartAnalyse);
     }
@@ -39,6 +43,10 @@ public class DoughnutChartController{
         return ResponseEntity.ok(finalAnalyse.getChart());
     }
 
+    /**
+     *
+     * @return a List of all registrated DoughnutChart analyses
+     */
     @ApiOperation(value = "View a list of available Analysen")
     @RequestMapping(value = "/list", method= RequestMethod.GET,produces = "application/json")
     private ResponseEntity<List<String>> getAnalysen(){

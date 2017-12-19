@@ -26,6 +26,10 @@ public class BarChartController {
         analysen = new HashSet<>();
     }
 
+    /**
+     *
+     * register a analyse to this specific ChartController in a HashSet of analyses
+     */
     public void registerAnalyse(Analyse<BarChart> barChartAnalyse){
         analysen.add(barChartAnalyse);
     }
@@ -37,9 +41,12 @@ public class BarChartController {
             throw new EntityNotFoundException("Analyse not found " + analyse);
         }
         return ResponseEntity.ok(finalAnalyse.getChart());
-
     }
 
+    /**
+     *
+     * @return a List of all registrated BarChart analyses
+     */
     @ApiOperation(value = "View a list of available Analysen")
     @RequestMapping(value = "/list", method= RequestMethod.GET,produces = "application/json")
     ResponseEntity<List<String>> getAnalysen(){

@@ -26,7 +26,10 @@ public class MapAnalyse implements Analyse{
         mapChartController.registerAnalyse(this);
     }
 
-
+    /**
+     *
+     * @return the chart which can be used for display the analyse
+     */
     @Override
     public Chart getChart() {
         GoogleMap googleMap = new GoogleMap("testmap",8.5661791,46.8207642);

@@ -26,6 +26,10 @@ public class BubbleChartController {
         analysen = new HashSet<>();
     }
 
+    /**
+     *
+     * register a analyse to this specific ChartController in a HashSet of analyses
+     */
     public void registerAnalyse(Analyse<BubbleChart> bubbleChartAnalyse){
         analysen.add(bubbleChartAnalyse);
     }
@@ -39,6 +43,10 @@ public class BubbleChartController {
         return ResponseEntity.ok(finalAnalyse.getChart());
     }
 
+    /**
+     *
+     * @return a List of all registrated BubbleChart analyses
+     */
     @ApiOperation(value = "View a list of available Analysen")
     @RequestMapping(value = "/list", method= RequestMethod.GET,produces = "application/json")
     ResponseEntity<List<String>> getAnalysen(){

@@ -26,6 +26,10 @@ public class MapChartController {
         analysen = new HashSet<>();
     }
 
+    /**
+     *
+     * register a analyse to this specific ChartController in a HashSet of analyses
+     */
     public void registerAnalyse(Analyse<GoogleMap> mapAnalyse){
         analysen.add(mapAnalyse);
     }
@@ -37,9 +41,12 @@ public class MapChartController {
             throw new EntityNotFoundException("Analyse not found " + analyse);
         }
         return ResponseEntity.ok(finalAnalyse.getChart());
-
     }
 
+    /**
+     *
+     * @return a List of all registrated MapChart analyses
+     */
     @ApiOperation(value = "View a list of available Analysen")
     @RequestMapping(value = "/list", method= RequestMethod.GET,produces = "application/json")
     ResponseEntity<List<String>> getAnalysen(){
