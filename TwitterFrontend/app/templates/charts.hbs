@@ -36,7 +36,14 @@
           {{ember-chart type='doughnut' data=model.sentiment.data  height=200}}
             <div class="card-body">
                 <h5 class="card-title">Sentiment Analysis</h5>
-                {{#link-to 'piecharts.sentimentanalyse' class="btn btn-primary twitter-orange"}} Sentiment Analysis {{/link-to}}
+                {{#link-to 'doughnutcharts.sentimentanalyse' class="btn btn-primary twitter-orange"}} Sentiment Analysis {{/link-to}}
+            </div>
+        </div>
+         <div class="card twitter-yellow" style="width: 20rem;">
+          {{ember-chart type='horizontalBar' data=model.sentiment.data  height=200}}
+            <div class="card-body">
+                <h5 class="card-title">Retweets by Theme</h5>
+                {{#link-to 'barcharts.retweetsbytheme' class="btn btn-primary twitter-orange"}} Retweets by theme {{/link-to}}
             </div>
         </div>
     </div>

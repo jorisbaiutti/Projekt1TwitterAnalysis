@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="" />
+    <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/samplepackage/SampleAnalyse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/scheduler/Scheduler.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwitterBackend.iml" afterPath="$PROJECT_DIR$/TwitterBackend.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/MapAnalyse.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/MapAnalyse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetsbytheme/TweetsbyTheme.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetsbytheme/TweetsbyTheme.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/router.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/routes/charts.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/routes/charts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/templates/charts.hbs" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/templates/charts.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.css" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/test-support.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/tests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/twitter-frontend.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.map" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/assets/vendor.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/index.html" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/dist/tests/index.html" afterPath="$PROJECT_DIR$/../TwitterFrontend/dist/tests/index.html" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -16,105 +39,86 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="TwitterBackend" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <file leaf-file-name="DoughnutChartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+            <state relative-caret-position="-41">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleAnalyse.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java">
+      <file leaf-file-name="SentimentAnalyse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="323">
+              <caret line="44" column="130" lean-forward="false" selection-start-line="44" selection-start-column="130" selection-end-line="44" selection-end-column="130" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Followers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UpdateTweets.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="45" column="45" lean-forward="false" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntityManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/util/EntityManager.java">
+      <file leaf-file-name="TweetthemebyRetweet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetthemebyretweet/TweetthemebyRetweet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapsUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/util/MapsUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TwitterUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/util/TwitterUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java">
+      <file leaf-file-name="PieChartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TwitterStream.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java">
+      <file leaf-file-name="PolarChartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PolarChartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1598">
-              <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScatterLineChartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ScatterLineChartController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TweetsbyLanguage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-799">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,8 +127,30 @@
       <file leaf-file-name="SentimentCategorizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="28" column="140" lean-forward="false" selection-start-line="28" selection-start-column="140" selection-end-line="28" selection-end-column="140" />
+            <state relative-caret-position="-354">
+              <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+              <folding>
+                <marker date="1513705719238" expanded="true" signature="2509:2515" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelLanguage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/ModelLanguage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BarChartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -165,7 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/assembler/KeyValueResourceAssembler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/TestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PersonController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/KeyValueAnalyse.java" />
@@ -176,7 +201,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/assembler/SampleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/SampleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetsbytheme/TweetsbyTheme.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/AreaChartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PolarChartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java" />
@@ -187,13 +211,11 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ScatterLineChartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/tests/PersistenceTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/OpenNLPCategorizer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/resources/inputfiles/sentimentinput.txt" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java" />
@@ -211,11 +233,15 @@
         <option value="$PROJECT_DIR$/src/test/java/ch/bfh/controllers/BarChartControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/util/MapsUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/util/TwitterUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetsbytheme/TweetsbyTheme.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/MapAnalyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java" />
       </list>
     </option>
   </component>
@@ -250,7 +276,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1927" />
+    <option name="x" value="-7" />
     <option name="width" value="1932" />
     <option name="height" value="1047" />
   </component>
@@ -270,7 +296,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,7 +357,132 @@
               <item name="ch" type="462c0819:PsiDirectoryNode" />
               <item name="bfh" type="462c0819:PsiDirectoryNode" />
               <item name="analyse" type="462c0819:PsiDirectoryNode" />
+              <item name="languageanalyse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
+              <item name="mapanalyse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
               <item name="sampleanalyse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
+              <item name="sentimentanalyse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
+              <item name="tweetsbytheme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
+              <item name="tweetthemebyretweet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="categorizer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="chartsmodel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="twitter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
@@ -353,22 +503,6 @@
               <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
               <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="outputFiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -394,6 +528,27 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ch" type="462c0819:PsiDirectoryNode" />
               <item name="bfh" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
+              <item name="sentimentanalyse" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
@@ -405,20 +560,31 @@
               <item name="bfh" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/gitProjects/ch.bfh.bti7535.w2017.dataGreen" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -433,8 +599,8 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="ch.bfh.controllers" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Patrick\IdeaProjects\Projekt1TwitterAnalysis\TwitterBackend\src\main\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ch.bfh.beans" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ch.bfh" />
@@ -442,8 +608,8 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="ch.bfh.beans" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Patrick\IdeaProjects\Projekt1TwitterAnalysis\TwitterBackend\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1108,6 +1274,9 @@
       <workItem from="1513507314067" duration="10386000" />
       <workItem from="1513614109738" duration="1251000" />
       <workItem from="1513703049230" duration="84000" />
+      <workItem from="1513705982526" duration="29000" />
+      <workItem from="1513706048940" duration="55000" />
+      <workItem from="1513706281298" duration="2337000" />
     </task>
     <task id="LOCAL-00001" summary="added BarChart Controller">
       <created>1510322367264</created>
@@ -1159,42 +1328,42 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212814000" />
+    <option name="totallyTimeSpent" value="215235000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1927" y="0" width="1932" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39891306" sideWeight="0.50213677" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.113829784" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4061471" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39891306" sideWeight="0.50213677" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11431624" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4917673" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41383097" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23344018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24145299" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4061471" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1272,938 +1441,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.3.RELEASE/spring-test-4.3.3.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunBeforeTestMethodCallbacks.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BubbleChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PolarChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/RadarChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ScatterLineChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/MapChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.3.RELEASE/spring-test-4.3.3.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestMethodCallbacks.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/scheduler/Scheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="" y="">groovyjarjarantlr.LLkGrammarAnalyzer</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRParser</node>
-            <node x="" y="">java</node>
-            <node x="" y="">okhttp3</node>
-            <node x="" y="">groovyjarjarantlr.PreservingFileWriter</node>
-            <node x="" y="">javafx</node>
-            <node x="" y="">groovyjarjarantlr.MismatchedCharException</node>
-            <node x="" y="">groovyjarjarantlr.ASTFactory</node>
-            <node x="" y="">groovyjarjarantlr.ParserSharedInputState</node>
-            <node x="" y="">groovyjarjarcommonscli.TypeHandler</node>
-            <node x="" y="">antlr</node>
-            <node x="" y="">aj</node>
-            <node x="" y="">groovyjarjarantlr.CommonToken</node>
-            <node x="" y="">groovyjarjarantlr.PythonCodeGenerator</node>
-            <node x="" y="">groovyjarjarantlr.StringLiteralElement</node>
-            <node x="" y="">groovyjarjarantlr.InputBuffer</node>
-            <node x="" y="">groovyjarjarantlr.ASTIterator</node>
-            <node x="" y="">META-INF</node>
-            <node x="" y="">groovyjarjarantlr.ParseTree</node>
-            <node x="" y="">groovy</node>
-            <node x="" y="">groovyjarjarantlr.TokenStream</node>
-            <node x="" y="">groovyjarjarantlr.debug</node>
-            <node x="" y="">groovyjarjarantlr.SimpleTokenManager</node>
-            <node x="" y="">okio</node>
-            <node x="" y="">groovyjarjarantlr.ASTNULLType</node>
-            <node x="" y="">groovyjarjarantlr.SynPredBlock</node>
-            <node x="" y="">groovyjarjarantlr.CharScanner</node>
-            <node x="" y="">netscape</node>
-            <node x="" y="">groovyjarjarantlr.build</node>
-            <node x="" y="">be</node>
-            <node x="" y="">groovyjarjarantlr.CharStreamIOException</node>
-            <node x="" y="">rx</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamRecognitionException</node>
-            <node x="" y="">groovyjarjarcommonscli.CommandLineParser</node>
-            <node x="" y="">groovyjarjarantlr.JavaCharFormatter</node>
-            <node x="" y="">sun</node>
-            <node x="" y="">groovyjarjarcommonscli.PosixParser</node>
-            <node x="" y="">ch</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRStringBuffer</node>
-            <node x="" y="">groovyjarjarantlr.actions</node>
-            <node x="" y="">groovyjarjarantlr.GrammarAtom</node>
-            <node x="" y="">jdk</node>
-            <node x="" y="">groovyjarjarantlr.RuleEndElement</node>
-            <node x="" y="">groovyjarjarantlr.ToolErrorHandler</node>
-            <node x="" y="">groovyjarjarantlr.DefineGrammarSymbols</node>
-            <node x="" y="">groovyjarjarantlr.TreeParserSharedInputState</node>
-            <node x="" y="">groovyjarjarantlr.StringLiteralSymbol</node>
-            <node x="" y="">outputFiles</node>
-            <node x="" y="">groovyjarjarantlr.ASdebug</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamIOException</node>
-            <node x="" y="">groovyjarjarantlr.DefaultToolErrorHandler</node>
-            <node x="" y="">microsoft</node>
-            <node x="" y="">groovyjarjarantlr.Grammar</node>
-            <node x="" y="">groovyjarjarantlr.CharFormatter</node>
-            <node x="" y="">groovyjarjarantlr.PythonCharFormatter</node>
-            <node x="" y="">springfox</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRError</node>
-            <node x="" y="">groovyjarjarasm</node>
-            <node x="" y="">javax</node>
-            <node x="" y="">groovyjarjarantlr.TokenWithIndex</node>
-            <node x="" y="">groovyjarjarantlr.FileCopyException</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamRewriteEngine</node>
-            <node x="" y="">groovyjarjarantlr.Token</node>
-            <node x="" y="">groovyjarjarantlr.Version</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRTokdefParserTokenTypes</node>
-            <node x="" y="">groovyjarjarantlr.TokenSymbol</node>
-            <node x="" y="">oracle</node>
-            <node x="" y="">groovyjarjarantlr.collections</node>
-            <node x="" y="">groovyjarjarantlr.HTMLCodeGenerator</node>
-            <node x="" y="">mozilla</node>
-            <node x="" y="">groovyjarjarcommonscli.MissingOptionException</node>
-            <node x="" y="">groovyjarjarcommonscli.OptionGroup</node>
-            <node x="" y="">groovyjarjarcommonscli.MissingArgumentException</node>
-            <node x="" y="">groovyjarjarantlr.AlternativeElement</node>
-            <node x="" y="">groovyjarjarantlr.LexerGrammar</node>
-            <node x="" y="">groovyjarjarantlr.StringUtils</node>
-            <node x="" y="">groovyjarjarantlr.TreeBlockContext</node>
-            <node x="" y="">groovyjarjarantlr.CSharpCodeGenerator</node>
-            <node x="" y="">groovyjarjarantlr.DiagnosticCodeGenerator</node>
-            <node x="" y="">groovyjarjarantlr.LLkAnalyzer</node>
-            <node x="" y="">groovyjarjarantlr.TreeElement</node>
-            <node x="" y="">groovyjarjarantlr.NameSpace</node>
-            <node x="" y="">junit</node>
-            <node x="" y="">org</node>
-            <node x="" y="">groovyjarjarantlr.ASTPair</node>
-            <node x="" y="">groovyjarjarantlr.CharBuffer</node>
-            <node x="" y="">groovyjarjarantlr.NoViableAltForCharException</node>
-            <node x="" y="">groovyjarjarantlr.ParserGrammar</node>
-            <node x="" y="">groovyjarjarantlr.BaseAST</node>
-            <node x="" y="">groovyjarjarantlr.ImportVocabTokenManager</node>
-            <node x="" y="">groovyjarjarantlr.CppCharFormatter</node>
-            <node x="" y="">groovyjarjarcommonscli.OptionBuilder</node>
-            <node x="" y="">groovyjarjarantlr.Lookahead</node>
-            <node x="" y="">groovyjarjarantlr.CommonASTWithHiddenTokens</node>
-            <node x="" y="">groovyjarjarantlr.BlockWithImpliedExitPath</node>
-            <node x="" y="">groovyjarjarantlr.TreeWalkerGrammar</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRHashString</node>
-            <node x="" y="">groovyjarjarantlr.BlockEndElement</node>
-            <node x="" y="">groovyjarjarantlr.CSharpNameSpace</node>
-            <node x="" y="">groovyjarjarantlr.ParseTreeToken</node>
-            <node x="" y="">groovyjarjarantlr.CommonAST</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamRetryException</node>
-            <node x="" y="">groovyjarjarantlr.ZeroOrMoreBlock</node>
-            <node x="" y="">groovyjarjarantlr.TokenRangeElement</node>
-            <node x="" y="">groovyjarjarcommonscli.HelpFormatter</node>
-            <node x="" y="">groovyjarjarcommonscli.Options</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRTokdefParser</node>
-            <node x="" y="">groovyjarjarantlr.TokenManager</node>
-            <node x="" y="">groovyjarjarantlr.DocBookCodeGenerator</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamRewriteEngine.InsertBeforeOp</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamHiddenTokenFilter</node>
-            <node x="" y="">groovyjarjarantlr.JavaBlockFinishingInfo</node>
-            <node x="" y="">groovyjarjarantlr.CSharpBlockFinishingInfo</node>
-            <node x="" y="">groovyjarjarcommonscli.GroovyInternalPosixParser</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamRewriteEngine.ReplaceOp</node>
-            <node x="" y="">groovyjarjarantlr.RuleBlock</node>
-            <node x="" y="">io</node>
-            <node x="" y="">groovyjarjarantlr.Utils</node>
-            <node x="" y="">groovyjarjarantlr.CodeGenerator</node>
-            <node x="" y="">groovyjarjarantlr.TreeParser</node>
-            <node x="" y="">groovyjarjarantlr.GrammarSymbol</node>
-            <node x="" y="">groovyjarjarantlr.PrintWriterWithSMAP</node>
-            <node x="" y="">groovyjarjarcommonscli.AlreadySelectedException</node>
-            <node x="" y="">groovyjarjarantlr.CharQueue</node>
-            <node x="" y="">groovyjarjarantlr.OneOrMoreBlock</node>
-            <node x="" y="">groovyjarjarantlr.TokenQueue</node>
-            <node x="" y="">groovyjarjarantlr.FileLineFormatter</node>
-            <node x="" y="">groovyjarjarantlr.SemanticException</node>
-            <node x="" y="">groovyjarjarantlr.ByteBuffer</node>
-            <node x="" y="">groovyjarjarcommonscli.Option</node>
-            <node x="" y="">groovyjarjarcommonscli.ParseException</node>
-            <node x="" y="">groovyjarjarantlr.CharLiteralElement</node>
-            <node x="" y="">groovyjarjarantlr.WildcardElement</node>
-            <node x="" y="">groovyjarjarantlr.Tool</node>
-            <node x="" y="">groovyjarjarantlr.NoViableAltException</node>
-            <node x="" y="">groovyjarjarantlr.MismatchedTokenException</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamRewriteEngine.RewriteOperation</node>
-            <node x="" y="">groovyjarjarantlr.ActionElement</node>
-            <node x="" y="">groovyjarjarantlr.ActionTransInfo</node>
-            <node x="" y="">groovyjarjarcommonscli.CommandLine</node>
-            <node x="" y="">opennlp</node>
-            <node x="" y="">groovyjarjarcommonscli.OptionValidator</node>
-            <node x="" y="">groovyjarjarcommonscli.BasicParser</node>
-            <node x="" y="">groovyjarjarantlr.JavaCodeGenerator</node>
-            <node x="" y="">groovyjarjarantlr.BlockContext</node>
-            <node x="" y="">groovyjarjarantlr.CSharpCharFormatter</node>
-            <node x="" y="">groovyjarjarantlr.RuleSymbol</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamBasicFilter</node>
-            <node x="" y="">groovyjarjarantlr.JavaCodeGeneratorPrintWriterManager</node>
-            <node x="" y="">groovyjarjarantlr.ExceptionHandler</node>
-            <node x="" y="">com</node>
-            <node x="" y="">groovyjarjarantlr.GrammarAnalyzer</node>
-            <node x="" y="">groovyjarjarantlr.ASTVisitor</node>
-            <node x="" y="">groovyjarjarantlr.TokenBuffer</node>
-            <node x="" y="">groovyjarjarantlr.PythonBlockFinishingInfo</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamSelector</node>
-            <node x="" y="">groovyjarjarantlr.CommonHiddenStreamToken</node>
-            <node x="" y="">groovyjarjarantlr.RuleRefElement</node>
-            <node x="" y="">net</node>
-            <node x="" y="">javassist</node>
-            <node x="" y="">groovyjarjarantlr.ParseTreeRule</node>
-            <node x="" y="">groovyjarjarantlr.TokenRefElement</node>
-            <node x="" y="">groovyjarjarantlr.Alternative</node>
-            <node x="" y="">groovyjarjarantlr.CppCodeGenerator</node>
-            <node x="" y="">groovyjarjarcommonscli.HelpFormatter.OptionComparator</node>
-            <node x="" y="">groovyjarjarantlr.CharStreamException</node>
-            <node x="" y="">groovyjarjarantlr.DumpASTVisitor</node>
-            <node x="" y="">groovyjarjarantlr.MakeGrammar</node>
-            <node x="" y="">groovyjarjarcommonscli.GnuParser</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRException</node>
-            <node x="" y="">groovyjarjarantlr.RecognitionException</node>
-            <node x="" y="">groovyjarjarantlr.preprocessor</node>
-            <node x="" y="">groovyjarjarantlr.LexerSharedInputState</node>
-            <node x="" y="">groovyjarjarantlr.Parser</node>
-            <node x="" y="">groovyjarjarantlr.AlternativeBlock</node>
-            <node x="" y="">groovyjarjarantlr.ExceptionSpec</node>
-            <node x="" y="">twitter4j</node>
-            <node x="" y="">groovyjarjarantlr.TreeSpecifierNode</node>
-            <node x="" y="">groovyjarjarantlr.CharRangeElement</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRGrammarParseBehavior</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRTokdefLexer</node>
-            <node x="" y="">groovyjarjarcommonscli.UnrecognizedOptionException</node>
-            <node x="" y="">groovyjarjarantlr.GrammarElement</node>
-            <node x="" y="">groovyjarjarantlr.DefaultJavaCodeGeneratorPrintWriterManager</node>
-            <node x="" y="">groovyjarjarcommonscli.PatternOptionBuilder</node>
-            <node x="" y="">inputfiles</node>
-            <node x="" y="">groovyjarjarantlr.DefaultFileLineFormatter</node>
-            <node x="" y="">groovyjarjarantlr.LLkParser</node>
-            <node x="" y="">groovyjarjarcommonscli.Parser</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRTokenTypes</node>
-            <node x="" y="">groovyjarjarcommonscli.Util</node>
-            <node x="" y="">groovyjarjarantlr.ANTLRLexer</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamException</node>
-            <node x="" y="">groovyjarjarantlr.TokenStreamRewriteEngine.DeleteOp</node>
-            <node x="" y="">groovyjarjarantlr.CppBlockFinishingInfo</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="1290.0" y="1208.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/ch.bfh">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>ch.bfh</OriginalElement>
-          <nodes>
-            <node x="4456.724023530815" y="1627.0">ch.bfh.analyse.mapanalyse</node>
-            <node x="734.0" y="1627.0">ch.bfh.controllers.RadarChartControllerTest</node>
-            <node x="374.0" y="1627.0">ch.bfh.controllers.ScatterLineChartControllerTest</node>
-            <node x="271.0" y="1801.0">ch.bfh.AppTest</node>
-            <node x="5459.581250000001" y="122.5">ch.bfh.util.EntityManager</node>
-            <node x="4105.770833333334" y="1005.5">ch.bfh.repositories.TweetRepository</node>
-            <node x="5346.081250000001" y="0.0">ch.bfh.entities.TwitterEntity</node>
-            <node x="2181.6646651205056" y="1005.5">ch.bfh.controllers.BubbleChartController</node>
-            <node x="2289.5" y="502.5">ch.bfh.analyse.Analyse</node>
-            <node x="3739.9753512037473" y="1627.0">ch.bfh.analyse.tweetsbytheme</node>
-            <node x="4728.177838993735" y="403.0">ch.bfh.entities.Tweet</node>
-            <node x="5442.302838993735" y="1549.0">ch.bfh.twitter.TwitterStream</node>
-            <node x="4391.237500000001" y="424.5">ch.bfh.chartsmodel.GoogleMap</node>
-            <node x="2884.3277062762113" y="1627.0">ch.bfh.analyse.sentimentanalyse</node>
-            <node x="4282.362500000001" y="112.0">ch.bfh.chartsmodel.GoogleMarker</node>
-            <node x="2518.96875" y="1627.0">ch.bfh.controllers.BubbleChartControllerTest</node>
-            <node x="4924.302838993735" y="1527.0">ch.bfh.twitter.UpdateTweets</node>
-            <node x="0.0" y="1801.0">ch.bfh.scheduler.Scheduler</node>
-            <node x="4555.204166666668" y="1050.5">ch.bfh.util.MapsUtil</node>
-            <node x="3919.9753512037473" y="1627.0">ch.bfh.analyse.languageanalyse</node>
-            <node x="1357.0" y="1005.5">ch.bfh.controllers.PolarChartController</node>
-            <node x="2854.5" y="1016.5">ch.bfh.categorizer.SentimentCategorizer</node>
-            <node x="3249.8086868596365" y="1005.5">ch.bfh.controllers.BarChartController</node>
-            <node x="2203.375" y="1582.5">ch.bfh.controllers.PieChartControllerTest</node>
-            <node x="5629.133143381376" y="1039.0">ch.bfh.repositories.HashTagRepository</node>
-            <node x="747.6676940661982" y="502.0">ch.bfh.exception.EntityNotFoundException</node>
-            <node x="471.0" y="1801.0">ch.bfh.StartApplication</node>
-            <node x="5857.552838993735" y="112.0">ch.bfh.entities.HashTag</node>
-            <node x="3075.3277062762113" y="1582.5">ch.bfh.controllers.BarChartControllerTest</node>
-            <node x="5324.945833333334" y="435.0">ch.bfh.repositories.Repository</node>
-            <node x="0.0" y="1039.0">ch.bfh.exception.ControllerExceptionHandler</node>
-            <node x="2520.6646651205056" y="1005.5">ch.bfh.controllers.PieChartController</node>
-            <node x="5119.323672327069" y="79.0">ch.bfh.entities.User</node>
-            <node x="1422.0" y="1627.0">ch.bfh.controllers.PolarChartControllerTest</node>
-            <node x="1001.0" y="1005.5">ch.bfh.controllers.DoughnutChartController</node>
-            <node x="1704.5" y="1005.5">ch.bfh.controllers.LineChartController</node>
-            <node x="4659.302838993735" y="1604.5">ch.bfh.PersistenceTests</node>
-            <node x="1650.5" y="1627.0">ch.bfh.analyse.sampleanalyse</node>
-            <node x="669.0" y="1005.5">ch.bfh.controllers.RadarChartController</node>
-            <node x="5373.133143381376" y="1027.5">ch.bfh.repositories.UserRepository</node>
-            <node x="309.0" y="1005.5">ch.bfh.controllers.ScatterLineChartController</node>
-            <node x="3581.8956433813755" y="1005.5">ch.bfh.controllers.MapChartController</node>
-            <node x="685.0" y="1801.0">ch.bfh.StartApplicationTest</node>
-            <node x="3401.933684537081" y="1582.5">ch.bfh.controllers.MapChartControllerTest</node>
-            <node x="1826.5" y="1582.5">ch.bfh.controllers.LineChartControllerTest</node>
-            <node x="4901.386172327069" y="995.0">ch.bfh.util.TwitterUtil</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="ch.bfh.controllers.RadarChartController" target="ch.bfh.analyse.Analyse">
-              <point x="104.0" y="-70.5" />
-              <point x="929.0" y="895.0" />
-              <point x="2307.304347826087" y="895.0" />
-              <point x="-40.695652173913004" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.MapChartController" target="ch.bfh.chartsmodel.GoogleMap">
-              <point x="63.0" y="-70.5" />
-              <point x="3802.3956433813755" y="885.0" />
-              <point x="4417.137500000001" y="885.0" />
-              <point x="-103.59999999999991" y="114.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.sentimentanalyse" target="ch.bfh.categorizer.SentimentCategorizer">
-              <point x="-10.6875" y="-14.5" />
-              <point x="2959.1402062762113" y="1477.0" />
-              <point x="2916.0" y="1477.0" />
-              <point x="-61.5" y="59.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.languageanalyse" target="ch.bfh.analyse.Analyse">
-              <point x="-13.916666666666629" y="-14.5" />
-              <point x="3989.558684537081" y="1377.0" />
-              <point x="3571.3956433813755" y="1377.0" />
-              <point x="3571.3956433813755" y="735.0" />
-              <point x="2388.695652173913" y="735.0" />
-              <point x="40.695652173913004" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.mapanalyse" target="ch.bfh.controllers.MapChartController">
-              <point x="-66.26666666666665" y="-14.5" />
-              <point x="4461.457356864148" y="1367.0" />
-              <point x="3778.7706433813755" y="1367.0" />
-              <point x="39.375" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.sentimentanalyse" target="ch.bfh.controllers.PieChartController">
-              <point x="-74.8125" y="-14.5" />
-              <point x="2895.0152062762113" y="1507.0" />
-              <point x="2711.9146651205056" y="1507.0" />
-              <point x="38.25" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.BubbleChartController" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="-106.33333333333348" y="-70.5" />
-              <point x="2234.831331787172" y="825.0" />
-              <point x="907.5676940661979" y="825.0" />
-              <point x="36.899999999999864" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.repositories.UserRepository" target="ch.bfh.repositories.Repository">
-              <point x="-78.66666666666674" y="-48.5" />
-              <point x="5412.466476714709" y="975.0" />
-              <point x="5450.445833333334" y="975.0" />
-              <point x="0.0" y="104.0" />
-            </edge>
-            <edge source="ch.bfh.repositories.TweetRepository" target="ch.bfh.entities.Tweet">
-              <point x="-85.0" y="-70.5" />
-              <point x="4148.270833333334" y="945.0" />
-              <point x="4804.677838993735" y="945.0" />
-              <point x="-17.0" y="136.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.BarChartController" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="-102.0" y="-70.5" />
-              <point x="3300.8086868596365" y="775.0" />
-              <point x="956.7676940661981" y="775.0" />
-              <point x="86.09999999999991" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.analyse.mapanalyse" target="ch.bfh.util.TwitterUtil">
-              <point x="66.26666666666665" y="-14.5" />
-              <point x="4593.990690197482" y="1507.0" />
-              <point x="4961.136172327069" y="1507.0" />
-              <point x="-59.75" y="81.0" />
-            </edge>
-            <edge source="ch.bfh.twitter.TwitterStream" target="ch.bfh.util.TwitterUtil">
-              <point x="-159.75" y="-92.5" />
-              <point x="5531.052838993735" y="1217.0" />
-              <point x="5080.636172327069" y="1217.0" />
-              <point x="59.75" y="81.0" />
-            </edge>
-            <edge source="ch.bfh.analyse.languageanalyse" target="ch.bfh.controllers.BarChartController">
-              <point x="-69.58333333333337" y="-14.5" />
-              <point x="3933.892017870414" y="1397.0" />
-              <point x="3479.3086868596365" y="1397.0" />
-              <point x="76.5" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.RadarChartControllerTest" target="ch.bfh.controllers.RadarChartController">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.LineChartControllerTest" target="ch.bfh.controllers.LineChartController">
-              <point x="69.25" y="-59.0" />
-              <point x="2034.25" y="1507.0" />
-              <point x="1972.25" y="1507.0" />
-              <point x="114.75" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.mapanalyse" target="ch.bfh.repositories.TweetRepository">
-              <point x="-37.86666666666679" y="-14.5" />
-              <point x="4489.857356864149" y="1337.0" />
-              <point x="4233.270833333334" y="1337.0" />
-              <point x="0.0" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.PersistenceTests" target="ch.bfh.repositories.TweetRepository">
-              <point x="-61.25" y="-37.0" />
-              <point x="4720.552838993735" y="1287.0" />
-              <point x="4272.501602564103" y="1287.0" />
-              <point x="39.23076923076917" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.BarChartControllerTest" target="ch.bfh.controllers.BarChartController">
-              <point x="-67.5" y="-59.0" />
-              <point x="3142.8277062762113" y="1437.0" />
-              <point x="3275.3086868596365" y="1437.0" />
-              <point x="-127.5" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.tweetsbytheme" target="ch.bfh.entities.Tweet">
-              <point x="13.333333333333485" y="-14.5" />
-              <point x="3833.308684537081" y="1447.0" />
-              <point x="3932.999810048042" y="1447.0" />
-              <point x="3932.999810048042" y="925.0" />
-              <point x="4770.677838993735" y="925.0" />
-              <point x="-51.0" y="136.0" />
-            </edge>
-            <edge source="ch.bfh.categorizer.SentimentCategorizer" target="ch.bfh.entities.Tweet">
-              <point x="0.0" y="-59.5" />
-              <point x="2977.5" y="905.0" />
-              <point x="4736.677838993735" y="905.0" />
-              <point x="-85.0" y="136.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.PieChartController" target="ch.bfh.analyse.Analyse">
-              <point x="102.0" y="-70.5" />
-              <point x="2775.6646651205056" y="795.0" />
-              <point x="2363.260869565218" y="795.0" />
-              <point x="15.26086956521749" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.BubbleChartController" target="ch.bfh.analyse.Analyse">
-              <point x="106.33333333333348" y="-70.5" />
-              <point x="2447.497998453839" y="975.0" />
-              <point x="2353.086956521739" y="975.0" />
-              <point x="5.086956521739012" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.twitter.TwitterStream" target="ch.bfh.repositories.UserRepository">
-              <point x="-17.75" y="-92.5" />
-              <point x="5673.052838993735" y="1177.0" />
-              <point x="5579.633143381376" y="1177.0" />
-              <point x="88.5" y="48.5" />
-            </edge>
-            <edge source="ch.bfh.entities.Tweet" target="ch.bfh.entities.User">
-              <point x="-53.428571428571416" y="-136.0" />
-              <point x="4768.249267565164" y="323.0" />
-              <point x="5129.386172327069" y="323.0" />
-              <point x="-70.4375" y="92.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.DoughnutChartController" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="-112.0" y="-70.5" />
-              <point x="1057.0" y="855.0" />
-              <point x="833.7676940661981" y="855.0" />
-              <point x="-36.90000000000009" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.twitter.UpdateTweets" target="ch.bfh.entities.Tweet">
-              <point x="24.90000000000009" y="-114.5" />
-              <point x="5198.202838993735" y="1507.0" />
-              <point x="5184.561172327069" y="1507.0" />
-              <point x="5184.561172327069" y="945.0" />
-              <point x="4872.677838993735" y="945.0" />
-              <point x="51.0" y="136.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.MapChartController" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="-126.0" y="-70.5" />
-              <point x="3613.3956433813755" y="725.0" />
-              <point x="981.367694066198" y="725.0" />
-              <point x="110.70000000000005" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.repositories.Repository" target="ch.bfh.entities.User">
-              <point x="-83.66666666666669" y="-104.0" />
-              <point x="5366.779166666667" y="353.0" />
-              <point x="5209.886172327069" y="353.0" />
-              <point x="10.0625" y="92.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.MapChartController" target="ch.bfh.analyse.Analyse">
-              <point x="0.0" y="-70.5" />
-              <point x="3739.3956433813755" y="705.0" />
-              <point x="2398.869565217392" y="705.0" />
-              <point x="50.86956521739148" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.repositories.HashTagRepository" target="ch.bfh.repositories.Repository">
-              <point x="-86.66666666666669" y="-37.0" />
-              <point x="5672.466476714709" y="955.0" />
-              <point x="5534.112500000001" y="955.0" />
-              <point x="83.66666666666669" y="104.0" />
-            </edge>
-            <edge source="ch.bfh.twitter.UpdateTweets" target="ch.bfh.util.TwitterUtil">
-              <point x="-124.50000000000006" y="-114.5" />
-              <point x="5048.802838993735" y="1257.0" />
-              <point x="5000.969505660402" y="1257.0" />
-              <point x="-19.916666666666742" y="81.0" />
-            </edge>
-            <edge source="ch.bfh.analyse.mapanalyse" target="ch.bfh.chartsmodel.GoogleMap">
-              <point x="0.0" y="-14.5" />
-              <point x="4527.724023530815" y="1297.0" />
-              <point x="4520.737500000001" y="1297.0" />
-              <point x="0.0" y="114.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.tweetsbytheme" target="ch.bfh.repositories.TweetRepository">
-              <point x="40.0" y="-14.5" />
-              <point x="3859.9753512037473" y="1477.0" />
-              <point x="4154.809294871795" y="1477.0" />
-              <point x="-78.46153846153845" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.exception.ControllerExceptionHandler" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="0.0" y="-37.0" />
-              <point x="144.5" y="835.0" />
-              <point x="759.9676940661984" y="835.0" />
-              <point x="-110.70000000000005" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.ScatterLineChartController" target="ch.bfh.analyse.Analyse">
-              <point x="113.33333333333348" y="-70.5" />
-              <point x="592.3333333333335" y="875.0" />
-              <point x="2297.130434782609" y="875.0" />
-              <point x="-50.86956521739148" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.LineChartController" target="ch.bfh.analyse.Analyse">
-              <point x="0.0" y="-70.5" />
-              <point x="1857.5" y="955.0" />
-              <point x="2337.826086956522" y="955.0" />
-              <point x="-10.173913043478478" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.BubbleChartControllerTest" target="ch.bfh.controllers.BubbleChartController">
-              <point x="0.0" y="-14.5" />
-              <point x="2613.46875" y="1487.0" />
-              <point x="2341.1646651205056" y="1487.0" />
-              <point x="0.0" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.tweetsbytheme" target="ch.bfh.analyse.Analyse">
-              <point x="-13.333333333333485" y="-14.5" />
-              <point x="3806.642017870414" y="1407.0" />
-              <point x="3566.3086868596365" y="1407.0" />
-              <point x="3566.3086868596365" y="745.0" />
-              <point x="2383.608695652174" y="745.0" />
-              <point x="35.60869565217399" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.languageanalyse" target="ch.bfh.entities.Tweet">
-              <point x="13.916666666666629" y="-14.5" />
-              <point x="4017.392017870414" y="1447.0" />
-              <point x="4095.270833333334" y="1447.0" />
-              <point x="4095.270833333334" y="935.0" />
-              <point x="4787.677838993735" y="935.0" />
-              <point x="-34.0" y="136.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.ScatterLineChartControllerTest" target="ch.bfh.controllers.ScatterLineChartController">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.entities.User" target="ch.bfh.entities.TwitterEntity">
-              <point x="0.0" y="-92.0" />
-              <point x="5199.823672327069" y="59.0" />
-              <point x="5389.206250000001" y="59.0" />
-              <point x="-14.375" y="14.5" />
-            </edge>
-            <edge source="ch.bfh.twitter.UpdateTweets" target="ch.bfh.repositories.TweetRepository">
-              <point x="-174.30000000000007" y="-114.5" />
-              <point x="4999.002838993735" y="1267.0" />
-              <point x="4311.732371794872" y="1267.0" />
-              <point x="78.46153846153845" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.PieChartControllerTest" target="ch.bfh.controllers.PieChartController">
-              <point x="67.0" y="-59.0" />
-              <point x="2404.375" y="1507.0" />
-              <point x="2635.4146651205056" y="1507.0" />
-              <point x="-38.25" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.PolarChartController" target="ch.bfh.analyse.Analyse">
-              <point x="103.0" y="-70.5" />
-              <point x="1614.5" y="935.0" />
-              <point x="2327.652173913044" y="935.0" />
-              <point x="-20.347826086956502" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.repositories.UserRepository" target="ch.bfh.entities.User">
-              <point x="0.0" y="-48.5" />
-              <point x="5491.133143381376" y="965.0" />
-              <point x="5686.219505660401" y="965.0" />
-              <point x="5686.219505660401" y="343.0" />
-              <point x="5230.011172327069" y="343.0" />
-              <point x="30.1875" y="92.0" />
-            </edge>
-            <edge source="ch.bfh.entities.User" target="ch.bfh.entities.Tweet">
-              <point x="-10.0625" y="92.0" />
-              <point x="5189.761172327069" y="353.0" />
-              <point x="4848.392124708022" y="353.0" />
-              <point x="26.71428571428578" y="-136.0" />
-            </edge>
-            <edge source="ch.bfh.twitter.UpdateTweets" target="ch.bfh.repositories.HashTagRepository">
-              <point x="174.29999999999995" y="-114.5" />
-              <point x="5347.6028389937355" y="1427.0" />
-              <point x="5661.633143381376" y="1427.0" />
-              <point x="-97.5" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.repositories.HashTagRepository" target="ch.bfh.util.EntityManager">
-              <point x="0.0" y="-37.0" />
-              <point x="5759.133143381376" y="965.0" />
-              <point x="5925.552838993735" y="965.0" />
-              <point x="5925.552838993735" y="323.0" />
-              <point x="5673.081250000001" y="323.0" />
-              <point x="91.5" y="48.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.DoughnutChartController" target="ch.bfh.analyse.Analyse">
-              <point x="0.0" y="-70.5" />
-              <point x="1169.0" y="905.0" />
-              <point x="2312.391304347826" y="905.0" />
-              <point x="-35.60869565217399" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.sampleanalyse" target="ch.bfh.controllers.LineChartController">
-              <point x="0.0" y="-14.5" />
-              <point x="1728.5" y="1507.0" />
-              <point x="1742.75" y="1507.0" />
-              <point x="-114.75" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.mapanalyse" target="ch.bfh.chartsmodel.GoogleMarker">
-              <point x="-18.933333333333394" y="-14.5" />
-              <point x="4508.790690197482" y="1317.0" />
-              <point x="4371.270833333334" y="1317.0" />
-              <point x="4371.270833333334" y="383.0" />
-              <point x="4316.362500000001" y="383.0" />
-              <point x="-102.0" y="59.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.MapChartControllerTest" target="ch.bfh.controllers.MapChartController">
-              <point x="71.0" y="-59.0" />
-              <point x="3614.933684537081" y="1447.0" />
-              <point x="3700.0206433813755" y="1447.0" />
-              <point x="-39.375" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.repositories.Repository" target="ch.bfh.entities.TwitterEntity">
-              <point x="0.0" y="-104.0" />
-              <point x="5450.445833333334" y="353.0" />
-              <point x="5449.081250000001" y="353.0" />
-              <point x="5449.081250000001" y="59.0" />
-              <point x="5417.956250000001" y="59.0" />
-              <point x="14.375" y="14.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.languageanalyse" target="ch.bfh.repositories.TweetRepository">
-              <point x="41.75" y="-14.5" />
-              <point x="4045.2253512037473" y="1497.0" />
-              <point x="4194.040064102564" y="1497.0" />
-              <point x="-39.23076923076928" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.entities.HashTag" target="ch.bfh.entities.TwitterEntity">
-              <point x="0.0" y="-59.0" />
-              <point x="5936.552838993735" y="49.0" />
-              <point x="5446.706250000001" y="49.0" />
-              <point x="43.125" y="14.5" />
-            </edge>
-            <edge source="ch.bfh.repositories.Repository" target="ch.bfh.util.EntityManager">
-              <point x="83.66666666666669" y="-104.0" />
-              <point x="5534.112500000001" y="363.0" />
-              <point x="5551.081250000001" y="363.0" />
-              <point x="-30.5" y="48.5" />
-            </edge>
-            <edge source="ch.bfh.repositories.TweetRepository" target="ch.bfh.repositories.Repository">
-              <point x="85.0" y="-70.5" />
-              <point x="4318.270833333334" y="975.0" />
-              <point x="5366.779166666667" y="975.0" />
-              <point x="-83.66666666666669" y="104.0" />
-            </edge>
-            <edge source="ch.bfh.analyse.sentimentanalyse" target="ch.bfh.entities.Tweet">
-              <point x="32.0625" y="-14.5" />
-              <point x="3001.8902062762113" y="1447.0" />
-              <point x="3127.1119852219044" y="1447.0" />
-              <point x="3127.1119852219044" y="915.0" />
-              <point x="4753.677838993735" y="915.0" />
-              <point x="-68.0" y="136.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.PolarChartController" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="-103.0" y="-70.5" />
-              <point x="1408.5" y="845.0" />
-              <point x="858.367694066198" y="845.0" />
-              <point x="-12.299999999999955" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.twitter.TwitterStream" target="ch.bfh.entities.User">
-              <point x="159.75" y="-92.5" />
-              <point x="5850.552838993735" y="1487.0" />
-              <point x="6076.192017870414" y="1487.0" />
-              <point x="6076.192017870414" y="303.0" />
-              <point x="5270.261172327069" y="303.0" />
-              <point x="70.4375" y="92.0" />
-            </edge>
-            <edge source="ch.bfh.chartsmodel.GoogleMap" target="ch.bfh.chartsmodel.GoogleMarker">
-              <point x="-64.75" y="-114.5" />
-              <point x="4455.987500000001" y="383.0" />
-              <point x="4452.362500000001" y="383.0" />
-              <point x="34.0" y="59.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.PieChartController" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="-102.0" y="-70.5" />
-              <point x="2571.6646651205056" y="815.0" />
-              <point x="932.1676940661982" y="815.0" />
-              <point x="61.5" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.ScatterLineChartController" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="-113.33333333333348" y="-70.5" />
-              <point x="365.6666666666665" y="845.0" />
-              <point x="784.5676940661983" y="845.0" />
-              <point x="-86.09999999999991" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.controllers.LineChartController" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="-102.0" y="-70.5" />
-              <point x="1755.5" y="835.0" />
-              <point x="882.9676940661984" y="835.0" />
-              <point x="12.299999999999955" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.twitter.TwitterStream" target="ch.bfh.entities.Tweet">
-              <point x="88.75" y="-92.5" />
-              <point x="5779.552838993735" y="1467.0" />
-              <point x="6053.2081433813755" y="1467.0" />
-              <point x="6053.2081433813755" y="925.0" />
-              <point x="4906.677838993735" y="925.0" />
-              <point x="85.0" y="136.0" />
-            </edge>
-            <edge source="ch.bfh.analyse.mapanalyse" target="ch.bfh.util.MapsUtil">
-              <point x="37.86666666666679" y="-14.5" />
-              <point x="4565.590690197482" y="1477.0" />
-              <point x="4699.954166666668" y="1477.0" />
-              <point x="48.25" y="25.5" />
-            </edge>
-            <edge source="ch.bfh.repositories.HashTagRepository" target="ch.bfh.entities.HashTag">
-              <point x="86.66666666666674" y="-37.0" />
-              <point x="5845.799810048042" y="975.0" />
-              <point x="5936.552838993735" y="975.0" />
-              <point x="0.0" y="59.0" />
-            </edge>
-            <edge source="ch.bfh.analyse.mapanalyse" target="ch.bfh.analyse.Analyse">
-              <point x="-47.33333333333326" y="-14.5" />
-              <point x="4480.390690197482" y="1347.0" />
-              <point x="3907.3956433813755" y="1347.0" />
-              <point x="3907.3956433813755" y="695.0" />
-              <point x="2403.956521739131" y="695.0" />
-              <point x="55.956521739130494" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.repositories.TweetRepository" target="ch.bfh.util.EntityManager">
-              <point x="0.0" y="-70.5" />
-              <point x="4233.270833333334" y="965.0" />
-              <point x="5075.435226714709" y="965.0" />
-              <point x="5075.435226714709" y="363.0" />
-              <point x="5490.081250000001" y="363.0" />
-              <point x="-91.5" y="48.5" />
-            </edge>
-            <edge source="ch.bfh.twitter.UpdateTweets" target="ch.bfh.repositories.UserRepository">
-              <point x="74.69999999999993" y="-114.5" />
-              <point x="5248.002838993735" y="1407.0" />
-              <point x="5402.633143381376" y="1407.0" />
-              <point x="-88.5" y="48.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.RadarChartController" target="ch.bfh.exception.EntityNotFoundException">
-              <point x="-104.0" y="-70.5" />
-              <point x="721.0" y="855.0" />
-              <point x="809.1676940661982" y="855.0" />
-              <point x="-61.5" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.analyse.sentimentanalyse" target="ch.bfh.analyse.Analyse">
-              <point x="-32.0625" y="-14.5" />
-              <point x="2937.7652062762113" y="1487.0" />
-              <point x="2837.1646651205056" y="1487.0" />
-              <point x="2837.1646651205056" y="785.0" />
-              <point x="2368.347826086957" y="785.0" />
-              <point x="20.347826086956502" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.twitter.TwitterStream" target="ch.bfh.repositories.TweetRepository">
-              <point x="-230.75" y="-92.5" />
-              <point x="5460.052838993735" y="1237.0" />
-              <point x="4331.347756410257" y="1237.0" />
-              <point x="98.0769230769231" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.entities.Tweet" target="ch.bfh.entities.TwitterEntity">
-              <point x="-80.14285714285711" y="-136.0" />
-              <point x="4741.5349818508785" y="383.0" />
-              <point x="4709.623077088973" y="383.0" />
-              <point x="4709.623077088973" y="49.0" />
-              <point x="5360.456250000001" y="49.0" />
-              <point x="-43.125" y="14.5" />
-            </edge>
-            <edge source="ch.bfh.twitter.TwitterStream" target="ch.bfh.entities.HashTag">
-              <point x="230.75" y="-92.5" />
-              <point x="5921.552838993735" y="1507.0" />
-              <point x="6138.020833333334" y="1507.0" />
-              <point x="6138.020833333334" y="283.0" />
-              <point x="5999.752838993735" y="283.0" />
-              <point x="63.200000000000045" y="59.0" />
-            </edge>
-            <edge source="ch.bfh.analyse.tweetsbytheme" target="ch.bfh.controllers.BarChartController">
-              <point x="-66.66666666666652" y="-14.5" />
-              <point x="3753.308684537081" y="1427.0" />
-              <point x="3377.3086868596365" y="1427.0" />
-              <point x="-25.5" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.sentimentanalyse" target="ch.bfh.repositories.TweetRepository">
-              <point x="53.4375" y="-14.5" />
-              <point x="3023.2652062762113" y="1457.0" />
-              <point x="4115.578525641026" y="1457.0" />
-              <point x="-117.69230769230774" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.repositories.UserRepository" target="ch.bfh.util.EntityManager">
-              <point x="78.66666666666652" y="-48.5" />
-              <point x="5569.799810048042" y="975.0" />
-              <point x="5703.854922327069" y="975.0" />
-              <point x="5703.854922327069" y="333.0" />
-              <point x="5612.081250000001" y="333.0" />
-              <point x="30.5" y="48.5" />
-            </edge>
-            <edge source="ch.bfh.analyse.mapanalyse" target="ch.bfh.entities.Tweet">
-              <point x="47.33333333333326" y="-14.5" />
-              <point x="4575.0573568641485" y="1487.0" />
-              <point x="4763.737500000001" y="1487.0" />
-              <point x="4763.737500000001" y="955.0" />
-              <point x="4821.677838993735" y="955.0" />
-              <point x="0.0" y="136.0" />
-            </edge>
-            <edge source="ch.bfh.twitter.TwitterStream" target="ch.bfh.repositories.HashTagRepository">
-              <point x="53.25" y="-92.5" />
-              <point x="5744.052838993735" y="1457.0" />
-              <point x="5856.633143381376" y="1457.0" />
-              <point x="97.5" y="37.0" />
-            </edge>
-            <edge source="ch.bfh.entities.Tweet" target="ch.bfh.entities.HashTag">
-              <point x="53.428571428571445" y="-136.0" />
-              <point x="4875.106410422307" y="373.0" />
-              <point x="5873.3528389937355" y="373.0" />
-              <point x="-63.2" y="59.0" />
-            </edge>
-            <edge source="ch.bfh.PersistenceTests" target="ch.bfh.entities.Tweet">
-              <point x="61.25" y="-37.0" />
-              <point x="4843.052838993735" y="955.0" />
-              <point x="4838.677838993735" y="955.0" />
-              <point x="17.0" y="136.0" />
-            </edge>
-            <edge source="ch.bfh.analyse.sampleanalyse" target="ch.bfh.analyse.Analyse">
-              <point x="-52.0" y="-14.5" />
-              <point x="1676.5" y="945.0" />
-              <point x="2332.739130434783" y="945.0" />
-              <point x="-15.26086956521749" y="36.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.PolarChartControllerTest" target="ch.bfh.controllers.PolarChartController">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="70.5" />
-            </edge>
-            <edge source="ch.bfh.controllers.BarChartController" target="ch.bfh.analyse.Analyse">
-              <point x="102.0" y="-70.5" />
-              <point x="3504.8086868596365" y="755.0" />
-              <point x="2378.521739130435" y="755.0" />
-              <point x="30.52173913043498" y="36.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.30000000000000016" x="685.0" y="1000.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Properties</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/MapChartControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="46" column="28" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/LineChartControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="44" column="32" lean-forward="false" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/AppTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/PersistenceTests.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/StartApplicationTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/BubbleChartControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2239,34 +1476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/HashTagRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="36" column="48" lean-forward="false" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/PieChartControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -2275,46 +1484,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1921">
           <caret line="113" column="22" lean-forward="false" selection-start-line="113" selection-start-column="15" selection-end-line="113" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/MapAnalyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="74" column="1" lean-forward="false" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -2351,34 +1525,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/outputFiles/results.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="45" column="45" lean-forward="false" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2406,13 +1556,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/scheduler/Scheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/samplepackage/SampleAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/HashTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/TwitterEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/exception/ControllerExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/exception/EntityNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BubbleChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2424,10 +1662,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="140" lean-forward="false" selection-start-line="28" selection-start-column="140" selection-end-line="28" selection-end-column="140" />
+        <state relative-caret-position="-58">
+          <caret line="45" column="45" lean-forward="false" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/MapAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2436,6 +1706,136 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetsbytheme/TweetsbyTheme.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/HashTagRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/repositories/UserRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PolarChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ScatterLineChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-799">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/ModelLanguage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-354">
+          <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding>
+            <marker date="1513705719238" expanded="true" signature="2509:2515" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="44" column="130" lean-forward="false" selection-start-line="44" selection-start-column="130" selection-end-line="44" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetthemebyretweet/TweetthemebyRetweet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding />
         </state>
       </provider>

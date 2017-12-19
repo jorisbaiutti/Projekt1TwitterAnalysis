@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-//@Component
+@Component
 public class TweetsbyTheme implements Analyse, Observer{
     TweetRepository tweetRepository;
     BarChartController barChartController;

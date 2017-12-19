@@ -13,8 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.Hashtable;
 import java.util.List;
-
-//@Component
+@Component
 public class TweetsbyLanguage implements Analyse{
     TweetRepository tweetRepository;
     BarChartController barChartController;

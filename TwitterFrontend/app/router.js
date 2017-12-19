@@ -7,10 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-
   this.route('barcharts',function(){
     this.route('tweetsbylanguage');
     this.route('tweetsbytheme');
+    this.route('retweetsbytheme');
   });
 
 
@@ -24,9 +24,9 @@ Router.map(function() {
     this.route('myfollowers');
   });
 
-  this.route('piecharts', function(){
-    this.route('sentimentanalyse');
-  });
+  this.route('doughnutcharts', function(){
+     this.route('sentimentanalyse');
+   });
 
   this.route('linecharts', function(){
     this.route('tutorial')
@@ -35,9 +35,6 @@ Router.map(function() {
 
   this.route('charts');
 
-  this.route('doughnutcharts', function(){
-    this.route('sentimentanalyse');
-  });
 });
 
 export default Router;
