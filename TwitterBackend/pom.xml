@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ch.bfh</groupId>
@@ -69,14 +69,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-test</artifactId>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
     <dependency>
       <groupId>com.microsoft.sqlserver</groupId>
       <artifactId>mssql-jdbc</artifactId>
       <version>6.2.2.jre8</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
@@ -97,10 +94,6 @@
       <version>[4.0,)</version>
     </dependency>
     <dependency>
-      <groupId>org.springframework.hateoas</groupId>
-      <artifactId>spring-hateoas</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-zuul</artifactId>
     </dependency>
@@ -109,31 +102,22 @@
       <artifactId>opennlp-tools</artifactId>
       <version>1.5.3</version>
     </dependency>
-      <dependency>
-          <groupId>com.microsoft.sqlserver</groupId>
-          <artifactId>mssql-jdbc</artifactId>
-          <version>6.1.0.jre8</version>
-      </dependency>
+
     <dependency>
       <groupId>be.ceau</groupId>
       <artifactId>chart</artifactId>
       <version>2.2.0</version>
     </dependency>
-      <dependency>
-        <groupId>io.springfox</groupId>
-        <artifactId>springfox-swagger2</artifactId>
-        <version>2.7.0</version>
-      </dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>2.7.0</version>
+    </dependency>
     <dependency>
       <groupId>io.springfox</groupId>
       <artifactId>springfox-swagger-ui</artifactId>
       <version>2.7.0</version>
     </dependency>
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <scope>test</scope>
-      </dependency>
     <dependency>
       <groupId>com.google.maps</groupId>
       <artifactId>google-maps-services</artifactId>
@@ -144,19 +128,11 @@
       <artifactId>slf4j-nop</artifactId>
       <version>1.7.25</version>
     </dependency>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-test</artifactId>
-      </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-test</artifactId>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-test</artifactId>
-    </dependency>
-
 
   </dependencies>
   <repositories>
