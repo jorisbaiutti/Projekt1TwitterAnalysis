@@ -23,7 +23,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ComponentScan(basePackages = { "ch.bfh" })
 public class LineChartControllerTest {
 
+    @Autowired
     LineChartController lineChartController;
+
     @Autowired
     private MockMvc mockMvc;
 

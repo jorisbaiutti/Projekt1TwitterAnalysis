@@ -37,7 +37,12 @@ public class UserRepository extends Repository<User>{
         return entityManager.createQuery("select u from User u").getResultList();
     }
 
-
+    /**
+     *
+     * @param id is the primarykey of a User in SQL
+     *           this is used for the SQL Query to find this user
+     * @return a User
+     */
     public User findbyId(long id){
         User user = entityManager.find(User.class, id);
         return user;

@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @Component
 @RestController
-@RequestMapping("/api/radarechart")
+@RequestMapping("/api/radarchart")
 public class RadarChartController {
     Set<Analyse<RadarChart>> analysen;
 

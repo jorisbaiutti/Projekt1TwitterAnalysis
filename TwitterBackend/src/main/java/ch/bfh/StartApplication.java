@@ -20,7 +20,7 @@ import java.io.IOException;
 
 
 @PropertySource("classpath:application.properties")
-@EnableZuulProxy
+//@EnableZuulProxy
 @EnableSwagger2
 @EnableScheduling
 @SpringBootApplication

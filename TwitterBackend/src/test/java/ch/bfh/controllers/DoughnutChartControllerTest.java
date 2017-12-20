@@ -11,39 +11,39 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(ScatterLineChartController.class)
+@WebMvcTest(DoughnutChartController.class)
 @ComponentScan(basePackages = { "ch.bfh" })
-public class ScatterLineChartControllerTest {
+public class DoughnutChartControllerTest {
+    @Autowired
+    DoughnutChartController doughnutChartController;
 
     @Autowired
-    ScatterLineChartController scatterLineChartController;
-
-    @Autowired
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     @Test
     public void shouldreturnaListofanalyse() throws Exception {
-        List<String> availableendpoints = scatterLineChartController.analysen.stream().map(a -> a.getName()).collect(Collectors.toList());
+        List<String> availableendpoints = doughnutChartController.analysen.stream().map(a -> a.getName()).collect(Collectors.toList());
         String responsebody = availableendpoints.toString();
 
 
-        this.mockMvc.perform(get("/api/scatterlinechart/list"))
+        this.mockMvc.perform(get("/api/doughnutchart/list"))
                 .andDo(print())
                 .andExpect(status().is(200))
                 .andExpect(content().json(responsebody));
-
     }
 
     @Test
-    public void shouldreturnScatterLineCharts() throws Exception{
-
+    public void shouldreturnDoughnutCharts() throws Exception{
+        String analyse = doughnutChartController.analysen.stream().map(a -> a.getName()).findFirst().get();
+        this.mockMvc.perform(get("/api/doughnutchart/"+ analyse))
+                .andDo(print())
+                .andExpect(status().is(200));
     }
 
 }

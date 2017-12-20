@@ -42,10 +42,7 @@ public class PieChartControllerTest {
 
     @Test
     public void shouldreturnPiecharts() throws Exception{
-        String analyse = pieChartController.analysen.stream().map(a -> a.getName()).findFirst().get();
-        this.mockMvc.perform(get("/api/piechart/"+ analyse))
-                .andDo(print())
-                .andExpect(status().is(200));
+     
     }
 
 
