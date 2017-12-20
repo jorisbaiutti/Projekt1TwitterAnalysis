@@ -16,17 +16,17 @@ public class SentimentAnalyseTest {
     SentimentAnalyse sentimentAnalyse;
 
     @Test
-    public void returnTheRightAnalyseName(){
+    public void returnTheRightAnalyseName() throws Exception {
         assert this.sentimentAnalyse.getName().equalsIgnoreCase("sentimentanalyse");
     }
 
     @Test
-    public void positiveAndNegativeShouldBeHundredPercent(){
+    public void positiveAndNegativeShouldBeHundredPercent() throws Exception {
         assert (this.sentimentAnalyse.getSentimentValueNegativeinPercent() + this.sentimentAnalyse.getSentimentValuePositiveinPercent()) == 100;
     }
 
     @Test
-    public void shouldBeBetweenZeroAndMaxValue(){
+    public void shouldBeBetweenZeroAndMaxValue() throws Exception {
         assert this.sentimentAnalyse.getSentimentValue() >= 0 && this.sentimentAnalyse.getSentimentValue() <= this.sentimentAnalyse.getMaxValue();
     }
 
