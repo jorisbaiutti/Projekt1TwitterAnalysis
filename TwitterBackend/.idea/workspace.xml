@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/ModelLanguage.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/ModelLanguage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/chartsmodel/GoogleMap.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/chartsmodel/GoogleMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/chartsmodel/GoogleMarker.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/chartsmodel/GoogleMarker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BubbleChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BubbleChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/DoughnutChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/LineChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/MapChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/MapChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PieChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PolarChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PolarChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/RadarChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/RadarChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ScatterLineChartController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ScatterLineChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/util/EntityManager.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/util/EntityManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/util/MapsUtil.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/util/MapsUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/util/RessourceLoader.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/util/RessourceLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/util/TwitterUtil.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/util/TwitterUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ch/bfh/controllers/BarChartControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/ch/bfh/controllers/BarChartControllerTest.java" />
-    </list>
+    <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -532,45 +508,6 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ch" type="462c0819:PsiDirectoryNode" />
-              <item name="bfh" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ch" type="462c0819:PsiDirectoryNode" />
-              <item name="bfh" type="462c0819:PsiDirectoryNode" />
-              <item name="analyse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ch" type="462c0819:PsiDirectoryNode" />
-              <item name="bfh" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ch" type="462c0819:PsiDirectoryNode" />
-              <item name="bfh" type="462c0819:PsiDirectoryNode" />
-              <item name="repositories" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1282,7 +1219,7 @@
       <workItem from="1513706281298" duration="2337000" />
       <workItem from="1513752115131" duration="904000" />
       <workItem from="1513784499094" duration="381000" />
-      <workItem from="1513785625868" duration="7199000" />
+      <workItem from="1513785625868" duration="7453000" />
     </task>
     <task id="LOCAL-00001" summary="added BarChart Controller">
       <created>1510322367264</created>
@@ -1334,11 +1271,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226930000" />
+    <option name="totallyTimeSpent" value="227184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39891306" sideWeight="0.50213677" order="7" side_tool="true" content_ui="tabs" />
@@ -1361,7 +1297,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
