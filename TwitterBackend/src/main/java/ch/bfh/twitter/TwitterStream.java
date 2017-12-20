@@ -39,6 +39,9 @@ public class TwitterStream {
         this.twitterUtil = twitterUtil;
     }
 
+    /**
+     * Has a listener which receives Tweets based on the Query Strings
+     */
     @Autowired
     public void readTwitterFeed() {
         twitter4j.TwitterStream stream = twitterUtil.getStream();

@@ -16,6 +16,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Controller for BarCharts
+ */
 @Component
 @RestController
 @RequestMapping("/api/barchart")

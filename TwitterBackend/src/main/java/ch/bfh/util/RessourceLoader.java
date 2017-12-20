@@ -4,6 +4,10 @@ package ch.bfh.util;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
+
+/**
+ * Can be used to import files in the Ressource Folder
+ */
 @Component
 public class RessourceLoader {
     /**

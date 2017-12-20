@@ -5,6 +5,9 @@ import org.springframework.stereotype.Component;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+/**
+ * Can be used to commit transactions in the database
+ */
 @Component
 public class EntityManager {
     EntityManagerFactory emFactory;

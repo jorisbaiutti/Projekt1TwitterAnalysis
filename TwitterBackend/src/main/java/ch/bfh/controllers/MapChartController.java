@@ -16,6 +16,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Controller for Google Maps
+ */
 @Component
 @RestController
 @RequestMapping("/api/map")

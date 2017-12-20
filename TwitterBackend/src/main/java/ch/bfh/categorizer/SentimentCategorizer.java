@@ -10,6 +10,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Used for training the model and the sentiment analysis
+ */
 @Component
 public class SentimentCategorizer {
     private DoccatModel enModel;

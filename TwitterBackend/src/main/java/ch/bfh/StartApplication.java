@@ -20,7 +20,7 @@ import java.io.IOException;
 
 
 @PropertySource("classpath:application.properties")
-//@EnableZuulProxy
+@EnableZuulProxy
 @EnableSwagger2
 @EnableScheduling
 @SpringBootApplication
@@ -30,6 +30,9 @@ public class StartApplication
         SpringApplication.run(StartApplication.class, args);
     }
 
+    /**
+     * @return Initiate Swagger
+     */
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)

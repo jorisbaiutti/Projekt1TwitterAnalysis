@@ -8,6 +8,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
 
+/**
+ * @param <T>
+ *     Generic Repository for the communication with the Database
+ */
 public abstract class Repository<T extends TwitterEntity> extends java.util.Observable {
 
 

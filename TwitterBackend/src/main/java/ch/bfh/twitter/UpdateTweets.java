@@ -40,6 +40,9 @@ public class UpdateTweets {
         i = 0;
     }
 
+    /**
+     * Updates Tweets in the Database with likes, Retweets ...
+     */
     @Scheduled(fixedRate = 1000)
     private void updateTweets(){
         if(updateTweets) {

@@ -29,6 +29,7 @@ public class BarChartControllerTest {
     private MockMvc mockMvc;
 
 
+
     @Test
     public void shouldreturnaListofanalyse() throws Exception {
         List<String> availableendpoints = barChartController.analysen.stream().map(a ->  a.getName()).collect(Collectors.toList());

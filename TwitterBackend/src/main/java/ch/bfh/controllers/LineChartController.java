@@ -16,6 +16,9 @@ package ch.bfh.controllers;
         import java.util.Set;
         import java.util.stream.Collectors;
 
+/**
+ * Controller for LineCharts
+ */
 @Component
 @RestController
 @RequestMapping("/api/linechart")
