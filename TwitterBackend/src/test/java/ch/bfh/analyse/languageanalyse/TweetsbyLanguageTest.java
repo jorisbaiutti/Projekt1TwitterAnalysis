@@ -22,6 +22,6 @@ public class TweetsbyLanguageTest {
     }
 
     @Test
-    public void getChart(){ assert (this.tweetsbyLanguage.getChart().getClass() == BarChart.class); }
+    public void getChart() throws Exception { assert (this.tweetsbyLanguage.getChart().getClass() == BarChart.class); }
 
 }

@@ -22,7 +22,7 @@ public class TweetsbyThemeTest {
     }
 
     @Test
-    public void getChart(){
+    public void getChart() throws Exception {
         assert (this.tweetsbyTheme.getChart().getClass() == BarChart.class);
     }
 

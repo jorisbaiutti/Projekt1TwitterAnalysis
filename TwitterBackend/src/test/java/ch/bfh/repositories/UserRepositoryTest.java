@@ -18,7 +18,7 @@ public class UserRepositoryTest{
     UserRepository userRepository;
 
     @Test
-    public void persistenceTest(){
+    public void persistenceTest() throws Exception {
 
         if (userRepository.userExist("TestUser")){
             User deleteUser = userRepository.findbyName("TestUser");
@@ -35,5 +35,4 @@ public class UserRepositoryTest{
 
         assert userRepository.findbyName("TestUser").getLocation().equalsIgnoreCase("TestOrt");
     }
-
 }

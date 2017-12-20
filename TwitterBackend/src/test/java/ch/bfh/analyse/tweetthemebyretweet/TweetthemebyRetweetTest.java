@@ -26,7 +26,7 @@ public class TweetthemebyRetweetTest {
     }
 
     @Test
-    public void getChart(){
+    public void getChart() throws Exception {
         assert (this.tweetthemebyRetweet.getChart().getClass() == BarChart.class);
     }
 
