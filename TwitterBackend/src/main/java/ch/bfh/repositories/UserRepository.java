@@ -38,4 +38,13 @@ public class UserRepository extends Repository<User>{
         entityManager.remove(user);
         entityManager.getTransaction().commit();
     }
+
+    public boolean userExist(String name){
+        entityManager.getTransaction().begin();
+        Query q = entityManager.createQuery("SELECT t FROM User t where t.userName LIKE :name");
+        q.setParameter("name", name);
+        List<User> users = q.getResultList();
+        entityManager.getTransaction().commit();
+        return users.size() == 1;
+    }
 }

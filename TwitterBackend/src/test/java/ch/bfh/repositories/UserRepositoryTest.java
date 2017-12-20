@@ -5,13 +5,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@WebMvcTest(UserRepository.class)
 @ComponentScan(basePackages = { "ch.bfh.repositories","ch.bfh.util" })
 public class UserRepositoryTest{
 
@@ -21,19 +20,20 @@ public class UserRepositoryTest{
     @Test
     public void persistenceTest(){
 
-        User deleteUser = userRepository.findbyName("TestUser");
-        userRepository.delete(deleteUser);
+        if (userRepository.userExist("TestUser")){
+            User deleteUser = userRepository.findbyName("TestUser");
+            userRepository.delete(deleteUser);
+        }
 
         User user = new User();
         user.setUserName("TestUser");
+        user.setEmail("test@test.ch");
+        user.setId(1234567);
         user.setLocation("TestOrt");
-
 
         userRepository.save(user);
 
         assert userRepository.findbyName("TestUser").getLocation().equalsIgnoreCase("TestOrt");
-
-
     }
 
 }
