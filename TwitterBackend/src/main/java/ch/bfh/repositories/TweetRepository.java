@@ -2,6 +2,7 @@ package ch.bfh.repositories;
 
 import ch.bfh.entities.Tweet;
 import ch.bfh.entities.TwitterEntity;
+import ch.bfh.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -54,6 +55,15 @@ public class TweetRepository extends Repository<Tweet>{
         Tweet tweet = entityManager.find(Tweet.class, ID);
         entityManager.getTransaction().commit();
         return tweet;
+    }
+
+    public boolean tweetExistbyContent(String content){
+        entityManager.getTransaction().begin();
+        Query q = entityManager.createQuery("SELECT t FROM Tweet t where t.content LIKE :name");
+        q.setParameter("name", "%"+content+"%");
+        List<Tweet> tweets = q.getResultList();
+        entityManager.getTransaction().commit();
+        return tweets.size() >= 1;
     }
 
     @Override

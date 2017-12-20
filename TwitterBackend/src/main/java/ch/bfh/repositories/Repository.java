@@ -49,7 +49,9 @@ public abstract class Repository<T extends TwitterEntity> extends java.util.Obse
      }
 
      public void delete(TwitterEntity entity) {
-
+         entityManager.getTransaction().begin();
+         entityManager.remove(entity);
+         entityManager.getTransaction().commit();
     }
     public abstract List<T> getAll();
 
