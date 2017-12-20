@@ -7,7 +7,7 @@ define('twitter-frontend/tests/app.lint-test', [], function () {
 
   QUnit.test('adapters/application.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'adapters/application.js should pass ESLint\n\n5:5 - Duplicate key \'namespace\'. (no-dupe-keys)\n6:5 - Duplicate key \'namespace\'. (no-dupe-keys)');
+    assert.ok(true, 'adapters/application.js should pass ESLint\n\n');
   });
 
   QUnit.test('app.js', function (assert) {
@@ -559,11 +559,6 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'test-helper.js should pass ESLint\n\n');
   });
 
-  QUnit.test('unit/adapters/application-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/adapters/application-test.js should pass ESLint\n\n');
-  });
-
   QUnit.test('unit/models/barcharttest-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/models/barcharttest-test.js should pass ESLint\n\n');
@@ -582,11 +577,6 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
   QUnit.test('unit/routes/barcharts/retweetsbytheme-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/barcharts/retweetsbytheme-test.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('unit/routes/barcharts/test-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/barcharts/test-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('unit/routes/barcharts/tweetsbylanguage-test.js', function (assert) {
@@ -614,64 +604,14 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/routes/index-test.js should pass ESLint\n\n');
   });
 
-  QUnit.test('unit/routes/keyvalueanalyse/mostdiscussedtopics-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'unit/routes/keyvalueanalyse/mostdiscussedtopics-test.js should pass ESLint\n\n3:33 - Unnecessary escape character: \\m. (no-useless-escape)\n3:87 - Unnecessary escape character: \\m. (no-useless-escape)');
-  });
-
-  QUnit.test('unit/routes/keyvalueanalyse/test-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/keyvalueanalyse/test-test.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('unit/routes/linecharts/samplechart-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'unit/routes/linecharts/samplechart-test.js should pass ESLint\n\n3:28 - Unnecessary escape character: \\s. (no-useless-escape)\n3:69 - Unnecessary escape character: \\s. (no-useless-escape)');
-  });
-
   QUnit.test('unit/routes/linecharts/tutorial-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/linecharts/tutorial-test.js should pass ESLint\n\n');
   });
 
-  QUnit.test('unit/routes/maps/myfollowers-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'unit/routes/maps/myfollowers-test.js should pass ESLint\n\n3:22 - Unnecessary escape character: \\m. (no-useless-escape)\n3:57 - Unnecessary escape character: \\m. (no-useless-escape)');
-  });
-
   QUnit.test('unit/routes/maps/tweetoverview-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/maps/tweetoverview-test.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('unit/routes/mostdiscussedtopics-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/mostdiscussedtopics-test.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('unit/routes/person-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/person-test.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('unit/routes/person/show-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/person/show-test.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('unit/routes/piecharts/piecharts-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'unit/routes/piecharts/piecharts-test.js should pass ESLint\n\n3:27 - Unnecessary escape character: \\p. (no-useless-escape)\n3:65 - Unnecessary escape character: \\p. (no-useless-escape)');
-  });
-
-  QUnit.test('unit/routes/piecharts/sentimentanalyse-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'unit/routes/piecharts/sentimentanalyse-test.js should pass ESLint\n\n3:27 - Unnecessary escape character: \\s. (no-useless-escape)\n3:72 - Unnecessary escape character: \\s. (no-useless-escape)');
-  });
-
-  QUnit.test('unit/routes/testhome-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/testhome-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('unit/serializers/application-test.js', function (assert) {
@@ -687,20 +627,6 @@ define('twitter-frontend/tests/tests.lint-test', [], function () {
   QUnit.test('unit/serializers/mostdiscussedtopic-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/serializers/mostdiscussedtopic-test.js should pass ESLint\n\n');
-  });
-});
-define('twitter-frontend/tests/unit/adapters/application-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('adapter:application', 'Unit | Adapter | application', {
-    // Specify the other units that are required for this test.
-    // needs: ['serializer:foo']
-  });
-
-  // Replace this with your real tests.
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var adapter = this.subject();
-    assert.ok(adapter);
   });
 });
 define('twitter-frontend/tests/unit/models/barcharttest-test', ['ember-qunit'], function (_emberQunit) {
@@ -749,19 +675,6 @@ define('twitter-frontend/tests/unit/routes/barcharts/retweetsbytheme-test', ['em
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:barcharts\retweetsbytheme', 'Unit | Route | barcharts\retweetsbytheme', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('twitter-frontend/tests/unit/routes/barcharts/test-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:barcharts\test', 'Unit | Route | barcharts\test', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   });
@@ -836,45 +749,6 @@ define('twitter-frontend/tests/unit/routes/index-test', ['ember-qunit'], functio
     assert.ok(route);
   });
 });
-define('twitter-frontend/tests/unit/routes/keyvalueanalyse/mostdiscussedtopics-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:keyvalueanalyse\mostdiscussedtopics', 'Unit | Route | keyvalueanalyse\mostdiscussedtopics', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('twitter-frontend/tests/unit/routes/keyvalueanalyse/test-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:keyvalueanalyse\test', 'Unit | Route | keyvalueanalyse\test', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('twitter-frontend/tests/unit/routes/linecharts/samplechart-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:linecharts\samplechart', 'Unit | Route | linecharts\samplechart', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
 define('twitter-frontend/tests/unit/routes/linecharts/tutorial-test', ['ember-qunit'], function (_emberQunit) {
   'use strict';
 
@@ -888,101 +762,10 @@ define('twitter-frontend/tests/unit/routes/linecharts/tutorial-test', ['ember-qu
     assert.ok(route);
   });
 });
-define('twitter-frontend/tests/unit/routes/maps/myfollowers-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:maps\myfollowers', 'Unit | Route | maps\myfollowers', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
 define('twitter-frontend/tests/unit/routes/maps/tweetoverview-test', ['ember-qunit'], function (_emberQunit) {
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:maps\tweetoverview', 'Unit | Route | maps\tweetoverview', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('twitter-frontend/tests/unit/routes/mostdiscussedtopics-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:mostdiscussedtopics', 'Unit | Route | mostdiscussedtopics', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('twitter-frontend/tests/unit/routes/person-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:person', 'Unit | Route | person', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('twitter-frontend/tests/unit/routes/person/show-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:person/show', 'Unit | Route | person/show', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('twitter-frontend/tests/unit/routes/piecharts/piecharts-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:piecharts\piecharts', 'Unit | Route | piecharts\piecharts', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('twitter-frontend/tests/unit/routes/piecharts/sentimentanalyse-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:piecharts\sentimentanalyse', 'Unit | Route | piecharts\sentimentanalyse', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('twitter-frontend/tests/unit/routes/testhome-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleFor)('route:testhome', 'Unit | Route | testhome', {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   });

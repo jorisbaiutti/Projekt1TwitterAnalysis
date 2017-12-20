@@ -1,0 +1,42 @@
+package ch.bfh.repositories;
+
+import ch.bfh.entities.User;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+=======
+import org.springframework.boot.test.context.SpringBootTest;
+>>>>>>> b85f779ecc1410d3b9c1bb546d01bdfd433e38c7
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.test.context.junit4.SpringRunner;
+
+
+@RunWith(SpringRunner.class)
+@WebMvcTest(UserRepository.class)
+@ComponentScan(basePackages = { "ch.bfh.repositories","ch.bfh.util" })
+public class UserRepositoryTest{
+
+    @Autowired
+    UserRepository userRepository;
+
+    @Test
+    public void persistenceTest() throws Exception {
+
+        if (userRepository.userExist("TestUser")){
+            User deleteUser = userRepository.findbyName("TestUser");
+            userRepository.delete(deleteUser);
+        }
+
+        User user = new User();
+        user.setUserName("TestUser");
+        user.setEmail("test@test.ch");
+        user.setId(1234567);
+        user.setLocation("TestOrt");
+
+        userRepository.save(user);
+
+        assert userRepository.findbyName("TestUser").getLocation().equalsIgnoreCase("TestOrt");
+    }
+}
