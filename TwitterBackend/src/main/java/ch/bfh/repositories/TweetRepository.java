@@ -1,14 +1,8 @@
 package ch.bfh.repositories;
 
 import ch.bfh.entities.Tweet;
-import ch.bfh.entities.TwitterEntity;
-import ch.bfh.entities.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.util.List;
 
@@ -50,6 +44,12 @@ public class TweetRepository extends Repository<Tweet>{
         return tweets;
     }
 
+    /**
+     *
+     * @param ID is the primarykey of a Tweet in SQL
+     *           this is used for the SQL Query to find this tweet
+     * @return a Tweet
+     */
     public Tweet findById(long ID){
         entityManager.getTransaction().begin();
         Tweet tweet = entityManager.find(Tweet.class, ID);
@@ -57,6 +57,12 @@ public class TweetRepository extends Repository<Tweet>{
         return tweet;
     }
 
+    /**
+     *
+     * @param content is the String which is in the content of a tweet
+     *             this is used for the SQL Query to find this tweets
+     * @return a boolean if tweets with this content exists
+     */
     public boolean tweetExistbyContent(String content){
         entityManager.getTransaction().begin();
         Query q = entityManager.createQuery("SELECT t FROM Tweet t where t.content LIKE :name");
@@ -66,6 +72,10 @@ public class TweetRepository extends Repository<Tweet>{
         return tweets.size() >= 1;
     }
 
+    /**
+     *
+     * @return a List of all tweets from DB
+     */
     @Override
     public List<Tweet> getAll() {
         return entityManager.createQuery("select t from Tweet t").getResultList();

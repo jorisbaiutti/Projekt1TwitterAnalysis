@@ -52,7 +52,7 @@ public class TwitterStream {
                     List<HashTag> hashTagList = new ArrayList<>();
                     List<User> mentionsList = new ArrayList<>();
 
-                    User user = (User) userRepository.getOne(status.getUser().getId());
+                    User user = userRepository.findbyId(status.getUser().getId());
                     Tweet tweetentity = new Tweet();
                     if (user == null) {
                         user = new User();
@@ -107,7 +107,6 @@ public class TwitterStream {
                 }
             };
             FilterQuery qry = new FilterQuery();
-            // String[] keywords = { "BFH","Digital Society","System Design","Future System","Big Data","Open Data","Gebäude und Städte","Identität","Privatsphäre","IT-Security","Cyberforensik","Gesundheitsversorgung","E-Health"};
             qry.track(keywords);
 
             stream.addListener(listener);

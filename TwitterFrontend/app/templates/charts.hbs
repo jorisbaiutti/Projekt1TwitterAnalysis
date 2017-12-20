@@ -40,7 +40,7 @@
             </div>
         </div>
          <div class="card twitter-yellow" style="width: 20rem;">
-          {{ember-chart type='horizontalBar' data=model.sentiment.data  height=200}}
+          {{ember-chart type='horizontalBar' data=model.retweetsbytheme.data  height=200}}
             <div class="card-body">
                 <h5 class="card-title">Retweets by Theme</h5>
                 {{#link-to 'barcharts.retweetsbytheme' class="btn btn-primary twitter-orange"}} Retweets by theme {{/link-to}}

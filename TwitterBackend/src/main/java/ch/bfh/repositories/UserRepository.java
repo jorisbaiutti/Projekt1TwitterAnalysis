@@ -15,7 +15,7 @@ public class UserRepository extends Repository<User>{
     /**
      *
      * @param name is the userName of the Entity User
-     *             this is used for the SQL Query to find the User
+     *             this is used for the SQL Query to find the user
      * @return a User object
      */
     public User findbyName(String name) {
@@ -28,17 +28,27 @@ public class UserRepository extends Repository<User>{
         return user;
     }
 
+    /**
+     *
+     * @return a List of all users from DB
+     */
     @Override
     public List<User> getAll() {
         return entityManager.createQuery("select u from User u").getResultList();
     }
 
-    public void delete(User user){
-        entityManager.getTransaction().begin();
-        entityManager.remove(user);
-        entityManager.getTransaction().commit();
+
+    public User findbyId(long id){
+        User user = entityManager.find(User.class, id);
+        return user;
     }
 
+    /**
+     *
+     * @param name is the userName of the Entity User
+     *             this is used for the SQL Query to find the User
+     * @return true if the user exists on the DB
+     */
     public boolean userExist(String name){
         entityManager.getTransaction().begin();
         Query q = entityManager.createQuery("SELECT t FROM User t where t.userName LIKE :name");

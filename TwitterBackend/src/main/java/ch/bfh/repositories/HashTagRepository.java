@@ -1,12 +1,8 @@
 package ch.bfh.repositories;
 
 import ch.bfh.entities.HashTag;
-import ch.bfh.entities.TwitterEntity;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.util.List;
 
 @Component
@@ -17,6 +13,10 @@ public class HashTagRepository extends Repository<HashTag>{
         super(entityManager);
     }
 
+    /**
+     *
+     * @return a List of all HashTags from DB
+     */
     @Override
     public List<HashTag> getAll() {
         return entityManager.createQuery("select h from HashTag h").getResultList();

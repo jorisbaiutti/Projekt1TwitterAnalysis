@@ -11,6 +11,7 @@ import ch.bfh.categorizer.SentimentCategorizer;
 import ch.bfh.controllers.DoughnutChartController;
 import ch.bfh.entities.Tweet;
 import ch.bfh.repositories.TweetRepository;
+import ch.bfh.util.RessourceLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.Hashtable;
@@ -33,7 +34,7 @@ public class SentimentAnalyse implements Analyse, Observer{
     private int sentimentValueNegativeinPercent;
 
     @Autowired
-    public SentimentAnalyse(TweetRepository tweetRepository, DoughnutChartController doughnutChartController, SentimentCategorizer sentimentCategorizer) {
+    public SentimentAnalyse(TweetRepository tweetRepository, DoughnutChartController doughnutChartController, SentimentCategorizer sentimentCategorizer, RessourceLoader ressourceLoader) {
 
         this.tweetRepository = tweetRepository;
         this.doughnutChartController = doughnutChartController;
@@ -42,11 +43,11 @@ public class SentimentAnalyse implements Analyse, Observer{
         name = "sentimentanalyse";
 
         // all the URL of the golden standard file for each language
-        goldStandardFileURL = "C:\\Users\\Patrick\\IdeaProjects\\Projekt1TwitterAnalysis\\TwitterBackend\\src\\main\\resources\\inputfiles\\sentimentinputEN.txt";
-        sentimentCategorizer.trainModel(goldStandardFileURL, ModelLanguage.EN);
+        goldStandardFileURL = "inputfiles/sentimentinputEN.txt";
+        sentimentCategorizer.trainModel(ressourceLoader.getRessource(goldStandardFileURL).getPath(), ModelLanguage.EN);
 
-        goldStandardFileURL = "C:\\Users\\Patrick\\IdeaProjects\\Projekt1TwitterAnalysis\\TwitterBackend\\src\\main\\resources\\inputfiles\\sentimentinputDE.txt";
-        sentimentCategorizer.trainModel(goldStandardFileURL, ModelLanguage.DE);
+        goldStandardFileURL = "inputfiles/sentimentinputDE.txt";
+        sentimentCategorizer.trainModel(ressourceLoader.getRessource(goldStandardFileURL).getPath(), ModelLanguage.DE);
 
         sentimentAnalyse = new Hashtable<>();
         tweets = tweetRepository.getAll();

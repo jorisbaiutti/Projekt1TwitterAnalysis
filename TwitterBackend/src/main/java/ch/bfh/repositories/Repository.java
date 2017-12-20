@@ -2,15 +2,11 @@ package ch.bfh.repositories;
 
 
 import ch.bfh.entities.TwitterEntity;
-import ch.bfh.entities.User;
-import javafx.beans.Observable;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.Query;
 import java.util.List;
-import java.util.Observer;
 
 public abstract class Repository<T extends TwitterEntity> extends java.util.Observable {
 
@@ -21,6 +17,10 @@ public abstract class Repository<T extends TwitterEntity> extends java.util.Obse
         this.entityManager = entityManager.getEntityManager();
     }
 
+    /**
+     *
+     * @param entity save or update this entity to DB and notify the observers
+     */
     public void save(TwitterEntity entity) {
 
         entityManager.getTransaction().begin();
@@ -35,29 +35,40 @@ public abstract class Repository<T extends TwitterEntity> extends java.util.Obse
         setChanged();
         notifyObservers();
 
-
     }
-     public TwitterEntity update(TwitterEntity entity) {
+
+    /**
+     *
+     * @param entity save or update this entity to DB and notify the observers
+     * @return return the updated entity
+     */
+    public TwitterEntity update(TwitterEntity entity) {
         this.save(entity);
         return entity;
     }
 
-     public TwitterEntity getOne(long id) {
-         return entityManager.find(User.class, id);
-
-
-     }
-
-     public void delete(TwitterEntity entity) {
-         entityManager.getTransaction().begin();
-         entityManager.remove(entity);
-         entityManager.getTransaction().commit();
+    /**
+     *
+     * @param entity delete this entity from DB
+     */
+    public void delete(TwitterEntity entity) {
+        entityManager.getTransaction().begin();
+        entityManager.remove(entity);
+        entityManager.getTransaction().commit();
     }
+
     public abstract List<T> getAll();
 
-    public List<T> findBySqlQuery(String SqlQuery) {
-        return null;
+    /**
+     *
+     * @param sqlQuery is the String of a SQL Query
+     * @return a List of entities find by the sqlQuery
+     */
+    public List<T> findBySqlQuery(String sqlQuery) {
+        entityManager.getTransaction().begin();
+        Query q = entityManager.createQuery(sqlQuery);
+        List<T> entities = q.getResultList();
+        entityManager.getTransaction().commit();
+        return entities;
     }
 }
-
-

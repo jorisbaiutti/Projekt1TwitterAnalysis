@@ -20,19 +20,18 @@ public class UserRepositoryTest{
     @Test
     public void persistenceTest() throws Exception {
 
-        if (userRepository.userExist("TestUser")){
-            User deleteUser = userRepository.findbyName("TestUser");
-            userRepository.delete(deleteUser);
+        if (!userRepository.userExist("TestUserNiemals")){
+            User user = new User();
+            user.setUserName("TestUserNiemals");
+            user.setEmail("testuser@test.ch");
+            user.setId(1234567);
+            user.setLocation("TestOrt");
+            userRepository.save(user);
         }
 
-        User user = new User();
-        user.setUserName("TestUser");
-        user.setEmail("test@test.ch");
-        user.setId(1234567);
-        user.setLocation("TestOrt");
+        assert userRepository.findbyName("TestUserNiemals").getLocation().equalsIgnoreCase("TestOrt");
 
-        userRepository.save(user);
-
-        assert userRepository.findbyName("TestUser").getLocation().equalsIgnoreCase("TestOrt");
+        User deleteUser = userRepository.findbyName("TestUserNiemals");
+        userRepository.delete(deleteUser);
     }
 }
