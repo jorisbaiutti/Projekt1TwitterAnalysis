@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="" />
+    <list default="true" id="a16a5b02-4b7a-4ea0-8f79-296d41a61ece" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/routes/linecharts/tutorial.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/templates/linecharts/tutorial.hbs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TwitterFrontend/tests/unit/routes/linecharts/tutorial-test.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" afterPath="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TwitterFrontend/app/router.js" afterPath="$PROJECT_DIR$/../TwitterFrontend/app/router.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -31,20 +38,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TweetRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="791">
-              <caret line="82" column="1" lean-forward="false" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TwitterStream.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="-675">
               <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
               <folding />
             </state>
@@ -54,7 +51,7 @@
       <file leaf-file-name="UpdateTweets.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="243">
               <caret line="43" column="62" lean-forward="false" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
               <folding />
             </state>
@@ -84,11 +81,9 @@
       <file leaf-file-name="RessourceLoader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/util/RessourceLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="102">
               <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartApplication.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StartApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="697">
+              <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,21 +110,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Analyse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java">
+      <file leaf-file-name="Repository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+            <state relative-caret-position="119">
+              <caret line="12" column="65" lean-forward="false" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TweetsbyLanguage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java">
+      <file leaf-file-name="TweetRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="770">
+              <caret line="82" column="1" lean-forward="false" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="44" column="7" lean-forward="false" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -172,7 +177,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/tests/PersistenceTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/OpenNLPCategorizer.java" />
         <option value="$PROJECT_DIR$/src/main/resources/inputfiles/sentimentinput.txt" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/scheduler/Scheduler.java" />
@@ -221,6 +225,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/util/TwitterUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java" />
       </list>
     </option>
   </component>
@@ -275,6 +280,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -509,14 +516,63 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ch" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
+              <item name="languageanalyse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="analyse" type="462c0819:PsiDirectoryNode" />
+              <item name="mapanalyse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwitterBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwitterBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ch" type="462c0819:PsiDirectoryNode" />
+              <item name="bfh" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1219,7 +1275,8 @@
       <workItem from="1513706281298" duration="2337000" />
       <workItem from="1513752115131" duration="904000" />
       <workItem from="1513784499094" duration="381000" />
-      <workItem from="1513785625868" duration="7453000" />
+      <workItem from="1513785625868" duration="9285000" />
+      <workItem from="1513928411943" duration="6590000" />
     </task>
     <task id="LOCAL-00001" summary="added BarChart Controller">
       <created>1510322367264</created>
@@ -1271,36 +1328,36 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227184000" />
+    <option name="totallyTimeSpent" value="235606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39891306" sideWeight="0.50213677" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.113829784" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4054348" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39891306" sideWeight="0.50213677" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.113829784" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.002173913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.002173913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25159913" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4054348" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1308,6 +1365,7 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1391,96 +1449,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/MapAnalyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/repositories/TweetRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="50" column="1" lean-forward="false" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="45" column="63" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/repositories/UserRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="44" column="7" lean-forward="false" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/BubbleChartControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" column="50" lean-forward="false" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/MapChartControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1502,7 +1470,7 @@
         <state relative-caret-position="89">
           <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="37" selection-end-column="57" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1541,14 +1509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/BarChartControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -1559,18 +1519,398 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/chartsmodel/GoogleMap.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PolarChartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="104" column="39" lean-forward="false" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
+        <state relative-caret-position="85">
+          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/chartsmodel/GoogleMarker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ScatterLineChartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+        <state relative-caret-position="85">
+          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/be/ceau/chart/2.2.0/chart-2.2.0.jar!/be/ceau/chart/color/Color.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="77" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="4" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/ch.bfh">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>ch.bfh</OriginalElement>
+          <nodes>
+            <node x="266.4486772486771" y="358.0">ch.bfh.controllers.RadarChartControllerTest</node>
+            <node x="157.28125" y="438.201171875">ch.bfh.entities</node>
+            <node x="468.4486772486771" y="358.0">ch.bfh.controllers.ScatterLineChartControllerTest</node>
+            <node x="30.0" y="0.0">ch.bfh.chartsmodel</node>
+            <node x="1478.448677248677" y="358.0">ch.bfh.controllers.DoughnutChartControllerTest</node>
+            <node x="97.90724206349205" y="557.201171875">ch.bfh.repositories</node>
+            <node x="1092.448677248677" y="279.0">ch.bfh.controllers.BubbleChartController</node>
+            <node x="0.0" y="438.201171875">ch.bfh.util</node>
+            <node x="834.337566137566" y="0.0">ch.bfh.analyse</node>
+            <node x="1081.448677248677" y="358.0">ch.bfh.controllers.BubbleChartControllerTest</node>
+            <node x="1715.448677248677" y="279.0">ch.bfh.controllers.PolarChartController</node>
+            <node x="1290.448677248677" y="358.0">ch.bfh.controllers.PieChartControllerTest</node>
+            <node x="903.4486772486771" y="279.0">ch.bfh.controllers.BarChartController</node>
+            <node x="339.40724206349205" y="432.0">ch.bfh.categorizer</node>
+            <node x="521.407242063492" y="432.0">ch.bfh.StartApplication</node>
+            <node x="892.4486772486771" y="358.0">ch.bfh.controllers.BarChartControllerTest</node>
+            <node x="1301.448677248677" y="279.0">ch.bfh.controllers.PieChartController</node>
+            <node x="1704.448677248677" y="358.0">ch.bfh.controllers.PolarChartControllerTest</node>
+            <node x="1489.448677248677" y="279.0">ch.bfh.controllers.DoughnutChartController</node>
+            <node x="709.4486772486771" y="279.0">ch.bfh.controllers.LineChartController</node>
+            <node x="277.4486772486771" y="279.0">ch.bfh.controllers.RadarChartController</node>
+            <node x="479.4486772486771" y="279.0">ch.bfh.controllers.ScatterLineChartController</node>
+            <node x="81.44867724867709" y="279.0">ch.bfh.controllers.MapChartController</node>
+            <node x="70.44867724867709" y="358.0">ch.bfh.controllers.MapChartControllerTest</node>
+            <node x="698.4486772486771" y="358.0">ch.bfh.controllers.LineChartControllerTest</node>
+            <node x="992.337566137566" y="0.0">ch.bfh.exception</node>
+            <node x="157.62946428571428" y="676.201171875">ch.bfh.twitter</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="ch.bfh.controllers.PolarChartController" target="ch.bfh.exception">
+              <point x="52.33333333333334" y="-14.5" />
+              <point x="1846.2820105820106" y="79.0" />
+              <point x="1115.837566137566" y="79.0" />
+              <point x="58.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.RadarChartController" target="ch.bfh.exception">
+              <point x="53.33333333333337" y="-14.5" />
+              <point x="410.78201058201046" y="229.0" />
+              <point x="1024.837566137566" y="229.0" />
+              <point x="-32.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.chartsmodel" target="ch.bfh.chartsmodel">
+              <point x="-18.125" y="14.5" />
+              <point x="84.375" y="59.0" />
+              <point x="0.0" y="59.0" />
+              <point x="0.0" y="7.25" />
+              <point x="-72.5" y="-7.25" />
+            </edge>
+            <edge source="ch.bfh.controllers.LineChartController" target="ch.bfh.analyse">
+              <point x="-50.66666666666663" y="-14.5" />
+              <point x="734.7820105820105" y="199.0" />
+              <point x="876.9486772486771" y="199.0" />
+              <point x="-16.388888888888886" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.BubbleChartController" target="ch.bfh.analyse">
+              <point x="-55.66666666666666" y="-14.5" />
+              <point x="1120.2820105820103" y="189.0" />
+              <point x="903.1708994708994" y="189.0" />
+              <point x="9.833333333333343" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.DoughnutChartController" target="ch.bfh.exception">
+              <point x="61.33333333333334" y="-14.5" />
+              <point x="1642.7820105820106" y="109.0" />
+              <point x="1102.837566137566" y="109.0" />
+              <point x="45.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.MapChartControllerTest" target="ch.bfh.controllers.MapChartController">
+              <point x="-44.0" y="-14.5" />
+              <point x="114.44867724867709" y="333.0" />
+              <point x="119.94867724867709" y="333.0" />
+              <point x="-38.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.twitter" target="ch.bfh.repositories">
+              <point x="-16.14285714285711" y="-14.5" />
+              <point x="197.98660714285717" y="636.201171875" />
+              <point x="185.40724206349205" y="636.201171875" />
+              <point x="17.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.ScatterLineChartController" target="ch.bfh.exception">
+              <point x="62.666666666666686" y="-14.5" />
+              <point x="636.1153439153438" y="239.0" />
+              <point x="1037.837566137566" y="239.0" />
+              <point x="-19.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.RadarChartController" target="ch.bfh.analyse">
+              <point x="-53.33333333333337" y="-14.5" />
+              <point x="304.1153439153437" y="159.0" />
+              <point x="850.7264550264549" y="159.0" />
+              <point x="-42.611111111111114" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.BubbleChartController" target="ch.bfh.exception">
+              <point x="55.666666666666686" y="-14.5" />
+              <point x="1231.6153439153438" y="169.0" />
+              <point x="1076.837566137566" y="169.0" />
+              <point x="19.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.RadarChartControllerTest" target="ch.bfh.controllers.RadarChartController">
+              <point x="45.5" y="-14.5" />
+              <point x="402.9486772486771" y="333.0" />
+              <point x="397.4486772486771" y="333.0" />
+              <point x="40.0" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.LineChartControllerTest" target="ch.bfh.controllers.LineChartController">
+              <point x="-43.5" y="-14.5" />
+              <point x="741.9486772486771" y="333.0" />
+              <point x="747.4486772486771" y="333.0" />
+              <point x="-38.0" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.twitter" target="ch.bfh.util">
+              <point x="-48.428571428571445" y="-14.5" />
+              <point x="165.70089285714283" y="656.201171875" />
+              <point x="37.0" y="656.201171875" />
+              <point x="37.0" y="537.201171875" />
+              <point x="16.0" y="537.201171875" />
+              <point x="-32.0" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.twitter" target="ch.bfh.entities">
+              <point x="32.285714285714334" y="-14.5" />
+              <point x="246.4151785714286" y="646.201171875" />
+              <point x="259.40724206349205" y="646.201171875" />
+              <point x="259.40724206349205" y="527.201171875" />
+              <point x="252.34375" y="527.201171875" />
+              <point x="36.5625" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.BarChartControllerTest" target="ch.bfh.controllers.BarChartController">
+              <point x="-42.25" y="-14.5" />
+              <point x="934.6986772486771" y="333.0" />
+              <point x="940.1986772486771" y="333.0" />
+              <point x="-36.75" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.PieChartController" target="ch.bfh.exception">
+              <point x="48.666666666666686" y="-14.5" />
+              <point x="1423.1153439153438" y="139.0" />
+              <point x="1089.837566137566" y="139.0" />
+              <point x="32.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.MapChartController" target="ch.bfh.analyse">
+              <point x="0.0" y="-14.5" />
+              <point x="158.4486772486771" y="139.0" />
+              <point x="837.6153439153438" y="139.0" />
+              <point x="-55.72222222222223" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.LineChartController" target="ch.bfh.exception">
+              <point x="50.66666666666663" y="-14.5" />
+              <point x="836.1153439153437" y="249.0" />
+              <point x="1050.837566137566" y="249.0" />
+              <point x="-6.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.exception" target="ch.bfh.exception">
+              <point x="-58.5" y="14.5" />
+              <point x="998.837566137566" y="49.0" />
+              <point x="972.337566137566" y="49.0" />
+              <point x="972.337566137566" y="14.5" />
+              <point x="-65.0" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh.controllers.DoughnutChartControllerTest" target="ch.bfh.controllers.DoughnutChartController">
+              <point x="-51.5" y="-14.5" />
+              <point x="1529.948677248677" y="333.0" />
+              <point x="1535.448677248677" y="333.0" />
+              <point x="-46.0" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.BarChartController" target="ch.bfh.exception">
+              <point x="49.0" y="-14.5" />
+              <point x="1025.948677248677" y="259.0" />
+              <point x="1063.837566137566" y="259.0" />
+              <point x="6.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.BarChartController" target="ch.bfh.analyse">
+              <point x="-49.0" y="-14.5" />
+              <point x="927.9486772486771" y="209.0" />
+              <point x="890.0597883597882" y="209.0" />
+              <point x="-3.2777777777777715" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.MapChartController" target="ch.bfh.chartsmodel">
+              <point x="-30.80000000000001" y="-14.5" />
+              <point x="127.64867724867713" y="129.0" />
+              <point x="156.875" y="129.0" />
+              <point x="54.375" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.MapChartController" target="ch.bfh.exception">
+              <point x="61.60000000000002" y="-14.5" />
+              <point x="220.0486772486771" y="219.0" />
+              <point x="1011.837566137566" y="219.0" />
+              <point x="-45.5" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.DoughnutChartController" target="ch.bfh.analyse">
+              <point x="-61.33333333333334" y="-14.5" />
+              <point x="1520.1153439153436" y="129.0" />
+              <point x="929.3931216931215" y="129.0" />
+              <point x="36.05555555555554" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.PolarChartController" target="ch.bfh.analyse">
+              <point x="0.0" y="-14.5" />
+              <point x="1793.948677248677" y="89.0" />
+              <point x="949.0597883597882" y="89.0" />
+              <point x="55.72222222222223" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.categorizer" target="ch.bfh.categorizer">
+              <point x="0.0" y="14.5" />
+              <point x="407.90724206349205" y="481.0" />
+              <point x="319.40724206349205" y="481.0" />
+              <point x="319.40724206349205" y="446.5" />
+              <point x="-68.5" y="-0.0" />
+            </edge>
+            <edge source="ch.bfh.controllers.PieChartController" target="ch.bfh.analyse">
+              <point x="-48.66666666666666" y="-14.5" />
+              <point x="1325.7820105820106" y="159.0" />
+              <point x="916.2820105820105" y="159.0" />
+              <point x="22.944444444444457" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.PolarChartControllerTest" target="ch.bfh.controllers.PolarChartController">
+              <point x="44.75" y="-14.5" />
+              <point x="1838.698677248677" y="333.0" />
+              <point x="1833.198677248677" y="333.0" />
+              <point x="39.25" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.ScatterLineChartController" target="ch.bfh.analyse">
+              <point x="0.0" y="-14.5" />
+              <point x="573.4486772486771" y="189.0" />
+              <point x="870.3931216931215" y="189.0" />
+              <point x="-22.94444444444443" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.BubbleChartControllerTest" target="ch.bfh.controllers.BubbleChartController">
+              <point x="47.25" y="-14.5" />
+              <point x="1223.198677248677" y="333.0" />
+              <point x="1217.698677248677" y="333.0" />
+              <point x="41.75" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.repositories" target="ch.bfh.util">
+              <point x="-46.66666666666666" y="-14.5" />
+              <point x="121.24057539682539" y="537.201171875" />
+              <point x="80.0" y="537.201171875" />
+              <point x="32.0" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.repositories" target="ch.bfh.entities">
+              <point x="0.0" y="-14.5" />
+              <point x="167.90724206349205" y="537.201171875" />
+              <point x="208.46875" y="537.201171875" />
+              <point x="-7.3125" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.entities" target="ch.bfh.entities">
+              <point x="-21.9375" y="14.5" />
+              <point x="193.84375" y="507.201171875" />
+              <point x="117.28125" y="507.201171875" />
+              <point x="117.28125" y="443.0345052083333" />
+              <point x="-58.5" y="-9.666666666666686" />
+            </edge>
+            <edge source="ch.bfh.repositories" target="ch.bfh.repositories">
+              <point x="-52.5" y="14.5" />
+              <point x="115.40724206349205" y="606.201171875" />
+              <point x="77.90724206349205" y="606.201171875" />
+              <point x="77.90724206349205" y="578.951171875" />
+              <point x="-70.0" y="7.25" />
+            </edge>
+            <edge source="ch.bfh.controllers.ScatterLineChartControllerTest" target="ch.bfh.controllers.ScatterLineChartController">
+              <point x="-52.5" y="-14.5" />
+              <point x="520.9486772486771" y="333.0" />
+              <point x="526.4486772486771" y="333.0" />
+              <point x="-47.0" y="14.5" />
+            </edge>
+            <edge source="ch.bfh.controllers.PieChartControllerTest" target="ch.bfh.controllers.PieChartController">
+              <point x="42.0" y="-14.5" />
+              <point x="1416.448677248677" y="333.0" />
+              <point x="1410.948677248677" y="333.0" />
+              <point x="36.5" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="278.85714285714283" y="-143.30952380952368" />
+          <SelectedNodes>
+            <node>ch.bfh.analyse</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/bfh/controllers/BubbleChartControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="39" column="46" lean-forward="true" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-403">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/Followers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/mapanalyse/MapAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sampleanalyse/SampleAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/sentimentanalyse/SentimentAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-454">
+          <caret line="45" column="63" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetsbytheme/TweetsbyTheme.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="75" column="40" lean-forward="true" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/tweetthemebyretweet/TweetthemebyRetweet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-505">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1585,8 +1925,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/categorizer/SentimentCategorizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="-403">
           <caret line="13" column="57" lean-forward="false" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/chartsmodel/GoogleMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="104" column="39" lean-forward="false" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/chartsmodel/GoogleMarker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="46" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1595,14 +1959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/BarChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1639,26 +1995,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/PolarChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/RadarChartController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/controllers/ScatterLineChartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1674,16 +2014,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/Tweet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1691,6 +2025,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1715,16 +2057,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding>
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/Repository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="119">
           <caret line="12" column="65" lean-forward="false" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
           <folding />
         </state>
@@ -1732,15 +2071,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/TweetRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="791">
+        <state relative-caret-position="770">
           <caret line="82" column="1" lean-forward="false" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="44" column="7" lean-forward="false" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/TwitterStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="-675">
           <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding />
         </state>
@@ -1748,7 +2095,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/twitter/UpdateTweets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="243">
           <caret line="43" column="62" lean-forward="false" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
           <folding />
         </state>
@@ -1772,11 +2119,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/util/RessourceLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="102">
           <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1790,27 +2135,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/StartApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="697">
+          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/Analyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/bfh/analyse/languageanalyse/TweetsbyLanguage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -1,7 +1,5 @@
 package ch.bfh.entities;
 
-import twitter4j.GeoLocation;
-import twitter4j.Place;
 
 import javax.persistence.*;
 import java.util.List;

@@ -13,8 +13,7 @@ Router.map(function() {
     this.route('retweetsbytheme');
   });
 
-
-  this.route('charts');
+  
   this.route('linecharts', function(){
     this.route('samplechart');
   });
@@ -27,11 +26,6 @@ Router.map(function() {
   this.route('doughnutcharts', function(){
      this.route('sentimentanalyse');
    });
-
-  this.route('linecharts', function(){
-    this.route('tutorial')
-  });
-
 
   this.route('charts');
 
